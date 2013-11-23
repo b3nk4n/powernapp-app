@@ -97,6 +97,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 24-hour clock.
+        /// </summary>
+        public static string Clock24Enabled {
+            get {
+                return ResourceManager.GetString("Clock24Enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to more apps.
         /// </summary>
         public static string MoreApps {
@@ -142,11 +151,74 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to settings.
+        /// </summary>
+        public static string SettingsTitle {
+            get {
+                return ResourceManager.GetString("SettingsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to support and feedback.
         /// </summary>
         public static string SupportAndFeedback {
             get {
                 return ResourceManager.GetString("SupportAndFeedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voice commands.
+        /// </summary>
+        public static string VoiceCommands {
+            get {
+                return ResourceManager.GetString("VoiceCommands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string VoiceLanguage {
+            get {
+                return ResourceManager.GetString("VoiceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string VoiceStatus {
+            get {
+                return ResourceManager.GetString("VoiceStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to supported.
+        /// </summary>
+        public static string VoiceSupported {
+            get {
+                return ResourceManager.GetString("VoiceSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to not supported.
+        /// </summary>
+        public static string VoiceUnsupported {
+            get {
+                return ResourceManager.GetString("VoiceUnsupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your installed language package is not supported  in the current version of this application. Supported languages for voice commands are English (en-US, en-GB) and German (de-DE). Please check your phone settings..
+        /// </summary>
+        public static string VoiceUnsupportedMessage {
+            get {
+                return ResourceManager.GetString("VoiceUnsupportedMessage", resourceCulture);
             }
         }
     }

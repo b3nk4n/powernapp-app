@@ -156,4 +156,36 @@
     <value>support and feedback</value>
     <comment>About Page</comment>
   </data>
+  <data name="Clock24Enabled" xml:space="preserve">
+    <value>24-hour clock</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>settings</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceCommands" xml:space="preserve">
+    <value>Voice commands</value>
+    <comment>Settings Page</comment>
+  </data>
+  <data name="VoiceLanguage" xml:space="preserve">
+    <value>Language</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceSupported" xml:space="preserve">
+    <value>supported</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceUnsupported" xml:space="preserve">
+    <value>not supported</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceUnsupportedMessage" xml:space="preserve">
+    <value>Your installed language package is not supported  in the current version of this application. Supported languages for voice commands are English (en-US, en-GB) and German (de-DE). Please check your phone settings.</value>
+    <comment>SettingsPage</comment>
+  </data>
 </root>
