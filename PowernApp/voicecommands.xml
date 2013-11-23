@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
 
-  <CommandSet xml:lang="en" Name="commandsEN">
+  <CommandSet xml:lang="en-GB" Name="commandsEN">
 
     <CommandPrefix>Power nap</CommandPrefix>
     <Example>for 20 minutes</Example>

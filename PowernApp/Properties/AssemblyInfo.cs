@@ -10,7 +10,7 @@ using System.Resources;
 [assembly: AssemblyDescription("Simple power napping application with voice commands")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PowernApp")]
+[assembly: AssemblyProduct("powernAPP")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

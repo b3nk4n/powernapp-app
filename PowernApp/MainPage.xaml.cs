@@ -46,7 +46,8 @@ namespace PowernApp
             PhoneApplicationService.Current.UserIdleDetectionMode =
                 IdleDetectionMode.Disabled;
 
-            try
+            if (NavigationContext.QueryString != null &&
+                NavigationContext.QueryString.ContainsKey("voiceCommandName"))
             {
                 String commandName = NavigationContext.QueryString["voiceCommandName"];
 
@@ -55,10 +56,6 @@ namespace PowernApp
 
                 // clear the QueryString or the page will retain the current value
                 NavigationContext.QueryString.Clear();
-            }
-            catch (Exception)
-            {
-                // this code block is reached if the app is accessed in a way other than voice commands, therefore, do nothing
             }
         }
 
