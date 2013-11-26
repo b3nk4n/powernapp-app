@@ -21,8 +21,5 @@ namespace PowernApp
         /// Setting for whether the vibration is enabled.
         /// </summary>
         public static readonly StoredObject<bool> EnableVibration = new StoredObject<bool>("enableVibration", true);
-
-        public static readonly StoredObject<DateTime> AlarmTime = new StoredObject<DateTime>("alarmTime", DateTime.MinValue);
-        public static readonly StoredObject<DateTime> AlarmStartTime = new StoredObject<DateTime>("alarmStartTime", DateTime.MinValue);
     }
 }

@@ -63,6 +63,10 @@
                 <TextBlock Text="{Binding TimeToAlarm,Converter={StaticResource TimeSpanConverter}}"
                            HorizontalAlignment="Center" Style="{StaticResource PhoneTextExtraLargeStyle}" />
                 <ProgressBar Height="50" Value="{Binding Progress}" />
+                <TextBlock Text="{Binding AlarmTime}"
+                           HorizontalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" />
+                <TextBlock Text="{Binding AlarmSetTime}"
+                           HorizontalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" />
             </StackPanel>
         </Grid>
 

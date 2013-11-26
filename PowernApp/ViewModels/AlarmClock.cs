@@ -3,6 +3,7 @@ using Microsoft.Phone.Scheduler;
 using Microsoft.Xna.Framework.Audio;
 using PhoneKit.Framework.Audio;
 using PhoneKit.Framework.Core.MVVM;
+using PhoneKit.Framework.Core.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,16 @@ namespace PowernApp.ViewModels
         private int _progress;
 
         /// <summary>
+        /// The alarm time.
+        /// </summary>
+        private readonly StoredObject<DateTime> _alarmTime = new StoredObject<DateTime>("alarmTime", DateTime.MinValue);
+
+        /// <summary>
+        /// The time when the user has set the alarm.
+        /// </summary>
+        private readonly StoredObject<DateTime> _alarmSetTime = new StoredObject<DateTime>("alarmSetTime", DateTime.MinValue);
+
+        /// <summary>
         /// the phones alarm scheduler.
         /// </summary>
         private static Alarm alarm;
@@ -108,11 +119,8 @@ namespace PowernApp.ViewModels
             _startAlarm = new DelegateCommand<string>(
                 (minutes) =>
                 {
-                    var now = DateTime.Now;
-                    var alarmTime = now.AddMinutes(int.Parse(minutes));
-                    Settings.AlarmTime.Value = alarmTime;
-                    Settings.AlarmStartTime.Value = now;
-                    UpdateCommands();
+                    var min = int.Parse(minutes);
+                    Set(min);
                 },
                 (minutes) =>
                 {
@@ -122,9 +130,8 @@ namespace PowernApp.ViewModels
             _snoozeAlarm = new DelegateCommand<string>(
                 (minutes) =>
                 {
-                    var alarmTime = Settings.AlarmTime.Value.AddMinutes(int.Parse(minutes));
-                    Settings.AlarmTime.Value = alarmTime;
-                    UpdateCommands();
+                    var min = int.Parse(minutes);
+                    Snooze(min);
                 },
                 (minutes) =>
                 {
@@ -134,9 +141,7 @@ namespace PowernApp.ViewModels
             _stopAlarm = new DelegateCommand(
                 () =>
                 {
-                    Settings.AlarmTime.Value = DateTime.MinValue;
-                    Settings.AlarmStartTime.Value = DateTime.MinValue;
-                    UpdateCommands();
+                    Stop();
                 },
                 () =>
                 {
@@ -149,6 +154,70 @@ namespace PowernApp.ViewModels
         #region Methods
 
         /// <summary>
+        /// Tries to set the alarm.
+        /// </summary>
+        /// <param name="minutes">The alarm time in minutes until now.</param>
+        /// <returns>Returns true if successful, else false.</returns>
+        public bool Set(int minutes)
+        {
+            if (minutes < 1)
+                throw new ArgumentException("Alarm time must be at least 1 minute.");
+
+            if (!IsAlarmSet)
+            {
+                AlarmSetTime = DateTime.Now;
+                AlarmTime = DateTime.Now.AddMinutes(minutes);
+
+                UpdateCommands();
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Snoozes the alarm time.
+        /// </summary>
+        /// <param name="minutes">The snooze time.</param>
+        /// <returns>Returns true if successful, else false.</returns>
+        public bool Snooze(int minutes)
+        {
+            if (minutes < 1)
+                throw new ArgumentException("Alarm snooze time must be at least 1 minute.");
+
+            if (IsAlarmSet)
+            {
+                DateTime newAlarmBaseTime;
+
+                // verify new alarm time offset is not based on a passed time
+                if (AlarmTime < DateTime.Now)
+                    newAlarmBaseTime = DateTime.Now;
+                else
+                    newAlarmBaseTime = AlarmTime;
+
+                AlarmTime = newAlarmBaseTime.AddMinutes(minutes);
+
+                UpdateCommands();
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Stops the alarm.
+        /// </summary>
+        private void Stop()
+        {
+            if (IsAlarmSet)
+            {
+                AlarmTime = DateTime.MinValue;
+                AlarmSetTime = DateTime.MinValue;
+                UpdateCommands();
+            }
+        }
+
+        /// <summary>
         /// Tries to add the alarm scheduler.
         /// </summary>
         public void TryAddToScheduler()
@@ -157,9 +226,9 @@ namespace PowernApp.ViewModels
             {
                 try
                 {
-                    if (Settings.AlarmTime.Value > DateTime.Now)
+                    if (AlarmTime > DateTime.Now)
                     {
-                        AlarmClock.alarm.BeginTime = Settings.AlarmTime.Value;
+                        AlarmClock.alarm.BeginTime = AlarmTime;
                         ScheduledActionService.Add(AlarmClock.alarm);
                     }
                 }
@@ -183,7 +252,7 @@ namespace PowernApp.ViewModels
                     // check if alarm was dismissed
                     if (oldAlarm.IsScheduled == false)
                     {
-                        Settings.AlarmTime.Value = DateTime.MinValue;
+                        Stop();
                     }
 
                     ScheduledActionService.Remove(ALARM_NAME);
@@ -209,15 +278,15 @@ namespace PowernApp.ViewModels
         {
             if (IsAlarmSet)
             {
-                var totalSeconds = (Settings.AlarmTime.Value - Settings.AlarmStartTime.Value).TotalSeconds;
-                var passedSeconds = (DateTime.Now - Settings.AlarmStartTime.Value).TotalSeconds;
+                var totalSeconds = (AlarmTime - AlarmSetTime).TotalSeconds;
+                var passedSeconds = (DateTime.Now - AlarmSetTime).TotalSeconds;
 
                 if (totalSeconds == 0)
                     Progress = 0;
                 else
                     Progress = (int)(100 * passedSeconds / totalSeconds);
 
-                TimeToAlarm = (Settings.AlarmTime.Value - DateTime.Now); 
+                TimeToAlarm = (AlarmTime - DateTime.Now); 
                 if (TimeToAlarm.TotalSeconds <= 0 && TimeToAlarm.TotalSeconds >= -60)
                 {
                     // vibrate only if enabled
@@ -266,7 +335,7 @@ namespace PowernApp.ViewModels
         {
             get
             {
-                return Settings.AlarmTime.Value > DateTime.Now;
+                return AlarmTime != DateTime.MinValue;
             }
         }
 
@@ -291,6 +360,44 @@ namespace PowernApp.ViewModels
         }
 
         /// <summary>
+        /// Gets or sets the alarm time.
+        /// </summary>
+        public DateTime AlarmTime
+        {
+            get
+            {
+                return _alarmTime.Value;
+            }
+            private set
+            {
+                if (_alarmTime.Value != value)
+                {
+                    _alarmTime.Value = value;
+                    NotifyPropertyChanged("AlarmTime");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the alarm set time.
+        /// </summary>
+        public DateTime AlarmSetTime
+        {
+            get
+            {
+                return _alarmSetTime.Value;
+            }
+            private set
+            {
+                if (_alarmSetTime.Value != value)
+                {
+                    _alarmSetTime.Value = value;
+                    NotifyPropertyChanged("AlarmSetTime");
+                }
+            }
+        }
+
+        /// <summary>
         /// Gets the progress of the total power nap.
         /// </summary>
         public int Progress
@@ -299,7 +406,7 @@ namespace PowernApp.ViewModels
             {
                 return _progress;
             }
-            set
+            private set
             {
                 if (_progress != value)
                 {
