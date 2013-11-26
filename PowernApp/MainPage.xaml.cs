@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PowernApp.Resources;
 using PhoneKit.Framework.Voice;
+using PowernApp.ViewModels;
 
 namespace PowernApp
 {
@@ -28,6 +29,8 @@ namespace PowernApp
                 {
                     // register voice commands
                     Speech.Instance.InstallCommandSets(new Uri("ms-appx:///voicecommands.xml", UriKind.Absolute));
+
+                    DataContext = AlarmClock.Instance;
                 };
 
             BuildLocalizedApplicationBar();
