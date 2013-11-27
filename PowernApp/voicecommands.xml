@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
 
-  <CommandSet xml:lang="en-GB" Name="commandsEN">
+  <CommandSet xml:lang="en-GB" Name="commandsENGB">
 
     <CommandPrefix>Power nap</CommandPrefix>
     <Example>for 20 minutes</Example>
@@ -107,4 +107,226 @@
     </PhraseList>
     
   </CommandSet>
+  
+  <CommandSet xml:lang="en-US" Name="commandsENUS">
+
+    <CommandPrefix>Power nap</CommandPrefix>
+    <Example>for 20 minutes</Example>
+
+    <Command Name="startNap">
+      <Example>for 20 minutes</Example>
+      <ListenFor>[for] {minute} [minutes]</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="stopNap">
+      <Example>Cancel nap</Example>
+      <ListenFor>Cancel [nap]</ListenFor>
+      <ListenFor>Stop [nap]</ListenFor>
+      <Feedback>Turning alarm off</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="checkAlarmTime">
+      <Example>When is my alarm set for?</Example>
+      <ListenFor>When is my alarm set [for]?</ListenFor>
+      <Feedback>One moment while I check</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="checkRemainingTime">
+      <Example>What is the remaining time?</Example>
+      <ListenFor>[What] [is] [the] remaining time?</ListenFor>
+      <ListenFor>How much time is left?</ListenFor>
+      <Feedback>One moment while I check</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="extendAlarmTime">
+      <Example>5 more minutes</Example>
+      <ListenFor>[give me] {minute} more [minutes]</ListenFor>
+      <ListenFor>extend by {minute} [minutes]</ListenFor>
+      <Feedback>Extending alarm time by {minute} minutes</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <PhraseList Label="minute">
+      <Item>1</Item>
+      <Item>2</Item>
+      <Item>3</Item>
+      <Item>4</Item>
+      <Item>5</Item>
+      <Item>6</Item>
+      <Item>7</Item>
+      <Item>8</Item>
+      <Item>9</Item>
+      <Item>10</Item>
+      <Item>11</Item>
+      <Item>12</Item>
+      <Item>13</Item>
+      <Item>14</Item>
+      <Item>15</Item>
+      <Item>16</Item>
+      <Item>17</Item>
+      <Item>18</Item>
+      <Item>19</Item>
+      <Item>20</Item>
+      <Item>21</Item>
+      <Item>22</Item>
+      <Item>23</Item>
+      <Item>24</Item>
+      <Item>25</Item>
+      <Item>26</Item>
+      <Item>27</Item>
+      <Item>28</Item>
+      <Item>29</Item>
+      <Item>30</Item>
+      <Item>31</Item>
+      <Item>32</Item>
+      <Item>33</Item>
+      <Item>34</Item>
+      <Item>35</Item>
+      <Item>36</Item>
+      <Item>37</Item>
+      <Item>38</Item>
+      <Item>39</Item>
+      <Item>40</Item>
+      <Item>41</Item>
+      <Item>42</Item>
+      <Item>43</Item>
+      <Item>44</Item>
+      <Item>45</Item>
+      <Item>46</Item>
+      <Item>47</Item>
+      <Item>48</Item>
+      <Item>49</Item>
+      <Item>50</Item>
+      <Item>51</Item>
+      <Item>52</Item>
+      <Item>53</Item>
+      <Item>54</Item>
+      <Item>55</Item>
+      <Item>56</Item>
+      <Item>57</Item>
+      <Item>58</Item>
+      <Item>59</Item>
+    </PhraseList>
+    
+  </CommandSet>
+
+  <CommandSet xml:lang="de-DE" Name="commandsDEDE">
+
+    <CommandPrefix>Power nap</CommandPrefix>
+    <Example>für 20 Minuten</Example>
+
+    <Command Name="startNap">
+      <Example>für 20 Minuten</Example>
+      <ListenFor>[für] {minute} [Minuten]</ListenFor>
+      <Feedback>Aktiviere Alarm</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="stopNap">
+      <Example>Beende Nap</Example>
+      <ListenFor>Beende [Nap] [Nickerchen]</ListenFor>
+      <ListenFor>Stopp [Nap] [Nickerchen]</ListenFor>
+      <ListenFor>Abbrechen</ListenFor>
+      <ListenFor>Breche [Nap] [Nickerchen] ab</ListenFor>
+      <Feedback>Deaktiviere Alarm</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="checkAlarmTime">
+      <Example>Auf wann ist der Alarm gestellt?</Example>
+      <ListenFor>[Auf] wann ist der Alarm [gestellt] [gesetzt]?</ListenFor>
+      <Feedback>Einen Moment bitte</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="checkRemainingTime">
+      <Example>Wie viel Zeit habe ich noch?</Example>
+      <ListenFor>Wie viel Zeit habe ich noch?</ListenFor>
+      <ListenFor>Wie viel Zeit ist noch übrig?</ListenFor>
+      <ListenFor>Restzeit?</ListenFor>
+      <ListenFor>Verbleibende Zeit?</ListenFor>
+      <ListenFor>Wie lange noch?</ListenFor>
+      <Feedback>Einen Moment bitte</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="extendAlarmTime">
+      <Example>5 Minuten verlängern</Example>
+      <ListenFor>{minute} [Minuten] verlängern</ListenFor>
+      <ListenFor>[Gib mir] {minute} [Minuten] mehr</ListenFor>
+      <ListenFor>{minute} [Minuten] erweitern</ListenFor>
+      <ListenFor>Verlängern um {minute} [Minuten]</ListenFor>
+      <Feedback>Verlängere Alarmzeit um {minute} Minuten</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <PhraseList Label="minute">
+      <Item>1</Item>
+      <Item>2</Item>
+      <Item>3</Item>
+      <Item>4</Item>
+      <Item>5</Item>
+      <Item>6</Item>
+      <Item>7</Item>
+      <Item>8</Item>
+      <Item>9</Item>
+      <Item>10</Item>
+      <Item>11</Item>
+      <Item>12</Item>
+      <Item>13</Item>
+      <Item>14</Item>
+      <Item>15</Item>
+      <Item>16</Item>
+      <Item>17</Item>
+      <Item>18</Item>
+      <Item>19</Item>
+      <Item>20</Item>
+      <Item>21</Item>
+      <Item>22</Item>
+      <Item>23</Item>
+      <Item>24</Item>
+      <Item>25</Item>
+      <Item>26</Item>
+      <Item>27</Item>
+      <Item>28</Item>
+      <Item>29</Item>
+      <Item>30</Item>
+      <Item>31</Item>
+      <Item>32</Item>
+      <Item>33</Item>
+      <Item>34</Item>
+      <Item>35</Item>
+      <Item>36</Item>
+      <Item>37</Item>
+      <Item>38</Item>
+      <Item>39</Item>
+      <Item>40</Item>
+      <Item>41</Item>
+      <Item>42</Item>
+      <Item>43</Item>
+      <Item>44</Item>
+      <Item>45</Item>
+      <Item>46</Item>
+      <Item>47</Item>
+      <Item>48</Item>
+      <Item>49</Item>
+      <Item>50</Item>
+      <Item>51</Item>
+      <Item>52</Item>
+      <Item>53</Item>
+      <Item>54</Item>
+      <Item>55</Item>
+      <Item>56</Item>
+      <Item>57</Item>
+      <Item>58</Item>
+      <Item>59</Item>
+    </PhraseList>
+
+  </CommandSet>
+  
 </VoiceCommands>

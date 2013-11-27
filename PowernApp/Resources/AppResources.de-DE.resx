@@ -121,6 +121,10 @@
     <value>about</value>
     <comment>AboutPage</comment>
   </data>
+  <data name="Alarm" xml:space="preserve">
+    <value>Alarmton</value>
+    <comment>SettingsPage</comment>
+  </data>
   <data name="ApplicationAuthor" xml:space="preserve">
     <value>von Benjamin Sautermeister</value>
     <comment>AboutPage</comment>
@@ -131,10 +135,6 @@
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
     <value>powernAPP</value>
-  </data>
-  <data name="Clock24Enabled" xml:space="preserve">
-    <value>24-Stunden Uhr</value>
-    <comment>SettingsPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
     <value>mehr apps</value>
@@ -163,6 +163,10 @@
   <data name="SupportAndFeedback" xml:space="preserve">
     <value>hilfe und feedback</value>
     <comment>About Page</comment>
+  </data>
+  <data name="VibrationEnabled" xml:space="preserve">
+    <value>Vibration</value>
+    <comment>SettingsPage</comment>
   </data>
   <data name="VoiceCommands" xml:space="preserve">
     <value>Sprachbefehle</value>

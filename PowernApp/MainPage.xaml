@@ -17,6 +17,7 @@
     
     <phone:PhoneApplicationPage.Resources>
         <converter:TimeSpanConverter x:Key="TimeSpanConverter" />
+        <converter:DateToTimeConverter x:Key="DateToTimeConverter" />
     </phone:PhoneApplicationPage.Resources>
 
     <toolkit:TransitionService.NavigationInTransition>
@@ -55,17 +56,17 @@
         <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
-                <Button Content="1 min" Command="{Binding StartAlarm}" CommandParameter="1" />
-                <Button Content="2 min" Command="{Binding StartAlarm}" CommandParameter="2" />
-                <Button Content="3 min" Command="{Binding StartAlarm}" CommandParameter="3" />
-                <Button Content="+ 1 min" Command="{Binding SnoozeAlarm}" CommandParameter="1" />
-                <Button Content="Stop" Command="{Binding StopAlarm}" />
+                <Button Content="1 min" Command="{Binding StartCommand}" CommandParameter="1" />
+                <Button Content="2 min" Command="{Binding StartCommand}" CommandParameter="2" />
+                <Button Content="3 min" Command="{Binding StartCommand}" CommandParameter="3" />
+                <Button Content="+ 1 min" Command="{Binding SnoozeCommand}" CommandParameter="1" />
+                <Button Content="Stop" Command="{Binding StopCommand}" />
                 <TextBlock Text="{Binding TimeToAlarm,Converter={StaticResource TimeSpanConverter}}"
                            HorizontalAlignment="Center" Style="{StaticResource PhoneTextExtraLargeStyle}" />
                 <ProgressBar Height="50" Value="{Binding Progress}" />
-                <TextBlock Text="{Binding AlarmTime}"
+                <TextBlock Text="{Binding AlarmTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=T}"
                            HorizontalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" />
-                <TextBlock Text="{Binding AlarmSetTime}"
+                <TextBlock Text="{Binding AlarmSetTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
                            HorizontalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" />
             </StackPanel>
         </Grid>

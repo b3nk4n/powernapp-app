@@ -70,6 +70,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alarm sound.
+        /// </summary>
+        public static string Alarm {
+            get {
+                return ResourceManager.GetString("Alarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to by Benjamin Sautermeister.
         /// </summary>
         public static string ApplicationAuthor {
@@ -93,15 +102,6 @@ namespace PowernApp.Resources {
         public static string ApplicationTitle {
             get {
                 return ResourceManager.GetString("ApplicationTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 24-hour clock.
-        /// </summary>
-        public static string Clock24Enabled {
-            get {
-                return ResourceManager.GetString("Clock24Enabled", resourceCulture);
             }
         }
         
@@ -165,6 +165,15 @@ namespace PowernApp.Resources {
         public static string SupportAndFeedback {
             get {
                 return ResourceManager.GetString("SupportAndFeedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vibration.
+        /// </summary>
+        public static string VibrationEnabled {
+            get {
+                return ResourceManager.GetString("VibrationEnabled", resourceCulture);
             }
         }
         

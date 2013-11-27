@@ -52,8 +52,31 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
                 <TextBlock Margin="12,0,12,0" Style="{StaticResource PhoneTextSubtleStyle}"
-                           Text="{Binding Path=LocalizedResources.Clock24Enabled, Source={StaticResource LocalizedStrings}}" />
-                <toolkit:ToggleSwitch x:Name="TestToggleSwitch" IsChecked="True" Margin="0,-20,0,0" />
+                           Text="" />
+                <toolkit:ListPicker Margin="12,12,12,44" ExpansionMode="FullScreenOnly" Header="{Binding Path=LocalizedResources.Alarm, Source={StaticResource LocalizedStrings}}"
+                                    x:Name="AudioList" FullModeHeader="Select alarm audio"  CacheMode="BitmapCache">
+                    <toolkit:ListPicker.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title}"/>
+                        </DataTemplate>
+                    </toolkit:ListPicker.ItemTemplate>
+                    <toolkit:ListPicker.FullModeItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Button Margin="10" Tap="ButtonTapAndHandleRoutedEvent" Command="{Binding PlayCommand}">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Image Source="{Binding ImageUri}" Height="48" Width="48"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <TextBlock Text="{Binding Title}" VerticalAlignment="Center" Style="{StaticResource PhoneTextLargeStyle}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </toolkit:ListPicker.FullModeItemTemplate>
+                </toolkit:ListPicker>
+                <toolkit:ToggleSwitch x:Name="VibrationToggleSwitch" IsChecked="True" Margin="0,-20,0,0"
+                                      Header="{Binding Path=LocalizedResources.VibrationEnabled, Source={StaticResource LocalizedStrings}}"/>
                 <TextBlock Margin="12,0,12,0" Style="{StaticResource PhoneTextSubtleStyle}"
                            Text="{Binding Path=LocalizedResources.VoiceCommands, Source={StaticResource LocalizedStrings}}" />
                 <Grid>

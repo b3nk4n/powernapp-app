@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
+using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using PhoneKit.Framework.Voice;
 using Windows.Phone.Speech.Synthesis;
 using PowernApp.Resources;
+using PowernApp.ViewModels;
 
 namespace PowernApp
 {
@@ -24,10 +21,34 @@ namespace PowernApp
         public SettingsPage()
         {
             InitializeComponent();
-            Loaded += (s, e) =>
-                {
-                    RefreshVoiceCommandsStatus();
-                };
+        }
+
+        /// <summary>
+        /// Load settings when page is navigated to.
+        /// </summary>
+        /// <param name="e">The event args.</param>
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            this.VibrationToggleSwitch.IsChecked = Settings.EnableVibration.Value;
+            BindAudioItems();
+            RefreshVoiceCommandsStatus();
+        }
+
+        /// <summary>
+        /// Save setting when page is navigated from.
+        /// </summary>
+        /// <param name="e">The event args.</param>
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            Settings.EnableVibration.Value = this.VibrationToggleSwitch.IsChecked.Value;
+            
+            var selectedAudio = this.AudioList.SelectedItem as AudioViewModel;
+            if (selectedAudio != null)
+                Settings.AlarmUriString.Value = selectedAudio.UriString;
         }
 
         /// <summary>
@@ -49,6 +70,53 @@ namespace PowernApp
             }
 
             LanguageText.Text = InstalledVoices.Default.Language;
+        }
+
+        /// <summary>
+        /// Binds the audio items to the list picker.
+        /// </summary>
+        private void BindAudioItems()
+        {
+            if (AudioList.ItemsSource != null)
+                return;
+
+            var playImageUri = new Uri("/Assets/Images/play.png", UriKind.Relative);
+
+            var audioList = new List<AudioViewModel>();
+
+            audioList.Add(
+                new AudioViewModel(
+                    "Alarm", 
+                    "Assets/Audio/alarm.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "Buzzer",
+                    "Assets/Audio/buzzer.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "Rooster",
+                    "Assets/Audio/rooster.wav",
+                    playImageUri));
+
+            AudioList.ItemsSource = audioList;
+
+            // try to select the item
+            var itemToSelect = audioList.Where(a => a.UriString == Settings.AlarmUriString.Value);
+
+            if (itemToSelect != null && itemToSelect.Count() > 0)
+                AudioList.SelectedItem = itemToSelect.First();
+        }
+
+        /// <summary>
+        /// Handles the button tap event so that the item in the list picker is not selected.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The event args.</param>
+        private void ButtonTapAndHandleRoutedEvent(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

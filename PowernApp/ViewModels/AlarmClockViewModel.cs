@@ -5,10 +5,6 @@ using PhoneKit.Framework.Audio;
 using PhoneKit.Framework.Core.MVVM;
 using PhoneKit.Framework.Core.Storage;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Resources;
 using System.Windows.Threading;
@@ -18,24 +14,19 @@ namespace PowernApp.ViewModels
     /// <summary>
     /// Represents a down counting alarm clock.
     /// </summary>
-    public class AlarmClock : ViewModelBase
+    public class AlarmClockViewModel : ViewModelBase
     {
         # region Members
 
         /// <summary>
         /// The singleton instance.
         /// </summary>
-        private static AlarmClock instance;
+        private static AlarmClockViewModel instance;
 
         /// <summary>
         /// The alarms unique name.
         /// </summary>
         private const string ALARM_NAME = "powerNapAlarm";
-
-        /// <summary>
-        /// The URI specifying the default alarm audio file.
-        /// </summary>
-        private readonly Uri _alarmUri = new Uri("Assets/Audio/alarm.wav", UriKind.Relative);
 
         /// <summary>
         /// Timer to adjust the alarm time each second.
@@ -75,17 +66,17 @@ namespace PowernApp.ViewModels
         /// <summary>
         /// The start alarm command.
         /// </summary>
-        private DelegateCommand<string> _startAlarm;
+        private DelegateCommand<string> _startCommand;
 
         /// <summary>
         /// The snooze alarm command.
         /// </summary>
-        private DelegateCommand<string> _snoozeAlarm;
+        private DelegateCommand<string> _snoozeCommand;
 
         /// <summary>
         /// The stop alarm command.
         /// </summary>
-        private DelegateCommand _stopAlarm;
+        private DelegateCommand _stopCommand;
 
         #endregion
 
@@ -94,14 +85,8 @@ namespace PowernApp.ViewModels
         /// <summary>
         /// Creates an AlarmClock instance.
         /// </summary>
-        private AlarmClock()
+        private AlarmClockViewModel()
         {
-            // sound
-            StreamResourceInfo alarmResource = App.GetResourceStream(_alarmUri);
-            SoundEffects.Instance.Load("alarm", alarmResource);
-            _alarmSound = SoundEffects.Instance["alarm"].CreateInstance();
-            _alarmSound.IsLooped = true;
-
             // timer
             _dispatcherTimer = new DispatcherTimer();
             _dispatcherTimer.Tick += dispatcherTimer_Tick;
@@ -109,14 +94,16 @@ namespace PowernApp.ViewModels
             _dispatcherTimer.Start();
 
             // alarm
-            AlarmClock.alarm = new Alarm(ALARM_NAME);
-            AlarmClock.alarm.ExpirationTime = DateTime.MaxValue;
-            AlarmClock.alarm.RecurrenceType = RecurrenceInterval.None;
-            AlarmClock.alarm.Sound = _alarmUri;
-            AlarmClock.alarm.Content = "Power nap done!";
+            AlarmClockViewModel.alarm = new Alarm(ALARM_NAME);
+            AlarmClockViewModel.alarm.ExpirationTime = DateTime.MaxValue;
+            AlarmClockViewModel.alarm.RecurrenceType = RecurrenceInterval.None;
+            AlarmClockViewModel.alarm.Content = "Power nap done!";
+
+            // update time to alarm
+            TimeToAlarm = (AlarmTime - DateTime.Now); 
 
             // commands
-            _startAlarm = new DelegateCommand<string>(
+            _startCommand = new DelegateCommand<string>(
                 (minutes) =>
                 {
                     var min = int.Parse(minutes);
@@ -127,7 +114,7 @@ namespace PowernApp.ViewModels
                     return !IsAlarmSet;
                 });
 
-            _snoozeAlarm = new DelegateCommand<string>(
+            _snoozeCommand = new DelegateCommand<string>(
                 (minutes) =>
                 {
                     var min = int.Parse(minutes);
@@ -138,7 +125,7 @@ namespace PowernApp.ViewModels
                     return IsAlarmSet;
                 });
 
-            _stopAlarm = new DelegateCommand(
+            _stopCommand = new DelegateCommand(
                 () =>
                 {
                     Stop();
@@ -207,14 +194,17 @@ namespace PowernApp.ViewModels
         /// <summary>
         /// Stops the alarm.
         /// </summary>
-        private void Stop()
+        public bool Stop()
         {
             if (IsAlarmSet)
             {
                 AlarmTime = DateTime.MinValue;
                 AlarmSetTime = DateTime.MinValue;
                 UpdateCommands();
+                return true;
             }
+
+            return false;
         }
 
         /// <summary>
@@ -228,8 +218,9 @@ namespace PowernApp.ViewModels
                 {
                     if (AlarmTime > DateTime.Now)
                     {
-                        AlarmClock.alarm.BeginTime = AlarmTime;
-                        ScheduledActionService.Add(AlarmClock.alarm);
+                        AlarmClockViewModel.alarm.BeginTime = AlarmTime;
+                        AlarmClockViewModel.alarm.Sound = new Uri(Settings.AlarmUriString.Value, UriKind.Relative);
+                        ScheduledActionService.Add(AlarmClockViewModel.alarm);
                     }
                 }
                 catch (Exception)
@@ -264,9 +255,9 @@ namespace PowernApp.ViewModels
         /// </summary>
         private void UpdateCommands()
         {
-            _snoozeAlarm.RaiseCanExecuteChanged();
-            _stopAlarm.RaiseCanExecuteChanged();
-            _startAlarm.RaiseCanExecuteChanged();
+            _snoozeCommand.RaiseCanExecuteChanged();
+            _stopCommand.RaiseCanExecuteChanged();
+            _startCommand.RaiseCanExecuteChanged();
         }
 
         /// <summary>
@@ -294,11 +285,20 @@ namespace PowernApp.ViewModels
                     {
                         VibrateController.Default.Start(TimeSpan.FromSeconds(0.5));
                     }
-                    _alarmSound.Play();
+
+                    if (_alarmSound == null)
+                    {
+                        StreamResourceInfo alarmResource = App.GetResourceStream(new Uri(Settings.AlarmUriString.Value, UriKind.Relative));
+                        SoundEffects.Instance.Load(Settings.AlarmUriString.Value, alarmResource);
+                        _alarmSound = SoundEffects.Instance[Settings.AlarmUriString.Value].CreateInstance();
+                        _alarmSound.IsLooped = true;
+                    }
+
+                    TryPlayAlarmSound();
                 }
-                else if (_alarmSound.State == SoundState.Playing)
+                else
                 {
-                    _alarmSound.Stop();
+                    TryStopAlarmSound();
                 }
             }
             else 
@@ -306,9 +306,31 @@ namespace PowernApp.ViewModels
                 Progress = 0;
                 TimeToAlarm = TimeSpan.Zero;
 
-                if (_alarmSound.State == SoundState.Playing)
-                    _alarmSound.Stop();
+                TryStopAlarmSound();
             }
+        }
+
+        /// <summary>
+        /// Plays the alarm sound if sound instance has been loaded.
+        /// </summary>
+        private void TryPlayAlarmSound()
+        {
+            if (_alarmSound == null)
+                return;
+
+            _alarmSound.Play();
+        }
+
+        /// <summary>
+        /// Stops the alarm sound if sound instance has been loaded.
+        /// </summary>
+        private void TryStopAlarmSound()
+        {
+            if (_alarmSound == null)
+                return;
+
+            if (_alarmSound.State == SoundState.Playing)
+                _alarmSound.Stop();
         }
 
         #endregion
@@ -318,12 +340,12 @@ namespace PowernApp.ViewModels
         /// <summary>
         /// Gets the singleton AlarmClock instance.
         /// </summary>
-        public static AlarmClock Instance
+        public static AlarmClockViewModel Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new AlarmClock();
+                    instance = new AlarmClockViewModel();
                 return instance;
             }
         }
@@ -419,33 +441,33 @@ namespace PowernApp.ViewModels
         /// <summary>
         /// Gets the start alarm command.
         /// </summary>
-        public ICommand StartAlarm
+        public ICommand StartCommand
         {
             get
             {
-                return _startAlarm;
+                return _startCommand;
             }
         }
 
         /// <summary>
         /// Gets the snooze alarm command.
         /// </summary>
-        public ICommand SnoozeAlarm
+        public ICommand SnoozeCommand
         {
             get
             {
-                return _snoozeAlarm;
+                return _snoozeCommand;
             }
         }
 
         /// <summary>
         /// Gets the stop alarm command.
         /// </summary>
-        public ICommand StopAlarm
+        public ICommand StopCommand
         {
             get
             {
-                return _stopAlarm;
+                return _stopCommand;
             }
         }
 

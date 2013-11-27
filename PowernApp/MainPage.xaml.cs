@@ -30,7 +30,7 @@ namespace PowernApp
                     // register voice commands
                     Speech.Instance.InstallCommandSets(new Uri("ms-appx:///voicecommands.xml", UriKind.Absolute));
 
-                    DataContext = AlarmClock.Instance;
+                    DataContext = AlarmClockViewModel.Instance;
                 };
 
             BuildLocalizedApplicationBar();
@@ -97,7 +97,12 @@ namespace PowernApp
         /// <param name="minutes">The length of the nap in minutes.</param>
         private async void handleStartNapCommand(string minutes)
         {
-            await Speech.Instance.Synthesizer.SpeakTextAsync("Have a nice " + minutes + " minutes nap.");
+            int min = int.Parse(minutes);
+
+            if (AlarmClockViewModel.Instance.Set(min))
+                await Speech.Instance.Synthesizer.SpeakTextAsync("Have a nice " + minutes + " minutes nap.");
+            else
+                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm is already set.");
         }
 
         /// <summary>
@@ -105,7 +110,10 @@ namespace PowernApp
         /// </summary>
         private async void handleStopNapCommand()
         {
-            await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm is now off. Hope you feel more energized now.");
+            if (AlarmClockViewModel.Instance.Stop())
+                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm is now off. Hope you feel more energized now.");
+            else
+                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm was not set.");
         }
 
         /// <summary>
@@ -113,7 +121,10 @@ namespace PowernApp
         /// </summary>
         private async void handleCheckAlarmTime()
         {
-            await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm is set for 7:30 pm");
+            if (AlarmClockViewModel.Instance.IsAlarmSet)
+                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm is set for " + AlarmClockViewModel.Instance.AlarmTime.ToString("t")); // 12:12 PM
+            else
+                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm was not set.");
         }
 
         /// <summary>
@@ -121,7 +132,10 @@ namespace PowernApp
         /// </summary>
         private async void handleCheckRemainingTime()
         {
-            await Speech.Instance.Synthesizer.SpeakTextAsync("You have 9 minutes left.");
+            if (AlarmClockViewModel.Instance.IsAlarmSet)
+                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format("You have {0} minutes left.", (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
+            else
+                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm was not set.");
         }
 
         /// <summary>
@@ -130,7 +144,12 @@ namespace PowernApp
         /// <param name="minutes">The minutes to extend the alarm.</param>
         private async void handleExtendAlarmTime(string minutes)
         {
-            await Speech.Instance.Synthesizer.SpeakTextAsync("Done. You have now 14 minutes left. Happy napping.");
+            int min = int.Parse(minutes);
+
+            if (AlarmClockViewModel.Instance.Snooze(min))
+                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format("You have now {0} minutes left. Happy napping.", (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
+            else
+                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm was not set.");
         }
 
         /// <summary>

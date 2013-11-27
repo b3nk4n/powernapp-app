@@ -61,28 +61,28 @@ namespace PowernApp
         // Dieser Code wird beim Reaktivieren der Anwendung nicht ausgeführt
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            AlarmClock.Instance.TryRemoveFromScheduler();
+            AlarmClockViewModel.Instance.TryRemoveFromScheduler();
         }
 
         // Code, der ausgeführt werden soll, wenn die Anwendung aktiviert wird (in den Vordergrund gebracht wird)
         // Dieser Code wird beim ersten Starten der Anwendung nicht ausgeführt
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
-            AlarmClock.Instance.TryRemoveFromScheduler();
+            AlarmClockViewModel.Instance.TryRemoveFromScheduler();
         }
 
         // Code, der ausgeführt werden soll, wenn die Anwendung deaktiviert wird (in den Hintergrund gebracht wird)
         // Dieser Code wird beim Schließen der Anwendung nicht ausgeführt
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
-            AlarmClock.Instance.TryAddToScheduler();
+            AlarmClockViewModel.Instance.TryAddToScheduler();
         }
 
         // Code, der beim Schließen der Anwendung ausgeführt wird (z. B. wenn der Benutzer auf "Zurück" klickt)
         // Dieser Code wird beim Deaktivieren der Anwendung nicht ausgeführt
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
-            AlarmClock.Instance.TryAddToScheduler();
+            AlarmClockViewModel.Instance.TryAddToScheduler();
         }
 
         // Code, der bei einem Navigationsfehler ausgeführt wird

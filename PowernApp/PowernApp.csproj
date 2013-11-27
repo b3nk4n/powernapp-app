@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\DateToTimeConverter.cs" />
     <Compile Include="Converter\TimeSpanConverter.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -110,7 +111,8 @@
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AlarmClock.cs" />
+    <Compile Include="ViewModels\AlarmClockViewModel.cs" />
+    <Compile Include="ViewModels\AudioViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -142,6 +144,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Audio\alarm.wav" />
+    <Content Include="Assets\Audio\buzzer.wav" />
+    <Content Include="Assets\Audio\rooster.wav" />
+    <Content Include="Assets\Images\play.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -157,7 +162,9 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="voicecommands.xml" />
+    <Content Include="voicecommands.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.de-DE.resx" />

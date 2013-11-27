@@ -156,10 +156,6 @@
     <value>support and feedback</value>
     <comment>About Page</comment>
   </data>
-  <data name="Clock24Enabled" xml:space="preserve">
-    <value>24-hour clock</value>
-    <comment>SettingsPage</comment>
-  </data>
   <data name="SettingsTitle" xml:space="preserve">
     <value>settings</value>
     <comment>SettingsPage</comment>
@@ -186,6 +182,14 @@
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
     <value>Your installed language package is not supported  in the current version of this application. Supported languages for voice commands are English (en-US, en-GB) and German (de-DE). Please check your phone settings.</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VibrationEnabled" xml:space="preserve">
+    <value>Vibration</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="Alarm" xml:space="preserve">
+    <value>Alarm sound</value>
     <comment>SettingsPage</comment>
   </data>
 </root>
