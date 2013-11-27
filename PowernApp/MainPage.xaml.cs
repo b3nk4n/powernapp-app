@@ -27,11 +27,13 @@ namespace PowernApp
         {
             InitializeComponent();
 
-            // late binding of timespan picker changed event
-            CustomNapTimePicker.ValueChanged += CustomNapTimeChanged;
-
             // register voice commands
             Speech.Instance.InstallCommandSets(new Uri("ms-appx:///voicecommands.xml", UriKind.Absolute));
+
+            CustomNapTimePicker.Value = AlarmClockViewModel.Instance.LastAlarmDuration;
+
+            // late binding of timespan picker changed event
+            CustomNapTimePicker.ValueChanged += CustomNapTimeChanged;
 
             Loaded += (s, e) =>
                 {
@@ -59,10 +61,6 @@ namespace PowernApp
         {
             base.OnNavigatedTo(e);
 
-            // disable idle detection
-            PhoneApplicationService.Current.UserIdleDetectionMode =
-                IdleDetectionMode.Disabled;
-
             if (NavigationContext.QueryString != null &&
                 NavigationContext.QueryString.ContainsKey("voiceCommandName"))
             {
@@ -79,6 +77,22 @@ namespace PowernApp
             UpdateViewState();
         }
 
+        /// <summary>
+        /// When the main page is navigates from.
+        /// </summary>
+        /// <param name="e">The event args.</param>
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            // ensure sound and vibration is off
+            AlarmClockViewModel.Instance.ForceStopSoundAndVibration();
+        }
+
+        /// <summary>
+        /// Updates the view state of the main page and the application bar
+        /// depending on whether the alarm is on or off.
+        /// </summary>
         private void UpdateViewState()
         {
             if (AlarmClockViewModel.Instance.IsAlarmSet)
@@ -254,28 +268,77 @@ namespace PowernApp
             };
         }
 
+        /// <summary>
+        /// Open the timespan picker box.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The event args.</param>
         private void CustomNapClick(object sender, RoutedEventArgs e)
         {
-            //CustomNapTimePicker.Value = new TimeSpan(0, 45, 0);
             CustomNapTimePicker.OpenPicker();
         }
 
-        private void CustomNapTimeChanged(object sender, RoutedPropertyChangedEventArgs<TimeSpan> e)
-        {
-            var time = CustomNapTimePicker.Value;
-            
-            if (time != null && time.Value.TotalSeconds >= 1)
-                AlarmClockViewModel.Instance.Set((int)time.Value.TotalSeconds);
-        }
-
-        private void SetButtonClick(object sender, RoutedEventArgs e)
-        {
-            ActivateAnimation.Begin();
-        }
-
+        /// <summary>
+        /// Handles the stop button click event.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The event args.</param>
         private void StopButtonClick(object sender, RoutedEventArgs e)
         {
             DeactivateAnimation.Begin();
+        }
+
+        /// <summary>
+        /// Handles the start button click event.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The event args.</param>
+        private void StartAlarmClick(object sender, RoutedEventArgs e)
+        {
+            var minutes = (int)CustomNapTimePicker.Value.Value.TotalMinutes;
+            AlarmClockViewModel.Instance.Set(minutes);
+            ActivateAnimation.Begin();
+        }
+
+        /// <summary>
+        /// Handles the change of the timespan using one of the buttons.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The event args.</param>
+        private void ChangeAlarmTimeClick(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+
+            if (button == null)
+                return;
+
+            int minDelta = int.Parse(button.Tag.ToString());
+            var value = CustomNapTimePicker.Value.Value;
+
+            value = value.Add(TimeSpan.FromMinutes(minDelta));
+            
+            // verify at least 1 min
+            if (value.TotalMinutes < 1)
+                value = TimeSpan.FromMinutes(1);
+
+            CustomNapTimePicker.Value = value;
+        }
+
+        /// <summary>
+        /// Handles the stop button click event.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The event args.</param>
+        private void CustomNapTimeChanged(object sender, RoutedPropertyChangedEventArgs<TimeSpan> e)
+        {
+            // update button view state in inactive mode.
+            var minutes = (int)CustomNapTimePicker.Value.Value.TotalMinutes;
+            bool noAlarmOn = !AlarmClockViewModel.Instance.IsAlarmSet;
+
+            ButtonMinus5.IsEnabled = minutes > 5 && noAlarmOn;
+            ButtonMinus1.IsEnabled = minutes > 1 && noAlarmOn;
+            ButtonPlus5.IsEnabled = noAlarmOn;
+            ButtonPlus1.IsEnabled = noAlarmOn;
         }
     }
 }

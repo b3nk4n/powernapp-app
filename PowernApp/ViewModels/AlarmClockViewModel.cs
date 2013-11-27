@@ -54,6 +54,11 @@ namespace PowernApp.ViewModels
         private readonly StoredObject<DateTime> _alarmSetTime = new StoredObject<DateTime>("alarmSetTime", DateTime.MinValue);
 
         /// <summary>
+        /// The time when the user has set the alarm.
+        /// </summary>
+        private readonly StoredObject<TimeSpan> _lastAlarmDuration = new StoredObject<TimeSpan>("lastAlarmDuration", TimeSpan.FromMinutes(20));
+
+        /// <summary>
         /// the phones alarm scheduler.
         /// </summary>
         private static Alarm alarm;
@@ -164,6 +169,9 @@ namespace PowernApp.ViewModels
                 AlarmSetTime = DateTime.Now;
                 AlarmTime = DateTime.Now.AddMinutes(minutes);
 
+                // save alarm duration
+                _lastAlarmDuration.Value = TimeSpan.FromMinutes(minutes);
+
                 UpdateCommands();
                 return true;
             }
@@ -267,6 +275,17 @@ namespace PowernApp.ViewModels
         }
 
         /// <summary>
+        /// Forces the app to be silent.
+        /// </summary>
+        public void ForceStopSoundAndVibration()
+        {
+            if (_alarmSound != null && !_alarmSound.IsDisposed)
+                _alarmSound.Stop();
+
+            VibrateController.Default.Stop();
+        }
+
+        /// <summary>
         /// Updates the binded button states depending on the CanExecute function.
         /// </summary>
         private void UpdateCommands()
@@ -332,10 +351,14 @@ namespace PowernApp.ViewModels
         /// </summary>
         private void TryPlayAlarmSound()
         {
-            if (_alarmSound == null)
+            if (_alarmSound == null || _alarmSound.IsDisposed)
                 return;
-
-            _alarmSound.Play();
+            try
+            {
+                if (_alarmSound.State != SoundState.Playing)
+                    _alarmSound.Play();
+            }
+            catch (Exception) { }
         }
 
         /// <summary>
@@ -343,7 +366,7 @@ namespace PowernApp.ViewModels
         /// </summary>
         private void TryStopAlarmSound()
         {
-            if (_alarmSound == null)
+            if (_alarmSound == null || _alarmSound.IsDisposed)
                 return;
 
             if (_alarmSound.State == SoundState.Playing)
@@ -435,6 +458,17 @@ namespace PowernApp.ViewModels
                     _alarmSetTime.Value = value;
                     NotifyPropertyChanged("AlarmSetTime");
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets the last alarm duration.
+        /// </summary>
+        public TimeSpan LastAlarmDuration
+        {
+            get
+            {
+                return _lastAlarmDuration.Value;
             }
         }
 

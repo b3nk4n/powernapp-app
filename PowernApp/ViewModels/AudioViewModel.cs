@@ -60,7 +60,7 @@ namespace PowernApp.ViewModels
             _playCommand = new DelegateCommand(
                 () =>
                 {
-                    SoundEffects.Instance[_title].Play();
+                    SoundEffects.Instance[_uriString].Play();
                 });
         }
 
