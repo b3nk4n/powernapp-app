@@ -10,6 +10,8 @@ using Microsoft.Phone.Shell;
 using PowernApp.Resources;
 using PhoneKit.Framework.Voice;
 using PowernApp.ViewModels;
+using Coding4Fun.Toolkit.Controls;
+using PhoneKit.Framework.OS;
 
 namespace PowernApp
 {
@@ -25,13 +27,25 @@ namespace PowernApp
         {
             InitializeComponent();
 
+            // late binding of timespan picker changed event
+            CustomNapTimePicker.ValueChanged += CustomNapTimeChanged;
+
+            // register voice commands
+            Speech.Instance.InstallCommandSets(new Uri("ms-appx:///voicecommands.xml", UriKind.Absolute));
+
             Loaded += (s, e) =>
                 {
-                    // register voice commands
-                    Speech.Instance.InstallCommandSets(new Uri("ms-appx:///voicecommands.xml", UriKind.Absolute));
-
                     DataContext = AlarmClockViewModel.Instance;
                 };
+
+            ActivateAnimation.Completed += (s, e) =>
+                {
+                    UpdateViewState();
+                };
+            DeactivateAnimation.Completed += (s, e) =>
+            {
+                UpdateViewState();
+            };
 
             BuildLocalizedApplicationBar();
         }
@@ -59,6 +73,25 @@ namespace PowernApp
 
                 // clear the QueryString or the page will retain the current value
                 NavigationContext.QueryString.Clear();
+            }
+
+            // determine view state
+            UpdateViewState();
+        }
+
+        private void UpdateViewState()
+        {
+            if (AlarmClockViewModel.Instance.IsAlarmSet)
+            {
+                ActivePanel.Visibility = Visibility.Visible;
+                InactivePanel.Visibility = Visibility.Collapsed;
+                BuildActiveLocalizedApplicationBar();
+            }
+            else
+            {
+                ActivePanel.Visibility = Visibility.Collapsed;
+                InactivePanel.Visibility = Visibility.Visible;
+                BuildInactiveLocalizedApplicationBar();
             }
         }
 
@@ -153,7 +186,7 @@ namespace PowernApp
         }
 
         /// <summary>
-        /// Builds the localizzed application bar.
+        /// Builds the localized application bar with all list items.
         /// </summary>
         private void BuildLocalizedApplicationBar()
         {
@@ -175,6 +208,74 @@ namespace PowernApp
             {
                 NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
             };
+        }
+
+        /// <summary>
+        /// Builds the localized application bar buttons in active mode.
+        /// </summary>
+        private void BuildActiveLocalizedApplicationBar()
+        {
+            ApplicationBar.Buttons.Clear();
+
+            // info
+            ApplicationBarIconButton appBarButton1 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.questionmark.png", UriKind.Relative));
+            appBarButton1.Text = "info";
+            ApplicationBar.Buttons.Add(appBarButton1);
+            appBarButton1.Click += (s, e) =>
+            {
+                // TODO: navigate to info page
+            };
+
+            // glight mode
+            ApplicationBarIconButton appBarButton2 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.nocellular.png", UriKind.Relative));
+            appBarButton2.Text = "disable connectivity";
+            ApplicationBar.Buttons.Add(appBarButton2);
+            appBarButton2.Click += async (s, e) =>
+            {
+                // TODO: navigate to info page
+                await SettingsLauncher.LaunchAirplaneModeAsync();
+            };
+        }
+
+        /// <summary>
+        /// Builds the localized application bar buttons in inactive mode.
+        /// </summary>
+        private void BuildInactiveLocalizedApplicationBar()
+        {
+            ApplicationBar.Buttons.Clear();
+
+            // info
+            ApplicationBarIconButton appBarButton1 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.questionmark.png", UriKind.Relative));
+            appBarButton1.Text = "info";
+            ApplicationBar.Buttons.Add(appBarButton1);
+            appBarButton1.Click += (s, e) =>
+            {
+                // TODO: navigate to info page
+            };
+        }
+
+        private void CustomNapClick(object sender, RoutedEventArgs e)
+        {
+            //CustomNapTimePicker.Value = new TimeSpan(0, 45, 0);
+            CustomNapTimePicker.OpenPicker();
+        }
+
+        private void CustomNapTimeChanged(object sender, RoutedPropertyChangedEventArgs<TimeSpan> e)
+        {
+            var time = CustomNapTimePicker.Value;
+            
+            if (time != null && time.Value.TotalSeconds >= 1)
+                AlarmClockViewModel.Instance.Set((int)time.Value.TotalSeconds);
+        }
+
+        private void SetButtonClick(object sender, RoutedEventArgs e)
+        {
+            ActivateAnimation.Begin();
+        }
+
+        private void StopButtonClick(object sender, RoutedEventArgs e)
+        {
+            DeactivateAnimation.Begin();
         }
     }
 }

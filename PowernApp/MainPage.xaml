@@ -8,16 +8,136 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:converter="clr-namespace:PowernApp.Converter"
+    xmlns:c4f="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    SupportedOrientations="Portrait" Orientation="Portrait">
     
     <phone:PhoneApplicationPage.Resources>
+        <!-- convertsers -->
         <converter:TimeSpanConverter x:Key="TimeSpanConverter" />
         <converter:DateToTimeConverter x:Key="DateToTimeConverter" />
+        
+        <!-- animations -->
+        <Storyboard x:Name="ActivateAnimation">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="InactivePanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-90">
+                	<EasingDoubleKeyFrame.EasingFunction>
+                		<BackEase EasingMode="EaseIn"/>
+                	</EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="InactivePanel">
+        		<DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+        			<DiscreteObjectKeyFrame.Value>
+        				<Visibility>Collapsed</Visibility>
+        			</DiscreteObjectKeyFrame.Value>
+        		</DiscreteObjectKeyFrame>
+        	</ObjectAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ActivePanel">
+        		<DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+        			<DiscreteObjectKeyFrame.Value>
+        				<Visibility>Visible</Visibility>
+        			</DiscreteObjectKeyFrame.Value>
+        		</DiscreteObjectKeyFrame>
+        	</ObjectAnimationUsingKeyFrames>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="ActivePanel">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="90"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<BackEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="DeactivateAnimation">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="InactivePanel">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="InactivePanel">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ActivePanel">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="ActivePanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="90">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="RoundButton" TargetType="Button">
+        	<Setter Property="Background" Value="Transparent"/>
+        	<Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
+        	<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+        	<Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
+        	<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
+        	<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}"/>
+        	<Setter Property="Padding" Value="3,5,3,6"/>
+            <Setter Property="Margin" Value="-5,0,-5,0"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button">
+        				<Grid Background="Transparent">
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="MouseOver"/>
+        							<VisualState x:Name="Pressed">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentContainer">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneButtonBasePressedForegroundBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneAccentBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Disabled">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentContainer">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ButtonBackground">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+                            <Border x:Name="ButtonBackground" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="100" Margin="{StaticResource PhoneTouchTargetOverhang}">
+                                <ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </Grid>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+
     </phone:PhoneApplicationPage.Resources>
 
     <toolkit:TransitionService.NavigationInTransition>
@@ -47,16 +167,98 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
         <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
+            <Border Background="{StaticResource PhoneChromeBrush}" Margin="12,0,6,0">
+                <Image Source="Assets/ApplicationIcon.png" Height="48" Width="48"/>
+            </Border>
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" Margin="12,0" VerticalAlignment="Center"/>
         </StackPanel>
 
         <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel>
-                <Button Content="1 min" Command="{Binding StartCommand}" CommandParameter="1" />
+        	<Grid.Projection>
+        		<PlaneProjection/>
+        	</Grid.Projection>
+            <Grid x:Name="InactivePanel" VerticalAlignment="Center" Visibility="Collapsed">
+            	<Grid.Projection>
+            		<PlaneProjection/>
+            	</Grid.Projection>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="120" />
+                    <RowDefinition Height="120" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Content="10 min" Command="{Binding StartCommand}" CommandParameter="10" Click="SetButtonClick" />
+                <Button Grid.Row="0" Grid.Column="1" Content="15 min" Command="{Binding StartCommand}" CommandParameter="15" Click="SetButtonClick"/>
+                <Button Grid.Row="1" Grid.Column="0" Content="20 min" Command="{Binding StartCommand}" CommandParameter="20" Click="SetButtonClick"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="25 min" Command="{Binding StartCommand}" CommandParameter="25" Click="SetButtonClick"/>
+                <Button Grid.Row="2" Grid.Column="0" Content="30 min" Command="{Binding StartCommand}" CommandParameter="30" Click="SetButtonClick"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="35 min" Command="{Binding StartCommand}" CommandParameter="35" Click="SetButtonClick"/>
+                <Button Grid.Row="3" Grid.Column="0" Content="40 min" Command="{Binding StartCommand}" CommandParameter="40" Click="SetButtonClick"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="..." Click="CustomNapClick" />
+                <c4f:TimeSpanPicker x:Name="CustomNapTimePicker" Value="0:45:00" Visibility="Collapsed" />
+            </Grid>
+            <Grid x:Name="ActivePanel" VerticalAlignment="Center" Visibility="Collapsed">
+            	<Grid.Projection>
+            		<PlaneProjection/>
+            	</Grid.Projection>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="42" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    
+                </StackPanel>
+                <StackPanel Grid.Row="0" VerticalAlignment="Bottom">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                        <TextBlock Text="{Binding TotalNapTime}" />
+                        <TextBlock Text=" Minuten Nap" />
+                    </StackPanel>
+                    <TextBlock Text="{Binding TimeToAlarm,Converter={StaticResource TimeSpanConverter}}"
+                           HorizontalAlignment="Center" FontSize="92" Margin="0,0,0,12" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Command="{Binding AntiSnoozeCommand}" CommandParameter="5"
+                            Width="92" Height="92" Style="{StaticResource RoundButton}">
+                        <TextBlock Text="-5" FontSize="32" Margin="0,0,2,2" />
+                    </Button>
+                    <Button Command="{Binding AntiSnoozeCommand}" CommandParameter="1"
+                            Width="92" Height="92" Style="{StaticResource RoundButton}">
+                        <TextBlock Text="-1" FontSize="32" Margin="0,0,2,2" />
+                    </Button>
+                    <Button Command="{Binding StopCommand}"
+                            Width="128" Height="128" Style="{StaticResource RoundButton}" Click="StopButtonClick">
+                        <Rectangle Width="32" Height="32" Fill="{StaticResource PhoneForegroundBrush}" />
+                    </Button>
+                    <Button Command="{Binding SnoozeCommand}" CommandParameter="1"
+                            Width="92" Height="92" Style="{StaticResource RoundButton}">
+                        <TextBlock Text="+1" FontSize="32" Margin="0,0,2,2" />
+                    </Button>
+                    <Button Command="{Binding SnoozeCommand}" CommandParameter="5"
+                            Width="92" Height="92" Style="{StaticResource RoundButton}">
+                        <TextBlock Text="+5" FontSize="32" Margin="0,0,2,2" />
+                    </Button>
+                </StackPanel>
+                <ProgressBar Grid.Row="2" Height="50" Value="{Binding Progress}" VerticalAlignment="Center" />
+                <TextBlock Grid.Row="3" Text="{Binding AlarmTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
+                           HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource PhoneTextNormalStyle}" />
+                <TextBlock Grid.Row="3" Text="{Binding AlarmSetTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
+                           HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource PhoneTextNormalStyle}" />
+                
+            </Grid>
+               
+            
+            
+            <!--<StackPanel>
+                
                 <Button Content="2 min" Command="{Binding StartCommand}" CommandParameter="2" />
                 <Button Content="3 min" Command="{Binding StartCommand}" CommandParameter="3" />
                 <Button Content="+ 1 min" Command="{Binding SnoozeCommand}" CommandParameter="1" />
@@ -68,7 +270,7 @@
                            HorizontalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" />
                 <TextBlock Text="{Binding AlarmSetTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
                            HorizontalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" />
-            </StackPanel>
+            </StackPanel>-->
         </Grid>
 
         <!--Auskommentieren, um ein Ausrichtungsraster anzuzeigen und sicherzustellen, dass Ihre Steuerelemente
@@ -77,7 +279,7 @@
             wenn die Taskleiste ausgeblendet wird.
 
             Entfernen Sie vor dem Versand dieses XAML und das Bild selbst.-->
-        <Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
     </Grid>
 
 </phone:PhoneApplicationPage>

@@ -39,11 +39,6 @@ namespace PowernApp.ViewModels
         private SoundEffectInstance _alarmSound;
 
         /// <summary>
-        /// The remaining time to start the alarm.
-        /// </summary>
-        private TimeSpan _timeToAlarm;
-
-        /// <summary>
         /// The progress of the total power nap [0,...,100].
         /// </summary>
         private int _progress;
@@ -74,6 +69,11 @@ namespace PowernApp.ViewModels
         private DelegateCommand<string> _snoozeCommand;
 
         /// <summary>
+        /// The anti snooze alarm command.
+        /// </summary>
+        private DelegateCommand<string> _antiSnoozeCommand;
+
+        /// <summary>
         /// The stop alarm command.
         /// </summary>
         private DelegateCommand _stopCommand;
@@ -99,9 +99,6 @@ namespace PowernApp.ViewModels
             AlarmClockViewModel.alarm.RecurrenceType = RecurrenceInterval.None;
             AlarmClockViewModel.alarm.Content = "Power nap done!";
 
-            // update time to alarm
-            TimeToAlarm = (AlarmTime - DateTime.Now); 
-
             // commands
             _startCommand = new DelegateCommand<string>(
                 (minutes) =>
@@ -123,6 +120,18 @@ namespace PowernApp.ViewModels
                 (minutes) =>
                 {
                     return IsAlarmSet;
+                });
+
+            _antiSnoozeCommand = new DelegateCommand<string>(
+                (minutes) =>
+                {
+                    var min = int.Parse(minutes);
+                    Snooze(-min);
+                },
+                (minutes) =>
+                {
+                    var min = int.Parse(minutes);
+                    return IsAlarmSet && TimeToAlarm.TotalMinutes > min;
                 });
 
             _stopCommand = new DelegateCommand(
@@ -169,8 +178,8 @@ namespace PowernApp.ViewModels
         /// <returns>Returns true if successful, else false.</returns>
         public bool Snooze(int minutes)
         {
-            if (minutes < 1)
-                throw new ArgumentException("Alarm snooze time must be at least 1 minute.");
+            if (minutes == 0)
+                throw new ArgumentException("Alarm snooze time must be non zero.");
 
             if (IsAlarmSet)
             {
@@ -182,7 +191,14 @@ namespace PowernApp.ViewModels
                 else
                     newAlarmBaseTime = AlarmTime;
 
-                AlarmTime = newAlarmBaseTime.AddMinutes(minutes);
+                if (minutes > 0)
+                {
+                    AlarmTime = newAlarmBaseTime.AddMinutes(minutes);
+                }
+                else if (TimeToAlarm.TotalMinutes > minutes)
+                {
+                    AlarmTime = newAlarmBaseTime.AddMinutes(minutes);
+                }
 
                 UpdateCommands();
                 return true;
@@ -256,6 +272,7 @@ namespace PowernApp.ViewModels
         private void UpdateCommands()
         {
             _snoozeCommand.RaiseCanExecuteChanged();
+            _antiSnoozeCommand.RaiseCanExecuteChanged();
             _stopCommand.RaiseCanExecuteChanged();
             _startCommand.RaiseCanExecuteChanged();
         }
@@ -277,7 +294,7 @@ namespace PowernApp.ViewModels
                 else
                     Progress = (int)(100 * passedSeconds / totalSeconds);
 
-                TimeToAlarm = (AlarmTime - DateTime.Now); 
+                NotifyPropertyChanged("TimeToAlarm");
                 if (TimeToAlarm.TotalSeconds <= 0 && TimeToAlarm.TotalSeconds >= -60)
                 {
                     // vibrate only if enabled
@@ -304,7 +321,7 @@ namespace PowernApp.ViewModels
             else 
             {
                 Progress = 0;
-                TimeToAlarm = TimeSpan.Zero;
+                NotifyPropertyChanged("TimeToAlarm");
 
                 TryStopAlarmSound();
             }
@@ -368,16 +385,16 @@ namespace PowernApp.ViewModels
         {
             get
             {
-                return _timeToAlarm;
+                var timeToAlarm = AlarmTime - DateTime.Now;
+                return (timeToAlarm < TimeSpan.Zero) ? TimeSpan.Zero : timeToAlarm;
             }
-            private set
+        }
+
+        public string TotalNapTime
+        {
+            get
             {
-                if (_timeToAlarm != value)
-                {
-                    _timeToAlarm = value;
-                    NotifyPropertyChanged("TimeToAlarm");
-                    NotifyPropertyChanged("FormattedTimeToAlarm");
-                }
+                return ((int)(AlarmTime - AlarmSetTime).TotalMinutes).ToString();
             }
         }
 
@@ -396,6 +413,8 @@ namespace PowernApp.ViewModels
                 {
                     _alarmTime.Value = value;
                     NotifyPropertyChanged("AlarmTime");
+                    NotifyPropertyChanged("TimeToAlarm");
+                    NotifyPropertyChanged("TotalNapTime");
                 }
             }
         }
@@ -457,6 +476,17 @@ namespace PowernApp.ViewModels
             get
             {
                 return _snoozeCommand;
+            }
+        }
+
+        /// <summary>
+        /// Gets the anti snooze alarm command.
+        /// </summary>
+        public ICommand AntiSnoozeCommand
+        {
+            get
+            {
+                return _antiSnoozeCommand;
             }
         }
 
