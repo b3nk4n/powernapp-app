@@ -44,6 +44,11 @@ namespace PowernApp.ViewModels
         private int _progress;
 
         /// <summary>
+        /// Indicates whether the alarm is on.
+        /// </summary>
+        private bool _alarmIsRinging;
+
+        /// <summary>
         /// The alarm time.
         /// </summary>
         private readonly StoredObject<DateTime> _alarmTime = new StoredObject<DateTime>("alarmTime", DateTime.MinValue);
@@ -224,6 +229,7 @@ namespace PowernApp.ViewModels
             {
                 AlarmTime = DateTime.MinValue;
                 AlarmSetTime = DateTime.MinValue;
+                IsAlarmRinging = false;
                 UpdateCommands();
                 return true;
             }
@@ -316,6 +322,8 @@ namespace PowernApp.ViewModels
                 NotifyPropertyChanged("TimeToAlarm");
                 if (TimeToAlarm.TotalSeconds <= 0 && TimeToAlarm.TotalSeconds >= -60)
                 {
+                    IsAlarmRinging = true;
+
                     // vibrate only if enabled
                     if (Settings.EnableVibration.Value)
                     {
@@ -335,6 +343,7 @@ namespace PowernApp.ViewModels
                 else
                 {
                     TryStopAlarmSound();
+                    IsAlarmRinging = false;
                 }
             }
             else 
@@ -410,6 +419,37 @@ namespace PowernApp.ViewModels
             {
                 var timeToAlarm = AlarmTime - DateTime.Now;
                 return (timeToAlarm < TimeSpan.Zero) ? TimeSpan.Zero : timeToAlarm;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets whether the alarm is ringing.
+        /// </summary>
+        public bool IsAlarmRinging
+        {
+            get
+            {
+                return _alarmIsRinging;
+            }
+            private set
+            {
+                if (_alarmIsRinging != value)
+                {
+                    _alarmIsRinging = value;
+                    NotifyPropertyChanged("IsAlarmRinging");
+                    NotifyPropertyChanged("IsAlarmNotRinging");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets whether the alarm is not ringing.
+        /// </summary>
+        public bool IsAlarmNotRinging
+        {
+            get
+            {
+                return !_alarmIsRinging;
             }
         }
 

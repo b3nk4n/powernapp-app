@@ -42,12 +42,12 @@ namespace PowernApp
 
             ActivateAnimation.Completed += (s, e) =>
                 {
-                    UpdateViewState();
+                    UpdateGeneralViewState();
                 };
             DeactivateAnimation.Completed += (s, e) =>
-            {
-                UpdateViewState();
-            };
+                {
+                    UpdateGeneralViewState();
+                };
 
             BuildLocalizedApplicationBar();
         }
@@ -74,7 +74,7 @@ namespace PowernApp
             }
 
             // determine view state
-            UpdateViewState();
+            UpdateGeneralViewState();
         }
 
         /// <summary>
@@ -85,6 +85,11 @@ namespace PowernApp
         {
             base.OnNavigatedFrom(e);
 
+            if (AlarmClockViewModel.Instance.IsAlarmRinging)
+            {
+                AlarmClockViewModel.Instance.Stop();
+            }
+
             // ensure sound and vibration is off
             AlarmClockViewModel.Instance.ForceStopSoundAndVibration();
         }
@@ -93,19 +98,22 @@ namespace PowernApp
         /// Updates the view state of the main page and the application bar
         /// depending on whether the alarm is on or off.
         /// </summary>
-        private void UpdateViewState()
+        private void UpdateGeneralViewState()
         {
+            ResetRotationAnimation.Begin();
             if (AlarmClockViewModel.Instance.IsAlarmSet)
             {
                 ActivePanel.Visibility = Visibility.Visible;
                 InactivePanel.Visibility = Visibility.Collapsed;
                 BuildActiveLocalizedApplicationBar();
+                AlarmBlinkingAnimation.Begin();
             }
             else
             {
                 ActivePanel.Visibility = Visibility.Collapsed;
                 InactivePanel.Visibility = Visibility.Visible;
                 BuildInactiveLocalizedApplicationBar();
+                AlarmBlinkingAnimation.Stop();
             }
         }
 

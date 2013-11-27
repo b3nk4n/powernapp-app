@@ -10,11 +10,6 @@ namespace PowernApp.Converter
     public class DateToTimeConverter : IValueConverter
     {
         /// <summary>
-        /// The placeholder for a non-real datetime.
-        /// </summary>
-        private const string PLACEHOLDER = "-";
-
-        /// <summary>
         /// Converts a date time do a time only string.
         /// </summary>
         /// <param name="value">The date time to convert.</param>
@@ -34,7 +29,7 @@ namespace PowernApp.Converter
                     param = (string)parameter;
 
                 if (dateValue == DateTime.MinValue || dateValue == DateTime.MaxValue)
-                    return PLACEHOLDER;
+                    return string.Empty;
                 return dateValue.ToString(param);
             }
 

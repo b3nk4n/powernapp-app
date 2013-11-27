@@ -149,6 +149,7 @@
     <Content Include="Assets\Audio\alarm.wav" />
     <Content Include="Assets\Audio\buzzer.wav" />
     <Content Include="Assets\Audio\rooster.wav" />
+    <Content Include="Assets\Images\alarm.png" />
     <Content Include="Assets\Images\play.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

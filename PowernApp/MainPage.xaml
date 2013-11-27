@@ -10,6 +10,7 @@
     xmlns:converter="clr-namespace:PowernApp.Converter"
     xmlns:c4f="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
     xmlns:vsm="clr-namespace:System.Windows;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:fwconv="clr-namespace:PhoneKit.Framework.Conversion;assembly=PhoneKit.Framework"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -20,8 +21,19 @@
         <!-- convertsers -->
         <converter:TimeSpanConverter x:Key="TimeSpanConverter" />
         <converter:DateToTimeConverter x:Key="DateToTimeConverter" />
+        <fwconv:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
         
         <!-- animations -->
+
+        <Storyboard x:Name="ResetRotationAnimation">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="InactivePanel">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="ActivePanel">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
         <Storyboard x:Name="ActivateAnimation">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="InactivePanel">
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-90">
@@ -95,6 +107,7 @@
                         ContentTemplate="{TemplateBinding HeaderTemplate}"
                         Foreground="{StaticResource PhoneSubtleBrush}"
                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                         Margin="12,0,12,-4"/>
                 <Button FontSize="{TemplateBinding FontSize}" Background="Black"
                         x:Name="ValueButton"
@@ -102,11 +115,21 @@
                         BorderThickness="0"
                         FontFamily="{TemplateBinding FontFamily}"
                         Foreground="White"
-                        Height="150"
-                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}">
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
                 </Button>
             </StackPanel>
         </ControlTemplate>
+        <Storyboard x:Name="AlarmBlinkingAnimation" AutoReverse="False" RepeatBehavior="Forever">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.25"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseInOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
     </phone:PhoneApplicationPage.Resources>
 
@@ -136,6 +159,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
@@ -150,21 +174,21 @@
         	<Grid.Projection>
         		<PlaneProjection/>
         	</Grid.Projection>
-            <Grid x:Name="InactivePanel" VerticalAlignment="Center" Visibility="Visible">
+            <Grid x:Name="InactivePanel" Visibility="Visible">
                 <Grid.Projection>
                     <PlaneProjection/>
                 </Grid.Projection>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="52" />
+                    <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" VerticalAlignment="Bottom">
-                        <TextBlock Text="Zeit für ein Powernap..." HorizontalAlignment="Center" />
-                    <c4f:TimeSpanPicker x:Name="CustomNapTimePicker" Value="0:20:00" FontSize="92" HorizontalAlignment="Center"
-                                    Template="{StaticResource TimeSpanCustomStyle}" Margin="0,0,0,12" Min="0:01:00" />
+                    <c4f:TimeSpanPicker x:Name="CustomNapTimePicker" Value="0:20:00" FontSize="108" HorizontalAlignment="Center"
+                                    Template="{StaticResource TimeSpanCustomStyle}" Min="0:01:00" />
                 </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button x:Name="ButtonMinus5" Width="92" Height="92" Style="{StaticResource RoundButton}" Tag="-5" Click="ChangeAlarmTimeClick">
                         <TextBlock Text="-5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
@@ -181,47 +205,38 @@
                         <TextBlock Text="+5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
                 </StackPanel>
-                <Button Grid.Row="2" Click="StartAlarmClick"
-                            Width="148" Height="148" Style="{StaticResource RoundButton}">
+                <Button Grid.Row="3" Click="StartAlarmClick"
+                            Width="164" Height="164" Style="{StaticResource RoundButton}">
                     <Path Data="M 10,0 L 10,60 L60,30 Z" Fill="{StaticResource PhoneForegroundBrush}" Width="60" Height="60" />
                 </Button>
             </Grid>
-            <Grid x:Name="ActivePanel" VerticalAlignment="Center" Visibility="Collapsed">
+            <Grid x:Name="ActivePanel" Visibility="Visible">
             	<Grid.Projection>
             		<PlaneProjection/>
             	</Grid.Projection>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="2*" />
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="42" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="52" />
+                    <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                <StackPanel>
-                    
-                </StackPanel>
-                <StackPanel Grid.Row="0" VerticalAlignment="Bottom">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                        <TextBlock Text="{Binding TotalNapTime}" />
-                        <TextBlock Text=" Minuten Nap" />
-                    </StackPanel>
-                    <TextBlock Text="{Binding TimeToAlarm,Converter={StaticResource TimeSpanConverter}}"
-                           HorizontalAlignment="Center" FontSize="92" Margin="0,0,0,12" />
-                </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image x:Name="image" Grid.RowSpan="3" Source="Assets/Images/alarm.png" Height="200" Width="200"
+                       Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}}" />
+                <TextBlock Grid.Row="0" Text="{Binding TimeToAlarm, Converter={StaticResource TimeSpanConverter}}"
+                           VerticalAlignment="Bottom" Margin="0,0,0,18" HorizontalAlignment="Center" FontSize="108"
+                           Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"
+                            Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}">
                     <Button Command="{Binding AntiSnoozeCommand}" CommandParameter="5"
                             Width="92" Height="92" Style="{StaticResource RoundButton}">
                         <TextBlock Text="-5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
                     <Button Command="{Binding AntiSnoozeCommand}" CommandParameter="1"
-                            Width="92" Height="92" Style="{StaticResource RoundButton}">
+                            Width="92" Height="92" Style="{StaticResource RoundButton}" Margin="0,0,33,0">
                         <TextBlock Text="-1" FontSize="32" Margin="0,0,2,2" />
                     </Button>
-                    <Button Command="{Binding StopCommand}"
-                            Width="128" Height="128" Style="{StaticResource RoundButton}" Click="StopButtonClick">
-                        <Rectangle Width="32" Height="32" Fill="{StaticResource PhoneForegroundBrush}" />
-                    </Button>
                     <Button Command="{Binding SnoozeCommand}" CommandParameter="1"
-                            Width="92" Height="92" Style="{StaticResource RoundButton}">
+                            Width="92" Height="92" Style="{StaticResource RoundButton}" Margin="33,0,0,0">
                         <TextBlock Text="+1" FontSize="32" Margin="0,0,2,2" />
                     </Button>
                     <Button Command="{Binding SnoozeCommand}" CommandParameter="5"
@@ -229,11 +244,17 @@
                         <TextBlock Text="+5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
                 </StackPanel>
-                <ProgressBar Grid.Row="2" Height="50" Value="{Binding Progress}" VerticalAlignment="Center" />
-                <TextBlock Grid.Row="3" Text="{Binding AlarmTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
-                           HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource PhoneTextNormalStyle}" />
-                <TextBlock Grid.Row="3" Text="{Binding AlarmSetTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
-                           HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource PhoneTextNormalStyle}" />
+                <Grid Grid.Row="2" Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <ProgressBar Height="50" Value="{Binding Progress}" VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding AlarmTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
+                           HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,34,12,0" />
+                    <TextBlock Text="{Binding AlarmSetTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,34,12,0" />
+                </Grid>
+                <Button Grid.Row="3" Command="{Binding StopCommand}"
+                        Width="164" Height="164" Style="{StaticResource RoundButton}" Click="StopButtonClick">
+                    <Rectangle Width="42" Height="42" Fill="{StaticResource PhoneForegroundBrush}" />
+                </Button>
             </Grid>
         </Grid>
     </Grid>
