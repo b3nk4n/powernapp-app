@@ -11,6 +11,7 @@
     xmlns:c4f="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
     xmlns:vsm="clr-namespace:System.Windows;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:fwconv="clr-namespace:PhoneKit.Framework.Conversion;assembly=PhoneKit.Framework"
+    xmlns:lc="clr-namespace:PowernApp.Controls"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -133,7 +134,7 @@
 
     </phone:PhoneApplicationPage.Resources>
 
-    <toolkit:TransitionService.NavigationInTransition>
+    <!--<toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
             <toolkit:NavigationInTransition.Backward>
                 <toolkit:TurnstileTransition Mode="BackwardIn"/>
@@ -150,6 +151,27 @@
             </toolkit:NavigationOutTransition.Backward>
             <toolkit:NavigationOutTransition.Forward>
                 <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>-->
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardOut" />
             </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
@@ -184,11 +206,11 @@
                     <RowDefinition Height="52" />
                     <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" VerticalAlignment="Bottom">
+                <StackPanel Grid.Row="0" VerticalAlignment="Bottom" toolkit:TurnstileFeatherEffect.FeatheringIndex="0">
                     <c4f:TimeSpanPicker x:Name="CustomNapTimePicker" Value="0:20:00" FontSize="108" HorizontalAlignment="Center"
                                     Template="{StaticResource TimeSpanCustomStyle}" Min="0:01:00" />
                 </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"  toolkit:TurnstileFeatherEffect.FeatheringIndex="1" >
                     <Button x:Name="ButtonMinus5" Width="92" Height="92" Style="{StaticResource RoundButton}" Tag="-5" Click="ChangeAlarmTimeClick">
                         <TextBlock Text="-5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
@@ -205,7 +227,7 @@
                         <TextBlock Text="+5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
                 </StackPanel>
-                <Button Grid.Row="3" Click="StartAlarmClick"
+                <Button Grid.Row="3" Click="StartAlarmClick"  toolkit:TurnstileFeatherEffect.FeatheringIndex="3"
                             Width="164" Height="164" Style="{StaticResource RoundButton}">
                     <Path Data="M 10,0 L 10,60 L60,30 Z" Fill="{StaticResource PhoneForegroundBrush}" Width="60" Height="60" />
                 </Button>
@@ -220,12 +242,12 @@
                     <RowDefinition Height="52" />
                     <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                <Image x:Name="image" Grid.RowSpan="3" Source="Assets/Images/alarm.png" Height="200" Width="200"
+                <Image x:Name="image" Grid.Row="0" Grid.RowSpan="3" Source="Assets/Images/alarm.png" Height="200" Width="200"  toolkit:TurnstileFeatherEffect.FeatheringIndex="0"
                        Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}}" />
-                <TextBlock Grid.Row="0" Text="{Binding TimeToAlarm, Converter={StaticResource TimeSpanConverter}}"
+                <TextBlock Grid.Row="0" Text="{Binding TimeToAlarm, Converter={StaticResource TimeSpanConverter}}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="0"
                            VerticalAlignment="Bottom" Margin="0,0,0,18" HorizontalAlignment="Center" FontSize="108"
                            Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}"/>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"  toolkit:TurnstileFeatherEffect.FeatheringIndex="1"
                             Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}">
                     <Button Command="{Binding AntiSnoozeCommand}" CommandParameter="5"
                             Width="92" Height="92" Style="{StaticResource RoundButton}">
@@ -244,19 +266,23 @@
                         <TextBlock Text="+5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
                 </StackPanel>
-                <Grid Grid.Row="2" Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}">
+                <Grid Grid.Row="2" Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="2">
                     <ProgressBar Height="50" Value="{Binding Progress}" VerticalAlignment="Center" />
                     <TextBlock Text="{Binding AlarmTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
                            HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,34,12,0" />
                     <TextBlock Text="{Binding AlarmSetTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
                            HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,34,12,0" />
                 </Grid>
-                <Button Grid.Row="3" Command="{Binding StopCommand}"
+                <Button Grid.Row="3" Command="{Binding StopCommand}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="3"
                         Width="164" Height="164" Style="{StaticResource RoundButton}" Click="StopButtonClick">
                     <Rectangle Width="42" Height="42" Fill="{StaticResource PhoneForegroundBrush}" />
                 </Button>
             </Grid>
         </Grid>
+
+        <!-- Feedback dialog -->
+        <lc:LocalizedFeedbackDialogControl Grid.RowSpan="3" EnableAnimation="True" />
+
     </Grid>
 
 </phone:PhoneApplicationPage>

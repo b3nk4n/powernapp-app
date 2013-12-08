@@ -8,6 +8,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PowernApp.Resources;
 using PowernApp.ViewModels;
+using PhoneKit.Framework.Support;
 
 namespace PowernApp
 {
@@ -40,7 +41,7 @@ namespace PowernApp
             if (Debugger.IsAttached)
             {
                 // Zähler für die aktuelle Bildrate anzeigen.
-                Application.Current.Host.Settings.EnableFrameRateCounter = true;
+                //Application.Current.Host.Settings.EnableFrameRateCounter = true;
 
                 // Bereiche der Anwendung hervorheben, die mit jedem Bild neu gezeichnet werden.
                 //Application.Current.Host.Settings.EnableRedrawRegions = true;
@@ -53,7 +54,7 @@ namespace PowernApp
                 // die Leerlauferkennung der Anwendung deaktiviert wird.
                 // Vorsicht: Nur im Debugmodus verwenden. Eine Anwendung mit deaktivierter Benutzerleerlauferkennung wird weiterhin ausgeführt
                 // und verbraucht auch dann Akkuenergie, wenn der Benutzer das Handy nicht verwendet.
-                PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
+                //PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
         }
 
@@ -62,6 +63,8 @@ namespace PowernApp
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             AlarmClockViewModel.Instance.TryRemoveFromScheduler();
+
+            FeedbackManager.Instance.Launching();
         }
 
         // Code, der ausgeführt werden soll, wenn die Anwendung aktiviert wird (in den Vordergrund gebracht wird)
@@ -69,6 +72,9 @@ namespace PowernApp
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
             AlarmClockViewModel.Instance.TryRemoveFromScheduler();
+
+            if (e.IsApplicationInstancePreserved)
+                return;
         }
 
         // Code, der ausgeführt werden soll, wenn die Anwendung deaktiviert wird (in den Hintergrund gebracht wird)
@@ -88,6 +94,8 @@ namespace PowernApp
         // Code, der bei einem Navigationsfehler ausgeführt wird
         private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
+            ErrorReportingManager.Instance.Save(e.Exception);
+
             if (Debugger.IsAttached)
             {
                 // Navigationsfehler. Unterbrechen und Debugger öffnen
@@ -98,6 +106,8 @@ namespace PowernApp
         // Code, der bei Ausnahmefehlern ausgeführt wird
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
+            ErrorReportingManager.Instance.Save(e.ExceptionObject);
+
             if (Debugger.IsAttached)
             {
                 // Ein Ausnahmefehler ist aufgetreten. Unterbrechen und Debugger öffnen
@@ -140,6 +150,10 @@ namespace PowernApp
 
             // Dieser Handler wird nicht mehr benötigt und kann entfernt werden
             RootFrame.Navigated -= CompleteInitializePhoneApplication;
+
+            ErrorReportingManager.Instance.CheckAndReport(
+                "apps@bsautermeister.de",
+                "[powernAPP] Error Report");
         }
 
         private void CheckForResetNavigation(object sender, NavigationEventArgs e)
