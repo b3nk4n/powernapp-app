@@ -131,6 +131,26 @@
         		</EasingDoubleKeyFrame>
         	</DoubleAnimationUsingKeyFrames>
         </Storyboard>
+        
+        <Storyboard x:Name="ConnectivityMessageIn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="ConnectivityMessage">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="ConnectivityMessageOut">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="ConnectivityMessage">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="200">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
     </phone:PhoneApplicationPage.Resources>
 
@@ -283,6 +303,16 @@
         <!-- Feedback dialog -->
         <lc:LocalizedFeedbackDialogControl Grid.RowSpan="3" EnableAnimation="True" />
 
+        <!-- no connectivity info message -->
+        <Canvas Grid.Row="4" Width="320" >
+            <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="320">
+                <Border Background="{StaticResource PhoneChromeBrush}">
+                    <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="12"
+                    Text="Don't get disturbed. Disable the phones connectivity!" />
+                </Border>
+                <Path Data="M 0,0 L 25,0 L 25,25 Z" Fill="{StaticResource PhoneChromeBrush}"  Height="25" Width="25" Margin="55,-2,0,0"/>
+            </StackPanel>
+        </Canvas>
     </Grid>
 
 </phone:PhoneApplicationPage>

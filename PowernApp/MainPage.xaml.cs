@@ -12,6 +12,8 @@ using PhoneKit.Framework.Voice;
 using PowernApp.ViewModels;
 using Coding4Fun.Toolkit.Controls;
 using PhoneKit.Framework.OS;
+using Microsoft.Phone.Net.NetworkInformation;
+using System.Windows.Threading;
 
 namespace PowernApp
 {
@@ -37,7 +39,7 @@ namespace PowernApp
 
             Loaded += (s, e) =>
                 {
-                    DataContext = AlarmClockViewModel.Instance;
+                    //DataContext = AlarmClockViewModel.Instance;
                 };
 
             ActivateAnimation.Completed += (s, e) =>
@@ -75,6 +77,8 @@ namespace PowernApp
 
             // determine view state
             UpdateGeneralViewState();
+
+            DataContext = AlarmClockViewModel.Instance;
         }
 
         /// <summary>
@@ -107,6 +111,27 @@ namespace PowernApp
                 InactivePanel.Visibility = Visibility.Collapsed;
                 BuildActiveLocalizedApplicationBar();
                 AlarmBlinkingAnimation.Begin();
+
+                if (IsAirplaneMode())
+                    ConnectivityMessageOut.Begin();
+                else
+                    ConnectivityMessageIn.Begin();
+
+                var timer = new DispatcherTimer();
+                timer.Tick += (s, e) =>
+                {
+                    // check again after 2 sec, because sometime the enabling/disabling of
+                    // flight mode takes a while.
+                    if (IsAirplaneMode())
+                        ConnectivityMessageOut.Begin();
+                    else
+                        ConnectivityMessageIn.Begin();
+
+                    timer.Stop();
+                };
+                timer.Interval = TimeSpan.FromSeconds(2);
+                timer.Start();
+                
             }
             else
             {
@@ -115,6 +140,16 @@ namespace PowernApp
                 BuildInactiveLocalizedApplicationBar();
                 AlarmBlinkingAnimation.Stop();
             }
+        }
+
+        /// <summary>
+        /// Checks for the air plane mode. (TODO: move to framework :) )
+        /// </summary>
+        /// <returns>Returns true, of the phone is offline.</returns>
+        private bool IsAirplaneMode()
+        {
+            bool[] networks = new bool[4] { DeviceNetworkInformation.IsNetworkAvailable, DeviceNetworkInformation.IsCellularDataEnabled, DeviceNetworkInformation.IsCellularDataRoamingEnabled, DeviceNetworkInformation.IsWiFiEnabled };
+            return (networks.Count(n => n) < 1);
         }
 
         /// <summary>
@@ -245,7 +280,7 @@ namespace PowernApp
             ApplicationBar.Buttons.Add(appBarButton1);
             appBarButton1.Click += (s, e) =>
             {
-                // TODO: navigate to info page
+                NavigationService.Navigate(new Uri("/InfoPage.xaml", UriKind.Relative));
             };
 
             // glight mode
@@ -258,6 +293,7 @@ namespace PowernApp
                 await SettingsLauncher.LaunchAirplaneModeAsync();
             };
         }
+
 
         /// <summary>
         /// Builds the localized application bar buttons in inactive mode.
@@ -272,7 +308,7 @@ namespace PowernApp
             ApplicationBar.Buttons.Add(appBarButton1);
             appBarButton1.Click += (s, e) =>
             {
-                // TODO: navigate to info page
+                NavigationService.Navigate(new Uri("/InfoPage.xaml", UriKind.Relative));
             };
         }
 
@@ -294,6 +330,7 @@ namespace PowernApp
         private void StopButtonClick(object sender, RoutedEventArgs e)
         {
             DeactivateAnimation.Begin();
+            ConnectivityMessageOut.Begin();
         }
 
         /// <summary>
