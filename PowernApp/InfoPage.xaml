@@ -38,9 +38,14 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource ThemeBackgroundDark}">
         <!--Pivot Control-->
-        <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
-
-            <phone:PivotItem Header="{Binding Path=LocalizedResources.NappingTipsHeader, Source={StaticResource LocalizedStrings}}">
+        <phone:Pivot>
+            <phone:Pivot.Title>
+                <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextNormalStyle}" Margin="0" />
+            </phone:Pivot.Title>
+            <phone:PivotItem>
+                <phone:PivotItem.Header>
+                    <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsHeader, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
+                </phone:PivotItem.Header>
                 <ScrollViewer>
                     <StackPanel>
                         <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsIntro, Source={StaticResource LocalizedStrings}}"
@@ -51,9 +56,9 @@
                                 <Image Source="Assets/Images/consistent.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
-                            <StackPanel Width="385">
+                            <StackPanel Width="400">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsConsistentTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource ThemeTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextTitle1Style}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsConsistentMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
@@ -64,9 +69,9 @@
                                 <Image Source="Assets/Images/quick.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
-                            <StackPanel Width="385">
+                            <StackPanel Width="400">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsQuickTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource ThemeTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextTitle1Style}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsQuickMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
@@ -77,9 +82,9 @@
                                 <Image Source="Assets/Images/nolight.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
-                            <StackPanel Width="385">
+                            <StackPanel Width="400">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDarknessTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource ThemeTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextTitle1Style}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDarknessMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
@@ -90,9 +95,9 @@
                                 <Image Source="Assets/Images/nocellular.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
-                            <StackPanel Width="385">
+                            <StackPanel Width="400">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDisturbedTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource ThemeTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextTitle1Style}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDisturbedMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
@@ -103,9 +108,9 @@
                                 <Image Source="Assets/Images/warm.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
-                            <StackPanel Width="385">
+                            <StackPanel Width="400">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsWarmTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource ThemeTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextTitle1Style}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsWarmMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
@@ -114,7 +119,10 @@
                 </ScrollViewer>
             </phone:PivotItem>
 
-            <phone:PivotItem Header="{Binding Path=LocalizedResources.CommandsHeader, Source={StaticResource LocalizedStrings}}">
+            <phone:PivotItem>
+                <phone:PivotItem.Header>
+                    <TextBlock Text="{Binding Path=LocalizedResources.CommandsHeader, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
+                </phone:PivotItem.Header>
                 <ScrollViewer>
                     <StackPanel>
                         <TextBlock Text="{Binding Path=LocalizedResources.CommandsIntro, Source={StaticResource LocalizedStrings}}"
@@ -125,9 +133,9 @@
                                 <Image Source="Assets/Images/windows.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
-                            <StackPanel Width="385">
+                            <StackPanel Width="400">
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands1Title, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource ThemeTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextTitle1Style}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands1Message, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
@@ -138,9 +146,9 @@
                                 <Image Source="Assets/Images/speak.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
-                            <StackPanel Width="385">
+                            <StackPanel Width="400">
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands2Title, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource ThemeTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextTitle1Style}" />
                                 <TextBlock Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap">
                                     <Run Text="{Binding Path=LocalizedResources.Commands2Message1, Source={StaticResource LocalizedStrings}}" />
                                     <Run Text="{Binding Path=LocalizedResources.Commands2Message2, Source={StaticResource LocalizedStrings}}" FontStyle="Italic" />
@@ -164,9 +172,9 @@
                                 <Image Source="Assets/Images/sleep.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
-                            <StackPanel Width="385">
+                            <StackPanel Width="400">
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands3Title, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource ThemeTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextTitle1Style}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands3Message, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>

@@ -1,5 +1,4 @@
-﻿using PhoneKit.Framework.Controls;
-using PowernApp.Resources;
+﻿using PowernApp.Resources;
 using System;
 
 namespace PowernApp.Controls
@@ -7,7 +6,7 @@ namespace PowernApp.Controls
     /// <summary>
     /// The localized About control.
     /// </summary>
-    public class LocalizedAboutControl : AboutControlBase
+    public class LocalizedAboutControl : ThemedAboutControlBase
     {
         /// <summary>
         /// Localizes the user controls contents and texts.

@@ -138,9 +138,9 @@
         
         <Storyboard x:Name="ConnectivityMessageIn">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="ConnectivityMessage">
-                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
                     <EasingDoubleKeyFrame.EasingFunction>
-                        <CircleEase EasingMode="EaseInOut"/>
+                        <QuadraticEase EasingMode="EaseOut" />
                     </EasingDoubleKeyFrame.EasingFunction>
                 </EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
@@ -148,9 +148,9 @@
 
         <Storyboard x:Name="ConnectivityMessageOut">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="ConnectivityMessage">
-                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="200">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200">
                     <EasingDoubleKeyFrame.EasingFunction>
-                        <CircleEase EasingMode="EaseInOut"/>
+                        <QuadraticEase EasingMode="EaseOut" />
                     </EasingDoubleKeyFrame.EasingFunction>
                 </EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
@@ -187,12 +187,26 @@
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
+        <!--<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
             <Border Background="{StaticResource ThemeBackgroundMedium}" Margin="12,0,6,0">
                 <Image Source="Assets/ApplicationIcon.png" Height="48" Width="48"/>
             </Border>
             <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" Margin="12,0" VerticalAlignment="Center"/>
-        </StackPanel>
+        </StackPanel>-->
+        <Grid x:Name="TitlePanel" Grid.Row="0" Margin="0,-1,0,28" toolkit:TurnstileFeatherEffect.FeatheringIndex="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="66"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.ColumnSpan="2" Grid.Row="0" Fill="{StaticResource ThemeForegroundLight}" Height="50" VerticalAlignment="Top" />
+            <Border Grid.Column="0" Grid.RowSpan="2" Background="{StaticResource ThemeBackgroundMedium}" HorizontalAlignment="Right" Margin="5">
+                <Image Source="Assets/ApplicationIcon.png" Height="56" Width="56"/>
+            </Border>
+            <TextBlock Grid.Column="1" Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle1Style}" VerticalAlignment="Top" Margin="12,2"/>
+        </Grid>
 
         <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
@@ -209,11 +223,11 @@
                     <RowDefinition Height="52" />
                     <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" VerticalAlignment="Bottom" toolkit:TurnstileFeatherEffect.FeatheringIndex="0">
+                <StackPanel Grid.Row="0" VerticalAlignment="Bottom" toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
                     <c4f:TimeSpanPicker x:Name="CustomNapTimePicker" Value="0:20:00" FontSize="108" HorizontalAlignment="Center"
                                     Template="{StaticResource TimeSpanCustomStyle}" Min="0:01:00" />
                 </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"  toolkit:TurnstileFeatherEffect.FeatheringIndex="1" >
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"  toolkit:TurnstileFeatherEffect.FeatheringIndex="2" >
                     <Button x:Name="ButtonMinus5" Width="92" Height="92" Style="{StaticResource RoundButton}" Tag="-5" Click="ChangeAlarmTimeClick">
                         <TextBlock Text="-5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
@@ -230,7 +244,7 @@
                         <TextBlock Text="+5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
                 </StackPanel>
-                <Button Grid.Row="3" Click="StartAlarmClick"  toolkit:TurnstileFeatherEffect.FeatheringIndex="3"
+                <Button Grid.Row="3" Click="StartAlarmClick"  toolkit:TurnstileFeatherEffect.FeatheringIndex="4"
                             Width="164" Height="164" Style="{StaticResource RoundButton}">
                     <Path Data="M 10,0 L 10,60 L60,30 Z" Fill="{StaticResource ThemeForegroundLight}" Width="60" Height="60" />
                 </Button>
@@ -245,12 +259,12 @@
                     <RowDefinition Height="52" />
                     <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                <Image x:Name="image" Grid.Row="0" Grid.RowSpan="3" Source="Assets/Images/alarm.png" Height="200" Width="200"  toolkit:TurnstileFeatherEffect.FeatheringIndex="0"
+                <Image x:Name="image" Grid.Row="0" Grid.RowSpan="3" Source="Assets/Images/alarm.png" Height="200" Width="200"  toolkit:TurnstileFeatherEffect.FeatheringIndex="1"
                        Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}}" />
-                <TextBlock Grid.Row="0" Text="{Binding TimeToAlarm, Converter={StaticResource TimeSpanConverter}}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="0"
+                <TextBlock Grid.Row="0" Text="{Binding TimeToAlarm, Converter={StaticResource TimeSpanConverter}}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="1"
                            VerticalAlignment="Bottom" Margin="0,0,0,18" HorizontalAlignment="Center" FontSize="108"
                            Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}"/>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"  toolkit:TurnstileFeatherEffect.FeatheringIndex="1"
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"  toolkit:TurnstileFeatherEffect.FeatheringIndex="2"
                             Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}">
                     <Button Command="{Binding AntiSnoozeCommand}" CommandParameter="5"
                             Width="92" Height="92" Style="{StaticResource RoundButton}">
@@ -269,14 +283,14 @@
                         <TextBlock Text="+5" FontSize="32" Margin="0,0,2,2" />
                     </Button>
                 </StackPanel>
-                <Grid Grid.Row="2" Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="2">
-                    <ProgressBar Height="50" Value="{Binding Progress}" VerticalAlignment="Center" Foreground="{StaticResource ThemeForegroundDark}" />
+                <Grid Grid.Row="2" Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="4">
+                    <ProgressBar Height="50" Value="{Binding Progress}" VerticalAlignment="Center" Foreground="{StaticResource ThemeForegroundDark}" Background="{StaticResource ThemeBackgroundMedium}"/>
                     <TextBlock Text="{Binding AlarmTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
                            HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ThemeTextNormalStyle}" Margin="12,34,12,0" />
                     <TextBlock Text="{Binding AlarmSetTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
                            HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ThemeTextNormalStyle}" Margin="12,34,12,0" />
                 </Grid>
-                <Button Grid.Row="3" Command="{Binding StopCommand}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="3"
+                <Button Grid.Row="3" Command="{Binding StopCommand}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="4"
                         Width="164" Height="164" Style="{StaticResource RoundButton}" Click="StopButtonClick">
                     <Rectangle Width="42" Height="42" Fill="{StaticResource ThemeForegroundLight}" />
                 </Button>

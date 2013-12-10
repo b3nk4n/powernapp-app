@@ -38,11 +38,6 @@ namespace PowernApp
             // late binding of timespan picker changed event
             CustomNapTimePicker.ValueChanged += CustomNapTimeChanged;
 
-            Loaded += (s, e) =>
-                {
-                    //DataContext = AlarmClockViewModel.Instance;
-                };
-
             ActivateAnimation.Completed += (s, e) =>
                 {
                     UpdateGeneralViewState();
@@ -79,6 +74,7 @@ namespace PowernApp
             // determine view state
             UpdateGeneralViewState();
 
+            // set data context to view model
             DataContext = AlarmClockViewModel.Instance;
         }
 
@@ -106,6 +102,7 @@ namespace PowernApp
         private void UpdateGeneralViewState()
         {
             ResetRotationAnimation.Begin();
+
             if (AlarmClockViewModel.Instance.IsAlarmSet)
             {
                 ActivePanel.Visibility = Visibility.Visible;
@@ -123,10 +120,17 @@ namespace PowernApp
                 {
                     // check again after 2 sec, because sometime the enabling/disabling of
                     // flight mode takes a while.
-                    if (AlarmClockViewModel.Instance.IsAlarmSet && IsAirplaneMode())
-                        ConnectivityMessageOut.Begin();
-                    else
-                        ConnectivityMessageIn.Begin();
+                    if (AlarmClockViewModel.Instance.IsAlarmSet)
+                    {
+                        if (IsAirplaneMode())
+                        {
+                            ConnectivityMessageOut.Begin();
+                        }
+                        else
+                        {
+                            ConnectivityMessageIn.Begin();
+                        }
+                    }
 
                     timer.Stop();
                 };
@@ -286,7 +290,7 @@ namespace PowernApp
                 NavigationService.Navigate(new Uri("/InfoPage.xaml", UriKind.Relative));
             };
 
-            // glight mode
+            // flight mode
             ApplicationBarIconButton appBarButton2 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.nocellular.png", UriKind.Relative));
             appBarButton2.Text = AppResources.AppBarOffline;
             ApplicationBar.Buttons.Add(appBarButton2);

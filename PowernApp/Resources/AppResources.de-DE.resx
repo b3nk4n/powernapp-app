@@ -149,11 +149,11 @@
     <comment>General</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
-    <value>Drücke und halte den Windows-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint.</value>
+    <value>Halte den Windows-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands1Title" xml:space="preserve">
-    <value>1. Aktiviere die Spracheingabe</value>
+    <value>1. Spracheingabe aktivieren</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet1" xml:space="preserve">
@@ -256,7 +256,7 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>AboutPage</comment>
   </data>
   <data name="NappingTipsConsistentMessage" xml:space="preserve">
-    <value>Führe einen regelmäßigen Mittagsschlaf. Die Beste Zeit für ein kurzes Nickerchen ist in der Mitte des Tages. Am besten gleich nach dem Mittagessen.</value>
+    <value>Führe einen regelmäßigen Mittagsschlaf. Die beste Zeit für ein kurzes Nickerchen ist in der Mitte des Tages. Zum Beispiel gleich nach dem Mittagessen.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsConsistentTitle" xml:space="preserve">
@@ -264,7 +264,7 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessMessage" xml:space="preserve">
-    <value>Halte den Power Nap in dunkler Umgebung oder trage eine Schlafmaske. Das hilft schneller einzuschlafen.</value>
+    <value>Halte den Power Nap in dunkler Umgebung oder trage eine Schlafmaske. Das hilft dir schneller einzuschlafen.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessTitle" xml:space="preserve">
@@ -280,7 +280,7 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsHeader" xml:space="preserve">
-    <value>tripps</value>
+    <value>tipps</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsIntro" xml:space="preserve">
@@ -288,7 +288,7 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickMessage" xml:space="preserve">
-    <value>Setzte den Wecker auf etwa 30 Minuten oder kürzer, wenn du nicht erschöpft aufwachen möchtest. Denn man sollte aufwachen noch bevor man in den Tiefschlafphase fällt.</value>
+    <value>Setze den Wecker auf etwa 30 Minuten oder kürzer, wenn du nicht erschöpft aufwachen möchtest. Denn du solltest aufwachen noch bevor die Tiefschlafphase eintritt.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickTitle" xml:space="preserve">
