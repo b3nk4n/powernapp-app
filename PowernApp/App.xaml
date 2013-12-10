@@ -59,6 +59,13 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <SolidColorBrush x:Key="ThemeBackgroundDark" Color="#162930" />
+        <SolidColorBrush x:Key="ThemeBackgroundMedium" Color="#145058" />
+        <SolidColorBrush x:Key="ThemeBackgroundLight" Color="#4e8a92" />
+        <SolidColorBrush x:Key="ThemeForegroundDark" Color="#b3a78f" />
+        <SolidColorBrush x:Key="ThemeForegroundLight" Color="#e0e0e0" />
+        
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

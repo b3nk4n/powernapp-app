@@ -125,6 +125,14 @@
     <value>Alarmton</value>
     <comment>SettingsPage</comment>
   </data>
+  <data name="AppBarInfo" xml:space="preserve">
+    <value>info</value>
+    <comment>AppBar</comment>
+  </data>
+  <data name="AppBarOffline" xml:space="preserve">
+    <value>offline gehen</value>
+    <comment>AppBar</comment>
+  </data>
   <data name="ApplicationAuthor" xml:space="preserve">
     <value>von Benjamin Sautermeister</value>
     <comment>AboutPage</comment>
@@ -139,6 +147,70 @@
   <data name="ApplicationVersion" xml:space="preserve">
     <value>1.0</value>
     <comment>General</comment>
+  </data>
+  <data name="Commands1Message" xml:space="preserve">
+    <value>Drücke und halte den Windows-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands1Title" xml:space="preserve">
+    <value>1. Aktiviere die Spracheingabe</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet1" xml:space="preserve">
+    <value>- " ...für 20 Minuten. "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet2" xml:space="preserve">
+    <value>- " ...abbrechen. "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet3" xml:space="preserve">
+    <value>- " ...auf wann ist der Alarm gestellt? "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet4" xml:space="preserve">
+    <value>- " ...wie viel Zeit habe ich noch? "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet5" xml:space="preserve">
+    <value>- " ...um 5 Minuten verlängern. "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message1" xml:space="preserve">
+    <value>Sag</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message2" xml:space="preserve">
+    <value> "Power Nap..."  </value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message3" xml:space="preserve">
+    <value>gefolgt von deinem Wunsch. Zum Beispiel:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Title" xml:space="preserve">
+    <value>2. Sprechen</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands3Message" xml:space="preserve">
+    <value>powernAPP kümmert sich um den Rest...</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands3Title" xml:space="preserve">
+    <value>3. Genieße deinen Schlaf</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="CommandsHeader" xml:space="preserve">
+    <value>Sprachbefehle</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="CommandsIntro" xml:space="preserve">
+    <value>Diese Anwendung unterstützt Windows Phone Spachbefehle. Befolge diese einfachen Schritte um mit deinen wohlverdienten Power Nap noch schneller loslegen zu können:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="ConnectivityHint" xml:space="preserve">
+    <value>Lass dich nicht stören. Stelle dein Smartphone offline!</value>
+    <comment>MainPage</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
     <value>[Dein Feedback hier]
@@ -182,6 +254,54 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
   <data name="MoreApps" xml:space="preserve">
     <value>mehr apps</value>
     <comment>AboutPage</comment>
+  </data>
+  <data name="NappingTipsConsistentMessage" xml:space="preserve">
+    <value>Führe einen regelmäßigen Mittagsschlaf. Die Beste Zeit für ein kurzes Nickerchen ist in der Mitte des Tages. Am besten gleich nach dem Mittagessen.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsConsistentTitle" xml:space="preserve">
+    <value>Bleib konstant</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDarknessMessage" xml:space="preserve">
+    <value>Halte den Power Nap in dunkler Umgebung oder trage eine Schlafmaske. Das hilft schneller einzuschlafen.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDarknessTitle" xml:space="preserve">
+    <value>Bevorzuge Dunkelheit</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDisturbedMessage" xml:space="preserve">
+    <value>Aktiviere den Flugmodus deines Smartphones und halte das Nickerchen in ruhiger Umgebung.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDisturbedTitle" xml:space="preserve">
+    <value>Bleib ungestört</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsHeader" xml:space="preserve">
+    <value>tripps</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsIntro" xml:space="preserve">
+    <value>Forschungen zufolge kann ein regelmäßiger Power Nap (ein kurzer Mittagsschlaf) Stress und sogar das Risiko von Herzkrankheiten senken. Um vollständig von einem Power Nap zu profitieren, befolge einfach die folgenden einfachen Tipps:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsQuickMessage" xml:space="preserve">
+    <value>Setzte den Wecker auf etwa 30 Minuten oder kürzer, wenn du nicht erschöpft aufwachen möchtest. Denn man sollte aufwachen noch bevor man in den Tiefschlafphase fällt.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsQuickTitle" xml:space="preserve">
+    <value>Kurz halten</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsWarmMessage" xml:space="preserve">
+    <value>Halte eine Decke bereit, welche du überziehen kannst wenn dir kühl wird. Deine Körpertemperatur fällt während du schläfst.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsWarmTitle" xml:space="preserve">
+    <value>Warm halten</value>
+    <comment>InfoPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
     <value>datenschutz informationen</value>
@@ -227,6 +347,34 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <value>einstellungen</value>
     <comment>SettingsPage</comment>
   </data>
+  <data name="SpeakAlarmAlreadySet" xml:space="preserve">
+    <value>Wecker war bereits gestellt.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakAlarmSetFor" xml:space="preserve">
+    <value>Wecker ist gestellt auf {0}.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakNoAlarmSet" xml:space="preserve">
+    <value>Wecker ist nicht gestellt.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakStartNap" xml:space="preserve">
+    <value>Wünsche einen guten {0} Minuten Power Nap.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakStopNap" xml:space="preserve">
+    <value>Wecker ist jetzt deaktiviert. I hoffe du hast dich gut erholt.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakTimeLeft" xml:space="preserve">
+    <value>Du hast noch {0} Minuten übrig.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakTimeShifted" xml:space="preserve">
+    <value>Jetzt hast du noch {0} Minuten übrig.</value>
+    <comment>Voice</comment>
+  </data>
   <data name="SupportAndFeedback" xml:space="preserve">
     <value>hilfe und feedback</value>
     <comment>About Page</comment>
@@ -236,7 +384,7 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceCommands" xml:space="preserve">
-    <value>Sprachbefehle</value>
+    <value>sprachbefehle</value>
     <comment>Settings Page</comment>
   </data>
   <data name="VoiceLanguage" xml:space="preserve">

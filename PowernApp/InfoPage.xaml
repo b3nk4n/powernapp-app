@@ -39,73 +39,73 @@
         <!--Pivot Control-->
         <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
 
-            <phone:PivotItem Header="napping tips">
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.NappingTipsHeader, Source={StaticResource LocalizedStrings}}">
                 <ScrollViewer>
                     <StackPanel>
-                        <TextBlock Text="Research has found that napping regularly may reduce stress and even decrease your risk of heart disease. To get the most out of a power snooze, follow these quick and simple tips:"
+                        <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsIntro, Source={StaticResource LocalizedStrings}}"
                         Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap"/>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
-                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="6">
+                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
                                 <Image Source="Assets/Images/consistent.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
                             <StackPanel Width="385">
-                                <TextBlock Text="Be consistent"
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsConsistentTitle, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Text="Keep a regular nap schedule. Prime napping time falls in the middle of the day, between 1 p.m. and 3 p.m."
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsConsistentMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
-                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="6">
+                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
                                 <Image Source="Assets/Images/quick.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
                             <StackPanel Width="385">
-                                <TextBlock Text="Make it quick"
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsQuickTitle, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Text="Set your cell phone alarm for 30 minutes or less if you don't want to wake up groggy."
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsQuickMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
-                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="6">
+                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
                                 <Image Source="Assets/Images/nolight.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
                             <StackPanel Width="385">
-                                <TextBlock Text="Go dark"
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDarknessTitle, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Text="Nap in a dark room or wear an eye mask. Blocking out light helps you fall asleep faster."
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDarknessMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
-                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="6">
+                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
                                 <Image Source="Assets/Images/nocellular.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
                             <StackPanel Width="385">
-                                <TextBlock Text="Don't get disturbed"
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDisturbedTitle, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Text="Disable your phones connectivity and search for silent places."
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDisturbedMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
-                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="6">
+                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
                                 <Image Source="Assets/Images/warm.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
                             <StackPanel Width="385">
-                                <TextBlock Text="Stay warm"
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsWarmTitle, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Text="Stash a blanket nearby to put over you because your body temperature drops while you snooze."
+                                <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsWarmMessage, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
@@ -113,62 +113,60 @@
                 </ScrollViewer>
             </phone:PivotItem>
 
-            <phone:PivotItem Header="commands">
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.CommandsHeader, Source={StaticResource LocalizedStrings}}">
                 <ScrollViewer>
                     <StackPanel>
-                        <TextBlock Text="This application supports Windows Phone voice commands. Follow these simple steps to take you well-deserved nap even faster:"
+                        <TextBlock Text="{Binding Path=LocalizedResources.CommandsIntro, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap"/>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
-                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="6">
+                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
                                 <Image Source="Assets/Images/windows.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
                             <StackPanel Width="385">
-                                <TextBlock Text="1. Activate voice input"
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands1Title, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Text="Press and hold the Windows-Button of you phone until the voice input dialog pops up."
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands1Message, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
-                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="6">
+                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
                                 <Image Source="Assets/Images/speak.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
                             <StackPanel Width="385">
-                                <TextBlock Text="2. Speak"
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands2Title, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
                                 <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap">
-                                    <Run Text="Say " />
-                                    <Run Text="&quot;Power Nap&quot;" FontStyle="Italic" />
-                                    <Run Text="  followed by your request. Some examples:" />
+                                    <Run Text="{Binding Path=LocalizedResources.Commands2Message1, Source={StaticResource LocalizedStrings}}" />
+                                    <Run Text="{Binding Path=LocalizedResources.Commands2Message2, Source={StaticResource LocalizedStrings}}" FontStyle="Italic" />
+                                    <Run Text="{Binding Path=LocalizedResources.Commands2Message3, Source={StaticResource LocalizedStrings}}" />
                                 </TextBlock>
-                                <TextBlock Text=" - &quot; for 20 minutes. &quot;" FontStyle="Italic"
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet1, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
                                 Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
-                                <TextBlock Text=" - &quot; cancel nap. &quot;" FontStyle="Italic"
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet2, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
                                 Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
-                                <TextBlock Text=" - &quot; when is my alarm set for? &quot;" FontStyle="Italic"
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet3, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
                                 Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
-                                <TextBlock Text=" - &quot; what is the remaining time? &quot;" FontStyle="Italic"
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet4, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
                                 Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
-                                <TextBlock Text=" - &quot; give me 5 more minutes. &quot;" FontStyle="Italic"
-                                Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
-                                <TextBlock Text=" - &quot; when is my alarm set for? &quot;" FontStyle="Italic"
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet5, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
                                 Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
-                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="6">
+                            <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
                                 <Image Source="Assets/Images/sleep.png"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,4" />
                             </Border>
                             <StackPanel Width="385">
-                                <TextBlock Text="3. Enjoy your nap"
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands3Title, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Text="powernAPP takes care of the rest..."
+                                <TextBlock Text="{Binding Path=LocalizedResources.Commands3Message, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>

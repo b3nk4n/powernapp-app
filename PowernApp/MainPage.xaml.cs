@@ -14,6 +14,7 @@ using Coding4Fun.Toolkit.Controls;
 using PhoneKit.Framework.OS;
 using Microsoft.Phone.Net.NetworkInformation;
 using System.Windows.Threading;
+using System.Windows.Media;
 
 namespace PowernApp
 {
@@ -190,9 +191,9 @@ namespace PowernApp
             int min = int.Parse(minutes);
 
             if (AlarmClockViewModel.Instance.Set(min))
-                await Speech.Instance.Synthesizer.SpeakTextAsync("Have a nice " + minutes + " minutes nap.");
+                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(AppResources.SpeakStartNap, minutes));
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm is already set.");
+                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakAlarmAlreadySet);
         }
 
         /// <summary>
@@ -201,9 +202,9 @@ namespace PowernApp
         private async void handleStopNapCommand()
         {
             if (AlarmClockViewModel.Instance.Stop())
-                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm is now off. Hope you feel more energized now.");
+                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakStopNap);
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm was not set.");
+                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
@@ -212,9 +213,9 @@ namespace PowernApp
         private async void handleCheckAlarmTime()
         {
             if (AlarmClockViewModel.Instance.IsAlarmSet)
-                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm is set for " + AlarmClockViewModel.Instance.AlarmTime.ToString("t")); // 12:12 PM
+                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(AppResources.SpeakAlarmSetFor, AlarmClockViewModel.Instance.AlarmTime.ToString("t"))); // 12:12 PM
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm was not set.");
+                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
@@ -223,9 +224,9 @@ namespace PowernApp
         private async void handleCheckRemainingTime()
         {
             if (AlarmClockViewModel.Instance.IsAlarmSet)
-                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format("You have {0} minutes left.", (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
+                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(AppResources.SpeakTimeLeft, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm was not set.");
+                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
@@ -237,9 +238,9 @@ namespace PowernApp
             int min = int.Parse(minutes);
 
             if (AlarmClockViewModel.Instance.Snooze(min))
-                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format("You have now {0} minutes left. Happy napping.", (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
+                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(AppResources.SpeakTimeShifted, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync("Alarm was not set.");
+                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
@@ -249,6 +250,7 @@ namespace PowernApp
         {
             // assigns a new application bar to the page.
             ApplicationBar = new ApplicationBar();
+            
 
             // about
             ApplicationBarMenuItem appBarMenuItem1 = new ApplicationBarMenuItem(AppResources.AboutTitle);
@@ -276,7 +278,7 @@ namespace PowernApp
 
             // info
             ApplicationBarIconButton appBarButton1 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.questionmark.png", UriKind.Relative));
-            appBarButton1.Text = "info";
+            appBarButton1.Text = AppResources.AppBarInfo;
             ApplicationBar.Buttons.Add(appBarButton1);
             appBarButton1.Click += (s, e) =>
             {
@@ -285,7 +287,7 @@ namespace PowernApp
 
             // glight mode
             ApplicationBarIconButton appBarButton2 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.nocellular.png", UriKind.Relative));
-            appBarButton2.Text = "disable connectivity";
+            appBarButton2.Text = AppResources.AppBarOffline;
             ApplicationBar.Buttons.Add(appBarButton2);
             appBarButton2.Click += async (s, e) =>
             {
@@ -304,7 +306,7 @@ namespace PowernApp
 
             // info
             ApplicationBarIconButton appBarButton1 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.questionmark.png", UriKind.Relative));
-            appBarButton1.Text = "info";
+            appBarButton1.Text = AppResources.AppBarInfo;
             ApplicationBar.Buttons.Add(appBarButton1);
             appBarButton1.Click += (s, e) =>
             {

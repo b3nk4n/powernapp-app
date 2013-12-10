@@ -256,9 +256,9 @@
     </Command>
 
     <Command Name="extendAlarmTime">
-      <Example>5 Minuten verlängern</Example>
-      <ListenFor>{minute} [Minuten] verlängern</ListenFor>
-      <ListenFor>[Gib mir] {minute} [Minuten] mehr</ListenFor>
+      <Example>um 5 Minuten verlängern</Example>
+      <ListenFor>[um] {minute} [Minuten] verlängern</ListenFor>
+      <ListenFor>[Gib mir] [noch] {minute} [Minuten] mehr</ListenFor>
       <ListenFor>{minute} [Minuten] erweitern</ListenFor>
       <ListenFor>Verlängern um {minute} [Minuten]</ListenFor>
       <Feedback>Verlängere Alarmzeit um {minute} Minuten</Feedback>

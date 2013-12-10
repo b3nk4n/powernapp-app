@@ -79,6 +79,24 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to info.
+        /// </summary>
+        public static string AppBarInfo {
+            get {
+                return ResourceManager.GetString("AppBarInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to disable connectivity.
+        /// </summary>
+        public static string AppBarOffline {
+            get {
+                return ResourceManager.GetString("AppBarOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to by Benjamin Sautermeister.
         /// </summary>
         public static string ApplicationAuthor {
@@ -111,6 +129,150 @@ namespace PowernApp.Resources {
         public static string ApplicationVersion {
             get {
                 return ResourceManager.GetString("ApplicationVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Press and hold the Windows-Button of you phone until the voice input dialog pops up..
+        /// </summary>
+        public static string Commands1Message {
+            get {
+                return ResourceManager.GetString("Commands1Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1. Activate voice input.
+        /// </summary>
+        public static string Commands1Title {
+            get {
+                return ResourceManager.GetString("Commands1Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - &quot; ...for 20 minutes. &quot;.
+        /// </summary>
+        public static string Commands2Bullet1 {
+            get {
+                return ResourceManager.GetString("Commands2Bullet1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - &quot; ...cancel nap. &quot;.
+        /// </summary>
+        public static string Commands2Bullet2 {
+            get {
+                return ResourceManager.GetString("Commands2Bullet2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - &quot; ...when is my alarm set for? &quot;.
+        /// </summary>
+        public static string Commands2Bullet3 {
+            get {
+                return ResourceManager.GetString("Commands2Bullet3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - &quot; ...what is the remaining time? &quot;.
+        /// </summary>
+        public static string Commands2Bullet4 {
+            get {
+                return ResourceManager.GetString("Commands2Bullet4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - &quot; ...give me 5 more minutes. &quot;.
+        /// </summary>
+        public static string Commands2Bullet5 {
+            get {
+                return ResourceManager.GetString("Commands2Bullet5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Say.
+        /// </summary>
+        public static string Commands2Message1 {
+            get {
+                return ResourceManager.GetString("Commands2Message1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  &quot;Power Nap...&quot;  .
+        /// </summary>
+        public static string Commands2Message2 {
+            get {
+                return ResourceManager.GetString("Commands2Message2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to followed by your request. Some examples:.
+        /// </summary>
+        public static string Commands2Message3 {
+            get {
+                return ResourceManager.GetString("Commands2Message3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2. Speak.
+        /// </summary>
+        public static string Commands2Title {
+            get {
+                return ResourceManager.GetString("Commands2Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to powernAPP takes care of the rest....
+        /// </summary>
+        public static string Commands3Message {
+            get {
+                return ResourceManager.GetString("Commands3Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3. Enjoy your nap.
+        /// </summary>
+        public static string Commands3Title {
+            get {
+                return ResourceManager.GetString("Commands3Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to commands.
+        /// </summary>
+        public static string CommandsHeader {
+            get {
+                return ResourceManager.GetString("CommandsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This application supports Windows Phone voice commands. Follow these simple steps to take you well-deserved nap even faster:.
+        /// </summary>
+        public static string CommandsIntro {
+            get {
+                return ResourceManager.GetString("CommandsIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t get disturbed. Disable the phones connectivity!.
+        /// </summary>
+        public static string ConnectivityHint {
+            get {
+                return ResourceManager.GetString("ConnectivityHint", resourceCulture);
             }
         }
         
@@ -194,6 +356,114 @@ namespace PowernApp.Resources {
         public static string MoreApps {
             get {
                 return ResourceManager.GetString("MoreApps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keep a regular nap schedule. Prime napping time falls in the middle of the day..
+        /// </summary>
+        public static string NappingTipsConsistentMessage {
+            get {
+                return ResourceManager.GetString("NappingTipsConsistentMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Be consistent.
+        /// </summary>
+        public static string NappingTipsConsistentTitle {
+            get {
+                return ResourceManager.GetString("NappingTipsConsistentTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nap in a dark room or wear an eye mask. Blocking out light helps you fall asleep faster..
+        /// </summary>
+        public static string NappingTipsDarknessMessage {
+            get {
+                return ResourceManager.GetString("NappingTipsDarknessMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prefer darkness.
+        /// </summary>
+        public static string NappingTipsDarknessTitle {
+            get {
+                return ResourceManager.GetString("NappingTipsDarknessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable your phones connectivity and search for silent places..
+        /// </summary>
+        public static string NappingTipsDisturbedMessage {
+            get {
+                return ResourceManager.GetString("NappingTipsDisturbedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t get disturbed.
+        /// </summary>
+        public static string NappingTipsDisturbedTitle {
+            get {
+                return ResourceManager.GetString("NappingTipsDisturbedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to napping tips.
+        /// </summary>
+        public static string NappingTipsHeader {
+            get {
+                return ResourceManager.GetString("NappingTipsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Research has found that napping regularly may reduce stress and even decrease your risk of heart disease. To get the most out of a power snooze, follow these quick and simple tips:.
+        /// </summary>
+        public static string NappingTipsIntro {
+            get {
+                return ResourceManager.GetString("NappingTipsIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set your alarm for about 30 minutes or less if you don&apos;t want to wake up groggy. Because you should wake up before the occurrence of deep sleep..
+        /// </summary>
+        public static string NappingTipsQuickMessage {
+            get {
+                return ResourceManager.GetString("NappingTipsQuickMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make it quick.
+        /// </summary>
+        public static string NappingTipsQuickTitle {
+            get {
+                return ResourceManager.GetString("NappingTipsQuickTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stash a blanket nearby to put over you because your body temperature drops while you snooze..
+        /// </summary>
+        public static string NappingTipsWarmMessage {
+            get {
+                return ResourceManager.GetString("NappingTipsWarmMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stay warm.
+        /// </summary>
+        public static string NappingTipsWarmTitle {
+            get {
+                return ResourceManager.GetString("NappingTipsWarmTitle", resourceCulture);
             }
         }
         
@@ -288,6 +558,69 @@ namespace PowernApp.Resources {
         public static string SettingsTitle {
             get {
                 return ResourceManager.GetString("SettingsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm is already set..
+        /// </summary>
+        public static string SpeakAlarmAlreadySet {
+            get {
+                return ResourceManager.GetString("SpeakAlarmAlreadySet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm is set for {0}..
+        /// </summary>
+        public static string SpeakAlarmSetFor {
+            get {
+                return ResourceManager.GetString("SpeakAlarmSetFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm was not set..
+        /// </summary>
+        public static string SpeakNoAlarmSet {
+            get {
+                return ResourceManager.GetString("SpeakNoAlarmSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have a nice {0} minutes nap..
+        /// </summary>
+        public static string SpeakStartNap {
+            get {
+                return ResourceManager.GetString("SpeakStartNap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm is now off. Hope you feel more energized..
+        /// </summary>
+        public static string SpeakStopNap {
+            get {
+                return ResourceManager.GetString("SpeakStopNap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have {0} minutes left..
+        /// </summary>
+        public static string SpeakTimeLeft {
+            get {
+                return ResourceManager.GetString("SpeakTimeLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now you have {0} minutes left..
+        /// </summary>
+        public static string SpeakTimeShifted {
+            get {
+                return ResourceManager.GetString("SpeakTimeShifted", resourceCulture);
             }
         }
         

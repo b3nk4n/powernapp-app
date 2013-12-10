@@ -308,7 +308,7 @@
             <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="320">
                 <Border Background="{StaticResource PhoneChromeBrush}">
                     <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="12"
-                    Text="Don't get disturbed. Disable the phones connectivity!" />
+                    Text="{Binding Path=LocalizedResources.ConnectivityHint, Source={StaticResource LocalizedStrings}}" />
                 </Border>
                 <Path Data="M 0,0 L 25,0 L 25,25 Z" Fill="{StaticResource PhoneChromeBrush}"  Height="25" Width="25" Margin="55,-2,0,0"/>
             </StackPanel>
