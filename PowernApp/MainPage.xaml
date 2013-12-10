@@ -15,8 +15,10 @@
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait">
+    Foreground="{StaticResource ThemeForegroundLight}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" shell:SystemTray.BackgroundColor="{StaticResource ThemeBackgroundMediumColor}"
+    shell:SystemTray.ForegroundColor="{StaticResource ThemeForegroundLightColor}">
     
     <phone:PhoneApplicationPage.Resources>
         <!-- convertsers -->
@@ -106,21 +108,23 @@
                 <ContentControl
                         Content="{TemplateBinding Header}"
                         ContentTemplate="{TemplateBinding HeaderTemplate}"
-                        Foreground="{StaticResource PhoneSubtleBrush}"
+                        Foreground="{StaticResource ThemeForegroundLight}"
                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                         Margin="12,0,12,-4"/>
-                <Button FontSize="{TemplateBinding FontSize}" Background="Black"
+                <Button FontSize="{TemplateBinding FontSize}" Background="Transparent"
                         x:Name="ValueButton"
                         Content="{TemplateBinding ValueString}"
                         BorderThickness="0"
                         FontFamily="{TemplateBinding FontFamily}"
-                        Foreground="White"
+                        Foreground="{StaticResource ThemeForegroundLight}"
                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Style="{StaticResource NoAccentButton}">
                 </Button>
             </StackPanel>
         </ControlTemplate>
+        
         <Storyboard x:Name="AlarmBlinkingAnimation" AutoReverse="False" RepeatBehavior="Forever">
         	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
         		<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.25"/>
@@ -154,27 +158,6 @@
 
     </phone:PhoneApplicationPage.Resources>
 
-    <!--<toolkit:TransitionService.NavigationInTransition>
-        <toolkit:NavigationInTransition>
-            <toolkit:NavigationInTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardIn"/>
-            </toolkit:NavigationInTransition.Backward>
-            <toolkit:NavigationInTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardIn"/>
-            </toolkit:NavigationInTransition.Forward>
-        </toolkit:NavigationInTransition>
-    </toolkit:TransitionService.NavigationInTransition>
-    <toolkit:TransitionService.NavigationOutTransition>
-        <toolkit:NavigationOutTransition>
-            <toolkit:NavigationOutTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardOut"/>
-            </toolkit:NavigationOutTransition.Backward>
-            <toolkit:NavigationOutTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardOut"/>
-            </toolkit:NavigationOutTransition.Forward>
-        </toolkit:NavigationOutTransition>
-    </toolkit:TransitionService.NavigationOutTransition>-->
-
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
             <toolkit:NavigationInTransition.Backward>
@@ -197,7 +180,7 @@
     </toolkit:TransitionService.NavigationOutTransition>
 
     <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource ThemeBackgroundDark}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -205,7 +188,7 @@
         </Grid.RowDefinitions>
         <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
-            <Border Background="{StaticResource PhoneChromeBrush}" Margin="12,0,6,0">
+            <Border Background="{StaticResource ThemeBackgroundMedium}" Margin="12,0,6,0">
                 <Image Source="Assets/ApplicationIcon.png" Height="48" Width="48"/>
             </Border>
             <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" Margin="12,0" VerticalAlignment="Center"/>
@@ -249,7 +232,7 @@
                 </StackPanel>
                 <Button Grid.Row="3" Click="StartAlarmClick"  toolkit:TurnstileFeatherEffect.FeatheringIndex="3"
                             Width="164" Height="164" Style="{StaticResource RoundButton}">
-                    <Path Data="M 10,0 L 10,60 L60,30 Z" Fill="{StaticResource PhoneForegroundBrush}" Width="60" Height="60" />
+                    <Path Data="M 10,0 L 10,60 L60,30 Z" Fill="{StaticResource ThemeForegroundLight}" Width="60" Height="60" />
                 </Button>
             </Grid>
             <Grid x:Name="ActivePanel" Visibility="Visible">
@@ -287,15 +270,15 @@
                     </Button>
                 </StackPanel>
                 <Grid Grid.Row="2" Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="2">
-                    <ProgressBar Height="50" Value="{Binding Progress}" VerticalAlignment="Center" />
+                    <ProgressBar Height="50" Value="{Binding Progress}" VerticalAlignment="Center" Foreground="{StaticResource ThemeForegroundDark}" />
                     <TextBlock Text="{Binding AlarmTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
-                           HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,34,12,0" />
+                           HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ThemeTextNormalStyle}" Margin="12,34,12,0" />
                     <TextBlock Text="{Binding AlarmSetTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
-                           HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,34,12,0" />
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ThemeTextNormalStyle}" Margin="12,34,12,0" />
                 </Grid>
                 <Button Grid.Row="3" Command="{Binding StopCommand}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="3"
                         Width="164" Height="164" Style="{StaticResource RoundButton}" Click="StopButtonClick">
-                    <Rectangle Width="42" Height="42" Fill="{StaticResource PhoneForegroundBrush}" />
+                    <Rectangle Width="42" Height="42" Fill="{StaticResource ThemeForegroundLight}" />
                 </Button>
             </Grid>
         </Grid>
@@ -306,11 +289,11 @@
         <!-- no connectivity info message -->
         <Canvas Grid.Row="4" Width="320" >
             <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="320">
-                <Border Background="{StaticResource PhoneChromeBrush}">
+                <Border Background="{StaticResource ThemeBackgroundLight}">
                     <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="12"
                     Text="{Binding Path=LocalizedResources.ConnectivityHint, Source={StaticResource LocalizedStrings}}" />
                 </Border>
-                <Path Data="M 0,0 L 25,0 L 25,25 Z" Fill="{StaticResource PhoneChromeBrush}"  Height="25" Width="25" Margin="55,-2,0,0"/>
+                <Path Data="M 0,0 L 25,0 L 25,25 Z" Fill="{StaticResource ThemeBackgroundLight}"  Height="25" Width="25" Margin="55,-2,0,0"/>
             </StackPanel>
         </Canvas>
     </Grid>

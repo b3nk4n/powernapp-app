@@ -201,7 +201,7 @@
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsHeader" xml:space="preserve">
-    <value>Sprachbefehle</value>
+    <value>sprachbefehle</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsIntro" xml:space="preserve">
@@ -384,7 +384,7 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceCommands" xml:space="preserve">
-    <value>sprachbefehle</value>
+    <value>Sprachbefehle</value>
     <comment>Settings Page</comment>
   </data>
   <data name="VoiceLanguage" xml:space="preserve">

@@ -7,11 +7,197 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
+    Foreground="{StaticResource ThemeForegroundLight}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d">
+    mc:Ignorable="d" shell:SystemTray.IsVisible="True" shell:SystemTray.BackgroundColor="{StaticResource ThemeBackgroundMediumColor}"
+    shell:SystemTray.ForegroundColor="{StaticResource ThemeForegroundLightColor}">
+    <phone:PhoneApplicationPage.Resources>
+
+        <Style x:Name= "ThemedToggleSwitchStyle" TargetType= "toolkit:ToggleSwitch">
+            <Setter Property= "Background" Value= "{StaticResource PhoneBackgroundBrush}" />
+            <Setter Property= "FontFamily" Value= "{StaticResource PhoneFontFamilyLight}" />
+            <Setter Property= "FontSize" Value= "{StaticResource PhoneFontSizeLarge}" />
+            <Setter Property= "Foreground" Value= "{StaticResource PhoneForegroundBrush}" />
+            <Setter Property= "IsTabStop" Value= "False" />
+            <Setter Property= "HorizontalContentAlignment" Value= "Left" />
+            <Setter Property= "SwitchForeground" Value= "{StaticResource ThemeForegroundDark}" />
+            <Setter Property= "VerticalContentAlignment" Value= "Top" />
+            <Setter Property= "Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="toolkit:ToggleSwitch">
+                        <Border 
+  BorderBrush = "{TemplateBinding BorderBrush}" 
+  BorderThickness = "{TemplateBinding BorderThickness}" 
+  Padding = "{TemplateBinding Padding}" 
+  CacheMode = "BitmapCache">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name= "CommonStates">
+                                    <VisualState x:Name= "Normal" />
+                                    <VisualState x:Name= "Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation 
+  Storyboard.TargetName = "Header" 
+  Storyboard.TargetProperty = "Opacity" 
+  Duration = "0" 
+  To = "0.3" />
+                                            <DoubleAnimation 
+  Storyboard.TargetName = "Content" 
+  Storyboard.TargetProperty = "Opacity" 
+  Duration = "0" 
+  To = "0.3" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid Margin= "12,5,12,42">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height= "Auto" />
+                                    <RowDefinition Height= "Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width= "*" />
+                                    <ColumnDefinition Width= "Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ContentControl 
+x:Name = "Header" 
+Content = "{TemplateBinding Header}" 
+ContentTemplate = "{TemplateBinding HeaderTemplate}" 
+FontFamily = "{StaticResource PhoneFontFamilyNormal}" 
+FontSize = "{StaticResource PhoneFontSizeNormal}" 
+Foreground = "{StaticResource PhoneBorderBrush}" 
+HorizontalAlignment = "Left" 
+IsTabStop = "False" 
+Margin = "-1,0,0,0" 
+Opacity = "{TemplateBinding Opacity}" 
+VerticalAlignment = "Bottom" />
+                                <ContentControl 
+x:Name = "Content" 
+Grid.Row = "1" 
+Content = "{TemplateBinding Content}" 
+ContentTemplate = "{TemplateBinding ContentTemplate}"
+HorizontalAlignment = "{TemplateBinding HorizontalContentAlignment}" 
+IsTabStop = "False" 
+Margin = "-1,1,0, -7" 
+Opacity = "{TemplateBinding Opacity}" 
+VerticalAlignment = "{TemplateBinding VerticalContentAlignment}" />
+
+                                <primitives:ToggleSwitchButton 
+x:Name = "Switch" 
+Grid.RowSpan = "2" 
+Grid.Column = "1" 
+Background = "{TemplateBinding Background}" 
+Margin = "-22, -29, -24, -28" 
+Opacity = "{TemplateBinding Opacity}" 
+SwitchForeground = "{TemplateBinding SwitchForeground}" 
+VerticalAlignment = "Bottom" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="primitives:ToggleSwitchButton">
+            <Setter Property= "Background" Value= "{StaticResource PhoneBackgroundBrush}" />
+            <Setter Property= "IsTabStop" Value= "False" />
+            <Setter Property= "SwitchForeground" Value= "{StaticResource ThemeForegroundDark}" />
+            <Setter Property= "Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="primitives:ToggleSwitchButton">
+                        <Border x:Name = "Root" BorderBrush = "{TemplateBinding BorderBrush}" 
+BorderThickness = "{TemplateBinding BorderThickness}" 
+CacheMode = "BitmapCache" 
+Opacity = "{TemplateBinding Opacity}" 
+Padding = "{TemplateBinding Padding}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ColorAnimation 
+Storyboard.TargetName = "Switch Bottom" 
+Storyboard.TargetProperty = "(Grid.Background). (SolidColorBrush.Color)" 
+Duration = "0" 
+To = "{StaticResource PhoneForegroundColor}" />
+                                            <ColorAnimation 
+Storyboard.TargetName = "ThumbCenter" 
+Storyboard.TargetProperty = "(Border.Background). (SolidColorBrush.Color)" Duration = "0" 
+To = "{StaticResource PhoneForegroundColor}" />
+                                            <DoubleAnimation Storyboard.TargetName = "Root" Storyboard.TargetProperty = "Opacity" Duration = "0" To = "0.3" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name= "CheckStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration= "0:0:0.05" To= "Unchecked" />
+                                        <VisualTransition GeneratedDuration= "0:0:0.05" To= "Checked" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name= "Checked">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName = "BackgroundTranslation" Storyboard.TargetProperty = "(TranslateTransform.X)" Duration = "0" To = "68">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <ExponentialEase Exponent="15" EasingMode="EaseOut"  />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetName = "ThumbTranslation" Storyboard.TargetProperty = "(TranslateTransform.X)" Duration = "0" To = "68">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <ExponentialEase Exponent="15" EasingMode="EaseOut"  />
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name= "Dragging" />
+                                    <VisualState x:Name= "Unchecked">
+                                        <Storyboard>
+                                            <DoubleAnimation 
+Storyboard.TargetName = "BackgroundTranslation" 
+Storyboard.TargetProperty = "(TranslateTransform.X)" 
+Duration = "0" 
+To = "0" />
+                                            <DoubleAnimation 
+Storyboard.TargetName = "ThumbTranslation" Storyboard.TargetProperty = "(TranslateTransform.X)" Duration = "0" To = "0" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid x:Name= "SwitchRoot" Background= "Transparent" Height= "95" Width= "136">
+                                <Grid x:Name= "SwitchTrack" Width= "88">
+                                    <Grid x:Name= "SwitchBottom" Background= "{TemplateBinding SwitchForeground}" Height= "32">
+                                        <Rectangle x:Name = "SwitchingBackground" Fill = "{TemplateBinding Background}" Width = "76" Height = "20" HorizontalAlignment = "Center" VerticalAlignment = "Center">
+                                            <Rectangle.RenderTransform>
+                                                <TranslateTransform x:Name= "BackgroundTranslation" />
+                                            </Rectangle.RenderTransform>
+                                        </Rectangle>
+                                        <Border BorderBrush= "{StaticResource PhoneForegroundBrush}" BorderThickness= "2">
+                                            <Border BorderBrush= "{StaticResource PhoneBackgroundBrush}" BorderThickness= "4" />
+                                        </Border>
+                                    </Grid>
+                                    <Border 
+x:Name = "SwitchThumb" 
+BorderBrush = "{StaticResource PhoneBackgroundBrush}" 
+BorderThickness = "4.0" 
+Margin = "-4.0" 
+Width = "28" 
+Height = "36" 
+HorizontalAlignment = "Left">
+                                        <Border.RenderTransform>
+                                            <TranslateTransform x:Name= "ThumbTranslation" />
+                                        </Border.RenderTransform>
+                                        <Border 
+x:Name = "ThumbCenter" 
+BorderBrush = "{StaticResource PhoneForegroundBrush}" BorderThickness = "2" Background = "White" />
+                                    </Border>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </phone:PhoneApplicationPage.Resources>
 
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
@@ -35,7 +221,7 @@
     </toolkit:TransitionService.NavigationOutTransition>
 
     <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource ThemeBackgroundDark}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -74,7 +260,7 @@
                         </DataTemplate>
                     </toolkit:ListPicker.FullModeItemTemplate>
                 </toolkit:ListPicker>
-                <toolkit:ToggleSwitch x:Name="VibrationToggleSwitch" IsChecked="True" Margin="0,-20,0,0"
+                <toolkit:ToggleSwitch x:Name="VibrationToggleSwitch" IsChecked="True" Margin="0,-20,0,0" Style="{StaticResource ThemedToggleSwitchStyle}"
                                       Header="{Binding Path=LocalizedResources.VibrationEnabled, Source={StaticResource LocalizedStrings}}"/>
                 <TextBlock Margin="12,0,12,0" Style="{StaticResource PhoneTextSubtleStyle}"
                            Text="{Binding Path=LocalizedResources.VoiceCommands, Source={StaticResource LocalizedStrings}}" />

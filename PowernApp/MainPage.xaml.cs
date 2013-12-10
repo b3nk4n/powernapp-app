@@ -123,7 +123,7 @@ namespace PowernApp
                 {
                     // check again after 2 sec, because sometime the enabling/disabling of
                     // flight mode takes a while.
-                    if (IsAirplaneMode())
+                    if (AlarmClockViewModel.Instance.IsAlarmSet && IsAirplaneMode())
                         ConnectivityMessageOut.Begin();
                     else
                         ConnectivityMessageIn.Begin();
@@ -250,7 +250,8 @@ namespace PowernApp
         {
             // assigns a new application bar to the page.
             ApplicationBar = new ApplicationBar();
-            
+            ApplicationBar.BackgroundColor = (Color)Application.Current.Resources["ThemeBackgroundMediumColor"];
+            ApplicationBar.ForegroundColor = (Color)Application.Current.Resources["ThemeForegroundLightColor"];
 
             // about
             ApplicationBarMenuItem appBarMenuItem1 = new ApplicationBarMenuItem(AppResources.AboutTitle);

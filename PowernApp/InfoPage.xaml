@@ -10,8 +10,9 @@
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait"  Orientation="Portrait">
+    Foreground="{StaticResource ThemeForegroundLight}"
+    SupportedOrientations="Portrait"  Orientation="Portrait" shell:SystemTray.IsVisible="True" shell:SystemTray.BackgroundColor="{StaticResource ThemeBackgroundMediumColor}"
+    shell:SystemTray.ForegroundColor="{StaticResource ThemeForegroundLightColor}">
 
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
@@ -35,7 +36,7 @@
     </toolkit:TransitionService.NavigationOutTransition>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource ThemeBackgroundDark}">
         <!--Pivot Control-->
         <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
 
@@ -43,7 +44,7 @@
                 <ScrollViewer>
                     <StackPanel>
                         <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsIntro, Source={StaticResource LocalizedStrings}}"
-                        Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap"/>
+                        Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap"/>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
                             <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
@@ -52,9 +53,9 @@
                             </Border>
                             <StackPanel Width="385">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsConsistentTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextLargeStyle}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsConsistentMessage, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
+                                Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
@@ -65,9 +66,9 @@
                             </Border>
                             <StackPanel Width="385">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsQuickTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextLargeStyle}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsQuickMessage, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
+                                Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
@@ -78,9 +79,9 @@
                             </Border>
                             <StackPanel Width="385">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDarknessTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextLargeStyle}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDarknessMessage, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
+                                Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
@@ -91,9 +92,9 @@
                             </Border>
                             <StackPanel Width="385">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDisturbedTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextLargeStyle}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsDisturbedMessage, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
+                                Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
@@ -104,9 +105,9 @@
                             </Border>
                             <StackPanel Width="385">
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsWarmTitle, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextLargeStyle}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsWarmMessage, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
+                                Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
@@ -117,7 +118,7 @@
                 <ScrollViewer>
                     <StackPanel>
                         <TextBlock Text="{Binding Path=LocalizedResources.CommandsIntro, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap"/>
+                                Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap"/>
 
                         <StackPanel Orientation="Horizontal" Margin="12">
                             <Border Width="36" Height="36" VerticalAlignment="Top" Margin="0,8,4,0">
@@ -126,9 +127,9 @@
                             </Border>
                             <StackPanel Width="385">
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands1Title, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextLargeStyle}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands1Message, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
+                                Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
@@ -139,22 +140,22 @@
                             </Border>
                             <StackPanel Width="385">
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands2Title, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
-                                <TextBlock Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap">
+                                Style="{StaticResource ThemeTextLargeStyle}" />
+                                <TextBlock Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap">
                                     <Run Text="{Binding Path=LocalizedResources.Commands2Message1, Source={StaticResource LocalizedStrings}}" />
                                     <Run Text="{Binding Path=LocalizedResources.Commands2Message2, Source={StaticResource LocalizedStrings}}" FontStyle="Italic" />
                                     <Run Text="{Binding Path=LocalizedResources.Commands2Message3, Source={StaticResource LocalizedStrings}}" />
                                 </TextBlock>
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet1, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
-                                Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
+                                Style="{StaticResource ThemeTextNormalStyle}" Margin="12,1,12,1" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet2, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
-                                Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
+                                Style="{StaticResource ThemeTextNormalStyle}" Margin="12,1,12,1" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet3, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
-                                Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
+                                Style="{StaticResource ThemeTextNormalStyle}" Margin="12,1,12,1" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet4, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
-                                Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
+                                Style="{StaticResource ThemeTextNormalStyle}" Margin="12,1,12,1" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands2Bullet5, Source={StaticResource LocalizedStrings}}" FontStyle="Italic"
-                                Style="{StaticResource PhoneTextNormalStyle}" Margin="12,1,12,1" />
+                                Style="{StaticResource ThemeTextNormalStyle}" Margin="12,1,12,1" />
                             </StackPanel>
                         </StackPanel>
 
@@ -165,9 +166,9 @@
                             </Border>
                             <StackPanel Width="385">
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands3Title, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextLargeStyle}" />
+                                Style="{StaticResource ThemeTextLargeStyle}" />
                                 <TextBlock Text="{Binding Path=LocalizedResources.Commands3Message, Source={StaticResource LocalizedStrings}}"
-                                Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
+                                Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap" />
                             </StackPanel>
                         </StackPanel>
 
