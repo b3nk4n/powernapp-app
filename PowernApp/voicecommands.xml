@@ -24,7 +24,7 @@
     <Command Name="checkAlarmTime">
       <Example>When is my alarm set for?</Example>
       <ListenFor>When is my alarm set [for]?</ListenFor>
-      <Feedback>One moment while I check</Feedback>
+      <Feedback>I have a look</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -32,7 +32,7 @@
       <Example>What is the remaining time?</Example>
       <ListenFor>[What] [is] [the] remaining time?</ListenFor>
       <ListenFor>How much time is left?</ListenFor>
-      <Feedback>One moment while I check</Feedback>
+      <Feedback>I have a look</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -131,7 +131,7 @@
     <Command Name="checkAlarmTime">
       <Example>When is my alarm set for?</Example>
       <ListenFor>When is my alarm set [for]?</ListenFor>
-      <Feedback>One moment while I check</Feedback>
+      <Feedback>I have a look</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -139,7 +139,7 @@
       <Example>What is the remaining time?</Example>
       <ListenFor>[What] [is] [the] remaining time?</ListenFor>
       <ListenFor>How much time is left?</ListenFor>
-      <Feedback>One moment while I check</Feedback>
+      <Feedback>I have a look</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -223,7 +223,7 @@
     <Command Name="startNap">
       <Example>für 20 Minuten</Example>
       <ListenFor>[für] {minute} [Minuten]</ListenFor>
-      <Feedback>Aktiviere Alarm</Feedback>
+      <Feedback>Ich stelle den Wecker</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -233,14 +233,14 @@
       <ListenFor>Stopp [Nap] [Nickerchen]</ListenFor>
       <ListenFor>Abbrechen</ListenFor>
       <ListenFor>Breche [Nap] [Nickerchen] ab</ListenFor>
-      <Feedback>Deaktiviere Alarm</Feedback>
+      <Feedback>Ich schalte den Wecker aus</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="checkAlarmTime">
       <Example>Auf wann ist der Alarm gestellt?</Example>
       <ListenFor>[Auf] wann ist der Alarm [gestellt] [gesetzt]?</ListenFor>
-      <Feedback>Einen Moment bitte</Feedback>
+      <Feedback>Ich schaue nach</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -251,7 +251,7 @@
       <ListenFor>Restzeit?</ListenFor>
       <ListenFor>Verbleibende Zeit?</ListenFor>
       <ListenFor>Wie lange noch?</ListenFor>
-      <Feedback>Einen Moment bitte</Feedback>
+      <Feedback>Ich schaue nach</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -261,7 +261,7 @@
       <ListenFor>[Gib mir] [noch] {minute} [Minuten] mehr</ListenFor>
       <ListenFor>{minute} [Minuten] erweitern</ListenFor>
       <ListenFor>Verlängern um {minute} [Minuten]</ListenFor>
-      <Feedback>Verlängere Alarmzeit um {minute} Minuten</Feedback>
+      <Feedback>Verlängere Weckzeit um {minute} Minuten</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 

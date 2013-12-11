@@ -20,6 +20,6 @@ namespace PowernApp
         /// <summary>
         /// The a
         /// </summary>
-        public static readonly StoredObject<string> AlarmUriString = new StoredObject<string>("alarmUri", "Assets/Audio/alarm.wav");
+        public static readonly StoredObject<string> AlarmUriString = new StoredObject<string>("alarmUri", "Assets/Audio/alarm1.wav");
     }
 }

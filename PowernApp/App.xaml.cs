@@ -63,8 +63,6 @@ namespace PowernApp
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             AlarmClockViewModel.Instance.TryRemoveFromScheduler();
-
-            FeedbackManager.Instance.Launching();
         }
 
         // Code, der ausgeführt werden soll, wenn die Anwendung aktiviert wird (in den Vordergrund gebracht wird)

@@ -125,10 +125,10 @@
             </StackPanel>
         </ControlTemplate>
         
-        <Storyboard x:Name="AlarmBlinkingAnimation" AutoReverse="False" RepeatBehavior="Forever">
-        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
-        		<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.25"/>
-        		<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+        <Storyboard x:Name="AlarmBlinkingAnimation" AutoReverse="True" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ClockImage">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0.25"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
         			<EasingDoubleKeyFrame.EasingFunction>
         				<CircleEase EasingMode="EaseInOut"/>
         			</EasingDoubleKeyFrame.EasingFunction>
@@ -195,15 +195,15 @@
         </StackPanel>-->
         <Grid x:Name="TitlePanel" Grid.Row="0" Margin="0,-1,0,28" toolkit:TurnstileFeatherEffect.FeatheringIndex="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="66"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="112" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Rectangle Grid.ColumnSpan="2" Grid.Row="0" Fill="{StaticResource ThemeForegroundLight}" Height="50" VerticalAlignment="Top" />
-            <Border Grid.Column="0" Grid.RowSpan="2" Background="{StaticResource ThemeBackgroundMedium}" HorizontalAlignment="Right" Margin="5">
-                <Image Source="Assets/ApplicationIcon.png" Height="56" Width="56"/>
+            <Border Grid.Column="0" Grid.RowSpan="2" Background="{StaticResource ThemeBackgroundMedium}" HorizontalAlignment="Right" Margin="6">
+                <Image Source="Assets/ApplicationIcon.png" Height="62" Width="62"/>
             </Border>
             <TextBlock Grid.Column="1" Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle1Style}" VerticalAlignment="Top" Margin="12,2"/>
         </Grid>
@@ -259,7 +259,7 @@
                     <RowDefinition Height="52" />
                     <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                <Image x:Name="image" Grid.Row="0" Grid.RowSpan="3" Source="Assets/Images/alarm.png" Height="200" Width="200"  toolkit:TurnstileFeatherEffect.FeatheringIndex="1"
+                <Image x:Name="ClockImage" Grid.Row="0" Grid.RowSpan="3" Source="Assets/Images/alarm.png" Height="200" Width="200"  toolkit:TurnstileFeatherEffect.FeatheringIndex="1"
                        Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}}" />
                 <TextBlock Grid.Row="0" Text="{Binding TimeToAlarm, Converter={StaticResource TimeSpanConverter}}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="1"
                            VerticalAlignment="Bottom" Margin="0,0,0,18" HorizontalAlignment="Center" FontSize="108"
@@ -298,10 +298,10 @@
         </Grid>
 
         <!-- Feedback dialog -->
-        <lc:LocalizedFeedbackDialogControl Grid.RowSpan="3" EnableAnimation="True" />
+        <lc:LocalizedFeedbackDialogControl Grid.RowSpan="3" />
 
         <!-- no connectivity info message -->
-        <Canvas Grid.Row="4" Width="320" >
+        <Canvas Grid.Row="4" Width="320" Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=!}">
             <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="320">
                 <Border Background="{StaticResource ThemeBackgroundLight}">
                     <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="12"

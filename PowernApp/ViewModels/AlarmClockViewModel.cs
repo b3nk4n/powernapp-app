@@ -1,9 +1,11 @@
 ﻿using Microsoft.Devices;
 using Microsoft.Phone.Scheduler;
+using Microsoft.Phone.Shell;
 using Microsoft.Xna.Framework.Audio;
 using PhoneKit.Framework.Audio;
 using PhoneKit.Framework.Core.MVVM;
 using PhoneKit.Framework.Core.Storage;
+using PowernApp.Resources;
 using System;
 using System.Windows.Input;
 using System.Windows.Resources;
@@ -88,6 +90,16 @@ namespace PowernApp.ViewModels
         /// </summary>
         private DelegateCommand _stopCommand;
 
+        /// <summary>
+        /// Alarm seconds counter to have an alarm sound in a regular interval.
+        /// </summary>
+        private int _alarmStartCounter = 0;
+
+        /// <summary>
+        /// The alarm interval in seconds when the app is active.
+        /// </summary>
+        private const int ALARM_INTERVAL = 5;
+
         #endregion
 
         #region Constructors
@@ -107,7 +119,7 @@ namespace PowernApp.ViewModels
             AlarmClockViewModel.alarm = new Alarm(ALARM_NAME);
             AlarmClockViewModel.alarm.ExpirationTime = DateTime.MaxValue;
             AlarmClockViewModel.alarm.RecurrenceType = RecurrenceInterval.None;
-            AlarmClockViewModel.alarm.Content = "Power nap done!";
+            AlarmClockViewModel.alarm.Content = AppResources.AlertDialogMessage;
 
             // commands
             _startCommand = new DelegateCommand<string>(
@@ -231,6 +243,10 @@ namespace PowernApp.ViewModels
                 AlarmSetTime = DateTime.MinValue;
                 IsAlarmRinging = false;
                 UpdateCommands();
+
+                // enable lock screen
+                PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Enabled;
+
                 return true;
             }
 
@@ -248,7 +264,15 @@ namespace PowernApp.ViewModels
                 {
                     if (AlarmTime > DateTime.Now)
                     {
-                        AlarmClockViewModel.alarm.BeginTime = AlarmTime;
+                        DateTime beginTime;
+
+                        // ensure alarm-timer is not set under 30 seconds
+                        if (TimeToAlarm.TotalSeconds > 30)
+                            beginTime = AlarmTime;
+                        else
+                            beginTime = DateTime.Now.AddSeconds(30);
+
+                        AlarmClockViewModel.alarm.BeginTime = beginTime;
                         AlarmClockViewModel.alarm.Sound = new Uri(Settings.AlarmUriString.Value, UriKind.Relative);
                         ScheduledActionService.Add(AlarmClockViewModel.alarm);
                     }
@@ -294,7 +318,7 @@ namespace PowernApp.ViewModels
         /// <summary>
         /// Updates the binded button states depending on the CanExecute function.
         /// </summary>
-        private void UpdateCommands()
+        public void UpdateCommands()
         {
             _snoozeCommand.RaiseCanExecuteChanged();
             _antiSnoozeCommand.RaiseCanExecuteChanged();
@@ -319,14 +343,15 @@ namespace PowernApp.ViewModels
                 else
                     Progress = (int)(100 * passedSeconds / totalSeconds);
 
-                NotifyPropertyChanged("TimeToAlarm");
                 if (TimeToAlarm.TotalSeconds <= 0 && TimeToAlarm.TotalSeconds >= -60)
                 {
                     IsAlarmRinging = true;
+                    _alarmStartCounter++;
 
                     // vibrate only if enabled
                     if (Settings.EnableVibration.Value)
                     {
+                        if (_alarmStartCounter % ALARM_INTERVAL == ALARM_INTERVAL - 1 || _alarmStartCounter % ALARM_INTERVAL == ALARM_INTERVAL - 2)
                         VibrateController.Default.Start(TimeSpan.FromSeconds(0.5));
                     }
 
@@ -335,24 +360,46 @@ namespace PowernApp.ViewModels
                         StreamResourceInfo alarmResource = App.GetResourceStream(new Uri(Settings.AlarmUriString.Value, UriKind.Relative));
                         SoundEffects.Instance.Load(Settings.AlarmUriString.Value, alarmResource);
                         _alarmSound = SoundEffects.Instance[Settings.AlarmUriString.Value].CreateInstance();
-                        _alarmSound.IsLooped = true;
+
+                        // start silent (but 0 is a too silent start)
+                        _alarmSound.Volume = 0.2f;
                     }
 
-                    TryPlayAlarmSound();
+                    if (_alarmStartCounter % ALARM_INTERVAL == 0)
+                    {
+                        // get slightly louder
+                        _alarmSound.Volume = Math.Min(1.0f, _alarmSound.Volume + 0.1f);
+
+                        TryPlayAlarmSound();
+                    }
                 }
                 else
                 {
                     TryStopAlarmSound();
                     IsAlarmRinging = false;
                 }
+
+                // disable lockscreen 10 sec before the alarm starts. This ensures that the app will not locked out
+                // shortly before the alarm or during the alarm.
+                if (TimeToAlarm.Seconds == 10)
+                {
+                    // disable lock screen
+                    PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
+                }
+
+                // check for specific times to update the commands
+                if (TimeToAlarm.Seconds == 300 || // 5 min
+                    TimeToAlarm.Seconds == 60) // 1 min
+                    UpdateCommands();
             }
             else 
             {
                 Progress = 0;
-                NotifyPropertyChanged("TimeToAlarm");
 
                 TryStopAlarmSound();
             }
+
+            NotifyPropertyChanged("TimeToAlarm");
         }
 
         /// <summary>
@@ -365,7 +412,9 @@ namespace PowernApp.ViewModels
             try
             {
                 if (_alarmSound.State != SoundState.Playing)
+                {
                     _alarmSound.Play();
+                }
             }
             catch (Exception) { }
         }
@@ -379,7 +428,14 @@ namespace PowernApp.ViewModels
                 return;
 
             if (_alarmSound.State == SoundState.Playing)
+            {
                 _alarmSound.Stop();
+            }
+
+            // delete sound to there will be a new instance created for the next run
+            // to ensure the current alarm sound is the setting is used
+            _alarmSound.Dispose();
+            _alarmSound = null;
         }
 
         #endregion

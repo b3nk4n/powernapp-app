@@ -79,6 +79,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wake up! Hope you feel more energized now....
+        /// </summary>
+        public static string AlertDialogMessage {
+            get {
+                return ResourceManager.GetString("AlertDialogMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to info.
         /// </summary>
         public static string AppBarInfo {
@@ -106,7 +115,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The fastest powernapping app for Windows Phone with voice commands..
+        ///   Looks up a localized string similar to The fastest power napping app for Windows Phone with voice commands..
         /// </summary>
         public static string ApplicationDescription {
             get {
@@ -497,7 +506,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We&apos;d love you to rate our app 5 stars
+        ///   Looks up a localized string similar to We&apos;d love you to rate our app 5 stars.
         ///
         ///Showing us some love on the store helps us to continue to work on the app and make things even better!.
         /// </summary>
@@ -591,18 +600,36 @@ namespace PowernApp.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Have a nice {0} minutes nap..
         /// </summary>
-        public static string SpeakStartNap {
+        public static string SpeakStartNap1 {
             get {
-                return ResourceManager.GetString("SpeakStartNap", resourceCulture);
+                return ResourceManager.GetString("SpeakStartNap1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have a nice {0} minutes sleep..
+        /// </summary>
+        public static string SpeakStartNap2 {
+            get {
+                return ResourceManager.GetString("SpeakStartNap2", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Alarm is now off. Hope you feel more energized..
         /// </summary>
-        public static string SpeakStopNap {
+        public static string SpeakStopNap1 {
             get {
-                return ResourceManager.GetString("SpeakStopNap", resourceCulture);
+                return ResourceManager.GetString("SpeakStopNap1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alarm is now off. Hope you had a good sleep..
+        /// </summary>
+        public static string SpeakStopNap2 {
+            get {
+                return ResourceManager.GetString("SpeakStopNap2", resourceCulture);
             }
         }
         
@@ -616,7 +643,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Now you have {0} minutes left..
+        ///   Looks up a localized string similar to Now you have about {0} minutes left..
         /// </summary>
         public static string SpeakTimeShifted {
             get {

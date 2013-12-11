@@ -15,6 +15,8 @@ using PhoneKit.Framework.OS;
 using Microsoft.Phone.Net.NetworkInformation;
 using System.Windows.Threading;
 using System.Windows.Media;
+using PhoneKit.Framework.Core.Net;
+using PhoneKit.Framework.Support;
 
 namespace PowernApp
 {
@@ -38,16 +40,44 @@ namespace PowernApp
             // late binding of timespan picker changed event
             CustomNapTimePicker.ValueChanged += CustomNapTimeChanged;
 
+            Loaded += (s, e) =>
+                {
+                    // make sure all buttons are enabled/disabled properly
+                    AlarmClockViewModel.Instance.UpdateCommands();
+
+                   // Always play the blink animation, because it requires no
+                   // resources when the element is collapsed
+                    var timer = new DispatcherTimer();
+                    timer.Tick += (se, ea) =>
+                    {
+                        // start clock async
+                        AlarmBlinkingAnimation.Begin();
+                        timer.Stop();
+                    };
+                    timer.Interval = TimeSpan.FromSeconds(1);
+                    timer.Start();
+                };
+
             ActivateAnimation.Completed += (s, e) =>
                 {
-                    UpdateGeneralViewState();
+                    UpdateGeneralViewState(false);
                 };
             DeactivateAnimation.Completed += (s, e) =>
                 {
-                    UpdateGeneralViewState();
+                    UpdateGeneralViewState(false);
                 };
 
             BuildLocalizedApplicationBar();
+
+            // register startup actions
+            StartupActionManager.Instance.Register(5, ActionExecutionRule.Equals, () =>
+            {
+                FeedbackManager.Instance.StartFirst();
+            });
+            StartupActionManager.Instance.Register(10, ActionExecutionRule.Equals, () =>
+            {
+                FeedbackManager.Instance.StartSecond();
+            });
         }
 
         /// <summary>
@@ -70,9 +100,15 @@ namespace PowernApp
                 // clear the QueryString or the page will retain the current value
                 NavigationContext.QueryString.Clear();
             }
+            else if (AlarmClockViewModel.Instance.IsAlarmNotRinging &&
+                (!AlarmClockViewModel.Instance.IsAlarmSet || AlarmClockViewModel.Instance.TimeToAlarm.Minutes > 5))
+            {
+                // fire startup events only when the app started without voice command
+                StartupActionManager.Instance.Fire();
+            }
 
             // determine view state
-            UpdateGeneralViewState();
+            UpdateGeneralViewState(true);
 
             // set data context to view model
             DataContext = AlarmClockViewModel.Instance;
@@ -98,8 +134,9 @@ namespace PowernApp
         /// <summary>
         /// Updates the view state of the main page and the application bar
         /// depending on whether the alarm is on or off.
+        /// <param name="withTimer">Indicates whether there should be a second async check of the message baloon.</param>
         /// </summary>
-        private void UpdateGeneralViewState()
+        private void UpdateGeneralViewState(bool withTimer)
         {
             ResetRotationAnimation.Begin();
 
@@ -108,53 +145,47 @@ namespace PowernApp
                 ActivePanel.Visibility = Visibility.Visible;
                 InactivePanel.Visibility = Visibility.Collapsed;
                 BuildActiveLocalizedApplicationBar();
-                AlarmBlinkingAnimation.Begin();
 
-                if (IsAirplaneMode())
+                if (ConnectivityHelper.IsAirplaneMode)
                     ConnectivityMessageOut.Begin();
                 else
                     ConnectivityMessageIn.Begin();
 
-                var timer = new DispatcherTimer();
-                timer.Tick += (s, e) =>
+                if (withTimer)
                 {
-                    // check again after 2 sec, because sometime the enabling/disabling of
-                    // flight mode takes a while.
-                    if (AlarmClockViewModel.Instance.IsAlarmSet)
+                    var timer = new DispatcherTimer();
+                    timer.Tick += (s, e) =>
                     {
-                        if (IsAirplaneMode())
+                        // check again after 2 sec, because sometime the enabling/disabling of
+                        // flight mode takes a while.
+                        if (AlarmClockViewModel.Instance.IsAlarmSet)
                         {
-                            ConnectivityMessageOut.Begin();
+                            if (ConnectivityHelper.IsAirplaneMode)
+                            {
+                                ConnectivityMessageOut.Begin();
+                            }
+                            else
+                            {
+                                ConnectivityMessageIn.Begin();
+                            }
                         }
                         else
                         {
-                            ConnectivityMessageIn.Begin();
+                            ConnectivityMessageOut.Begin();
                         }
-                    }
 
-                    timer.Stop();
-                };
-                timer.Interval = TimeSpan.FromSeconds(2);
-                timer.Start();
-                
+                        timer.Stop();
+                    };
+                    timer.Interval = TimeSpan.FromSeconds(2);
+                    timer.Start();
+                }
             }
             else
             {
                 ActivePanel.Visibility = Visibility.Collapsed;
                 InactivePanel.Visibility = Visibility.Visible;
                 BuildInactiveLocalizedApplicationBar();
-                AlarmBlinkingAnimation.Stop();
             }
-        }
-
-        /// <summary>
-        /// Checks for the air plane mode. (TODO: move to framework :) )
-        /// </summary>
-        /// <returns>Returns true, of the phone is offline.</returns>
-        private bool IsAirplaneMode()
-        {
-            bool[] networks = new bool[4] { DeviceNetworkInformation.IsNetworkAvailable, DeviceNetworkInformation.IsCellularDataEnabled, DeviceNetworkInformation.IsCellularDataRoamingEnabled, DeviceNetworkInformation.IsWiFiEnabled };
-            return (networks.Count(n => n) < 1);
         }
 
         /// <summary>
@@ -195,7 +226,11 @@ namespace PowernApp
             int min = int.Parse(minutes);
 
             if (AlarmClockViewModel.Instance.Set(min))
-                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(AppResources.SpeakStartNap, minutes));
+            {
+                string startFormat = (new Random().Next(2) == 0) ? AppResources.SpeakStartNap1 : AppResources.SpeakStartNap2;
+
+                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(startFormat, minutes));
+            }
             else
                 await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakAlarmAlreadySet);
         }
@@ -206,7 +241,11 @@ namespace PowernApp
         private async void handleStopNapCommand()
         {
             if (AlarmClockViewModel.Instance.Stop())
-                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakStopNap);
+            {
+                string stopString = (new Random().Next(2) == 0) ? AppResources.SpeakStopNap1 : AppResources.SpeakStopNap2;
+
+                await Speech.Instance.Synthesizer.SpeakTextAsync(stopString);
+            }
             else
                 await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakNoAlarmSet);
         }
@@ -257,20 +296,20 @@ namespace PowernApp
             ApplicationBar.BackgroundColor = (Color)Application.Current.Resources["ThemeBackgroundMediumColor"];
             ApplicationBar.ForegroundColor = (Color)Application.Current.Resources["ThemeForegroundLightColor"];
 
-            // about
-            ApplicationBarMenuItem appBarMenuItem1 = new ApplicationBarMenuItem(AppResources.AboutTitle);
+            // settings
+            ApplicationBarMenuItem appBarMenuItem1 = new ApplicationBarMenuItem(AppResources.SettingsTitle);
             ApplicationBar.MenuItems.Add(appBarMenuItem1);
             appBarMenuItem1.Click += (s, e) =>
             {
-                NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
             };
 
-            // settings
-            ApplicationBarMenuItem appBarMenuItem2 = new ApplicationBarMenuItem(AppResources.SettingsTitle);
+            // about
+            ApplicationBarMenuItem appBarMenuItem2 = new ApplicationBarMenuItem(AppResources.AboutTitle);
             ApplicationBar.MenuItems.Add(appBarMenuItem2);
             appBarMenuItem2.Click += (s, e) =>
             {
-                NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
             };
         }
 

@@ -58,7 +58,8 @@ namespace PowernApp
         {
             // verify the current language is supported
             if (InstalledVoices.Default.Language == "de-DE" ||
-                InstalledVoices.Default.Language == "en-GB")
+                InstalledVoices.Default.Language == "en-GB" ||
+                InstalledVoices.Default.Language == "en-US")
             {
                 StatusText.Text = AppResources.VoiceSupported;
                 StatusMessageText.Visibility = Visibility.Collapsed;
@@ -86,8 +87,13 @@ namespace PowernApp
 
             audioList.Add(
                 new AudioViewModel(
-                    "Alarm", 
-                    "Assets/Audio/alarm.wav",
+                    "Alarm1", 
+                    "Assets/Audio/alarm1.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "Alarm2",
+                    "Assets/Audio/alarm2.wav",
                     playImageUri));
             audioList.Add(
                 new AudioViewModel(
@@ -98,6 +104,21 @@ namespace PowernApp
                 new AudioViewModel(
                     "Rooster",
                     "Assets/Audio/rooster.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "Classic",
+                    "Assets/Audio/classic.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "Modern",
+                    "Assets/Audio/modern.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "Dong",
+                    "Assets/Audio/dong.wav",
                     playImageUri));
 
             AudioList.ItemsSource = audioList;

@@ -127,6 +127,7 @@
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
     <value>powernAPP</value>
+    <comment>General</comment>
   </data>
   <data name="AboutTitle" xml:space="preserve">
     <value>About</value>
@@ -137,7 +138,7 @@
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationDescription" xml:space="preserve">
-    <value>The fastest powernapping app for Windows Phone with voice commands.</value>
+    <value>The fastest power napping app for Windows Phone with voice commands.</value>
     <comment>AboutPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
@@ -242,7 +243,7 @@ Why not give us a 5 star rating to show your appreciation?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage5Text" xml:space="preserve">
-    <value>We'd love you to rate our app 5 stars
+    <value>We'd love you to rate our app 5 stars.
 
 Showing us some love on the store helps us to continue to work on the app and make things even better!</value>
     <comment>FeedbackDialogControl</comment>
@@ -391,11 +392,11 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <value>Alarm was not set.</value>
     <comment>Voice</comment>
   </data>
-  <data name="SpeakStartNap" xml:space="preserve">
+  <data name="SpeakStartNap1" xml:space="preserve">
     <value>Have a nice {0} minutes nap.</value>
     <comment>Voice</comment>
   </data>
-  <data name="SpeakStopNap" xml:space="preserve">
+  <data name="SpeakStopNap1" xml:space="preserve">
     <value>Alarm is now off. Hope you feel more energized.</value>
     <comment>Voice</comment>
   </data>
@@ -404,7 +405,19 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeShifted" xml:space="preserve">
-    <value>Now you have {0} minutes left.</value>
+    <value>Now you have about {0} minutes left.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="AlertDialogMessage" xml:space="preserve">
+    <value>Wake up! Hope you feel more energized now...</value>
+    <comment>AlertDialog</comment>
+  </data>
+  <data name="SpeakStartNap2" xml:space="preserve">
+    <value>Have a nice {0} minutes sleep.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakStopNap2" xml:space="preserve">
+    <value>Alarm is now off. Hope you had a good sleep.</value>
     <comment>Voice</comment>
   </data>
 </root>
