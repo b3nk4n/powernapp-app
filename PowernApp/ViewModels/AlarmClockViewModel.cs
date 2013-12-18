@@ -381,15 +381,15 @@ namespace PowernApp.ViewModels
 
                 // disable lockscreen 10 sec before the alarm starts. This ensures that the app will not locked out
                 // shortly before the alarm or during the alarm.
-                if (TimeToAlarm.Seconds == 10)
+                if ((int)TimeToAlarm.TotalSeconds == 10)
                 {
                     // disable lock screen
                     PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
                 }
 
                 // check for specific times to update the commands
-                if (TimeToAlarm.Seconds == 300 || // 5 min
-                    TimeToAlarm.Seconds == 60) // 1 min
+                if ((int)TimeToAlarm.TotalSeconds == 300 || // 5 min
+                    (int)TimeToAlarm.TotalSeconds == 60) // 1 min
                     UpdateCommands();
             }
             else 

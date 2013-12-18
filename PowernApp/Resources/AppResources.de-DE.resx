@@ -134,7 +134,11 @@
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>offline gehen</value>
+    <value>verbindung deaktivieren</value>
+    <comment>AppBar</comment>
+  </data>
+  <data name="AppBarOnline" xml:space="preserve">
+    <value>verbindung aktivieren</value>
     <comment>AppBar</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
@@ -150,7 +154,7 @@
     <comment>General</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>1.0</value>
+    <value>1.1</value>
     <comment>General</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">

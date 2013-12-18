@@ -356,6 +356,19 @@ namespace PowernApp
             {
                 NavigationService.Navigate(new Uri("/InfoPage.xaml", UriKind.Relative));
             };
+
+            if (ConnectivityHelper.IsAirplaneMode)
+            {
+                // flight mode
+                ApplicationBarIconButton appBarButton2 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.cellular.png", UriKind.Relative));
+                appBarButton2.Text = AppResources.AppBarOnline;
+                ApplicationBar.Buttons.Add(appBarButton2);
+                appBarButton2.Click += async (s, e) =>
+                {
+                    // TODO: navigate to info page
+                    await SettingsLauncher.LaunchAirplaneModeAsync();
+                };
+            }
         }
 
         /// <summary>

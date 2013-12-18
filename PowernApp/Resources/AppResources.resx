@@ -130,7 +130,7 @@
     <comment>General</comment>
   </data>
   <data name="AboutTitle" xml:space="preserve">
-    <value>About</value>
+    <value>about</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
@@ -194,7 +194,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>1.0</value>
+    <value>1.1</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
@@ -419,5 +419,9 @@ Showing us some love on the store helps us to continue to work on the app and ma
   <data name="SpeakStopNap2" xml:space="preserve">
     <value>Alarm is now off. Hope you had a good sleep.</value>
     <comment>Voice</comment>
+  </data>
+  <data name="AppBarOnline" xml:space="preserve">
+    <value>enable connectivity</value>
+    <comment>AppBar</comment>
   </data>
 </root>

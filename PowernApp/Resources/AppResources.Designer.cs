@@ -61,7 +61,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About.
+        ///   Looks up a localized string similar to about.
         /// </summary>
         public static string AboutTitle {
             get {
@@ -106,6 +106,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to enable connectivity.
+        /// </summary>
+        public static string AppBarOnline {
+            get {
+                return ResourceManager.GetString("AppBarOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to by Benjamin Sautermeister.
         /// </summary>
         public static string ApplicationAuthor {
@@ -133,7 +142,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.0.
+        ///   Looks up a localized string similar to 1.1.
         /// </summary>
         public static string ApplicationVersion {
             get {
