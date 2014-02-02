@@ -229,10 +229,10 @@ namespace PowernApp
             {
                 string startFormat = (new Random().Next(2) == 0) ? AppResources.SpeakStartNap1 : AppResources.SpeakStartNap2;
 
-                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(startFormat, minutes));
+                await Speech.Instance.TrySpeakTextAsync(string.Format(startFormat, minutes));
             }
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakAlarmAlreadySet);
+                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakAlarmAlreadySet);
         }
 
         /// <summary>
@@ -244,10 +244,10 @@ namespace PowernApp
             {
                 string stopString = (new Random().Next(2) == 0) ? AppResources.SpeakStopNap1 : AppResources.SpeakStopNap2;
 
-                await Speech.Instance.Synthesizer.SpeakTextAsync(stopString);
+                await Speech.Instance.TrySpeakTextAsync(stopString);
             }
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakNoAlarmSet);
+                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
@@ -256,9 +256,9 @@ namespace PowernApp
         private async void handleCheckAlarmTime()
         {
             if (AlarmClockViewModel.Instance.IsAlarmSet)
-                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(AppResources.SpeakAlarmSetFor, AlarmClockViewModel.Instance.AlarmTime.ToString("t"))); // 12:12 PM
+                await Speech.Instance.TrySpeakTextAsync(string.Format(AppResources.SpeakAlarmSetFor, AlarmClockViewModel.Instance.AlarmTime.ToString("t"))); // 12:12 PM
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakNoAlarmSet);
+                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
@@ -267,9 +267,9 @@ namespace PowernApp
         private async void handleCheckRemainingTime()
         {
             if (AlarmClockViewModel.Instance.IsAlarmSet)
-                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(AppResources.SpeakTimeLeft, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
+                await Speech.Instance.TrySpeakTextAsync(string.Format(AppResources.SpeakTimeLeft, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakNoAlarmSet);
+                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
@@ -281,9 +281,9 @@ namespace PowernApp
             int min = int.Parse(minutes);
 
             if (AlarmClockViewModel.Instance.Snooze(min))
-                await Speech.Instance.Synthesizer.SpeakTextAsync(string.Format(AppResources.SpeakTimeShifted, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
+                await Speech.Instance.TrySpeakTextAsync(string.Format(AppResources.SpeakTimeShifted, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
             else
-                await Speech.Instance.Synthesizer.SpeakTextAsync(AppResources.SpeakNoAlarmSet);
+                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>

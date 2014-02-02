@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>fr</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>powernAPP</value>
+    <comment>General</comment>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>informations</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="ApplicationAuthor" xml:space="preserve">
+    <value>par Benjamin Sautermeister</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="ApplicationDescription" xml:space="preserve">
+    <value>La plus vite application pour prendre un roupillon pour Windows Phone avec commandes de voix.</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="MoreApps" xml:space="preserve">
+    <value>plus d'applications</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="PrivacyInfo" xml:space="preserve">
+    <value>politique de confidentialité</value>
+    <comment>About Page</comment>
+  </data>
+  <data name="RateAndReview" xml:space="preserve">
+    <value>évaluation</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="SupportAndFeedback" xml:space="preserve">
+    <value>retour d'expérience</value>
+    <comment>About Page</comment>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>paramètres</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceCommands" xml:space="preserve">
+    <value>Commandes de voix</value>
+    <comment>Settings Page</comment>
+  </data>
+  <data name="VoiceLanguage" xml:space="preserve">
+    <value>Langue</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceStatus" xml:space="preserve">
+    <value>État</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceSupported" xml:space="preserve">
+    <value>soutient</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceUnsupported" xml:space="preserve">
+    <value>non soutient</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceUnsupportedMessage" xml:space="preserve">
+    <value>Votre paquet de langue installe n'est pas supporte dans la version actuel de cette application. Les langues supportees pour commandes de voix sont anglais (en-US, en-GB), allemand (de-DE) et français (fr-FR). Prier de consulter vos paramètres de téléphone.</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VibrationEnabled" xml:space="preserve">
+    <value>Vibration</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="Alarm" xml:space="preserve">
+    <value>Son d'alarme</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="ApplicationVersion" xml:space="preserve">
+    <value>1.1</value>
+    <comment>General</comment>
+  </data>
+  <data name="FeedbackBodyText" xml:space="preserve">
+    <value>[Votre évaluation]
+
+
+---------------------------------
+Device Name: {0}
+Device Manufacturer: {1}
+Device Firmware Version: {2}
+Device Hardware Version: {3}
+Application Version: {4}
+---------------------------------</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackEmail" xml:space="preserve">
+    <value>apps@bsautermeister.de</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackMessageText" xml:space="preserve">
+    <value>Desole que vous ne vouliez pas évaluer powernAPP. Veuillez expliquer votre expérience ou proposez comment on peut l'améliorer.</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackNoText" xml:space="preserve">
+    <value>non merci</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackSubject" xml:space="preserve">
+    <value>powenAPP - Retour d'expérience</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackTitleText" xml:space="preserve">
+    <value>Est-ce qu'on peut l'améliorer?</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackYesText" xml:space="preserve">
+    <value>d'accord</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingMessage10Text" xml:space="preserve">
+    <value>Il parait que vous trouvez notre application utile!
+
+Pourquoi ne pas donner un 5 étoile avis pour montrer votre appréciation?</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingMessage5Text" xml:space="preserve">
+    <value>On aimeriais que vous avis notre application 5 étoiles.
+
+De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à travailler sur l'application et d'améliorer les choses!</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingNoText" xml:space="preserve">
+    <value>non merci</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingTitleText" xml:space="preserve">
+    <value>Vous aimez powenAPP?</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingYesText" xml:space="preserve">
+    <value>évaluer 5 étoiles</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="AppBarInfo" xml:space="preserve">
+    <value>info</value>
+    <comment>AppBar</comment>
+  </data>
+  <data name="AppBarOffline" xml:space="preserve">
+    <value>désactivez branchement</value>
+    <comment>AppBar</comment>
+  </data>
+  <data name="Commands1Message" xml:space="preserve">
+    <value>Appuyer et maintenir le Windows bouton de votre téléphone.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands1Title" xml:space="preserve">
+    <value>1. Activer les commandes vocales</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet1" xml:space="preserve">
+    <value>"…pour 20 minutes."</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet2" xml:space="preserve">
+    <value>"…annuler le roupillon."</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet3" xml:space="preserve">
+    <value>"à qu'elle heure est-ce mon réveil réglé?"</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet4" xml:space="preserve">
+    <value>"…combien de temps reste-il?"</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet5" xml:space="preserve">
+    <value>"…donnez-moi 5 minutes de plus."</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message1" xml:space="preserve">
+    <value>Dis</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message2" xml:space="preserve">
+    <value> "Powernap..."  </value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message3" xml:space="preserve">
+    <value>suivi par votre demande. Quelques exemples:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Title" xml:space="preserve">
+    <value>2. Parler</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands3Message" xml:space="preserve">
+    <value>powernAPP prend soin du reste…</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands3Title" xml:space="preserve">
+    <value>3. Jouis votre roupillon</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="CommandsHeader" xml:space="preserve">
+    <value>commandes</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="CommandsIntro" xml:space="preserve">
+    <value>Cette application supporte les commandes de voix de Windows Phone. Veuillez suivre ces pas simples pour prendre votre roupillon bien mérité plus vite:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="ConnectivityHint" xml:space="preserve">
+    <value>Ne vous vous dérangez pas. Désactivez le branchement.</value>
+    <comment>MainPage</comment>
+  </data>
+  <data name="NappingTipsConsistentMessage" xml:space="preserve">
+    <value>Veuillez garder votre emploi de temps de sieste. Principal temps de roupillon est à la moitié de la journée.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsConsistentTitle" xml:space="preserve">
+    <value>Régularité</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDarknessMessage" xml:space="preserve">
+    <value>Veuillez prendre un roupillon dans une chambre sombre. Bloquer la lumière aide à dormir plus vite.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDarknessTitle" xml:space="preserve">
+    <value>Veuillez préférer obscurité</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDisturbedMessage" xml:space="preserve">
+    <value>Désactivez le branchement de votre téléphone et cherchez des lieux silencieux.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDisturbedTitle" xml:space="preserve">
+    <value>Ne vous vous dérangez pas</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsHeader" xml:space="preserve">
+    <value>tuyaus de roupillon</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsIntro" xml:space="preserve">
+    <value>La recherche a trouve que faire des roupillon régulièrement peut réduire le stress et même réduire le risque d'une maladie cardiaque. Pour profiter au maximum d'un roupillon, veuillez suivre ces tuyaus vites et simples:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsQuickMessage" xml:space="preserve">
+    <value>Réglez votre réveil pour 30 minutes ou moins si vous ne voulez pas vous réveillerfatigué parce que vous devriez vous réveiller avant l'occurrence de sommeil bas.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsQuickTitle" xml:space="preserve">
+    <value>Faisez vite</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsWarmMessage" xml:space="preserve">
+    <value>Casez une couverture tout près pour vous couvrir parce que votre température de corps baisse pendant que vous dormez.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsWarmTitle" xml:space="preserve">
+    <value>Restez chaud</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="SpeakAlarmAlreadySet" xml:space="preserve">
+    <value>L'alarme est déjà réglee.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakAlarmSetFor" xml:space="preserve">
+    <value>L'alarme est réglee pour {0}.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakNoAlarmSet" xml:space="preserve">
+    <value>L'alarme n'a pas été régle.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakStartNap1" xml:space="preserve">
+    <value>Bon roupillon pour {0} minutes.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakStopNap1" xml:space="preserve">
+    <value>L'alarme est maintenant éteinte. J'espère que vous vous sentez plus énergétiques.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakTimeLeft" xml:space="preserve">
+    <value>Il vous reste {0} minutes.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakTimeShifted" xml:space="preserve">
+    <value>Maintenant il vous reste a peu près {0} minutes.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="AlertDialogMessage" xml:space="preserve">
+    <value>Réveillez-vous! J'espère que vous vous sentiez plus énergétiques maintenant…</value>
+    <comment>AlertDialog</comment>
+  </data>
+  <data name="SpeakStartNap2" xml:space="preserve">
+    <value>Bon roupillon pour {0} minutes.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakStopNap2" xml:space="preserve">
+    <value>L'alarme est maintenant éteinte. J'espère que vous avez eu un bon sommeil.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="AppBarOnline" xml:space="preserve">
+    <value>activez branchement</value>
+    <comment>AppBar</comment>
+  </data>
+</root>

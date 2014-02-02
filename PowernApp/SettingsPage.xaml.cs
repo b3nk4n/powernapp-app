@@ -59,7 +59,8 @@ namespace PowernApp
             // verify the current language is supported
             if (InstalledVoices.Default.Language == "de-DE" ||
                 InstalledVoices.Default.Language == "en-GB" ||
-                InstalledVoices.Default.Language == "en-US")
+                InstalledVoices.Default.Language == "en-US" ||
+                InstalledVoices.Default.Language == "fr-FR")
             {
                 StatusText.Text = AppResources.VoiceSupported;
                 StatusMessageText.Visibility = Visibility.Collapsed;
