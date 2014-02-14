@@ -1,5 +1,7 @@
-﻿using PowernApp.Resources;
+﻿using PhoneKit.Framework.Controls;
+using PowernApp.Resources;
 using System;
+using System.Collections.Generic;
 
 namespace PowernApp.Controls
 {
@@ -25,6 +27,12 @@ namespace PowernApp.Controls
             RateAndReviewText = AppResources.RateAndReview;
             MoreAppsText= AppResources.MoreApps;
             MoreAppsSearchTerms = "Benjamin Sautermeister";
+
+            // contributors
+            ContributorsListVisibility = System.Windows.Visibility.Visible;
+            SetContributorsList(new List<ContributorModel>() {
+                new ContributorModel("/Assets/Languages/french.png","Lamyae Reklaoui"),
+                new ContributorModel("/Assets/Languages/portuguese.png","João Vitório Dagostin")});
         }
     }
 }

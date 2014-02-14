@@ -121,6 +121,26 @@ namespace PowernApp
                     "Dong",
                     "Assets/Audio/dong.wav",
                     playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "Ocean",
+                    "Assets/Audio/ocean.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "Birds",
+                    "Assets/Audio/birds.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "Frogs",
+                    "Assets/Audio/frogs.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
+                    "NO SOUND",
+                    "Assets/Audio/nosound.wav",
+                    playImageUri));
 
             AudioList.ItemsSource = audioList;
 

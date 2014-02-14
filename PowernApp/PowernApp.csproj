@@ -169,10 +169,14 @@
     </Content>
     <Content Include="Assets\Audio\alarm1.wav" />
     <Content Include="Assets\Audio\alarm2.wav" />
+    <Content Include="Assets\Audio\birds.wav" />
     <Content Include="Assets\Audio\buzzer.wav" />
     <Content Include="Assets\Audio\classic.wav" />
     <Content Include="Assets\Audio\dong.wav" />
+    <Content Include="Assets\Audio\frogs.wav" />
     <Content Include="Assets\Audio\modern.wav" />
+    <Content Include="Assets\Audio\nosound.wav" />
+    <Content Include="Assets\Audio\ocean.wav" />
     <Content Include="Assets\Audio\rooster.wav" />
     <Content Include="Assets\Images\alarm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -200,6 +204,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Images\windows.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Languages\french.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Languages\portuguese.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">

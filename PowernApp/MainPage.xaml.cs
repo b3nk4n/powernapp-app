@@ -194,12 +194,18 @@ namespace PowernApp
         /// <param name="commandName">The command name.</param>
         private void handleVoiceCommands(string commandName)
         {
+            string hours;
             string minutes;
             switch (commandName)
             {
-                case "startNap":
+                case "startNap1":
                     minutes = NavigationContext.QueryString["minute"];
-                    handleStartNapCommand(minutes);
+                    handleStartNap1Command(minutes);
+                    break;
+                case "startNap2":
+                    hours = NavigationContext.QueryString["hour"];
+                    minutes = NavigationContext.QueryString["minute"];
+                    handleStartNap2Command(hours, minutes);
                     break;
                 case "stopNap":
                     handleStopNapCommand();
@@ -221,7 +227,7 @@ namespace PowernApp
         /// Handles the start nap command.
         /// </summary>
         /// <param name="minutes">The length of the nap in minutes.</param>
-        private async void handleStartNapCommand(string minutes)
+        private async void handleStartNap1Command(string minutes)
         {
             int min = int.Parse(minutes);
 
@@ -230,6 +236,27 @@ namespace PowernApp
                 string startFormat = (new Random().Next(2) == 0) ? AppResources.SpeakStartNap1 : AppResources.SpeakStartNap2;
 
                 await Speech.Instance.TrySpeakTextAsync(string.Format(startFormat, minutes));
+            }
+            else
+                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakAlarmAlreadySet);
+        }
+
+        /// <summary>
+        /// Handles the start nap command.
+        /// </summary>
+        /// <param name="hours">The length of the nap in hours.</param>
+        /// <param name="minutes">The length of the nap in minutes.</param>
+        private async void handleStartNap2Command(string hours, string minutes)
+        {
+            int h = int.Parse(hours);
+            int min = int.Parse(minutes);
+            int totalMins = 60 * h + min;
+
+            if (AlarmClockViewModel.Instance.Set(totalMins))
+            {
+                string startFormat = (new Random().Next(2) == 0) ? AppResources.SpeakStartNap1 : AppResources.SpeakStartNap2;
+
+                await Speech.Instance.TrySpeakTextAsync(string.Format(startFormat, totalMins));
             }
             else
                 await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakAlarmAlreadySet);

@@ -6,9 +6,16 @@
     <CommandPrefix>Power nap</CommandPrefix>
     <Example>for 20 minutes</Example>
 
-    <Command Name="startNap">
+    <Command Name="startNap1">
       <Example>for 20 minutes</Example>
       <ListenFor>[for] {minute} [minutes]</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap2">
+      <Example>for 1 hour and 30 minutes</Example>
+      <ListenFor>[for] {hour} hour [and] {minute} minutes</ListenFor>
       <Feedback>Turning alarm on</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -104,6 +111,21 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+    </PhraseList>
+
+    <PhraseList Label="hour">
+      <Item>1</Item>
+      <Item>2</Item>
+      <Item>3</Item>
+      <Item>4</Item>
+      <Item>5</Item>
+      <Item>6</Item>
+      <Item>7</Item>
+      <Item>8</Item>
+      <Item>9</Item>
+      <Item>10</Item>
+      <Item>11</Item>
+      <Item>12</Item>
     </PhraseList>
     
   </CommandSet>
@@ -113,9 +135,16 @@
     <CommandPrefix>Power nap</CommandPrefix>
     <Example>for 20 minutes</Example>
 
-    <Command Name="startNap">
+    <Command Name="startNap1">
       <Example>for 20 minutes</Example>
       <ListenFor>[for] {minute} [minutes]</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap2">
+      <Example>for 1 hour and 30 minutes</Example>
+      <ListenFor>[for] {hour} hour [and] {minute} minutes</ListenFor>
       <Feedback>Turning alarm on</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -212,6 +241,21 @@
       <Item>58</Item>
       <Item>59</Item>
     </PhraseList>
+
+    <PhraseList Label="hour">
+      <Item>1</Item>
+      <Item>2</Item>
+      <Item>3</Item>
+      <Item>4</Item>
+      <Item>5</Item>
+      <Item>6</Item>
+      <Item>7</Item>
+      <Item>8</Item>
+      <Item>9</Item>
+      <Item>10</Item>
+      <Item>11</Item>
+      <Item>12</Item>
+    </PhraseList>
     
   </CommandSet>
 
@@ -220,9 +264,16 @@
     <CommandPrefix>Power nap</CommandPrefix>
     <Example>für 20 Minuten</Example>
 
-    <Command Name="startNap">
+    <Command Name="startNap1">
       <Example>für 20 Minuten</Example>
       <ListenFor>[für] {minute} [Minuten]</ListenFor>
+      <Feedback>Ich stelle den Wecker</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap2">
+      <Example>für 1 Stunde und 30 Minuten</Example>
+      <ListenFor>[für] {hour} Stunde [und] {minute} Minuten</ListenFor>
       <Feedback>Ich stelle den Wecker</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -327,6 +378,21 @@
       <Item>59</Item>
     </PhraseList>
 
+    <PhraseList Label="hour">
+      <Item>1</Item>
+      <Item>2</Item>
+      <Item>3</Item>
+      <Item>4</Item>
+      <Item>5</Item>
+      <Item>6</Item>
+      <Item>7</Item>
+      <Item>8</Item>
+      <Item>9</Item>
+      <Item>10</Item>
+      <Item>11</Item>
+      <Item>12</Item>
+    </PhraseList>
+
   </CommandSet>
 
   <CommandSet xml:lang="fr-FR" Name="commandsFRFR">
@@ -334,9 +400,16 @@
     <CommandPrefix>Power nap</CommandPrefix>
     <Example>pour 20 minutes</Example>
 
-    <Command Name="startNap">
+    <Command Name="startNap1">
       <Example>pour 20 minutes</Example>
       <ListenFor>[pour] {minute} [minutes]</ListenFor>
+      <Feedback>Je active l'alarme</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap2">
+      <Example>pour 1 heure et 30 minutes</Example>
+      <ListenFor>[pour] {hour} heure [et] {minute} minutes</ListenFor>
       <Feedback>Je active l'alarme</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -434,6 +507,21 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+    </PhraseList>
+
+    <PhraseList Label="hour">
+      <Item>1</Item>
+      <Item>2</Item>
+      <Item>3</Item>
+      <Item>4</Item>
+      <Item>5</Item>
+      <Item>6</Item>
+      <Item>7</Item>
+      <Item>8</Item>
+      <Item>9</Item>
+      <Item>10</Item>
+      <Item>11</Item>
+      <Item>12</Item>
     </PhraseList>
 
   </CommandSet>

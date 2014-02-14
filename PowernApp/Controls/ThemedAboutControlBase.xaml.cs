@@ -10,6 +10,7 @@ using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using PhoneKit.Framework.OS;
 using System.Windows.Media.Imaging;
+using PhoneKit.Framework.Controls;
 
 namespace PowernApp.Controls
 {
@@ -79,6 +80,18 @@ namespace PowernApp.Controls
         }
 
         /// <summary>
+        /// Sets the contributors to the list.
+        /// </summary>
+        /// <remarks>
+        /// Do not forget <code>ContributorsListVisibility = Visible;</code>
+        /// </remarks>
+        /// <param name="contributors"></param>
+        public void SetContributorsList(IEnumerable<ContributorModel> contributors)
+        {
+            ContributorsList.ItemsSource = contributors;
+        }
+
+        /// <summary>
         /// Localizes the user control content and texts.
         /// </summary>
         protected abstract void LocalizeContent();
@@ -92,7 +105,7 @@ namespace PowernApp.Controls
         /// </summary>
         private void SetFrameworkBranding()
         {
-            BrandingElement.Text = "powered by PhoneKit Framework " + "1.0";
+            BrandingElement.Text = "powered by PhoneKit Framework " + VersionHelper.GetFrameworkVersionText();
         }
 
         #endregion
@@ -240,6 +253,17 @@ namespace PowernApp.Controls
             set
             {
                 MoreAppsElement.Content = value;
+            }
+        }
+
+        /// <summary>
+        /// Sets the contributors list visiblility to show or hide the contributors list.
+        /// </summary>
+        public Visibility ContributorsListVisibility
+        {
+            set
+            {
+                ContributorsContainer.Visibility = value;
             }
         }
         

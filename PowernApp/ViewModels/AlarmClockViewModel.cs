@@ -358,7 +358,7 @@ namespace PowernApp.ViewModels
                     if (_alarmSound == null)
                     {
                         StreamResourceInfo alarmResource = App.GetResourceStream(new Uri(Settings.AlarmUriString.Value, UriKind.Relative));
-                        SoundEffects.Instance.Load(Settings.AlarmUriString.Value, alarmResource);
+                        SoundEffects.Instance.Load(Settings.AlarmUriString.Value, alarmResource.Stream);
                         _alarmSound = SoundEffects.Instance[Settings.AlarmUriString.Value].CreateInstance();
 
                         // start silent (but 0 is a too silent start)
