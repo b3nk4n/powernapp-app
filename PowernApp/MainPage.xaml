@@ -301,10 +301,10 @@
         <lc:LocalizedFeedbackDialogControl Grid.RowSpan="3" />
 
         <!-- no connectivity info message -->
-        <Canvas Grid.Row="4" Width="320" Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=!}">
-            <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="320">
+        <Canvas Grid.Row="4" Width="360" Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=!}">
+            <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="360">
                 <Border Background="{StaticResource ThemeBackgroundLight}">
-                    <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="12"
+                    <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="12" TextAlignment="Center"
                     Text="{Binding Path=LocalizedResources.ConnectivityHint, Source={StaticResource LocalizedStrings}}" />
                 </Border>
                 <Path Data="M 0,0 L 25,0 L 25,25 Z" Fill="{StaticResource ThemeBackgroundLight}"  Height="25" Width="25" Margin="55,-2,0,0"/>

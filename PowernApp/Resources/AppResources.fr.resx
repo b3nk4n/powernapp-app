@@ -182,7 +182,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>Votre paquet de langue installe n'est pas supporte dans la version actuel de cette application. Les langues supportees pour commandes de voix sont anglais (en-US, en-GB), allemand (de-DE) et français (fr-FR). Prier de consulter vos paramètres de téléphone.</value>
+    <value>Votre paquet de langue installe n'est pas supporte dans la version actuel de cette application. Les langues supportees pour commandes de voix sont anglais (en-US, en-GB, en-IN),  français (fr-FR), portugais (pt-PT, pt-BR) et allemand (de-DE). Prier de consulter vos paramètres de téléphone.</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VibrationEnabled" xml:space="preserve">
@@ -275,23 +275,23 @@ De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à t
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet1" xml:space="preserve">
-    <value>"…pour 20 minutes."</value>
+    <value>- "…pour 20 minutes."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet2" xml:space="preserve">
-    <value>"…annuler le roupillon."</value>
+    <value>- "…annuler le roupillon."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet3" xml:space="preserve">
-    <value>"à qu'elle heure est-ce mon réveil réglé?"</value>
+    <value>- "à qu'elle heure est-ce mon réveil réglé?"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet4" xml:space="preserve">
-    <value>"…combien de temps reste-il?"</value>
+    <value>- "…combien de temps reste-il?"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet5" xml:space="preserve">
-    <value>"…donnez-moi 5 minutes de plus."</value>
+    <value>- "…donnez-moi 5 minutes de plus."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message1" xml:space="preserve">
@@ -427,7 +427,7 @@ De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à t
     <comment>AboutPage</comment>
   </data>
   <data name="Commands2Bullet1b" xml:space="preserve">
-    <value>"…pour 1 heure et 30 minutes."</value>
+    <value>- "…pour 1 heure et 30 minutes."</value>
     <comment>InfoPage</comment>
   </data>
 </root>
