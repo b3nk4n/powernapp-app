@@ -385,11 +385,11 @@ Mostre o seu interesse na loja e ajude-nos a continuar trabalhando para tornar e
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">
-    <value>O despertador está desligado. Espero que você já tenha recuperado as energias.</value>
+    <value>O despertador foi desligado. Espero que você já tenha recuperado as energias.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap2" xml:space="preserve">
-    <value>O despertador está desligado. Espero que você tenha dormido bem.</value>
+    <value>O despertador foi desligado. Espero que você tenha dormido bem.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeLeft" xml:space="preserve">

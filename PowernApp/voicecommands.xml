@@ -663,29 +663,32 @@
     <Command Name="startNap1">
       <Example>por 20 minutos</Example>
       <ListenFor>[por] {minute} [minutos]</ListenFor>
-      <Feedback>Ligar o despertador</Feedback>
+      <Feedback>Ligando o despertador</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="startNap2">
       <Example>por 1 hora e 30 minutos</Example>
       <ListenFor>[por] {hour} hora [e] {minute} minutos</ListenFor>
-      <Feedback>Ligar o despertador</Feedback>
+      <Feedback>Ligando o despertador</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="stopNap">
-      <Example>cancelar nap</Example>
+      <Example>cancelar soneca</Example>
       <ListenFor>cancelar [nap]</ListenFor>
-      <ListenFor>Pare [nap]</ListenFor>
-      <Feedback>Desligar o despertador</Feedback>
+      <ListenFor>cancelar soneca</ListenFor>
+      <ListenFor>Parar [nap]</ListenFor>
+      <ListenFor>Parar soneca</ListenFor>
+      <ListenFor>Cancelar despertador</ListenFor>
+      <Feedback>Desligando o despertador</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="checkAlarmTime">
       <Example>para quando o despertador está definido?</Example>
       <ListenFor>[para quando o] despertador está definido?</ListenFor>
-      <Feedback>Dar uma olhada</Feedback>
+      <Feedback>Estou verificando</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -694,7 +697,7 @@
       <ListenFor>[quanto] tempo restante?</ListenFor>
       <ListenFor>[quanto] tempo falta?</ListenFor>
       <ListenFor>[quanto] tempo eu tenho?</ListenFor>
-      <Feedback>Dar uma olhada</Feedback>
+      <Feedback>Estou verificando</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -702,7 +705,7 @@
       <Example>mais 5 minuto</Example>
       <ListenFor>[Estender por] {minute} more [minutos]</ListenFor>
       <ListenFor>[Me dê] mais {minute} [minutos]</ListenFor>
-      <Feedback>Estender o tempo do despertador por {minute} minutos</Feedback>
+      <Feedback>Estendendo o tempo do despertador por mais {minute} minutos</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -793,29 +796,32 @@
     <Command Name="startNap1">
       <Example>por 20 minutos</Example>
       <ListenFor>[por] {minute} [minutos]</ListenFor>
-      <Feedback>Ligar o despertador</Feedback>
+      <Feedback>Ligando o despertador</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="startNap2">
       <Example>por 1 hora e 30 minutos</Example>
       <ListenFor>[por] {hour} hora [e] {minute} minutos</ListenFor>
-      <Feedback>Ligar o despertador</Feedback>
+      <Feedback>Ligando o despertador</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="stopNap">
-      <Example>cancelar nap</Example>
+      <Example>cancelar soneca</Example>
       <ListenFor>cancelar [nap]</ListenFor>
-      <ListenFor>Pare [nap]</ListenFor>
-      <Feedback>Desligar o despertador</Feedback>
+      <ListenFor>cancelar soneca</ListenFor>
+      <ListenFor>Parar [nap]</ListenFor>
+      <ListenFor>Parar soneca</ListenFor>
+      <ListenFor>Cancelar despertador</ListenFor>
+      <Feedback>Desligando o despertador</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="checkAlarmTime">
       <Example>para quando o despertador está definido?</Example>
       <ListenFor>[para quando o] despertador está definido?</ListenFor>
-      <Feedback>Dar uma olhada</Feedback>
+      <Feedback>Estou verificando</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -824,7 +830,7 @@
       <ListenFor>[quanto] tempo restante?</ListenFor>
       <ListenFor>[quanto] tempo falta?</ListenFor>
       <ListenFor>[quanto] tempo eu tenho?</ListenFor>
-      <Feedback>Dar uma olhada</Feedback>
+      <Feedback>Estou verificando</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -832,7 +838,7 @@
       <Example>mais 5 minuto</Example>
       <ListenFor>[Estender por] {minute} more [minutos]</ListenFor>
       <ListenFor>[Me dê] mais {minute} [minutos]</ListenFor>
-      <Feedback>Estender o tempo do despertador por {minute} minutos</Feedback>
+      <Feedback>Estendendo o tempo do despertador por mais {minute} minutos</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 

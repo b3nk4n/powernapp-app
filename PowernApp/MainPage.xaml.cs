@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -10,9 +7,7 @@ using Microsoft.Phone.Shell;
 using PowernApp.Resources;
 using PhoneKit.Framework.Voice;
 using PowernApp.ViewModels;
-using Coding4Fun.Toolkit.Controls;
 using PhoneKit.Framework.OS;
-using Microsoft.Phone.Net.NetworkInformation;
 using System.Windows.Threading;
 using System.Windows.Media;
 using PhoneKit.Framework.Core.Net;
