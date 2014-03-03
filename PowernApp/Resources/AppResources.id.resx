@@ -117,120 +117,89 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutTitle" xml:space="preserve">
-    <value>hilfe</value>
-    <comment>AboutPage</comment>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
-  <data name="Alarm" xml:space="preserve">
-    <value>Alarmton</value>
-    <comment>SettingsPage</comment>
-  </data>
-  <data name="AlertDialogMessage" xml:space="preserve">
-    <value>Aufwachen! Hoffentlich hast du dich gut erholt...</value>
-    <comment>AlertDialog</comment>
-  </data>
-  <data name="AppBarInfo" xml:space="preserve">
-    <value>info</value>
-    <comment>AppBar</comment>
-  </data>
-  <data name="AppBarOffline" xml:space="preserve">
-    <value>verbindung deaktivieren</value>
-    <comment>AppBar</comment>
-  </data>
-  <data name="AppBarOnline" xml:space="preserve">
-    <value>verbindung aktivieren</value>
-    <comment>AppBar</comment>
-  </data>
-  <data name="ApplicationAuthor" xml:space="preserve">
-    <value>von Benjamin Sautermeister</value>
-    <comment>AboutPage</comment>
-  </data>
-  <data name="ApplicationDescription" xml:space="preserve">
-    <value>Die schnellste Powernapping App für Windows Phone mit Spracheingabe.</value>
-    <comment>AboutPage</comment>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>id</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
     <value>powernAPP</value>
     <comment>General</comment>
   </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>tentang</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="ApplicationAuthor" xml:space="preserve">
+    <value>oleh Benjamin Sautermeister</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="ApplicationDescription" xml:space="preserve">
+    <value>Aplikasi tidur singkat tercepat untuk Windows Phone dengan perintah suara.</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="MoreApps" xml:space="preserve">
+    <value>aplikasi lain</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="PrivacyInfo" xml:space="preserve">
+    <value>informasi pribadi</value>
+    <comment>About Page</comment>
+  </data>
+  <data name="RateAndReview" xml:space="preserve">
+    <value>nilai dan tinjauan</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="SupportAndFeedback" xml:space="preserve">
+    <value>dukungan dan saran</value>
+    <comment>About Page</comment>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>pengaturan</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceCommands" xml:space="preserve">
+    <value>Perintah suara</value>
+    <comment>Settings Page</comment>
+  </data>
+  <data name="VoiceLanguage" xml:space="preserve">
+    <value>Bahasa</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceSupported" xml:space="preserve">
+    <value>didukung</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceUnsupported" xml:space="preserve">
+    <value>tidak didukung</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceUnsupportedMessage" xml:space="preserve">
+    <value>Anda menginstal paket bahasa yang tidak didukung pada versi aplikasi ini. Bahasa yang didukung untuk perintah suara adalah English (en-US, en-GB, en-IN), German (de-DE), French (fr-FR), Portuguese (pt-PT, pt-BR) dan Indonesian (id-ID). Periksa pengaturan telefon Anda.
+You want to help with the translation to support your language in the next version? Just contact me!</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VibrationEnabled" xml:space="preserve">
+    <value>Getaran</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="Alarm" xml:space="preserve">
+    <value>Suara alarm</value>
+    <comment>SettingsPage</comment>
+  </data>
   <data name="ApplicationVersion" xml:space="preserve">
     <value>1.4</value>
     <comment>General</comment>
   </data>
-  <data name="Commands1Message" xml:space="preserve">
-    <value>Halte den Windows-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint.</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands1Title" xml:space="preserve">
-    <value>1. Spracheingabe aktivieren</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Bullet1" xml:space="preserve">
-    <value>- " ...für 20 Minuten. "</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Bullet1b" xml:space="preserve">
-    <value>- " ...für 1 Stunde und 30 Minuten. "</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Bullet2" xml:space="preserve">
-    <value>- " ...abbrechen. "</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Bullet3" xml:space="preserve">
-    <value>- " ...auf wann ist der Alarm gestellt? "</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Bullet4" xml:space="preserve">
-    <value>- " ...wie viel Zeit habe ich noch? "</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Bullet5" xml:space="preserve">
-    <value>- " ...um 5 Minuten verlängern. "</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Message1" xml:space="preserve">
-    <value>Sag</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Message2" xml:space="preserve">
-    <value> "Power Nap..."  </value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Message3" xml:space="preserve">
-    <value>gefolgt von deinem Wunsch. Zum Beispiel:</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands2Title" xml:space="preserve">
-    <value>2. Sprechen</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands3Message" xml:space="preserve">
-    <value>powernAPP kümmert sich um den Rest...</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="Commands3Title" xml:space="preserve">
-    <value>3. Den Schlaf genießen</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="CommandsHeader" xml:space="preserve">
-    <value>sprachbefehle</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="CommandsIntro" xml:space="preserve">
-    <value>Diese Anwendung unterstützt Windows Phone Spachbefehle. Befolge diese einfachen Schritte um mit deinem wohlverdienten Power Nap noch schneller loslegen zu können:</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="ConnectivityHint" xml:space="preserve">
-    <value>Lass dich nicht stören. Stelle dein Smartphone offline!</value>
-    <comment>MainPage</comment>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Unterstützt von</value>
-    <comment>AboutPage</comment>
-  </data>
   <data name="FeedbackBodyText" xml:space="preserve">
-    <value>[Dein Feedback hier]
+    <value>[Your feedback here]
 
 
 ---------------------------------
@@ -247,193 +216,225 @@ Application Version: {4}
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackMessageText" xml:space="preserve">
-    <value>Schade dass Sie powernAPP nicht bewerten wollen.
+    <value>Sedih jika Anda tidak ingin menilai powernAPP.
 
-Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, damit wir powernAPP noch besser machen können.</value>
+Beritahu kami mengenai pengalaman atau saran untuk membuat aplikasi ini lebih baik.</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackNoText" xml:space="preserve">
-    <value>nein danke</value>
+    <value>tidak terimakasih</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>powernAPP Feedback </value>
+    <value>powernAPP Saran Pelanggan</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackTitleText" xml:space="preserve">
-    <value>Können wir es besser machen?</value>
+    <value>Dapatkah kami membuatnya lebih baik?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackYesText" xml:space="preserve">
-    <value>feedback</value>
+    <value>berikan saran</value>
     <comment>FeedbackDialogControl</comment>
   </data>
-  <data name="MoreApps" xml:space="preserve">
-    <value>mehr apps</value>
-    <comment>AboutPage</comment>
-  </data>
-  <data name="NappingTipsConsistentMessage" xml:space="preserve">
-    <value>Führe einen regelmäßigen Mittagsschlaf. Besonders die Zeit nach dem Mittagessen eignet sich hervorragend um kurz die Augen zu schließen und neue Energie zu sammeln.</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsConsistentTitle" xml:space="preserve">
-    <value>Regelmäßigkeit</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsDarknessMessage" xml:space="preserve">
-    <value>Die passende Umgebung ist entscheidend. Mithilfe einer Schlafmaske oder einem geschlossenen Rollladen kann auch tagsüber die passenden Schlafbedingungen geschaffen werden.</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsDarknessTitle" xml:space="preserve">
-    <value>Dunkelheit</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsDisturbedMessage" xml:space="preserve">
-    <value>Lass dich bei einem Nickerchen nicht unterbrechen. Achte auf eine ruhige Umgebung und aktiviere am besten den Flugmodus deines Smartphones.</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsDisturbedTitle" xml:space="preserve">
-    <value>Ablenkungen</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsHeader" xml:space="preserve">
-    <value>tipps</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsIntro" xml:space="preserve">
-    <value>Forschungen zufolge kann ein regelmäßiger Power Nap (ein kurzer Mittagsschlaf) Stress und sogar das Risiko von Herzkrankheiten senken. Um vollständig von einem Power Nap zu profitieren, befolge einfach die folgenden einfachen Tipps:</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsQuickMessage" xml:space="preserve">
-    <value>Um nicht erschöpft aufzuwachen, sollte man den Wecker auf etwa 30 Minuten oder kürzer stellen. Denn danach tritt im Allgemeinen die Tiefschlafphase ein.</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsQuickTitle" xml:space="preserve">
-    <value>Dauer</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsWarmMessage" xml:space="preserve">
-    <value>Halte eine Decke bereit, welche du bei bedarf verwenden kannst. Denn deine Körpertemperatur fällt während du schläfst.</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="NappingTipsWarmTitle" xml:space="preserve">
-    <value>Wärme</value>
-    <comment>InfoPage</comment>
-  </data>
-  <data name="PrivacyInfo" xml:space="preserve">
-    <value>datenschutz informationen</value>
-    <comment>About Page</comment>
-  </data>
-  <data name="RateAndReview" xml:space="preserve">
-    <value>bewerten und kritik schreiben</value>
-    <comment>AboutPage</comment>
-  </data>
   <data name="RatingMessage10Text" xml:space="preserve">
-    <value>Es scheint als ob powernAPP Ihnen sehr gefällt!
+    <value>Anda sepertinya sering menggunakan aplikasi kami!
 
-Warum geben Sie uns nicht eine 5 Sterne Bewertung um zu zeigen, dass Sie unsere Arbeit zu schätzen wissen?</value>
+Mengapa tidak memberikan kita nilai 5 bintang untuk menunjukkan apresiasi Anda?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage5Text" xml:space="preserve">
-    <value>Wir würden uns freuen, wenn Sie unsere App mit 5 Sternen bewerten.
+    <value>Kami sangat ingin Anda memberikan nilai 5 bintang untuk aplikasi kita.
 
-Das würde uns sehr motivieren um die App noch besser zu machen!</value>
+Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan aplikasi dan membuat sesuatu menjadi lebih baik!</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingNoText" xml:space="preserve">
-    <value>nein danke</value>
+    <value>tidak terimakasih</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingTitleText" xml:space="preserve">
-    <value>Gefällt Ihnen powernAPP?</value>
+    <value>Menikmati powernAPP?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingYesText" xml:space="preserve">
-    <value>bewerten</value>
+    <value>nilai 5 bintang</value>
     <comment>FeedbackDialogControl</comment>
   </data>
-  <data name="ResourceFlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
-    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  <data name="AppBarInfo" xml:space="preserve">
+    <value>informasi</value>
+    <comment>AppBar</comment>
   </data>
-  <data name="ResourceLanguage" xml:space="preserve">
-    <value>de-DE</value>
-    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  <data name="AppBarOffline" xml:space="preserve">
+    <value>matikan konektivitas</value>
+    <comment>AppBar</comment>
   </data>
-  <data name="SettingsTitle" xml:space="preserve">
-    <value>einstellungen</value>
-    <comment>SettingsPage</comment>
+  <data name="Commands1Message" xml:space="preserve">
+    <value>Tekan dan tahan Tombol-Windows di ponsel Anda sampai dialog input suara muncul.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands1Title" xml:space="preserve">
+    <value>1. Mengaktifkan input suara</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet1" xml:space="preserve">
+    <value>- "...selama 20 menit."</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet2" xml:space="preserve">
+    <value>- "...batalkan tidur singkat."</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet3" xml:space="preserve">
+    <value>- "...kapan alarm saya diatur?"</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet4" xml:space="preserve">
+    <value>- "...masih berapa lama waktu tersisa?"</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet5" xml:space="preserve">
+    <value>- "...tambahkan waktu 5 menit lagi."</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message1" xml:space="preserve">
+    <value>Ucapkan</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message2" xml:space="preserve">
+    <value> "Power Nap..."  </value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message3" xml:space="preserve">
+    <value>diikuti oleh permintaan Anda. Beberapa contoh:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Title" xml:space="preserve">
+    <value>2. Bicara</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands3Message" xml:space="preserve">
+    <value>powernAPP akan mengatur hal lainnya...</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands3Title" xml:space="preserve">
+    <value>3. Nikmati tidur singkat Anda</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="CommandsHeader" xml:space="preserve">
+    <value>perintah</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="CommandsIntro" xml:space="preserve">
+    <value>Aplikasi ini mendukung perintah suara Windows Phone. Ikuti langkah sederhana ini untuk membuat tidur singkat Anda lebih cepat:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="ConnectivityHint" xml:space="preserve">
+    <value>Jangan sampai terganggu. Matikan konektivitas telefon!</value>
+    <comment>MainPage</comment>
+  </data>
+  <data name="NappingTipsConsistentMessage" xml:space="preserve">
+    <value>Jaga jadwal tidur singkat secara reguler. Waktu tidur singkat yang tepat adalah sewaktu siang hari.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsConsistentTitle" xml:space="preserve">
+    <value>Konsisten</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDarknessMessage" xml:space="preserve">
+    <value>Tidur singkat di ruang gelap atau kenakan masker mata. Menutup mata dari cahaya membantu Anda tertidur lebih cepat.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDarknessTitle" xml:space="preserve">
+    <value>Lebih baik di tempat gelap</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDisturbedMessage" xml:space="preserve">
+    <value>Matikan konektivitas telefon dan carilah tempat yang sunyi.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDisturbedTitle" xml:space="preserve">
+    <value>Jangan sampai terganggu</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsHeader" xml:space="preserve">
+    <value>tips tidur singkat</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsIntro" xml:space="preserve">
+    <value>Penelitian telah membuktikan bahwa tidur singkat secara reguler bisa mengurangi stres dan bahkan menurunkan resiko serangan jantung. Untuk mendapatkan kelebihan tidur singkat, ikuti tips cepat dan sederhana ini:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsQuickMessage" xml:space="preserve">
+    <value>Atur alarm Anda sekitar 30 menit atau kurang jika Anda tidak ingin terbangun dalam keadaan pening. Karena Anda harus terbangun sebelum memasuki keadaan tidur lelap.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsQuickTitle" xml:space="preserve">
+    <value>Lakukan dengan cepat</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsWarmMessage" xml:space="preserve">
+    <value>Simpan selimut di samping Anda karena temperatur tubuh Anda akan menurun sewaktu tidur singkat.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsWarmTitle" xml:space="preserve">
+    <value>Pertahankan kehangatan</value>
+    <comment>InfoPage</comment>
   </data>
   <data name="SpeakAlarmAlreadySet" xml:space="preserve">
-    <value>Wecker war bereits gestellt.</value>
+    <value>Alarm sudah di atur.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakAlarmSetFor" xml:space="preserve">
-    <value>Wecker ist gestellt auf {0}.</value>
+    <value>Alarm diatur selama {0}.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakNoAlarmSet" xml:space="preserve">
-    <value>Wecker ist nicht gestellt.</value>
+    <value>Alarm belum diatur.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap1" xml:space="preserve">
-    <value>Wünsche einen guten {0} Minuten Power Nap.</value>
-    <comment>Voice</comment>
-  </data>
-  <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Wünsche ein angenemes {0} Minuten Nickerchen.</value>
+    <value>Selamat menikmati tidur singkat selama {0} menit.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">
-    <value>Wecker ist jetzt deaktiviert. Ich hoffe du hast dich gut erholt.</value>
-    <comment>Voice</comment>
-  </data>
-  <data name="SpeakStopNap2" xml:space="preserve">
-    <value>Wecker ist jetzt ausgeschaltet. Hoffentlich hast du dich erholen können.</value>
+    <value>Alarm sudah dimatikan. Semoga Anda lebih bertenaga.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeLeft" xml:space="preserve">
-    <value>Du hast noch {0} Minuten übrig.</value>
+    <value>Anda memiliki {0} menit tersisa.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeShifted" xml:space="preserve">
-    <value>Jetzt hast du noch etwa {0} Minuten übrig.</value>
+    <value>Sekarang Anda mempunyai {0} menit tersisa.</value>
     <comment>Voice</comment>
   </data>
-  <data name="SupportAndFeedback" xml:space="preserve">
-    <value>hilfe und feedback</value>
-    <comment>About Page</comment>
+  <data name="AlertDialogMessage" xml:space="preserve">
+    <value>Bangun! Semoga Anda lebih bertenaga sekarang...</value>
+    <comment>AlertDialog</comment>
   </data>
-  <data name="VibrationEnabled" xml:space="preserve">
-    <value>Vibration</value>
-    <comment>SettingsPage</comment>
+  <data name="SpeakStartNap2" xml:space="preserve">
+    <value>Selamat menikmati tidur selama {0} menit.</value>
+    <comment>Voice</comment>
   </data>
-  <data name="VoiceCommands" xml:space="preserve">
-    <value>Sprachbefehle</value>
-    <comment>Settings Page</comment>
+  <data name="SpeakStopNap2" xml:space="preserve">
+    <value>Alarm sudah dimatikan. Semoga Anda sudah tidur dengan nyenyak.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="AppBarOnline" xml:space="preserve">
+    <value>aktifan konektivitas</value>
+    <comment>AppBar</comment>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Kontributor</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="Commands2Bullet1b" xml:space="preserve">
+    <value>- "...selama 1 jam dan 30 menit."</value>
+    <comment>InfoPage</comment>
   </data>
   <data name="VoiceFeedback" xml:space="preserve">
-    <value>Akustische Bestätigung</value>
-    <comment>SettingsPage</comment>
-  </data>
-  <data name="VoiceLanguage" xml:space="preserve">
-    <value>Sprache</value>
-    <comment>SettingsPage</comment>
-  </data>
-  <data name="VoiceStatus" xml:space="preserve">
-    <value>Status</value>
-    <comment>SettingsPage</comment>
-  </data>
-  <data name="VoiceSupported" xml:space="preserve">
-    <value>unterstützt</value>
-    <comment>SettingsPage</comment>
-  </data>
-  <data name="VoiceUnsupported" xml:space="preserve">
-    <value>nicht unterstützt</value>
-    <comment>SettingsPage</comment>
-  </data>
-  <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>Das installierte Sprachpaket wird in dieser Version der Anwendung leider noch nicht unterstützt. Unterstütze Sprachen für Spracheingaben sind Englisch (en-US, en-GB, en-IN), Französisch (fr-FR), Portugisisch (pt-PT, pt-BR), Indonesisch(id-ID) und Deutsch (de-DE). Bitte prüfen Sie die Einstellungen ihres Smartphones.</value>
+    <value>Putar konfirmasi audio</value>
     <comment>SettingsPage</comment>
   </data>
 </root>

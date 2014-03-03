@@ -32,6 +32,7 @@ namespace PowernApp
             base.OnNavigatedTo(e);
 
             this.VibrationToggleSwitch.IsChecked = Settings.EnableVibration.Value;
+            this.VoiceFeedbackToggleSwitch.IsChecked = Settings.EnableVoiceFeedback.Value;
             BindAudioItems();
             RefreshVoiceCommandsStatus();
         }
@@ -45,6 +46,7 @@ namespace PowernApp
             base.OnNavigatedFrom(e);
 
             Settings.EnableVibration.Value = this.VibrationToggleSwitch.IsChecked.Value;
+            Settings.EnableVoiceFeedback.Value = this.VoiceFeedbackToggleSwitch.IsChecked.Value;
             
             var selectedAudio = this.AudioList.SelectedItem as AudioViewModel;
             if (selectedAudio != null)
@@ -63,7 +65,8 @@ namespace PowernApp
                 InstalledVoices.Default.Language == "en-IN" ||
                 InstalledVoices.Default.Language == "fr-FR" ||
                 InstalledVoices.Default.Language == "pt-PT" ||
-                InstalledVoices.Default.Language == "pt-BR")
+                InstalledVoices.Default.Language == "pt-BR" ||
+                InstalledVoices.Default.Language == "id-ID")
             {
                 StatusText.Text = AppResources.VoiceSupported;
                 StatusMessageText.Visibility = Visibility.Collapsed;

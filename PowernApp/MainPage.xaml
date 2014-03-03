@@ -301,7 +301,8 @@
         <lc:LocalizedFeedbackDialogControl Grid.RowSpan="3" />
 
         <!-- no connectivity info message -->
-        <Canvas Grid.Row="4" Width="360" Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=!}">
+        <Canvas Grid.Row="4" Width="360" toolkit:TurnstileFeatherEffect.FeatheringIndex="5"
+                Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=!}">
             <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="360">
                 <Border Background="{StaticResource ThemeBackgroundLight}">
                     <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="12" TextAlignment="Center"

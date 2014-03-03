@@ -333,52 +333,56 @@
 
         <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel>
-                <toolkit:ListPicker Margin="12,12,12,44" ExpansionMode="FullScreenOnly" Header="{Binding Path=LocalizedResources.Alarm, Source={StaticResource LocalizedStrings}}"
+            <ScrollViewer>
+                <StackPanel>
+                    <toolkit:ListPicker Margin="12" ExpansionMode="FullScreenOnly" Header="{Binding Path=LocalizedResources.Alarm, Source={StaticResource LocalizedStrings}}"
                                     x:Name="AudioList" FullModeHeader="Select alarm audio"  CacheMode="BitmapCache" Style="{StaticResource ThemedListPickerStyle}">
-                    <toolkit:ListPicker.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Title}"/>
-                        </DataTemplate>
-                    </toolkit:ListPicker.ItemTemplate>
-                    <toolkit:ListPicker.FullModeItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="5">
-                                <Button Margin="10" Tap="ButtonTapAndHandleRoutedEvent" Command="{Binding PlayCommand}">
-                                    <Button.Template>
-                                        <ControlTemplate>
-                                            <Image Source="{Binding ImageUri}" Height="48" Width="48"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <TextBlock Text="{Binding Title}" VerticalAlignment="Center" Style="{StaticResource PhoneTextLargeStyle}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </toolkit:ListPicker.FullModeItemTemplate>
-                </toolkit:ListPicker>
-                <toolkit:ToggleSwitch x:Name="VibrationToggleSwitch" IsChecked="True" Margin="0,-20,0,0" Style="{StaticResource ThemedToggleSwitchStyle}"
+                        <toolkit:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}"/>
+                            </DataTemplate>
+                        </toolkit:ListPicker.ItemTemplate>
+                        <toolkit:ListPicker.FullModeItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Button Margin="10" Tap="ButtonTapAndHandleRoutedEvent" Command="{Binding PlayCommand}">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Image Source="{Binding ImageUri}" Height="48" Width="48"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <TextBlock Text="{Binding Title}" VerticalAlignment="Center" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </toolkit:ListPicker.FullModeItemTemplate>
+                    </toolkit:ListPicker>
+                    <toolkit:ToggleSwitch x:Name="VibrationToggleSwitch" Margin="0,12,0,0" IsChecked="True" Style="{StaticResource ThemedToggleSwitchStyle}"
                                       Header="{Binding Path=LocalizedResources.VibrationEnabled, Source={StaticResource LocalizedStrings}}"/>
-                <TextBlock Margin="12,0,12,0" Style="{StaticResource ThemeTextTitle2Style}"
+                    <toolkit:ToggleSwitch x:Name="VoiceFeedbackToggleSwitch"  Margin="0,12,0,0" IsChecked="True"  Style="{StaticResource ThemedToggleSwitchStyle}"
+                                      Header="{Binding Path=LocalizedResources.VoiceFeedback, Source={StaticResource LocalizedStrings}}"/>
+                    <TextBlock Margin="12,0,12,0" Style="{StaticResource ThemeTextTitle2Style}"
                            Text="{Binding Path=LocalizedResources.VoiceCommands, Source={StaticResource LocalizedStrings}}" />
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="56" />
-                        <RowDefinition Height="56" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="56" />
+                            <RowDefinition Height="56" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="3*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource ThemeTextLargeStyle}" VerticalAlignment="Center"
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource ThemeTextLargeStyle}" VerticalAlignment="Center"
                                Text="{Binding Path=LocalizedResources.VoiceLanguage, Source={StaticResource LocalizedStrings}}" />
-                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource ThemeTextLargeStyle}" VerticalAlignment="Center"
+                        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource ThemeTextLargeStyle}" VerticalAlignment="Center"
                                Text="{Binding Path=LocalizedResources.VoiceStatus, Source={StaticResource LocalizedStrings}}" />
-                    <TextBlock x:Name="LanguageText" Grid.Row="0" Grid.Column="1" Style="{StaticResource ThemeTextLargeStyle}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-                    <TextBlock x:Name="StatusText" Grid.Row="1" Grid.Column="1" Style="{StaticResource ThemeTextLargeStyle}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-                </Grid>
-                <TextBlock x:Name="StatusMessageText" Margin="24,12,24,12" Style="{StaticResource ThemeTextTitle2Style}" TextWrapping="Wrap" TextAlignment="Center" Visibility="Collapsed"
+                        <TextBlock x:Name="LanguageText" Grid.Row="0" Grid.Column="1" Style="{StaticResource ThemeTextLargeStyle}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <TextBlock x:Name="StatusText" Grid.Row="1" Grid.Column="1" Style="{StaticResource ThemeTextLargeStyle}" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                    </Grid>
+                    <TextBlock x:Name="StatusMessageText" Margin="24,0,24,12" Style="{StaticResource ThemeTextTitle2Style}" TextWrapping="Wrap" TextAlignment="Center" Visibility="Collapsed"
                     Text="{Binding Path=LocalizedResources.VoiceUnsupportedMessage, Source={StaticResource LocalizedStrings}}" />
-            </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
     </Grid>
 

@@ -171,7 +171,7 @@ namespace PowernApp
 
                         timer.Stop();
                     };
-                    timer.Interval = TimeSpan.FromSeconds(2);
+                    timer.Interval = TimeSpan.FromSeconds(3);
                     timer.Start();
                 }
             }
@@ -222,18 +222,19 @@ namespace PowernApp
         /// Handles the start nap command.
         /// </summary>
         /// <param name="minutes">The length of the nap in minutes.</param>
-        private async void handleStartNap1Command(string minutes)
+        private void handleStartNap1Command(string minutes)
         {
-            int min = int.Parse(minutes);
+            int min = 30;
+            int.TryParse(minutes, out min);
 
             if (AlarmClockViewModel.Instance.Set(min))
             {
                 string startFormat = (new Random().Next(2) == 0) ? AppResources.SpeakStartNap1 : AppResources.SpeakStartNap2;
 
-                await Speech.Instance.TrySpeakTextAsync(string.Format(startFormat, minutes));
+                GiveVoiceFeedback(string.Format(startFormat, minutes));
             }
             else
-                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakAlarmAlreadySet);
+                GiveVoiceFeedback(AppResources.SpeakAlarmAlreadySet);
         }
 
         /// <summary>
@@ -241,71 +242,83 @@ namespace PowernApp
         /// </summary>
         /// <param name="hours">The length of the nap in hours.</param>
         /// <param name="minutes">The length of the nap in minutes.</param>
-        private async void handleStartNap2Command(string hours, string minutes)
+        private void handleStartNap2Command(string hours, string minutes)
         {
-            int h = int.Parse(hours);
-            int min = int.Parse(minutes);
+            int h = 0;
+            int min = 30;
+            int.TryParse(minutes, out min);
+            int.TryParse(hours, out h);
             int totalMins = 60 * h + min;
 
             if (AlarmClockViewModel.Instance.Set(totalMins))
             {
                 string startFormat = (new Random().Next(2) == 0) ? AppResources.SpeakStartNap1 : AppResources.SpeakStartNap2;
 
-                await Speech.Instance.TrySpeakTextAsync(string.Format(startFormat, totalMins));
+                GiveVoiceFeedback(string.Format(startFormat, totalMins));
             }
             else
-                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakAlarmAlreadySet);
+                GiveVoiceFeedback(AppResources.SpeakAlarmAlreadySet);
         }
 
         /// <summary>
         /// Handles the stop nap command.
         /// </summary>
-        private async void handleStopNapCommand()
+        private void handleStopNapCommand()
         {
             if (AlarmClockViewModel.Instance.Stop())
             {
                 string stopString = (new Random().Next(2) == 0) ? AppResources.SpeakStopNap1 : AppResources.SpeakStopNap2;
 
-                await Speech.Instance.TrySpeakTextAsync(stopString);
+                GiveVoiceFeedback(stopString);
             }
             else
-                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakNoAlarmSet);
+                GiveVoiceFeedback(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
         /// Handles the check alarm time command.
         /// </summary>
-        private async void handleCheckAlarmTime()
+        private void handleCheckAlarmTime()
         {
             if (AlarmClockViewModel.Instance.IsAlarmSet)
-                await Speech.Instance.TrySpeakTextAsync(string.Format(AppResources.SpeakAlarmSetFor, AlarmClockViewModel.Instance.AlarmTime.ToString("t"))); // 12:12 PM
+                GiveVoiceFeedback(string.Format(AppResources.SpeakAlarmSetFor, AlarmClockViewModel.Instance.AlarmTime.ToString("t"))); // 12:12 PM
             else
-                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakNoAlarmSet);
+                GiveVoiceFeedback(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
         /// Handles the check remaining time command.
         /// </summary>
-        private async void handleCheckRemainingTime()
+        private void handleCheckRemainingTime()
         {
             if (AlarmClockViewModel.Instance.IsAlarmSet)
-                await Speech.Instance.TrySpeakTextAsync(string.Format(AppResources.SpeakTimeLeft, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
+                GiveVoiceFeedback(string.Format(AppResources.SpeakTimeLeft, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
             else
-                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakNoAlarmSet);
+                GiveVoiceFeedback(AppResources.SpeakNoAlarmSet);
         }
 
         /// <summary>
         /// Handles the extend alarm time command.
         /// </summary>
         /// <param name="minutes">The minutes to extend the alarm.</param>
-        private async void handleExtendAlarmTime(string minutes)
+        private void handleExtendAlarmTime(string minutes)
         {
             int min = int.Parse(minutes);
 
             if (AlarmClockViewModel.Instance.Snooze(min))
-                await Speech.Instance.TrySpeakTextAsync(string.Format(AppResources.SpeakTimeShifted, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
+                GiveVoiceFeedback(string.Format(AppResources.SpeakTimeShifted, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
             else
-                await Speech.Instance.TrySpeakTextAsync(AppResources.SpeakNoAlarmSet);
+                GiveVoiceFeedback(AppResources.SpeakNoAlarmSet);
+        }
+
+        /// <summary>
+        /// Speaks a text if the setting for voice feedback is active.
+        /// </summary>
+        /// <param name="text">The text to speak.</param>
+        private async void GiveVoiceFeedback(string text)
+        {
+            if (Settings.EnableVoiceFeedback.Value)
+                await Speech.Instance.TrySpeakTextAsync(text);
         }
 
         /// <summary>

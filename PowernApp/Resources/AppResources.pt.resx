@@ -154,7 +154,7 @@
     <comment>General</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>1.3</value>
+    <value>1.4</value>
     <comment>General</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
@@ -412,6 +412,10 @@ Mostre o seu interesse na loja e ajude-nos a continuar trabalhando para tornar e
     <value>Comandos de voz</value>
     <comment>Settings Page</comment>
   </data>
+  <data name="VoiceFeedback" xml:space="preserve">
+    <value>Reproduzir confirmaçõesde áudio</value>
+    <comment>SettingsPage</comment>
+  </data>
   <data name="VoiceLanguage" xml:space="preserve">
     <value>Idioma</value>
     <comment>SettingsPage</comment>
@@ -429,7 +433,7 @@ Mostre o seu interesse na loja e ajude-nos a continuar trabalhando para tornar e
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>O pacote de idiomas instalado não é suportado pela versão atual deste aplicativo. Os comandos de voz são suportados em inglês (en-US, en-GB, en-IN), francês (fr-FR) português (pt-PT, pt-BR) e alemão (de-DE). Por favor, verifique as configurações de seu telefone.</value>
+    <value>O pacote de idiomas instalado não é suportado pela versão atual deste aplicativo. Os comandos de voz são suportados em inglês (en-US, en-GB, en-IN), francês (fr-FR) português (pt-PT, pt-BR), indonésio (id-ID) e alemão (de-DE). Por favor, verifique as configurações de seu telefone.</value>
     <comment>SettingsPage</comment>
   </data>
 </root>
