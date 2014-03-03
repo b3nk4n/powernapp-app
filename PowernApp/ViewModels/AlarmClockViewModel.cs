@@ -125,7 +125,8 @@ namespace PowernApp.ViewModels
             _startCommand = new DelegateCommand<string>(
                 (minutes) =>
                 {
-                    var min = int.Parse(minutes);
+                    int min = 30;
+                    int.TryParse(minutes, out min);
                     Set(min);
                 },
                 (minutes) =>
@@ -136,7 +137,8 @@ namespace PowernApp.ViewModels
             _snoozeCommand = new DelegateCommand<string>(
                 (minutes) =>
                 {
-                    var min = int.Parse(minutes);
+                    int min = 5;
+                    int.TryParse(minutes, out min);
                     Snooze(min);
                 },
                 (minutes) =>
@@ -147,12 +149,14 @@ namespace PowernApp.ViewModels
             _antiSnoozeCommand = new DelegateCommand<string>(
                 (minutes) =>
                 {
-                    var min = int.Parse(minutes);
+                    int min = 1;
+                    int.TryParse(minutes, out min);
                     Snooze(-min);
                 },
                 (minutes) =>
                 {
-                    var min = int.Parse(minutes);
+                    int min = 1;
+                    int.TryParse(minutes, out min);
                     return IsAlarmSet && TimeToAlarm.TotalMinutes > min;
                 });
 

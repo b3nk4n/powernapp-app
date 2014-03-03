@@ -303,7 +303,8 @@ namespace PowernApp
         /// <param name="minutes">The minutes to extend the alarm.</param>
         private void handleExtendAlarmTime(string minutes)
         {
-            int min = int.Parse(minutes);
+            int min = 5;
+            int.TryParse(minutes, out min);
 
             if (AlarmClockViewModel.Instance.Snooze(min))
                 GiveVoiceFeedback(string.Format(AppResources.SpeakTimeShifted, (int)AlarmClockViewModel.Instance.TimeToAlarm.TotalMinutes));
@@ -451,7 +452,8 @@ namespace PowernApp
             if (button == null)
                 return;
 
-            int minDelta = int.Parse(button.Tag.ToString());
+            int minDelta = 1;
+            int.TryParse(button.Tag.ToString(), out minDelta);
             var value = CustomNapTimePicker.Value.Value;
 
             value = value.Add(TimeSpan.FromMinutes(minDelta));
