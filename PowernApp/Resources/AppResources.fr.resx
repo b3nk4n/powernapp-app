@@ -434,4 +434,8 @@ De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à t
     <value>Lire les confirmations sonores</value>
     <comment>SettingsPage</comment>
   </data>
+  <data name="InfoTitle" xml:space="preserve">
+    <value>informations</value>
+    <comment>InfoPage</comment>
+  </data>
 </root>

@@ -102,6 +102,9 @@
     </Compile>
     <Compile Include="Converter\DateToTimeConverter.cs" />
     <Compile Include="Converter\TimeSpanConverter.cs" />
+    <Compile Include="StatisticPage.xaml.cs">
+      <DependentUpon>StatisticPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InfoPage.xaml.cs">
       <DependentUpon>InfoPage.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StatisticPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="InfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,6 +171,7 @@
     </Content>
     <Content Include="Assets\AppBar\appbar.nocellular.png" />
     <Content Include="Assets\AppBar\appbar.questionmark.png" />
+    <Content Include="Assets\AppBar\appbar.statistics.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

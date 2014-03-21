@@ -40,7 +40,7 @@
         <!--Pivot Control-->
         <phone:Pivot>
             <phone:Pivot.Title>
-                <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextNormalStyle}" Margin="0" />
+                <TextBlock Text="{Binding Path=LocalizedResources.InfoTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextNormalStyle}" Margin="0" />
             </phone:Pivot.Title>
             <phone:PivotItem>
                 <phone:PivotItem.Header>

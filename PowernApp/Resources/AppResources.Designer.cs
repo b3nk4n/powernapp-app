@@ -387,6 +387,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die information ähnelt.
+        /// </summary>
+        public static string InfoTitle {
+            get {
+                return ResourceManager.GetString("InfoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die more apps ähnelt.
         /// </summary>
         public static string MoreApps {

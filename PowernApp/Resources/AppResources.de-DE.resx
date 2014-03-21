@@ -268,6 +268,10 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <value>feedback</value>
     <comment>FeedbackDialogControl</comment>
   </data>
+  <data name="InfoTitle" xml:space="preserve">
+    <value>informationen</value>
+    <comment>InfoPage</comment>
+  </data>
   <data name="MoreApps" xml:space="preserve">
     <value>mehr apps</value>
     <comment>AboutPage</comment>

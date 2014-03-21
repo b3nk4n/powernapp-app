@@ -437,4 +437,8 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <value>Putar konfirmasi audio</value>
     <comment>SettingsPage</comment>
   </data>
+  <data name="InfoTitle" xml:space="preserve">
+    <value>tentang</value>
+    <comment>InfoPage</comment>
+  </data>
 </root>

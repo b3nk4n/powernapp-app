@@ -437,4 +437,8 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <value>Play audio confirmations</value>
     <comment>SettingsPage</comment>
   </data>
+  <data name="InfoTitle" xml:space="preserve">
+    <value>information</value>
+    <comment>InfoPage</comment>
+  </data>
 </root>
