@@ -122,7 +122,7 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>en-US</value>
+    <value>it</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
@@ -130,68 +130,67 @@
     <comment>General</comment>
   </data>
   <data name="AboutTitle" xml:space="preserve">
-    <value>about</value>
+    <value>supporto</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
-    <value>by Benjamin Sautermeister</value>
+    <value>di Benjamin Sautermeister</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationDescription" xml:space="preserve">
-    <value>The fastest power napping app for Windows Phone with voice commands.</value>
+    <value>La più rapida app per "power napping" per Windows Phone, con comandi vocali.</value>
     <comment>AboutPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
-    <value>more apps</value>
+    <value>più app</value>
     <comment>AboutPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
-    <value>privacy info</value>
+    <value>info privacy</value>
     <comment>About Page</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
-    <value>rate and review</value>
+    <value>dai un giudizio</value>
     <comment>AboutPage</comment>
   </data>
   <data name="SupportAndFeedback" xml:space="preserve">
-    <value>support and feedback</value>
+    <value>supporto e feedback</value>
     <comment>About Page</comment>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
-    <value>settings</value>
+    <value>impostazioni</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceCommands" xml:space="preserve">
-    <value>Voice commands</value>
+    <value>Comandi vocali</value>
     <comment>Settings Page</comment>
   </data>
   <data name="VoiceLanguage" xml:space="preserve">
-    <value>Language</value>
+    <value>Lingua</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceStatus" xml:space="preserve">
-    <value>Status</value>
+    <value>Stato</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceSupported" xml:space="preserve">
-    <value>supported</value>
+    <value>supportato</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupported" xml:space="preserve">
-    <value>not supported</value>
+    <value>non supportato</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>Your installed language package is not supported  in the current version of this application. Supported languages for voice commands are English (en-US, en-GB, en-IN), French (fr-FR), Portuguese (pt-PT, pt-BR), Indonesian (id-ID) and German (de-DE). Please check your phone settings.
-You want to help with the translation to support your language in the next version? Just contact me!</value>
+    <value>Il tuo language pack non è supportato in questa versione dell'app. Le lingue supportate per adesso sono Inglese, Tedesco, Portoghese, Indonesiano e Francese. Controlla le impostazioni del telefono.</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VibrationEnabled" xml:space="preserve">
-    <value>Vibration</value>
+    <value>Vibrazione</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="Alarm" xml:space="preserve">
-    <value>Alarm sound</value>
+    <value>Suono sveglia</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
@@ -216,49 +215,49 @@ Application Version: {4}
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackMessageText" xml:space="preserve">
-    <value>Sorry to hear you didn't want to rate powernAPP.
+    <value>Peccato tu non voglia votare powernAPP.
 
-Tell us about your experience or suggest how we can make it even better.</value>
+Raccontandoci la tua esperienza o dandoci suggerimenti, potremmo migliorare questa app.</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackNoText" xml:space="preserve">
-    <value>no thanks</value>
+    <value>no grazie</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>powernAPP Customer Feedback </value>
+    <value>feedback per powernAPP</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackTitleText" xml:space="preserve">
-    <value>Can we make it better?</value>
+    <value>Possiamo migliorare?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackYesText" xml:space="preserve">
-    <value>give feedback</value>
+    <value>lascia un feedback</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage10Text" xml:space="preserve">
-    <value>You look to be getting a lot of use out of our application!
+    <value>Sembra che la nostra applicazione ti piaccaia!
 
-Why not give us a 5 star rating to show your appreciation?</value>
+Perché non darci 5 stelle di votazione per mostrarci il tuo apprezzamento?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage5Text" xml:space="preserve">
-    <value>We'd love you to rate our app 5 stars.
+    <value>Abbiamo apprezzato le 5 stelle concesseci.
 
-Showing us some love on the store helps us to continue to work on the app and make things even better!</value>
+Mostrandoci apprezzamento sullo store, ci aiuterai a proseguire il nostro lavoro per migliorare sempre più!</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingNoText" xml:space="preserve">
-    <value>no thanks</value>
+    <value>no grazie</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingTitleText" xml:space="preserve">
-    <value>Enjoying powernAPP?</value>
+    <value>Ti piace powernAPP?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingYesText" xml:space="preserve">
-    <value>rate 5 stars</value>
+    <value>votala con le 5 stelle</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="AppBarInfo" xml:space="preserve">
@@ -266,171 +265,171 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>disable connectivity</value>
+    <value>disabilita connettività</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
-    <value>Press and hold the Windows-Button of you phone until the voice input dialog pops up.</value>
+    <value>Premi e rilascia il tasto "Windows" del telefono sino all'apparire del pop up.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands1Title" xml:space="preserve">
-    <value>1. Activate voice input</value>
+    <value>1. Attiva l'immissione vocale</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet1" xml:space="preserve">
-    <value>- " ...for 20 minutes. "</value>
+    <value>"… per 20 minuti."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet2" xml:space="preserve">
-    <value>- " ...cancel nap. "</value>
+    <value>"… cancella il pisolino."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet3" xml:space="preserve">
-    <value>- " ...when is my alarm set for? "</value>
+    <value>"… per quando ho impostato il pisolino?"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet4" xml:space="preserve">
-    <value>- " ...what is the remaining time? "</value>
+    <value>"… quanto tempo mi resta per riposare?"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet5" xml:space="preserve">
-    <value>- " ...give me 5 more minutes. "</value>
+    <value>"… dammi ancora 5 minuti."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message1" xml:space="preserve">
-    <value>Say</value>
+    <value>Parla</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message2" xml:space="preserve">
-    <value> "Power Nap..."  </value>
+    <value>"Power Nap…"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message3" xml:space="preserve">
-    <value>followed by your request. Some examples:</value>
+    <value>in attesa di comandi. Qualche esempio:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Title" xml:space="preserve">
-    <value>2. Speak</value>
+    <value>2. Parla</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Message" xml:space="preserve">
-    <value>powernAPP takes care of the rest...</value>
+    <value>powernAPP si occuperà del resto…</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Title" xml:space="preserve">
-    <value>3. Enjoy your nap</value>
+    <value>3. Goditi  il pisolino</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsHeader" xml:space="preserve">
-    <value>commands</value>
+    <value>comandi</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsIntro" xml:space="preserve">
-    <value>This application supports Windows Phone voice commands. Follow these simple steps to take you well-deserved nap even faster:</value>
+    <value>Questa applicazione supporta i comandi vocali di Windows Phone. Segui questi semplici passaggi per utilizzare al meglio l'app:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="ConnectivityHint" xml:space="preserve">
-    <value>Don't get disturbed. Disable the phones connectivity!</value>
+    <value>Non farti disturbare. Spegni la rete telefonica!</value>
     <comment>MainPage</comment>
   </data>
   <data name="NappingTipsConsistentMessage" xml:space="preserve">
-    <value>Keep a regular nap schedule. Prime napping time falls in the middle of the day.</value>
+    <value>Mantieni un proramma regolare del pisolino. Il momento migliore è il primo pomeriggio.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsConsistentTitle" xml:space="preserve">
-    <value>Be consistent</value>
+    <value>Sii costante</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessMessage" xml:space="preserve">
-    <value>Nap in a dark room or wear an eye mask. Blocking out light helps you fall asleep faster.</value>
+    <value>Dormi in una stanza buia o utilizza una maschera da notte per gli occhi. Evitare le luci ti farà addormentare prima.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessTitle" xml:space="preserve">
-    <value>Prefer darkness</value>
+    <value>Preferisci i posti meno illuminati</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedMessage" xml:space="preserve">
-    <value>Disable your phones connectivity and search for silent places.</value>
+    <value>Disattiva il telefono e cerca un posto silenzioso.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedTitle" xml:space="preserve">
-    <value>Don't get disturbed</value>
+    <value>Evita di essere disturbato</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsHeader" xml:space="preserve">
-    <value>napping tips</value>
+    <value>suggerimenti</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsIntro" xml:space="preserve">
-    <value>Research has found that napping regularly may reduce stress and even decrease your risk of heart disease. To get the most out of a power snooze, follow these quick and simple tips:</value>
+    <value>Molte ricerche affermano che un pisolino regolare può ridurre lo stress ed il rischio cardiovascolare. Per ottenere il massimo, segui questi rapidi consigli:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickMessage" xml:space="preserve">
-    <value>Set your alarm for about 30 minutes or less if you don't want to wake up groggy. Because you should wake up before the occurrence of deep sleep.</value>
+    <value>Imposta il la sveglia a circa 30 minuti. Ciò, affinchè non possa essere svegliato mentre ti trovi nella fase più profonda del riposo.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickTitle" xml:space="preserve">
-    <value>Make it quick</value>
+    <value>Fallo rapidamente</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmMessage" xml:space="preserve">
-    <value>Stash a blanket nearby to put over you because your body temperature drops while you snooze.</value>
+    <value>Preoccupati di avere una coperta con te, poiché durante il sonno la temperatura del corpo si abbassa.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmTitle" xml:space="preserve">
-    <value>Stay warm</value>
+    <value>Stai al caldo</value>
     <comment>InfoPage</comment>
   </data>
   <data name="SpeakAlarmAlreadySet" xml:space="preserve">
-    <value>Alarm is already set.</value>
+    <value>L'allarme è già impostato.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakAlarmSetFor" xml:space="preserve">
-    <value>Alarm is set for {0}.</value>
+    <value>Svelgia impostata per {0}.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakNoAlarmSet" xml:space="preserve">
-    <value>Alarm was not set.</value>
+    <value>L'allarme non è impostato</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap1" xml:space="preserve">
-    <value>Have a nice {0} minutes nap.</value>
+    <value>Goditi i tuoi {0} minuti di riposo.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">
-    <value>Alarm is now off. Hope you feel more energized.</value>
+    <value>Sveglia spenta.  Va meglio?</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeLeft" xml:space="preserve">
-    <value>You have {0} minutes left.</value>
+    <value>{0} minuti restanti.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeShifted" xml:space="preserve">
-    <value>Now you have about {0} minutes left.</value>
+    <value>Restano ancora {0} minuti.</value>
     <comment>Voice</comment>
   </data>
   <data name="AlertDialogMessage" xml:space="preserve">
-    <value>Wake up! Hope you feel more energized now...</value>
+    <value>Sveglia! Spero che ora ti senta pieno di energie…</value>
     <comment>AlertDialog</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Have a nice {0} minutes sleep.</value>
+    <value>Buon riposo, per {0} minuti.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap2" xml:space="preserve">
-    <value>Alarm is now off. Hope you had a good sleep.</value>
+    <value>Sveglia spenta. Hai riposato bene?</value>
     <comment>Voice</comment>
   </data>
   <data name="AppBarOnline" xml:space="preserve">
-    <value>enable connectivity</value>
+    <value>abilita connettività</value>
     <comment>AppBar</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
-    <value>Contributors</value>
+    <value>Collaboratori</value>
     <comment>AboutPage</comment>
   </data>
   <data name="Commands2Bullet1b" xml:space="preserve">
-    <value>- " ...for 1 hour and 30 minutes. "</value>
+    <value>"… per 1 ora e 30 minuti."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="VoiceFeedback" xml:space="preserve">

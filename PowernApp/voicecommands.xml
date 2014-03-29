@@ -1049,5 +1049,137 @@
     </PhraseList>
 
   </CommandSet>
+
+  <CommandSet xml:lang="it-IT" Name="commandsITIT">
+
+    <CommandPrefix>Power nap</CommandPrefix>
+    <Example>per 20 minuti</Example>
+
+    <Command Name="startNap1">
+      <Example>per 20 minuti</Example>
+      <ListenFor>[per] {minute} [minuti]</ListenFor>
+      <Feedback>Accendi sveglia</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap2">
+      <Example>per 1 ora e 30 minuti</Example>
+      <ListenFor>[per] {hour} ora [e] {minute} minuti</ListenFor>
+      <Feedback>Accendi sveglia</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="stopNap">
+      <Example>cancella il pisolino</Example>
+      <ListenFor>cancella [il pisolino]</ListenFor>
+      <ListenFor>cancella nap</ListenFor>
+      <ListenFor>stop [il pisolino]</ListenFor>
+      <ListenFor>Stop nap</ListenFor>
+      <Feedback>Spegni sveglia</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="checkAlarmTime">
+      <Example>per quando è impostata la sveglia?</Example>
+      <ListenFor>per quando [è impostata la sveglia]?</ListenFor>
+      <ListenFor>per quando ho impostato il pisolino?</ListenFor>
+      <Feedback>Controllo</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="checkRemainingTime">
+      <Example>quanto tempo resta ancora?</Example>
+      <ListenFor>[quanto] tempo resta ancora?</ListenFor>
+      <ListenFor>[quanto] tempo mi resta per riposare?</ListenFor>
+      <Feedback>Controllo</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="extendAlarmTime">
+      <Example>sposta di 5 minuti la sveglia</Example>
+      <ListenFor>[sposta di] {minute} [minuti] la sveglia</ListenFor>
+      <ListenFor>dammi ancora {minute} [minuti]</ListenFor>
+      <Feedback>Sposta di {minute} minuti la sveglia</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <PhraseList Label="minute">
+      <Item>1</Item>
+      <Item>2</Item>
+      <Item>3</Item>
+      <Item>4</Item>
+      <Item>5</Item>
+      <Item>6</Item>
+      <Item>7</Item>
+      <Item>8</Item>
+      <Item>9</Item>
+      <Item>10</Item>
+      <Item>11</Item>
+      <Item>12</Item>
+      <Item>13</Item>
+      <Item>14</Item>
+      <Item>15</Item>
+      <Item>16</Item>
+      <Item>17</Item>
+      <Item>18</Item>
+      <Item>19</Item>
+      <Item>20</Item>
+      <Item>21</Item>
+      <Item>22</Item>
+      <Item>23</Item>
+      <Item>24</Item>
+      <Item>25</Item>
+      <Item>26</Item>
+      <Item>27</Item>
+      <Item>28</Item>
+      <Item>29</Item>
+      <Item>30</Item>
+      <Item>31</Item>
+      <Item>32</Item>
+      <Item>33</Item>
+      <Item>34</Item>
+      <Item>35</Item>
+      <Item>36</Item>
+      <Item>37</Item>
+      <Item>38</Item>
+      <Item>39</Item>
+      <Item>40</Item>
+      <Item>41</Item>
+      <Item>42</Item>
+      <Item>43</Item>
+      <Item>44</Item>
+      <Item>45</Item>
+      <Item>46</Item>
+      <Item>47</Item>
+      <Item>48</Item>
+      <Item>49</Item>
+      <Item>50</Item>
+      <Item>51</Item>
+      <Item>52</Item>
+      <Item>53</Item>
+      <Item>54</Item>
+      <Item>55</Item>
+      <Item>56</Item>
+      <Item>57</Item>
+      <Item>58</Item>
+      <Item>59</Item>
+    </PhraseList>
+
+    <PhraseList Label="hour">
+      <Item>1</Item>
+      <Item>2</Item>
+      <Item>3</Item>
+      <Item>4</Item>
+      <Item>5</Item>
+      <Item>6</Item>
+      <Item>7</Item>
+      <Item>8</Item>
+      <Item>9</Item>
+      <Item>10</Item>
+      <Item>11</Item>
+      <Item>12</Item>
+    </PhraseList>
+
+  </CommandSet>
   
 </VoiceCommands>
