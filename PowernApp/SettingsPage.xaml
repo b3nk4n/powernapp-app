@@ -334,7 +334,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <ScrollViewer>
                 <StackPanel>
-                    <toolkit:ListPicker Margin="12" ExpansionMode="FullScreenOnly" Header="{Binding Path=LocalizedResources.Alarm, Source={StaticResource LocalizedStrings}}"
+                    <toolkit:ListPicker Margin="12,12,12,44" ExpansionMode="FullScreenOnly" Header="{Binding Path=LocalizedResources.Alarm, Source={StaticResource LocalizedStrings}}"
                                     x:Name="AudioList" FullModeHeader="Select alarm audio"  CacheMode="BitmapCache" Style="{StaticResource ThemedListPickerStyle}">
                         <toolkit:ListPicker.ItemTemplate>
                             <DataTemplate>
@@ -356,6 +356,8 @@
                             </DataTemplate>
                         </toolkit:ListPicker.FullModeItemTemplate>
                     </toolkit:ListPicker>
+                    <toolkit:ToggleSwitch x:Name="SuppressLockScreenToggleSwitch" IsChecked="True" Margin="0,-20,0,0" Style="{StaticResource ThemedToggleSwitchStyle}"
+                                      Header="{Binding Path=LocalizedResources.SuppressLockScreen, Source={StaticResource LocalizedStrings}}"/>
                     <toolkit:ToggleSwitch x:Name="VibrationToggleSwitch" Margin="0,12,0,0" IsChecked="True" Style="{StaticResource ThemedToggleSwitchStyle}"
                                       Header="{Binding Path=LocalizedResources.VibrationEnabled, Source={StaticResource LocalizedStrings}}"/>
                     <toolkit:ToggleSwitch x:Name="VoiceFeedbackToggleSwitch"  Margin="0,12,0,0" IsChecked="True"  Style="{StaticResource ThemedToggleSwitchStyle}"

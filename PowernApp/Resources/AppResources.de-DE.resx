@@ -408,6 +408,10 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <value>hilfe und feedback</value>
     <comment>About Page</comment>
   </data>
+  <data name="SuppressLockScreen" xml:space="preserve">
+    <value>Sperrbildschirm unterdrücken</value>
+    <comment>SettingsPage</comment>
+  </data>
   <data name="VibrationEnabled" xml:space="preserve">
     <value>Vibration</value>
     <comment>SettingsPage</comment>

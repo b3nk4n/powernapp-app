@@ -440,4 +440,8 @@ Mostrandoci apprezzamento sullo store, ci aiuterai a proseguire il nostro lavoro
     <value>information</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="SuppressLockScreen" xml:space="preserve">
+    <value>Sopprimere la schermata di blocco</value>
+    <comment>SettingsPage</comment>
+  </data>
 </root>

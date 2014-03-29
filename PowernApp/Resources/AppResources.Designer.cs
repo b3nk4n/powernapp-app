@@ -697,6 +697,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Suppress lock screen ähnelt.
+        /// </summary>
+        public static string SuppressLockScreen {
+            get {
+                return ResourceManager.GetString("SuppressLockScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Vibration ähnelt.
         /// </summary>
         public static string VibrationEnabled {

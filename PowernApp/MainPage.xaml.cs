@@ -105,6 +105,12 @@ namespace PowernApp
             // determine view state
             UpdateGeneralViewState(true);
 
+            if (Settings.EnableSuppressLockScreen.Value)
+            {
+                // disable lock screen
+                PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
+            }
+
             // set data context to view model
             DataContext = AlarmClockViewModel.Instance;
         }

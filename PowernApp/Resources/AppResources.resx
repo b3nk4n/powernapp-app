@@ -441,4 +441,8 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <value>information</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="SuppressLockScreen" xml:space="preserve">
+    <value>Suppress lock screen</value>
+    <comment>SettingsPage</comment>
+  </data>
 </root>

@@ -438,4 +438,8 @@ De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à t
     <value>informations</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="SuppressLockScreen" xml:space="preserve">
+    <value>Supprimer l'écran de verrouillage</value>
+    <comment>SettingsPage</comment>
+  </data>
 </root>

@@ -408,6 +408,10 @@ Mostre o seu interesse na loja e ajude-nos a continuar trabalhando para tornar e
     <value>suporte e feedback</value>
     <comment>About Page</comment>
   </data>
+  <data name="SuppressLockScreen" xml:space="preserve">
+    <value>Suprimir a tela de bloqueio</value>
+    <comment>SettingsPage</comment>
+  </data>
   <data name="VibrationEnabled" xml:space="preserve">
     <value>Vibrar</value>
     <comment>SettingsPage</comment>

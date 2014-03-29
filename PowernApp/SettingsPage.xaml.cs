@@ -31,6 +31,7 @@ namespace PowernApp
         {
             base.OnNavigatedTo(e);
 
+            this.SuppressLockScreenToggleSwitch.IsChecked = Settings.EnableSuppressLockScreen.Value;
             this.VibrationToggleSwitch.IsChecked = Settings.EnableVibration.Value;
             this.VoiceFeedbackToggleSwitch.IsChecked = Settings.EnableVoiceFeedback.Value;
             BindAudioItems();
@@ -45,6 +46,7 @@ namespace PowernApp
         {
             base.OnNavigatedFrom(e);
 
+            Settings.EnableSuppressLockScreen.Value = this.SuppressLockScreenToggleSwitch.IsChecked.Value;
             Settings.EnableVibration.Value = this.VibrationToggleSwitch.IsChecked.Value;
             Settings.EnableVoiceFeedback.Value = this.VoiceFeedbackToggleSwitch.IsChecked.Value;
             

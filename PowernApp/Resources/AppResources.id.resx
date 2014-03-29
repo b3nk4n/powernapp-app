@@ -441,4 +441,8 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <value>tentang</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="SuppressLockScreen" xml:space="preserve">
+    <value>Menekan layar kunci</value>
+    <comment>SettingsPage</comment>
+  </data>
 </root>
