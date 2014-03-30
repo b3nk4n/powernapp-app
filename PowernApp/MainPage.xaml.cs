@@ -145,7 +145,7 @@ namespace PowernApp
             {
                 ActivePanel.Visibility = Visibility.Visible;
                 InactivePanel.Visibility = Visibility.Collapsed;
-                BuildLocalizedApplicationBar(ConnectivityHelper.IsAirplaneMode);
+                BuildActiveLocalizedApplicationBar();
 
                 if (ConnectivityHelper.IsAirplaneMode)
                     ConnectivityMessageOut.Begin();
@@ -177,7 +177,7 @@ namespace PowernApp
 
                         timer.Stop();
                     };
-                    timer.Interval = TimeSpan.FromSeconds(3);
+                    timer.Interval = TimeSpan.FromSeconds(5);
                     timer.Start();
                 }
             }
@@ -185,7 +185,7 @@ namespace PowernApp
             {
                 ActivePanel.Visibility = Visibility.Collapsed;
                 InactivePanel.Visibility = Visibility.Visible;
-                BuildLocalizedApplicationBar(false);
+                BuildInactiveLocalizedApplicationBar();
             }
         }
 
@@ -338,55 +338,92 @@ namespace PowernApp
             ApplicationBar.BackgroundColor = (Color)Application.Current.Resources["ThemeBackgroundMediumColor"];
             ApplicationBar.ForegroundColor = (Color)Application.Current.Resources["ThemeForegroundLightColor"];
 
-            // info
-            ApplicationBarMenuItem appBarMenuItem1 = new ApplicationBarMenuItem(AppResources.AppBarInfo);
+            // settings
+            ApplicationBarMenuItem appBarMenuItem1 = new ApplicationBarMenuItem(AppResources.SettingsTitle);
             ApplicationBar.MenuItems.Add(appBarMenuItem1);
             appBarMenuItem1.Click += (s, e) =>
-            {
-                NavigationService.Navigate(new Uri("/InfoPage.xaml", UriKind.Relative));
-            };
-
-            // settings
-            ApplicationBarMenuItem appBarMenuItem2 = new ApplicationBarMenuItem(AppResources.SettingsTitle);
-            ApplicationBar.MenuItems.Add(appBarMenuItem2);
-            appBarMenuItem2.Click += (s, e) =>
             {
                 NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
             };
 
             // about
-            ApplicationBarMenuItem appBarMenuItem3 = new ApplicationBarMenuItem(AppResources.AboutTitle);
-            ApplicationBar.MenuItems.Add(appBarMenuItem3);
-            appBarMenuItem3.Click += (s, e) =>
+            ApplicationBarMenuItem appBarMenuItem2 = new ApplicationBarMenuItem(AppResources.AboutTitle);
+            ApplicationBar.MenuItems.Add(appBarMenuItem2);
+            appBarMenuItem2.Click += (s, e) =>
             {
                 NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
             };
         }
 
         /// <summary>
-        /// Builds the localized application bar buttons.
-        /// <param name="showCellularButton">Indicates whether the cellular buttons should be generated</param>
+        /// Builds the localized application bar buttons in active mode.
         /// </summary>
-        private void BuildLocalizedApplicationBar(bool showCellularButton)
+        private void BuildActiveLocalizedApplicationBar()
         {
             ApplicationBar.Buttons.Clear();
 
             // info
-            ApplicationBarIconButton appBarButton1 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.statistics.png", UriKind.Relative));
-            appBarButton1.Text = "naptistics";
+            ApplicationBarIconButton appBarButton1 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.questionmark.png", UriKind.Relative));
+            appBarButton1.Text = AppResources.AppBarInfo;
             ApplicationBar.Buttons.Add(appBarButton1);
             appBarButton1.Click += (s, e) =>
+            {
+                NavigationService.Navigate(new Uri("/InfoPage.xaml", UriKind.Relative));
+            };
+
+            // naptistics
+            ApplicationBarIconButton appBarButton2 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.statistics.png", UriKind.Relative));
+            appBarButton2.Text = "naptistics";
+            ApplicationBar.Buttons.Add(appBarButton2);
+            appBarButton2.Click += (s, e) =>
             {
                 NavigationService.Navigate(new Uri("/StatisticPage.xaml", UriKind.Relative));
             };
 
-            if (showCellularButton)
+            // flight mode
+            ApplicationBarIconButton appBarButton3 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.nocellular.png", UriKind.Relative));
+            appBarButton3.Text = AppResources.AppBarOffline;
+            ApplicationBar.Buttons.Add(appBarButton3);
+            appBarButton3.Click += async (s, e) =>
+            {
+                // TODO: navigate to info page
+                await SettingsLauncher.LaunchAirplaneModeAsync();
+            };
+        }
+
+
+        /// <summary>
+        /// Builds the localized application bar buttons in inactive mode.
+        /// </summary>
+        private void BuildInactiveLocalizedApplicationBar()
+        {
+            ApplicationBar.Buttons.Clear();
+
+            // info
+            ApplicationBarIconButton appBarButton1 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.questionmark.png", UriKind.Relative));
+            appBarButton1.Text = AppResources.AppBarInfo;
+            ApplicationBar.Buttons.Add(appBarButton1);
+            appBarButton1.Click += (s, e) =>
+            {
+                NavigationService.Navigate(new Uri("/InfoPage.xaml", UriKind.Relative));
+            };
+
+            // naptistics
+            ApplicationBarIconButton appBarButton2 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.statistics.png", UriKind.Relative));
+            appBarButton2.Text = "naptistics";
+            ApplicationBar.Buttons.Add(appBarButton2);
+            appBarButton2.Click += (s, e) =>
+            {
+                NavigationService.Navigate(new Uri("/StatisticPage.xaml", UriKind.Relative));
+            };
+
+            if (ConnectivityHelper.IsAirplaneMode)
             {
                 // flight mode
-                ApplicationBarIconButton appBarButton2 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.cellular.png", UriKind.Relative));
-                appBarButton2.Text = AppResources.AppBarOnline;
-                ApplicationBar.Buttons.Add(appBarButton2);
-                appBarButton2.Click += async (s, e) =>
+                ApplicationBarIconButton appBarButton3 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.cellular.png", UriKind.Relative));
+                appBarButton3.Text = AppResources.AppBarOnline;
+                ApplicationBar.Buttons.Add(appBarButton3);
+                appBarButton3.Click += async (s, e) =>
                 {
                     // TODO: navigate to info page
                     await SettingsLauncher.LaunchAirplaneModeAsync();

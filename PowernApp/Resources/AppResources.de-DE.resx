@@ -134,7 +134,7 @@
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>verbindung deaktivieren</value>
+    <value>verbindung deaktiv.</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOnline" xml:space="preserve">

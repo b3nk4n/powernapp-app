@@ -308,7 +308,7 @@
                     <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="12" TextAlignment="Center"
                     Text="{Binding Path=LocalizedResources.ConnectivityHint, Source={StaticResource LocalizedStrings}}" />
                 </Border>
-                <Path Data="M 0,0 L 25,0 L 25,25 Z" Fill="{StaticResource ThemeBackgroundLight}"  Height="25" Width="25" Margin="55,-2,0,0"/>
+                <Path Data="M 0,0 L 25,0 L 25,25 Z" Fill="{StaticResource ThemeBackgroundLight}"  Height="25" Width="25" Margin="135,-2,0,0"/>
             </StackPanel>
         </Canvas>
     </Grid>
