@@ -100,6 +100,11 @@ namespace PowernApp.ViewModels
         /// </summary>
         private const int ALARM_INTERVAL = 5;
 
+        /// <summary>
+        /// The napping statistics instance.
+        /// </summary>
+        private NapStatisticsViewModel _statistics = NapStatisticsViewModel.Instance;
+
         #endregion
 
         #region Constructors
@@ -193,6 +198,9 @@ namespace PowernApp.ViewModels
                 // save alarm duration
                 _lastAlarmDuration.Value = TimeSpan.FromMinutes(minutes);
 
+                // create statistics entry
+                _statistics.AddNap(new NapDataViewModel(DateTime.Now, minutes));
+
                 UpdateCommands();
                 return true;
             }
@@ -229,6 +237,9 @@ namespace PowernApp.ViewModels
                     AlarmTime = newAlarmBaseTime.AddMinutes(minutes);
                 }
 
+                // modify statistics entry
+                _statistics.ChangeDurationOfCurrentNap(minutes);
+
                 UpdateCommands();
                 return true;
             }
@@ -243,6 +254,10 @@ namespace PowernApp.ViewModels
         {
             if (IsAlarmSet)
             {
+                // adjust statistics
+                int minutesToAlarm = Math.Max(0, (int)TimeToAlarm.TotalMinutes);
+                _statistics.ChangeDurationOfCurrentNap(-minutesToAlarm);
+
                 AlarmTime = DateTime.MinValue;
                 AlarmSetTime = DateTime.MinValue;
                 IsAlarmRinging = false;
@@ -297,18 +312,18 @@ namespace PowernApp.ViewModels
         /// </summary>
         public void TryRemoveFromScheduler()
         {
-                var oldAlarm = ScheduledActionService.Find(ALARM_NAME) as Alarm;
+            var oldAlarm = ScheduledActionService.Find(ALARM_NAME) as Alarm;
 
-                if (oldAlarm != null)
+            if (oldAlarm != null)
+            {
+                // check if alarm was dismissed
+                if (oldAlarm.IsScheduled == false)
                 {
-                    // check if alarm was dismissed
-                    if (oldAlarm.IsScheduled == false)
-                    {
-                        Stop();
-                    }
-
-                    ScheduledActionService.Remove(ALARM_NAME);
+                    Stop();
                 }
+
+                ScheduledActionService.Remove(ALARM_NAME);
+            }
         }
 
         /// <summary>

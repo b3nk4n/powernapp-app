@@ -42,6 +42,62 @@
             <phone:Pivot.Title>
                 <TextBlock Text="naptistics" Style="{StaticResource ThemeTextNormalStyle}" Margin="0" />
             </phone:Pivot.Title>
+
+            <phone:PivotItem>
+                <phone:PivotItem.Header>
+                    <TextBlock Text="overview" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
+                </phone:PivotItem.Header>
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Number of naps:" />
+                        <TextBlock Grid.Row="0" Grid.Column="1" x:Name="NapsCountText" Text="{Binding NapsCount}"
+                                   HorizontalAlignment="Right" />
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Min. nap time:" />
+                        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="MinNapTime" Text="{Binding MinNapTime}"
+                                   HorizontalAlignment="Right" />
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Max. nap time:" />
+                        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="MaxNapTime" Text="{Binding MaxNapTime}"
+                                   HorizontalAlignment="Right" />
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Avg. nap time:" />
+                        <TextBlock Grid.Row="3" Grid.Column="1" x:Name="AvgNapTime" Text="{Binding AvgNapTime}"
+                                   HorizontalAlignment="Right" />
+
+                    </Grid>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+            <phone:PivotItem>
+                <phone:PivotItem.Header>
+                    <TextBlock Text="list" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
+                </phone:PivotItem.Header>
+                <ScrollViewer>
+                    <ItemsControl ItemsSource="{Binding NapList}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="20">
+                                    <TextBlock Text="{Binding StartTime}" />
+                                    <TextBlock Text="{Binding Duration}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </phone:PivotItem>
+
             <phone:PivotItem>
                 <phone:PivotItem.Header>
                     <TextBlock Text="graph" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
@@ -53,18 +109,6 @@
                 </ScrollViewer>
             </phone:PivotItem>
 
-            <phone:PivotItem>
-                <phone:PivotItem.Header>
-                    <TextBlock Text="list" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
-                </phone:PivotItem.Header>
-                <ScrollViewer>
-                    <StackPanel>
-
-                    </StackPanel>
-                </ScrollViewer>
-            </phone:PivotItem>
-
         </phone:Pivot>
     </Grid>
-    
 </phone:PhoneApplicationPage>

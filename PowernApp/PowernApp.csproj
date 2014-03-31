@@ -124,6 +124,8 @@
     </Compile>
     <Compile Include="ViewModels\AlarmClockViewModel.cs" />
     <Compile Include="ViewModels\AudioViewModel.cs" />
+    <Compile Include="ViewModels\NapDataViewModel.cs" />
+    <Compile Include="ViewModels\NapStatisticsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -169,6 +171,7 @@
     <Content Include="Assets\AppBar\appbar.cellular.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\AppBar\appbar.clean.png" />
     <Content Include="Assets\AppBar\appbar.nocellular.png" />
     <Content Include="Assets\AppBar\appbar.questionmark.png" />
     <Content Include="Assets\AppBar\appbar.statistics.png" />

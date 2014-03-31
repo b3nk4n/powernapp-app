@@ -80,6 +80,7 @@ namespace PowernApp
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
             AlarmClockViewModel.Instance.TryAddToScheduler();
+            NapStatisticsViewModel.Instance.Save();
         }
 
         // Code, der beim Schließen der Anwendung ausgeführt wird (z. B. wenn der Benutzer auf "Zurück" klickt)
@@ -87,6 +88,7 @@ namespace PowernApp
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
             AlarmClockViewModel.Instance.TryAddToScheduler();
+            NapStatisticsViewModel.Instance.Save();
         }
 
         // Code, der bei einem Navigationsfehler ausgeführt wird
