@@ -445,4 +445,7 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <value>Suppress lock screen</value>
     <comment>SettingsPage</comment>
   </data>
+  <data name="Commands2Bullet1c" xml:space="preserve">
+    <value />
+  </data>
 </root>

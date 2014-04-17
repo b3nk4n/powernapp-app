@@ -20,6 +20,20 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap3US">
+      <Example>until 2:30 PM.</Example>
+      <ListenFor>[util] {hour} {minute} {identifier}</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3ShortUS">
+      <Example>until 3 PM.</Example>
+      <ListenFor>[until] {hour} {identifier}</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="stopNap">
       <Example>Cancel nap</Example>
       <ListenFor>Cancel [nap]</ListenFor>
@@ -126,6 +140,11 @@
       <Item>10</Item>
       <Item>11</Item>
       <Item>12</Item>
+    </PhraseList>
+    
+    <PhraseList Label="identifier">
+      <Item>AM</Item>
+      <Item>PM</Item>
     </PhraseList>
     
   </CommandSet>
@@ -407,8 +426,22 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap3">
+      <Example>bis 14 Uhr 30.</Example>
+      <ListenFor>[bis] {hour} Uhr {minute}</ListenFor>
+      <Feedback>Ich stelle den Wecker</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3Short">
+      <Example>bis 14 Uhr.</Example>
+      <ListenFor>[bis] {hour} Uhr</ListenFor>
+      <Feedback>Ich stelle den Wecker</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="stopNap">
-      <Example>Beende Nap</Example>
+      <Example>abbrechen</Example>
       <ListenFor>Beende [Nap] [Nickerchen]</ListenFor>
       <ListenFor>Stopp [Nap] [Nickerchen]</ListenFor>
       <ListenFor>Abbrechen</ListenFor>
@@ -418,14 +451,14 @@
     </Command>
 
     <Command Name="checkAlarmTime">
-      <Example>Auf wann ist der Alarm gestellt?</Example>
+      <Example>auf wann ist der Alarm gestellt?</Example>
       <ListenFor>[Auf] wann ist der Alarm [gestellt] [gesetzt]?</ListenFor>
       <Feedback>Ich schaue nach</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="checkRemainingTime">
-      <Example>Wie viel Zeit habe ich noch?</Example>
+      <Example>wie viel Zeit habe ich noch?</Example>
       <ListenFor>Wie viel Zeit habe ich noch?</ListenFor>
       <ListenFor>Wie viel Zeit ist noch übrig?</ListenFor>
       <ListenFor>Restzeit?</ListenFor>
@@ -508,6 +541,7 @@
     </PhraseList>
 
     <PhraseList Label="hour">
+      <Item>0</Item>
       <Item>1</Item>
       <Item>2</Item>
       <Item>3</Item>
@@ -520,6 +554,17 @@
       <Item>10</Item>
       <Item>11</Item>
       <Item>12</Item>
+      <Item>13</Item>
+      <Item>14</Item>
+      <Item>15</Item>
+      <Item>16</Item>
+      <Item>17</Item>
+      <Item>18</Item>
+      <Item>19</Item>
+      <Item>20</Item>
+      <Item>21</Item>
+      <Item>22</Item>
+      <Item>23</Item>
     </PhraseList>
 
   </CommandSet>

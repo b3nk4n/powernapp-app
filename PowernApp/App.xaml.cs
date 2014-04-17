@@ -94,7 +94,7 @@ namespace PowernApp
         // Code, der bei einem Navigationsfehler ausgeführt wird
         private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
-            ErrorReportingManager.Instance.Save(e.Exception);
+            ErrorReportingManager.Instance.Save(e.Exception, AppResources.ApplicationVersion, AppResources.ResourceLanguage);
 
             if (Debugger.IsAttached)
             {
@@ -106,7 +106,7 @@ namespace PowernApp
         // Code, der bei Ausnahmefehlern ausgeführt wird
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
-            ErrorReportingManager.Instance.Save(e.ExceptionObject);
+            ErrorReportingManager.Instance.Save(e.ExceptionObject, AppResources.ApplicationVersion, AppResources.ResourceLanguage);
 
             if (Debugger.IsAttached)
             {

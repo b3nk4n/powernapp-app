@@ -173,6 +173,9 @@
     <value>- " ...für 1 Stunde und 30 Minuten. "</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="Commands2Bullet1c" xml:space="preserve">
+    <value>- "...bis 14 Uhr 30."</value>
+  </data>
   <data name="Commands2Bullet2" xml:space="preserve">
     <value>- " ...abbrechen. "</value>
     <comment>InfoPage</comment>

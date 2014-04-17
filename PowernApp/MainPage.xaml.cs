@@ -197,6 +197,7 @@ namespace PowernApp
         {
             string hours;
             string minutes;
+            string identifier;
             switch (commandName)
             {
                 case "startNap1":
@@ -207,6 +208,26 @@ namespace PowernApp
                     hours = NavigationContext.QueryString["hour"];
                     minutes = NavigationContext.QueryString["minute"];
                     handleStartNap2Command(hours, minutes);
+                    break;
+                case "startNap3":
+                    hours = NavigationContext.QueryString["hour"];
+                    minutes = NavigationContext.QueryString["minute"];
+                    handleStartNap3Command(hours, minutes);
+                    break;
+                case "startNap3Short":
+                    hours = NavigationContext.QueryString["hour"];
+                    handleStartNap3ShortCommand(hours);
+                    break;
+                case "startNap3US":
+                    hours = NavigationContext.QueryString["hour"];
+                    minutes = NavigationContext.QueryString["minute"];
+                    identifier = NavigationContext.QueryString["identifier"];
+                    handleStartNap3USCommand(hours, minutes, identifier);
+                    break;
+                case "startNap3ShortUS":
+                    hours = NavigationContext.QueryString["hour"];
+                    identifier = NavigationContext.QueryString["identifier"];
+                    handleStartNap3ShortUSCommand(hours, identifier);
                     break;
                 case "stopNap":
                     handleStopNapCommand();
@@ -230,17 +251,7 @@ namespace PowernApp
         /// <param name="minutes">The length of the nap in minutes.</param>
         private void handleStartNap1Command(string minutes)
         {
-            int min = 30;
-            int.TryParse(minutes, out min);
-
-            if (AlarmClockViewModel.Instance.Set(min))
-            {
-                string startFormat = (new Random().Next(2) == 0) ? AppResources.SpeakStartNap1 : AppResources.SpeakStartNap2;
-
-                GiveVoiceFeedback(string.Format(startFormat, minutes));
-            }
-            else
-                GiveVoiceFeedback(AppResources.SpeakAlarmAlreadySet);
+            handleStartNap2Command("0", minutes);
         }
 
         /// <summary>
@@ -256,11 +267,114 @@ namespace PowernApp
             int.TryParse(hours, out h);
             int totalMins = 60 * h + min;
 
-            if (AlarmClockViewModel.Instance.Set(totalMins))
+            handleSleepMinutesInternal(totalMins);
+        }
+
+        /// <summary>
+        /// Handles the start nap command.
+        /// </summary>
+        /// <param name="hours">The hour clock time to sleep to.</param>
+        /// <param name="minutes">The minutes clock time to sleep to.</param>
+        private void handleStartNap3Command(string hours, string minutes)
+        {
+            int h = DateTime.Now.Hour;
+            int min = DateTime.Now.Minute + 30;
+
+            if (min > 59)
+            {
+                min -= 60;
+                h++;
+                if (h > 23)
+                    h = 0;
+            }
+
+            int.TryParse(minutes, out min);
+            int.TryParse(hours, out h);
+
+            var now = DateTime.Now;
+            var sleepTo = new DateTime(now.Year, now.Month, now.Day, h, min, 0);
+           
+            if (sleepTo < now)
+            {
+                sleepTo = sleepTo.AddDays(1);
+            }
+
+            int totalMins = (int)(sleepTo - now).TotalMinutes + 1;
+
+            handleSleepMinutesInternal(totalMins);
+        }
+
+        /// <summary>
+        /// Handles the start nap command.
+        /// </summary>
+        /// <param name="hours">The hour clock time to sleep to.</param>
+        /// <param name="minutes">The minutes clock time to sleep to.</param>
+        private void handleStartNap3ShortCommand(string hours)
+        {
+            handleStartNap3Command(hours, "0");
+        }
+
+        /// <summary>
+        /// Handles the start nap command with 12h clock.
+        /// </summary>
+        /// <param name="hours">The hour clock time to sleep to.</param>
+        /// <param name="minutes">The minutes clock time to sleep to.</param>
+        /// <param name="identifier12h">The 12h clock identifier (am/pm)</param>
+        private void handleStartNap3USCommand(string hours, string minutes, string identifier12h)
+        {
+            int h = DateTime.Now.Hour;
+            int min = DateTime.Now.Minute + 30;
+
+            if (min > 59)
+            {
+                min -= 60;
+                h++;
+                if (h > 23)
+                    h = 0;
+            }
+
+            int.TryParse(minutes, out min);
+            int.TryParse(hours, out h);
+
+            var now = DateTime.Now;
+            var sleepTo = new DateTime(now.Year, now.Month, now.Day, h, min, 0);
+
+            if (sleepTo < now)
+            {
+                sleepTo = sleepTo.AddDays(1);
+            }
+
+            if (identifier12h == "PM")
+            {
+                sleepTo = sleepTo.AddHours(12);
+            }
+
+            int totalMins = (int)(sleepTo - now).TotalMinutes + 1;
+
+            handleSleepMinutesInternal(totalMins);
+        }
+
+        /// <summary>
+        /// Handles the start nap command with 12h clock.
+        /// </summary>
+        /// <param name="hours">The hour clock time to sleep to.</param>
+        /// <param name="identifier12h">The 12h clock identifier (am/pm)</param>
+        private void handleStartNap3ShortUSCommand(string hours, string identifier12h)
+        {
+            handleStartNap3USCommand(hours, "0", identifier12h);
+        }
+
+        /// <summary>
+        /// Handles the sleep total minutes and fives sound feedback.
+        /// </summary>
+        /// <param name="totalMinutes">The total minutes to sleep.</param>
+        private void handleSleepMinutesInternal(int totalMinutes)
+        {
+            if (AlarmClockViewModel.Instance.Set(totalMinutes))
             {
                 string startFormat = (new Random().Next(2) == 0) ? AppResources.SpeakStartNap1 : AppResources.SpeakStartNap2;
 
-                GiveVoiceFeedback(string.Format(startFormat, totalMins));
+                GiveVoiceFeedback(string.Format(startFormat, totalMinutes));
             }
             else
                 GiveVoiceFeedback(AppResources.SpeakAlarmAlreadySet);

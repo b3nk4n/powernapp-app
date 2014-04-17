@@ -187,6 +187,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        public static string Commands2Bullet1c {
+            get {
+                return ResourceManager.GetString("Commands2Bullet1c", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die - &quot; ...cancel nap. &quot; ähnelt.
         /// </summary>
         public static string Commands2Bullet2 {

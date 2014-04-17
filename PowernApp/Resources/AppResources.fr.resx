@@ -442,4 +442,7 @@ De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à t
     <value>Supprimer l'écran de verrouillage</value>
     <comment>SettingsPage</comment>
   </data>
+  <data name="Commands2Bullet1c" xml:space="preserve">
+    <value />
+  </data>
 </root>

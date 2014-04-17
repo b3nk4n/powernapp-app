@@ -444,4 +444,7 @@ Mostrandoci apprezzamento sullo store, ci aiuterai a proseguire il nostro lavoro
     <value>Sopprimere la schermata di blocco</value>
     <comment>SettingsPage</comment>
   </data>
+  <data name="Commands2Bullet1c" xml:space="preserve">
+    <value />
+  </data>
 </root>
