@@ -271,6 +271,22 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
     <value>enviar feedback</value>
     <comment>FeedbackDialogControl</comment>
   </data>
+  <data name="InAppStoreLoading" xml:space="preserve">
+    <value>zzzZZZ...</value>
+    <comment>InAppStorePage</comment>
+  </data>
+  <data name="InAppStoreNoProducts" xml:space="preserve">
+    <value>There are currently no in-app purchases available. Please try again later.</value>
+    <comment>InAppStorePage</comment>
+  </data>
+  <data name="InAppStorePurchased" xml:space="preserve">
+    <value>comprou</value>
+    <comment>InAppStorePage</comment>
+  </data>
+  <data name="InAppStoreTitle" xml:space="preserve">
+    <value>compras na aplicação</value>
+    <comment>AppBar</comment>
+  </data>
   <data name="InfoTitle" xml:space="preserve">
     <value>ajuda</value>
     <comment>InfoPage</comment>

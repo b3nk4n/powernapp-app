@@ -615,10 +615,18 @@ namespace PowernApp
                 NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
             };
 
-            // about
-            ApplicationBarMenuItem appBarMenuItem2 = new ApplicationBarMenuItem(AppResources.AboutTitle);
+            // settings
+            ApplicationBarMenuItem appBarMenuItem2 = new ApplicationBarMenuItem(AppResources.InAppStoreTitle);
             ApplicationBar.MenuItems.Add(appBarMenuItem2);
             appBarMenuItem2.Click += (s, e) =>
+            {
+                NavigationService.Navigate(new Uri("/InAppStorePage.xaml", UriKind.Relative));
+            };
+
+            // about
+            ApplicationBarMenuItem appBarMenuItem3 = new ApplicationBarMenuItem(AppResources.AboutTitle);
+            ApplicationBar.MenuItems.Add(appBarMenuItem3);
+            appBarMenuItem3.Click += (s, e) =>
             {
                 NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
             };

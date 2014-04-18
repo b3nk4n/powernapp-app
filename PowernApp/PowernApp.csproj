@@ -97,11 +97,23 @@
     </Compile>
     <Compile Include="Controls\LocalizedAboutControl.cs" />
     <Compile Include="Controls\LocalizedFeedbackDialogControl.cs" />
+    <Compile Include="Controls\LocalizedInAppStoreControl.cs" />
     <Compile Include="Controls\ThemedAboutControlBase.xaml.cs">
       <DependentUpon>ThemedAboutControlBase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ThemedInAppStoreControlBase.xaml.cs">
+      <DependentUpon>ThemedInAppStoreControlBase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converter\DateToTimeConverter.cs" />
     <Compile Include="Converter\TimeSpanConverter.cs" />
+    <Compile Include="InAppStorePage.xaml.cs">
+      <DependentUpon>InAppStorePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppResources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="StatisticPage.xaml.cs">
       <DependentUpon>StatisticPage.xaml</DependentUpon>
     </Compile>
@@ -113,11 +125,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\AppResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -137,6 +144,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ThemedAboutControlBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ThemedInAppStoreControlBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InAppStorePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -246,7 +261,7 @@
     <EmbeddedResource Include="Resources\AppResources.pt.resx" />
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppResources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

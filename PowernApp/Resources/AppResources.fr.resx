@@ -445,4 +445,20 @@ De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à t
   <data name="Commands2Bullet1c" xml:space="preserve">
     <value />
   </data>
+  <data name="InAppStoreLoading" xml:space="preserve">
+    <value>zzzZZZ...</value>
+    <comment>InAppStorePage</comment>
+  </data>
+  <data name="InAppStoreNoProducts" xml:space="preserve">
+    <value>There are currently no in-app purchases available. Please try again later.</value>
+    <comment>InAppStorePage</comment>
+  </data>
+  <data name="InAppStorePurchased" xml:space="preserve">
+    <value>acheté</value>
+    <comment>InAppStorePage</comment>
+  </data>
+  <data name="InAppStoreTitle" xml:space="preserve">
+    <value>achats via l'application</value>
+    <comment>AppBar</comment>
+  </data>
 </root>
