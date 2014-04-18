@@ -388,7 +388,7 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Wünsche ein angenemes {0} Minuten Nickerchen.</value>
+    <value>Wünsche einen angenemen {0} Minuten Schlaf.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">

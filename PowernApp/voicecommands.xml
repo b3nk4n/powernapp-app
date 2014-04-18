@@ -34,6 +34,20 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap3GB">
+      <Example>until half past 2.</Example>
+      <ListenFor>[until] {minText} {relative} {hour}</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3ShortGB">
+      <Example>until 3 o'clock.</Example>
+      <ListenFor>[until] {hour} o'clock</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="stopNap">
       <Example>Cancel nap</Example>
       <ListenFor>Cancel [nap]</ListenFor>
@@ -146,6 +160,22 @@
       <Item>AM</Item>
       <Item>PM</Item>
     </PhraseList>
+
+    <PhraseList Label="minText">
+      <Item>five</Item>
+      <Item>ten</Item>
+      <Item>fifteen</Item>
+      <Item>quarter</Item>
+      <Item>twenty</Item>
+      <Item>twenty-five</Item>
+      <Item>thirty</Item>
+      <Item>half</Item>
+    </PhraseList>
+
+    <PhraseList Label="relative">
+      <Item>to</Item>
+      <Item>past</Item>
+    </PhraseList>
     
   </CommandSet>
   
@@ -164,6 +194,34 @@
     <Command Name="startNap2">
       <Example>for 1 hour and 30 minutes</Example>
       <ListenFor>[for] {hour} hour [and] {minute} minutes</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3US">
+      <Example>until 2:30 PM.</Example>
+      <ListenFor>[util] {hour} {minute} {identifier}</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3ShortUS">
+      <Example>until 3 PM.</Example>
+      <ListenFor>[until] {hour} {identifier}</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3GB">
+      <Example>until half past 2.</Example>
+      <ListenFor>[until] {minText} {relative} {hour}</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3ShortGB">
+      <Example>until 3 o'clock.</Example>
+      <ListenFor>[until] {hour} o'clock</ListenFor>
       <Feedback>Turning alarm on</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -274,6 +332,27 @@
       <Item>10</Item>
       <Item>11</Item>
       <Item>12</Item>
+    </PhraseList>
+
+    <PhraseList Label="identifier">
+      <Item>AM</Item>
+      <Item>PM</Item>
+    </PhraseList>
+
+    <PhraseList Label="minText">
+      <Item>five</Item>
+      <Item>ten</Item>
+      <Item>fifteen</Item>
+      <Item>quarter</Item>
+      <Item>twenty</Item>
+      <Item>twenty-five</Item>
+      <Item>thirty</Item>
+      <Item>half</Item>
+    </PhraseList>
+
+    <PhraseList Label="relative">
+      <Item>to</Item>
+      <Item>past</Item>
     </PhraseList>
     
   </CommandSet>
@@ -297,6 +376,34 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap3US">
+      <Example>until 2:30 PM.</Example>
+      <ListenFor>[util] {hour} {minute} {identifier}</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3ShortUS">
+      <Example>until 3 PM.</Example>
+      <ListenFor>[until] {hour} {identifier}</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3GB">
+      <Example>until half past 2.</Example>
+      <ListenFor>[until] {minText} {relative} {hour}</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3ShortGB">
+      <Example>until 3 o'clock.</Example>
+      <ListenFor>[until] {hour} o'clock</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="stopNap">
       <Example>Cancel nap</Example>
       <ListenFor>Cancel [nap]</ListenFor>
@@ -403,6 +510,27 @@
       <Item>10</Item>
       <Item>11</Item>
       <Item>12</Item>
+    </PhraseList>
+
+    <PhraseList Label="identifier">
+      <Item>AM</Item>
+      <Item>PM</Item>
+    </PhraseList>
+
+    <PhraseList Label="minText">
+      <Item>five</Item>
+      <Item>ten</Item>
+      <Item>fifteen</Item>
+      <Item>quarter</Item>
+      <Item>twenty</Item>
+      <Item>twenty-five</Item>
+      <Item>thirty</Item>
+      <Item>half</Item>
+    </PhraseList>
+
+    <PhraseList Label="relative">
+      <Item>to</Item>
+      <Item>past</Item>
     </PhraseList>
 
   </CommandSet>
@@ -436,6 +564,13 @@
     <Command Name="startNap3Short">
       <Example>bis 14 Uhr.</Example>
       <ListenFor>[bis] {hour} Uhr</ListenFor>
+      <Feedback>Ich stelle den Wecker</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3DEText">
+      <Example>bis halb 3.</Example>
+      <ListenFor>[bis] {text} {hour}</ListenFor>
       <Feedback>Ich stelle den Wecker</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -565,6 +700,12 @@
       <Item>21</Item>
       <Item>22</Item>
       <Item>23</Item>
+    </PhraseList>
+
+    <PhraseList Label="text">
+      <Item>viertel vor</Item>
+      <Item>halb</Item>
+      <Item>viertel nach</Item>
     </PhraseList>
 
   </CommandSet>
