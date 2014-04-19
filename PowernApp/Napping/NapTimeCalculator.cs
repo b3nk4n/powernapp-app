@@ -11,6 +11,25 @@ namespace PowernApp.Napping
     /// </summary>
     public class NapTimeCalculator
     {
+        public const string IDENTIFIER12_AM = "AM";
+        public const string IDENTIFIER12_PM = "PM";
+
+        public const string DE_MINTEXT_QUARTER_TO = "viertel vor";
+        public const string DE_MINTEXT_HALF = "halb";
+        public const string DE_MINTEXT_QUARTER_PAST = "viertel nach";
+
+        public const string EN_RELATIVE_TO = "to";
+        public const string EN_RELATIVE_PAST = "past";
+
+        public const string EN_MINTEXT_FIVE = "five";
+        public const string EN_MINTEXT_TEN = "ten";
+        public const string EN_MINTEXT_FIFTEEN = "fifteen";
+        public const string EN_MINTEXT_QUARTER = "quarter";
+        public const string EN_MINTEXT_TWENTY = "twenty";
+        public const string EN_MINTEXT_TWENTYFIVE = "twenty-five";
+        public const string EN_MINTEXT_THIRTY = "thirty";
+        public const string EN_MINTEXT_HALF = "half";
+
         /// <summary>
         /// The base time, which is usually the current time.
         /// </summary>
@@ -34,7 +53,7 @@ namespace PowernApp.Napping
         public int calculateTime(string hours, string minutes)
         {
             int h = 0;
-            int min = 30;
+            int min = 0;
             int.TryParse(minutes, out min);
             int.TryParse(hours, out h);
             int totalMins = 60 * h + min;
@@ -51,7 +70,7 @@ namespace PowernApp.Napping
         public int calculateTimeUntilTimeAs24Clock(string hours, string minutes)
         {
             int h = _now.Hour;
-            int min = _now.Minute + 30;
+            int min = _now.Minute;
 
             if (min > 59)
             {
@@ -71,7 +90,7 @@ namespace PowernApp.Napping
                 sleepTo = sleepTo.AddDays(1);
             }
 
-            int totalMins = (int)(sleepTo - _now).TotalMinutes + 1;
+            int totalMins = TimespanToTotalMinutesCeiled(sleepTo - _now);
             return totalMins;
         }
 
@@ -85,7 +104,7 @@ namespace PowernApp.Napping
         public int calculateTimeUntilTimeAs12ClockUS(string hours, string minutes, string identifier12h)
         {
             int h = _now.Hour;
-            int min = _now.Minute + 30;
+            int min = _now.Minute;
 
             if (min > 59)
             {
@@ -100,7 +119,7 @@ namespace PowernApp.Napping
 
             var sleepTo = new DateTime(_now.Year, _now.Month, _now.Day, h, min, 0);
 
-            if (identifier12h == "PM")
+            if (identifier12h == IDENTIFIER12_PM)
             {
                 sleepTo = sleepTo.AddHours(12);
             }
@@ -110,7 +129,7 @@ namespace PowernApp.Napping
                 sleepTo = sleepTo.AddDays(1);
             }
 
-            int totalMins = (int)(sleepTo - _now).TotalMinutes + 1;
+            int totalMins = TimespanToTotalMinutesCeiled(sleepTo - _now);
             return totalMins;
         }
 
@@ -131,13 +150,13 @@ namespace PowernApp.Napping
 
             switch (minText)
             {
-                case "viertel vor":
+                case DE_MINTEXT_QUARTER_TO:
                     minOffset = -15;
                     break;
-                case "viertel nach":
+                case DE_MINTEXT_QUARTER_PAST:
                     minOffset = 15;
                     break;
-                case "halb":
+                case DE_MINTEXT_HALF:
                     minOffset = -30;
                     break;
             }
@@ -155,7 +174,7 @@ namespace PowernApp.Napping
                 sleepTo = sleepTo.AddHours(12);
             }
 
-            int totalMins = (int)(sleepTo - _now).TotalMinutes + 1;
+            int totalMins = TimespanToTotalMinutesCeiled(sleepTo - _now);
             return totalMins;
         }
 
@@ -178,34 +197,34 @@ namespace PowernApp.Napping
 
             switch (relative)
             {
-                case "past":
+                case EN_RELATIVE_PAST:
                     factor = 1;
                     break;
-                case "to":
+                case EN_RELATIVE_TO:
                     factor = -1;
                     break;
             }
 
             switch (minText)
             {
-                case "five":
+                case EN_MINTEXT_FIVE:
                     minOffset = 5;
                     break;
-                case "ten":
+                case EN_MINTEXT_TEN:
                     minOffset = 10;
                     break;
-                case "fifteen":
-                case "quarter":
+                case EN_MINTEXT_FIFTEEN:
+                case EN_MINTEXT_QUARTER:
                     minOffset = 15;
                     break;
-                case "twenty":
+                case EN_MINTEXT_TWENTY:
                     minOffset = 20;
                     break;
-                case "twenty-five":
+                case EN_MINTEXT_TWENTYFIVE:
                     minOffset = 25;
                     break;
-                case "thirty":
-                case "half":
+                case EN_MINTEXT_THIRTY:
+                case EN_MINTEXT_HALF:
                     minOffset = 30;
                     break;
             }
@@ -220,7 +239,7 @@ namespace PowernApp.Napping
                 sleepTo = sleepTo.AddHours(12);
             }
 
-            int totalMins = (int)(sleepTo - _now).TotalMinutes + 1;
+            int totalMins = TimespanToTotalMinutesCeiled(sleepTo - _now);
             return totalMins;
         }
 
@@ -244,8 +263,18 @@ namespace PowernApp.Napping
                 sleepTo = sleepTo.AddHours(12);
             }
 
-            int totalMins = (int)(sleepTo - _now).TotalMinutes + 1;
+            int totalMins = TimespanToTotalMinutesCeiled(sleepTo - _now);
             return totalMins;
+        }
+
+        /// <summary>
+        /// Gets the ceiled (rounded up) total minutes of the time span.
+        /// </summary>
+        /// <param name="timespan">The time span.</param>
+        /// <returns>The total minutes of the timespan.</returns>
+        private int TimespanToTotalMinutesCeiled(TimeSpan timespan)
+        {
+            return (int)Math.Ceiling(timespan.TotalMinutes);
         }
     }
 }

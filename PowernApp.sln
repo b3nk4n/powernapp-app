@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowernApp", "PowernApp\PowernApp.csproj", "{9B087801-1E2D-45B0-9666-075809C89E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowernApp.UnitTesting", "PowernApp.UnitTesting\PowernApp.UnitTesting.csproj", "{262C21BE-50B6-444D-B584-A855E98DE4FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,14 @@ Global
 		{9B087801-1E2D-45B0-9666-075809C89E8E}.Release|x86.ActiveCfg = Release|x86
 		{9B087801-1E2D-45B0-9666-075809C89E8E}.Release|x86.Build.0 = Release|x86
 		{9B087801-1E2D-45B0-9666-075809C89E8E}.Release|x86.Deploy.0 = Release|x86
+		{262C21BE-50B6-444D-B584-A855E98DE4FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262C21BE-50B6-444D-B584-A855E98DE4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262C21BE-50B6-444D-B584-A855E98DE4FF}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{262C21BE-50B6-444D-B584-A855E98DE4FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{262C21BE-50B6-444D-B584-A855E98DE4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262C21BE-50B6-444D-B584-A855E98DE4FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262C21BE-50B6-444D-B584-A855E98DE4FF}.Release|ARM.ActiveCfg = Release|Any CPU
+		{262C21BE-50B6-444D-B584-A855E98DE4FF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
