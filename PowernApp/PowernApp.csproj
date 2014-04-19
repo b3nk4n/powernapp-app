@@ -109,6 +109,7 @@
     <Compile Include="InAppStorePage.xaml.cs">
       <DependentUpon>InAppStorePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Napping\NapTimeCalculator.cs" />
     <Compile Include="Resources\AppResources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -12,6 +12,7 @@ using System.Windows.Threading;
 using System.Windows.Media;
 using PhoneKit.Framework.Core.Net;
 using PhoneKit.Framework.Support;
+using PowernApp.Napping;
 
 namespace PowernApp
 {
@@ -198,7 +199,6 @@ namespace PowernApp
             string hours;
             string minutes;
             string identifier;
-            string text;
             string minText;
             string relative;
             switch (commandName)
@@ -223,8 +223,8 @@ namespace PowernApp
                     break;
                 case "startNap3DEText":
                     hours = NavigationContext.QueryString["hour"];
-                    text = NavigationContext.QueryString["text"];
-                    handleStartNap3DETextCommand(hours, text);
+                    minText = NavigationContext.QueryString["text"];
+                    handleStartNap3DETextCommand(hours, minText);
                     break;
                 case "startNap3US":
                     hours = NavigationContext.QueryString["hour"];
@@ -279,11 +279,8 @@ namespace PowernApp
         /// <param name="minutes">The length of the nap in minutes.</param>
         private void handleStartNap2Command(string hours, string minutes)
         {
-            int h = 0;
-            int min = 30;
-            int.TryParse(minutes, out min);
-            int.TryParse(hours, out h);
-            int totalMins = 60 * h + min;
+            NapTimeCalculator napTimeCalulator = new NapTimeCalculator(DateTime.Now);
+            var totalMins = napTimeCalulator.calculateTime(hours, minutes);
 
             handleSleepMinutesInternal(totalMins);
         }
@@ -295,30 +292,8 @@ namespace PowernApp
         /// <param name="minutes">The minutes clock time to sleep to.</param>
         private void handleStartNap3Command(string hours, string minutes)
         {
-            int h = DateTime.Now.Hour;
-            int min = DateTime.Now.Minute + 30;
-
-            if (min > 59)
-            {
-                min -= 60;
-                h++;
-                if (h > 23)
-                    h = 0;
-            }
-
-            int.TryParse(minutes, out min);
-            int.TryParse(hours, out h);
-
-            var now = DateTime.Now;
-            var sleepTo = new DateTime(now.Year, now.Month, now.Day, h, min, 0);
-           
-            if (sleepTo < now)
-            {
-                sleepTo = sleepTo.AddDays(1);
-            }
-
-            int totalMins = (int)(sleepTo - now).TotalMinutes + 1;
-
+            NapTimeCalculator napTimeCalulator = new NapTimeCalculator(DateTime.Now);
+            var totalMins = napTimeCalulator.calculateTimeUntilTimeAs24Clock(hours, minutes);
             handleSleepMinutesInternal(totalMins);
         }
 
@@ -350,35 +325,8 @@ namespace PowernApp
         /// <param name="identifier12h">The 12h clock identifier (am/pm)</param>
         private void handleStartNap3USCommand(string hours, string minutes, string identifier12h)
         {
-            int h = DateTime.Now.Hour;
-            int min = DateTime.Now.Minute + 30;
-
-            if (min > 59)
-            {
-                min -= 60;
-                h++;
-                if (h > 23)
-                    h = 0;
-            }
-
-            int.TryParse(minutes, out min);
-            int.TryParse(hours, out h);
-
-            var now = DateTime.Now;
-            var sleepTo = new DateTime(now.Year, now.Month, now.Day, h, min, 0);
-
-            if (identifier12h == "PM")
-            {
-                sleepTo = sleepTo.AddHours(12);
-            }
-
-            if (sleepTo < now)
-            {
-                sleepTo = sleepTo.AddDays(1);
-            }
-
-            int totalMins = (int)(sleepTo - now).TotalMinutes + 1;
-
+            NapTimeCalculator napTimeCalulator = new NapTimeCalculator(DateTime.Now);
+            var totalMins = napTimeCalulator.calculateTimeUntilTimeAs12ClockUS(hours, minutes, identifier12h);
             handleSleepMinutesInternal(totalMins);
         }
 
@@ -389,42 +337,8 @@ namespace PowernApp
         /// <param name="text">The german quarter text (viertel vor/halb/viertel nach)</param>
         private void handleStartNap3DETextCommand(string hours, string text)
         {
-            int minOffset = -30; // "halb" as default
-            int h = DateTime.Now.Hour + 1;
-            if (h > 23)
-                h = 0;
-
-            int.TryParse(hours, out h);
-
-            switch (text)
-            {
-                case "viertel vor":
-                    minOffset = -15;
-                    break;
-                case "viertel nach":
-                    minOffset = 15;
-                    break;
-                case "halb":
-                    minOffset = -30;
-                    break;
-            }
-
-            var now = DateTime.Now;
-            var sleepTo = new DateTime(now.Year, now.Month, now.Day, h, 0, 0);
-            sleepTo = sleepTo.AddMinutes(minOffset);
-
-            if (sleepTo < now)
-            {
-                sleepTo = sleepTo.AddHours(12);
-            }
-            // do this a second time, bacause sleepTo could still be before NOW
-            if (sleepTo < now)
-            {
-                sleepTo = sleepTo.AddHours(12);
-            }
-
-            int totalMins = (int)(sleepTo - now).TotalMinutes + 1;
-
+            NapTimeCalculator napTimeCalulator = new NapTimeCalculator(DateTime.Now);
+            var totalMins = napTimeCalulator.calculateTimeUntilTimeAs12ClockDEText(hours, text);
             handleSleepMinutesInternal(totalMins);
         }
 
@@ -436,61 +350,8 @@ namespace PowernApp
         /// <param name="relative">The relative (offset/downset) as "past" or "to".</param>
         private void handleStartNap3GBCommand(string hours, string minText, string relative)
         {
-            int factor = 1;
-            int minOffset = 30; // "half" as default
-            int h = DateTime.Now.Hour + 1;
-            if (h > 23)
-                h = 0;
-
-            int.TryParse(hours, out h);
-
-            switch (relative)
-            {
-                case "past":
-                    factor = 1;
-                    break;
-                case "to":
-                    factor = -1;
-                    break;
-            }
-
-            switch (minText)
-            {
-                case "five":
-                    minOffset = 5;
-                    break;
-                case "ten":
-                    minOffset = 10;
-                    break;
-                case "fifteen":
-                case "quarter":
-                    minOffset = 15;
-                    break;
-                case "twenty":
-                    minOffset = 20;
-                    break;
-                case "twenty-five":
-                    minOffset = 25;
-                    break;
-                case "thirty":
-                case "half":
-                    minOffset = 30;
-                    break;
-            }
-
-            minOffset = minOffset * factor;
-
-            var now = DateTime.Now;
-            var sleepTo = new DateTime(now.Year, now.Month, now.Day, h, 0, 0);
-            sleepTo = sleepTo.AddMinutes(minOffset);
-
-            while (sleepTo < now)
-            {
-                sleepTo = sleepTo.AddHours(12);
-            }
-
-            int totalMins = (int)(sleepTo - now).TotalMinutes + 1;
-
+            NapTimeCalculator napTimeCalculator = new NapTimeCalculator(DateTime.Now);
+            var totalMins = napTimeCalculator.calculateTimeUntilTimeAs12ClockGBText(hours, minText, relative);
             handleSleepMinutesInternal(totalMins);
         }
 
@@ -500,22 +361,8 @@ namespace PowernApp
         /// <param name="hours">The next full hours.</param>
         private void handleStartNap3ShortGBCommand(string hours)
         {
-            int h = DateTime.Now.Hour + 1;
-            if (h > 23)
-                h = 0;
-
-            int.TryParse(hours, out h);
-
-            var now = DateTime.Now;
-            var sleepTo = new DateTime(now.Year, now.Month, now.Day, h, 0, 0);
-
-            while (sleepTo < now)
-            {
-                sleepTo = sleepTo.AddHours(12);
-            }
-
-            int totalMins = (int)(sleepTo - now).TotalMinutes + 1;
-
+            NapTimeCalculator napTimeCalculator = new NapTimeCalculator(DateTime.Now);
+            var totalMins = napTimeCalculator.calculateTimeUntilTimeAs12ClockGB(hours);
             handleSleepMinutesInternal(totalMins);
         }
 
