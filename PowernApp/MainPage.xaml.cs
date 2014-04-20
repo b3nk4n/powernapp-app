@@ -15,6 +15,7 @@ using PhoneKit.Framework.Support;
 using PowernApp.Napping;
 using PhoneKit.Framework.InAppPurchase;
 using PhoneKit.Framework.Advertising;
+using System.Collections.Generic;
 
 namespace PowernApp
 {
@@ -106,8 +107,38 @@ namespace PowernApp
         /// </summary>
         private void InitializeBanner()
         {
-            BannerControl.AddAdvert(new AdvertData(new Uri("/Assets/Banners/pocketBRAIN_adduplex.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ad1227e4-9f80-4967-957f-6db140dc0c90"));
-            BannerControl.AddAdvert(new AdvertData(new Uri("/Assets/Banners/pocketBRAIN_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ad1227e4-9f80-4967-957f-6db140dc0c90"));
+            List<AdvertData> advertsList = new List<AdvertData>();
+            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/pocketBRAIN_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ad1227e4-9f80-4967-957f-6db140dc0c90"));
+            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/SpaceScribble_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "71fc4a5b-de12-4b28-88ec-8ac573ce9708"));
+            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/SpacepiXX_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "cbe0dfa7-2879-4c2c-b7c6-3798781fba16"));
+            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/ScribbleHunter_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ed250596-e670-4d22-aee1-8ed0a08c411f"));
+            
+            //shuffle
+            ShuffleList<AdvertData>(advertsList);
+
+            foreach (var advert in advertsList)
+            {
+                BannerControl.AddAdvert(advert);
+            }
+        }
+
+        /// <summary>
+        /// Helper function to shuffle a list.
+        /// </summary>
+        /// <typeparam name="T"> The list type.</typeparam>
+        /// <param name="list">The list to shuffle.</param>
+        private static void ShuffleList<T>(IList<T> list)
+        {
+            Random rng = new Random();
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
         }
 
         /// <summary>

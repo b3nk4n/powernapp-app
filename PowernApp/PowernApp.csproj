@@ -206,8 +206,10 @@
     <Content Include="Assets\Audio\nosound.wav" />
     <Content Include="Assets\Audio\ocean.wav" />
     <Content Include="Assets\Audio\rooster.wav" />
-    <Content Include="Assets\Banners\pocketBRAIN_adduplex.png" />
     <Content Include="Assets\Banners\pocketBRAIN_adduplex_trans.png" />
+    <Content Include="Assets\Banners\ScribbleHunter_adduplex_trans.png" />
+    <Content Include="Assets\Banners\SpacepiXX_adduplex_trans.png" />
+    <Content Include="Assets\Banners\SpaceScribble_adduplex_trans.png" />
     <Content Include="Assets\Images\alarm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
