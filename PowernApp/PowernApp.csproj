@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppConstants.cs" />
     <Compile Include="Controls\LocalizedAboutControl.cs" />
     <Compile Include="Controls\LocalizedFeedbackDialogControl.cs" />
     <Compile Include="Controls\LocalizedInAppStoreControl.cs" />
@@ -205,6 +206,8 @@
     <Content Include="Assets\Audio\nosound.wav" />
     <Content Include="Assets\Audio\ocean.wav" />
     <Content Include="Assets\Audio\rooster.wav" />
+    <Content Include="Assets\Banners\pocketBRAIN_adduplex.png" />
+    <Content Include="Assets\Banners\pocketBRAIN_adduplex_trans.png" />
     <Content Include="Assets\Images\alarm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -282,9 +285,7 @@
       <HintPath>..\Lib\PhoneKit.Framework.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Banners\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

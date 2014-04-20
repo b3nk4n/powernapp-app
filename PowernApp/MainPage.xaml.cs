@@ -13,6 +13,8 @@ using System.Windows.Media;
 using PhoneKit.Framework.Core.Net;
 using PhoneKit.Framework.Support;
 using PowernApp.Napping;
+using PhoneKit.Framework.InAppPurchase;
+using PhoneKit.Framework.Advertising;
 
 namespace PowernApp
 {
@@ -21,6 +23,8 @@ namespace PowernApp
     /// </summary>
     public partial class MainPage : PhoneApplicationPage
     {
+        private bool _isBannerVisible = false;
+
         /// <summary>
         /// Creates a MainPage instance.
         /// </summary>
@@ -43,24 +47,25 @@ namespace PowernApp
 
                    // Always play the blink animation, because it requires no
                    // resources when the element is collapsed
+                    AlarmBlinkingAnimation.Begin();
+
                     var timer = new DispatcherTimer();
                     timer.Tick += (se, ea) =>
                     {
-                        // start clock async
-                        AlarmBlinkingAnimation.Begin();
-                        timer.Stop();
+                        UpdateBannerViewState();
                     };
-                    timer.Interval = TimeSpan.FromSeconds(1);
+                    timer.Interval = TimeSpan.FromSeconds(5);
                     timer.Start();
+
                 };
 
             ActivateAnimation.Completed += (s, e) =>
                 {
-                    UpdateGeneralViewState(false);
+                    UpdateGeneralViewState();
                 };
             DeactivateAnimation.Completed += (s, e) =>
                 {
-                    UpdateGeneralViewState(false);
+                    UpdateGeneralViewState();
                 };
 
             BuildLocalizedApplicationBar();
@@ -74,6 +79,35 @@ namespace PowernApp
             {
                 FeedbackManager.Instance.StartSecond();
             });
+
+            InitializeBanner();
+        }
+
+        /// <summary>
+        /// Updates the banner view state. This function is called every 5 second!
+        /// </summary>
+        private void UpdateBannerViewState()
+        {
+            if (!_isBannerVisible && AlarmClockViewModel.Instance.IsAlarmSet && AlarmClockViewModel.Instance.TimeSinceStart.TotalSeconds >= 20 && AlarmClockViewModel.Instance.TimeToAlarm.TotalSeconds > 20)
+            {
+                ConnectivityMessageOut.Begin();
+                BannerIn.Begin();
+                _isBannerVisible = true;
+            }
+            else if (_isBannerVisible && AlarmClockViewModel.Instance.IsAlarmSet && AlarmClockViewModel.Instance.TimeToAlarm.TotalSeconds <= 20)
+            {
+                BannerOut.Begin();
+                _isBannerVisible = false;
+            }
+        }
+
+        /// <summary>
+        /// Initializes the banner.
+        /// </summary>
+        private void InitializeBanner()
+        {
+            BannerControl.AddAdvert(new AdvertData(new Uri("/Assets/Banners/pocketBRAIN_adduplex.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ad1227e4-9f80-4967-957f-6db140dc0c90"));
+            BannerControl.AddAdvert(new AdvertData(new Uri("/Assets/Banners/pocketBRAIN_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ad1227e4-9f80-4967-957f-6db140dc0c90"));
         }
 
         /// <summary>
@@ -104,7 +138,7 @@ namespace PowernApp
             }
 
             // determine view state
-            UpdateGeneralViewState(true);
+            UpdateGeneralViewState();
 
             if (Settings.EnableSuppressLockScreen.Value)
             {
@@ -112,8 +146,26 @@ namespace PowernApp
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+            UpdateBannerVisibility();
+
             // set data context to view model
             DataContext = AlarmClockViewModel.Instance;
+        }
+
+        /// <summary>
+        /// Updates the banner visiblilty.
+        /// </summary>
+        private void UpdateBannerVisibility()
+        {
+            if (InAppPurchaseHelper.IsProductActive(AppConstants.PRO_VERSION_IN_APP_KEY))
+            {
+                BannerControl.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+                BannerControl.Visibility = System.Windows.Visibility.Visible;
+                BannerControl.Start();
+            }
         }
 
         /// <summary>
@@ -136,9 +188,8 @@ namespace PowernApp
         /// <summary>
         /// Updates the view state of the main page and the application bar
         /// depending on whether the alarm is on or off.
-        /// <param name="withTimer">Indicates whether there should be a second async check of the message baloon.</param>
         /// </summary>
-        private void UpdateGeneralViewState(bool withTimer)
+        private void UpdateGeneralViewState()
         {
             ResetRotationAnimation.Begin();
 
@@ -147,40 +198,6 @@ namespace PowernApp
                 ActivePanel.Visibility = Visibility.Visible;
                 InactivePanel.Visibility = Visibility.Collapsed;
                 BuildActiveLocalizedApplicationBar();
-
-                if (ConnectivityHelper.IsAirplaneMode)
-                    ConnectivityMessageOut.Begin();
-                else
-                    ConnectivityMessageIn.Begin();
-
-                if (withTimer)
-                {
-                    var timer = new DispatcherTimer();
-                    timer.Tick += (s, e) =>
-                    {
-                        // check again after 2 sec, because sometime the enabling/disabling of
-                        // flight mode takes a while.
-                        if (AlarmClockViewModel.Instance.IsAlarmSet)
-                        {
-                            if (ConnectivityHelper.IsAirplaneMode)
-                            {
-                                ConnectivityMessageOut.Begin();
-                            }
-                            else
-                            {
-                                ConnectivityMessageIn.Begin();
-                            }
-                        }
-                        else
-                        {
-                            ConnectivityMessageOut.Begin();
-                        }
-
-                        timer.Stop();
-                    };
-                    timer.Interval = TimeSpan.FromSeconds(5);
-                    timer.Start();
-                }
             }
             else
             {
@@ -510,7 +527,7 @@ namespace PowernApp
             ApplicationBar.Buttons.Add(appBarButton3);
             appBarButton3.Click += async (s, e) =>
             {
-                // TODO: navigate to info page
+                ConnectivityMessageOut.Begin();
                 await SettingsLauncher.LaunchAirplaneModeAsync();
             };
         }
@@ -541,18 +558,14 @@ namespace PowernApp
                 NavigationService.Navigate(new Uri("/StatisticPage.xaml", UriKind.Relative));
             };
 
-            if (ConnectivityHelper.IsAirplaneMode)
+            // flight mode
+            ApplicationBarIconButton appBarButton3 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.cellular.png", UriKind.Relative));
+            appBarButton3.Text = AppResources.AppBarOnline;
+            ApplicationBar.Buttons.Add(appBarButton3);
+            appBarButton3.Click += async (s, e) =>
             {
-                // flight mode
-                ApplicationBarIconButton appBarButton3 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.cellular.png", UriKind.Relative));
-                appBarButton3.Text = AppResources.AppBarOnline;
-                ApplicationBar.Buttons.Add(appBarButton3);
-                appBarButton3.Click += async (s, e) =>
-                {
-                    // TODO: navigate to info page
-                    await SettingsLauncher.LaunchAirplaneModeAsync();
-                };
-            }
+                await SettingsLauncher.LaunchAirplaneModeAsync();
+            };
         }
 
         /// <summary>
@@ -574,6 +587,9 @@ namespace PowernApp
         {
             DeactivateAnimation.Begin();
             ConnectivityMessageOut.Begin();
+
+            BannerOut.Begin();
+            _isBannerVisible = false;
         }
 
         /// <summary>
@@ -586,6 +602,7 @@ namespace PowernApp
             var minutes = (int)CustomNapTimePicker.Value.Value.TotalMinutes;
             AlarmClockViewModel.Instance.Set(minutes);
             ActivateAnimation.Begin();
+            ConnectivityMessageIn.Begin();
         }
 
         /// <summary>

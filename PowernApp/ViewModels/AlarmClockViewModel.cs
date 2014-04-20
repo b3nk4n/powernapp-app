@@ -489,7 +489,7 @@ namespace PowernApp.ViewModels
         }
 
         /// <summary>
-        /// Sets or gets the alarm time.
+        /// Gets the alarm time.
         /// </summary>
         public TimeSpan TimeToAlarm
         {
@@ -497,6 +497,18 @@ namespace PowernApp.ViewModels
             {
                 var timeToAlarm = AlarmTime - DateTime.Now;
                 return (timeToAlarm < TimeSpan.Zero) ? TimeSpan.Zero : timeToAlarm;
+            }
+        }
+
+        /// <summary>
+        /// Gets the time since the start of the clock.
+        /// </summary>
+        public TimeSpan TimeSinceStart
+        {
+            get
+            {
+                var timeSinceAlarm = DateTime.Now - AlarmSetTime;
+                return (timeSinceAlarm < TimeSpan.Zero) ? TimeSpan.Zero : timeSinceAlarm;
             }
         }
 

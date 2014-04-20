@@ -12,6 +12,7 @@
     xmlns:vsm="clr-namespace:System.Windows;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:fwconv="clr-namespace:PhoneKit.Framework.Conversion;assembly=PhoneKit.Framework"
     xmlns:lc="clr-namespace:PowernApp.Controls"
+    xmlns:adverts="clr-namespace:PhoneKit.Framework.Advertising;assembly=PhoneKit.Framework"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -156,6 +157,26 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 
+        <Storyboard x:Name="BannerIn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="BannerContainer" BeginTime="0:0:0.5">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Name="BannerOut">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="BannerContainer">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
     </phone:PhoneApplicationPage.Resources>
 
     <toolkit:TransitionService.NavigationInTransition>
@@ -186,13 +207,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
-        <!--<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
-            <Border Background="{StaticResource ThemeBackgroundMedium}" Margin="12,0,6,0">
-                <Image Source="Assets/ApplicationIcon.png" Height="48" Width="48"/>
-            </Border>
-            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" Margin="12,0" VerticalAlignment="Center"/>
-        </StackPanel>-->
         <Grid x:Name="TitlePanel" Grid.Row="0" Margin="0,-1,0,28" toolkit:TurnstileFeatherEffect.FeatheringIndex="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -301,15 +315,18 @@
         <lc:LocalizedFeedbackDialogControl Grid.RowSpan="3" />
 
         <!-- no connectivity info message -->
-        <Canvas Grid.Row="4" Width="360" toolkit:TurnstileFeatherEffect.FeatheringIndex="5"
+        <Canvas Grid.Row="4"  toolkit:TurnstileFeatherEffect.FeatheringIndex="5"
                 Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=!}">
-            <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="360">
+            <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="360" Canvas.Left="60">
                 <Border Background="{StaticResource ThemeBackgroundLight}">
                     <TextBlock TextWrapping="Wrap" FontStyle="Italic" Margin="12" TextAlignment="Center"
                     Text="{Binding Path=LocalizedResources.ConnectivityHint, Source={StaticResource LocalizedStrings}}" />
                 </Border>
                 <Path Data="M 0,0 L 25,0 L 25,25 Z" Fill="{StaticResource ThemeBackgroundLight}"  Height="25" Width="25" Margin="135,-2,0,0"/>
             </StackPanel>
+            <StackPanel x:Name="BannerContainer" Canvas.Top="200">
+                <adverts:OfflineAdControl x:Name="BannerControl" Width="480" Height="80" toolkit:TiltEffect.IsTiltEnabled="True" />
+            </StackPanel>         
         </Canvas>
     </Grid>
 

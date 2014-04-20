@@ -17,7 +17,7 @@ namespace PowernApp.Controls
             InAppStoreLoadingText = AppResources.InAppStoreLoading;
             InAppStoreNoProductsText = AppResources.InAppStoreNoProducts;
             InAppStorePurchasedText = AppResources.InAppStorePurchased;
-            SupportedProductIds = "pro_version";
+            SupportedProductIds = AppConstants.PRO_VERSION_IN_APP_KEY;
         }
     }
 }
