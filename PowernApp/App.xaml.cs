@@ -105,18 +105,6 @@ namespace PowernApp
             }
         }
 
-        // Code, der bei Ausnahmefehlern ausgeführt wird
-        private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
-        {
-            ErrorReportingManager.Instance.Save(e.ExceptionObject, AppResources.ApplicationVersion, AppResources.ResourceLanguage);
-
-            if (Debugger.IsAttached)
-            {
-                // Ein Ausnahmefehler ist aufgetreten. Unterbrechen und Debugger öffnen
-                Debugger.Break();
-            }
-        }
-
         #region Initialisierung der Phone-Anwendung
 
         // Doppelte Initialisierung vermeiden

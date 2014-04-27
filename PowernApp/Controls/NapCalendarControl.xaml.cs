@@ -87,7 +87,7 @@ namespace PowernApp.Controls
             for (int c = firstDayOfWeek - 1; c >= 0; c--)
             {
                 dayCounter++;
-                var isNapDay = dataViewModel.HasNapAtDate(new DateTime(previousMonth.Year, previousMonth.Month, dayCounter));
+                var isNapDay = dataViewModel.HasNapAtDate(new DateTime(previousMonth.Year, previousMonth.Month, currentDayCounter));
                 var dayControl = CreateDayControl(currentDayCounter.ToString(), false, isNapDay);
                 Grid.SetRow(dayControl, 0);
                 Grid.SetColumn(dayControl, c);

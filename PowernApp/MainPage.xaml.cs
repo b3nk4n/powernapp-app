@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define TESTING
+
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -216,7 +218,9 @@ namespace PowernApp
             AlarmClockViewModel.Instance.ForceStopSoundAndVibration();
 
             // update live tile in PRO version
-            //if (InAppPurchaseHelper.IsProductActive(AppConstants.PRO_VERSION_IN_APP_KEY)) // TODO: asdfasfa!!!
+#if !TESTING
+            if (InAppPurchaseHelper.IsProductActive(AppConstants.PRO_VERSION_IN_APP_KEY))
+#endif
             {
                 // update is a bit performance consuming. Only update the live tile when the app is deactivated/closed
                 if (e.NavigationMode == NavigationMode.Back ||
@@ -567,10 +571,11 @@ namespace PowernApp
                 }
                 else
                 {
-                    //NavigationService.Navigate(new Uri("/InAppStorePage.xaml", UriKind.Relative));
-                    // FIXME
-                    // TODO
+#if TESTING
                     NavigationService.Navigate(new Uri("/StatisticPage.xaml", UriKind.Relative));
+#else
+                    NavigationService.Navigate(new Uri("/InAppStorePage.xaml", UriKind.Relative));
+#endif                
                 }
             };
 

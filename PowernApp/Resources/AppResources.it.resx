@@ -433,7 +433,7 @@ Mostrandoci apprezzamento sullo store, ci aiuterai a proseguire il nostro lavoro
     <comment>InfoPage</comment>
   </data>
   <data name="VoiceFeedback" xml:space="preserve">
-    <value>Play audio confirmations</value>
+    <value>Gioca conferme audio</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="InfoTitle" xml:space="preserve">

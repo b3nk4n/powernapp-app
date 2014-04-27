@@ -45,7 +45,7 @@
                 <phone:PivotItem.Header>
                     <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsHeader, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
                 </phone:PivotItem.Header>
-                <ScrollViewer>
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
                     <StackPanel>
                         <TextBlock Text="{Binding Path=LocalizedResources.NappingTipsIntro, Source={StaticResource LocalizedStrings}}"
                         Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap"/>
@@ -122,7 +122,7 @@
                 <phone:PivotItem.Header>
                     <TextBlock Text="{Binding Path=LocalizedResources.CommandsHeader, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
                 </phone:PivotItem.Header>
-                <ScrollViewer>
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
                     <StackPanel>
                         <TextBlock Text="{Binding Path=LocalizedResources.CommandsIntro, Source={StaticResource LocalizedStrings}}"
                                 Style="{StaticResource ThemeTextNormalStyle}" TextWrapping="Wrap"/>

@@ -1,4 +1,6 @@
-﻿using BugSense;
+﻿#define TESTING
+
+using BugSense;
 using BugSense.Core.Model;
 using Microsoft.Phone.Shell;
 using PhoneKit.Framework.Core.Graphics;
@@ -101,12 +103,17 @@ namespace PowernApp.ViewModels
             if (_isDataLoaded)
                 return;
 
+#if !TESTING
             if (DesignerProperties.IsInDesignTool)
             {
+#endif
                 // design time data
-                NapList.Add(new NapDataViewModel(DateTime.Now.AddDays(-3), 30));
-                NapList.Add(new NapDataViewModel(DateTime.Now.AddDays(-1), 45));
-                NapList.Add(new NapDataViewModel(DateTime.Now, 120));
+                NapList.Add(new NapDataViewModel(new DateTime(2014, 4, 27, 14, 30, 0), 30));
+                NapList.Add(new NapDataViewModel(new DateTime(2014, 4, 23, 12, 25, 0), 45));
+                NapList.Add(new NapDataViewModel(new DateTime(2014, 4, 10, 13, 38, 0), 35));
+                NapList.Add(new NapDataViewModel(new DateTime(2014, 4, 02, 12, 45, 0), 30));
+                NapList.Add(new NapDataViewModel(new DateTime(2014, 3, 31, 13, 38, 0), 25));
+#if !TESTING
             }
             else
             {
@@ -115,6 +122,7 @@ namespace PowernApp.ViewModels
                 if (loadedData != null)
                     _napList = loadedData;
             }
+#endif
 
             _isDataLoaded = true;
         }
