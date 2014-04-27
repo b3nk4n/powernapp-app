@@ -20,7 +20,7 @@ namespace PowernApp
         /// <summary>
         /// The a
         /// </summary>
-        public static readonly StoredObject<string> AlarmUriString = new StoredObject<string>("alarmUri", "Assets/Audio/alarm1.wav");
+        public static readonly StoredObject<string> AlarmUriString = new StoredObject<string>("alarmUri", "Assets/Audio/classic.wav");
 
         /// <summary>
         /// Setting for whether the voice feedback is enabled.

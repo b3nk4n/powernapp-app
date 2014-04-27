@@ -160,6 +160,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Press and hold the Search-Button of you phone until the voice input dialog pops up. ähnelt.
+        /// </summary>
+        public static string Commands1Message_8_1_OS {
+            get {
+                return ResourceManager.GetString("Commands1Message_8_1_OS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die 1. Activate voice input ähnelt.
         /// </summary>
         public static string Commands1Title {

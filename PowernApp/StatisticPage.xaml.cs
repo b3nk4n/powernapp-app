@@ -35,6 +35,7 @@ namespace PowernApp
         private void BuildLocalizedAppBar()
         {
             ApplicationBar = new ApplicationBar();
+            ApplicationBar.Opacity = 0.99;
             ApplicationBar.BackgroundColor = (Color)Application.Current.Resources["ThemeBackgroundMediumColor"];
             ApplicationBar.ForegroundColor = (Color)Application.Current.Resources["ThemeForegroundLightColor"];
 

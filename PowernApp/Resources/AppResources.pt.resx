@@ -161,6 +161,10 @@
     <value>Pressione e segure o botão Windows de seu telefone para abrir o controle por voz.</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="Commands1Message_8_1_OS" xml:space="preserve">
+    <value>Pressione e segure o botão "Pesquisa" de seu telefone para abrir o controle por voz.</value>
+    <comment>InfoPage</comment>
+  </data>
   <data name="Commands1Title" xml:space="preserve">
     <value>1. Ative o controle por voz</value>
     <comment>InfoPage</comment>

@@ -464,4 +464,8 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <value>in-app store</value>
     <comment>AppBar</comment>
   </data>
+  <data name="Commands1Message_8_1_OS" xml:space="preserve">
+    <value>Press and hold the Search-Button of you phone until the voice input dialog pops up.</value>
+    <comment>InfoPage</comment>
+  </data>
 </root>

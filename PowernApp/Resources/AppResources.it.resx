@@ -463,4 +463,8 @@ Mostrandoci apprezzamento sullo store, ci aiuterai a proseguire il nostro lavoro
     <value>acquisti in-app</value>
     <comment>AppBar</comment>
   </data>
+  <data name="Commands1Message_8_1_OS" xml:space="preserve">
+    <value>Premi e rilascia il tasto "Cerca" del telefono sino all'apparire del pop up.</value>
+    <comment>InfoPage</comment>
+  </data>
 </root>

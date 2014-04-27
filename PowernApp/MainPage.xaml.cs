@@ -38,7 +38,7 @@ namespace PowernApp
 
             CustomNapTimePicker.Value = AlarmClockViewModel.Instance.LastAlarmDuration;
 
-            // late binding of timespan picker changed event
+            //// late binding of timespan picker changed event
             CustomNapTimePicker.ValueChanged += CustomNapTimeChanged;
 
             Loaded += (s, e) =>
@@ -228,13 +228,13 @@ namespace PowernApp
             {
                 ActivePanel.Visibility = Visibility.Visible;
                 InactivePanel.Visibility = Visibility.Collapsed;
-                BuildActiveLocalizedApplicationBar();
+                BuildLocalizedApplicationBarButtons(true);
             }
             else
             {
                 ActivePanel.Visibility = Visibility.Collapsed;
                 InactivePanel.Visibility = Visibility.Visible;
-                BuildInactiveLocalizedApplicationBar();
+                BuildLocalizedApplicationBarButtons(false);
             }
         }
 
@@ -499,6 +499,7 @@ namespace PowernApp
         {
             // assigns a new application bar to the page.
             ApplicationBar = new ApplicationBar();
+            ApplicationBar.Opacity = 0.99;
             ApplicationBar.BackgroundColor = (Color)Application.Current.Resources["ThemeBackgroundMediumColor"];
             ApplicationBar.ForegroundColor = (Color)Application.Current.Resources["ThemeForegroundLightColor"];
 
@@ -528,9 +529,9 @@ namespace PowernApp
         }
 
         /// <summary>
-        /// Builds the localized application bar buttons in active mode.
+        /// Builds the localized application bar buttons in the appropriate mode.
         /// </summary>
-        private void BuildActiveLocalizedApplicationBar()
+        private void BuildLocalizedApplicationBarButtons(bool isActiveMode)
         {
             ApplicationBar.Buttons.Clear();
 
@@ -549,54 +550,39 @@ namespace PowernApp
             ApplicationBar.Buttons.Add(appBarButton2);
             appBarButton2.Click += (s, e) =>
             {
-                NavigationService.Navigate(new Uri("/StatisticPage.xaml", UriKind.Relative));
+                if (InAppPurchaseHelper.IsProductActive(AppConstants.PRO_VERSION_IN_APP_KEY))
+                {
+                    NavigationService.Navigate(new Uri("/StatisticPage.xaml", UriKind.Relative));
+                }
+                else
+                {
+                    NavigationService.Navigate(new Uri("/InAppStorePage.xaml", UriKind.Relative));
+                }
             };
 
             // flight mode
-            ApplicationBarIconButton appBarButton3 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.nocellular.png", UriKind.Relative));
-            appBarButton3.Text = AppResources.AppBarOffline;
-            ApplicationBar.Buttons.Add(appBarButton3);
-            appBarButton3.Click += async (s, e) =>
+            if (isActiveMode)
             {
-                ConnectivityMessageOut.Begin();
-                await SettingsLauncher.LaunchAirplaneModeAsync();
-            };
-        }
-
-
-        /// <summary>
-        /// Builds the localized application bar buttons in inactive mode.
-        /// </summary>
-        private void BuildInactiveLocalizedApplicationBar()
-        {
-            ApplicationBar.Buttons.Clear();
-
-            // info
-            ApplicationBarIconButton appBarButton1 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.questionmark.png", UriKind.Relative));
-            appBarButton1.Text = AppResources.AppBarInfo;
-            ApplicationBar.Buttons.Add(appBarButton1);
-            appBarButton1.Click += (s, e) =>
+                ApplicationBarIconButton appBarButton3 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.nocellular.png", UriKind.Relative));
+                appBarButton3.Text = AppResources.AppBarOffline;
+                ApplicationBar.Buttons.Add(appBarButton3);
+                appBarButton3.Click += async (s, e) =>
+                {
+                    ConnectivityMessageOut.Begin();
+                    await SettingsLauncher.LaunchAirplaneModeAsync();
+                };
+            }
+            else
             {
-                NavigationService.Navigate(new Uri("/InfoPage.xaml", UriKind.Relative));
-            };
-
-            // naptistics
-            ApplicationBarIconButton appBarButton2 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.statistics.png", UriKind.Relative));
-            appBarButton2.Text = "naptistics";
-            ApplicationBar.Buttons.Add(appBarButton2);
-            appBarButton2.Click += (s, e) =>
-            {
-                NavigationService.Navigate(new Uri("/StatisticPage.xaml", UriKind.Relative));
-            };
-
-            // flight mode
-            ApplicationBarIconButton appBarButton3 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.cellular.png", UriKind.Relative));
-            appBarButton3.Text = AppResources.AppBarOnline;
-            ApplicationBar.Buttons.Add(appBarButton3);
-            appBarButton3.Click += async (s, e) =>
-            {
-                await SettingsLauncher.LaunchAirplaneModeAsync();
-            };
+                ApplicationBarIconButton appBarButton3 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.cellular.png", UriKind.Relative));
+                appBarButton3.Text = AppResources.AppBarOnline;
+                ApplicationBar.Buttons.Add(appBarButton3);
+                appBarButton3.Click += async (s, e) =>
+                {
+                    await SettingsLauncher.LaunchAirplaneModeAsync();
+                };
+            }
+            
         }
 
         /// <summary>
@@ -653,7 +639,7 @@ namespace PowernApp
             var value = CustomNapTimePicker.Value.Value;
 
             value = value.Add(TimeSpan.FromMinutes(minDelta));
-            
+
             // verify at least 1 min
             if (value.TotalMinutes < 1)
                 value = TimeSpan.FromMinutes(1);

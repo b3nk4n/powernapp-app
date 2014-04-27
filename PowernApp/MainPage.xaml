@@ -17,9 +17,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource ThemeForegroundLight}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True" shell:SystemTray.BackgroundColor="{StaticResource ThemeBackgroundMediumColor}"
-    shell:SystemTray.ForegroundColor="{StaticResource ThemeForegroundLightColor}">
+    SupportedOrientations="Portrait" Orientation="Portrait">
     
     <phone:PhoneApplicationPage.Resources>
         <!-- convertsers -->
@@ -206,6 +204,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
+            <RowDefinition Height="72"/>
         </Grid.RowDefinitions>
         <Grid x:Name="TitlePanel" Grid.Row="0" Margin="0,-1,0,28" toolkit:TurnstileFeatherEffect.FeatheringIndex="0">
             <Grid.RowDefinitions>
@@ -315,7 +314,7 @@
         <lc:LocalizedFeedbackDialogControl Grid.RowSpan="3" />
 
         <!-- no connectivity info message -->
-        <Canvas Grid.Row="4"  toolkit:TurnstileFeatherEffect.FeatheringIndex="5"
+        <Canvas Grid.Row="2"  toolkit:TurnstileFeatherEffect.FeatheringIndex="5"
                 Visibility="{Binding IsAlarmRinging, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=!}">
             <StackPanel x:Name="ConnectivityMessage" Canvas.Top="200" Width="360" Canvas.Left="60">
                 <Border Background="{StaticResource ThemeBackgroundLight}">

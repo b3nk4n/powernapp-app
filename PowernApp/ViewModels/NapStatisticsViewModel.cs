@@ -203,6 +203,20 @@ namespace PowernApp.ViewModels
         }
 
         /// <summary>
+        /// Gets the time span since the end of the last nap.
+        /// </summary>
+        public TimeSpan TimeSinceLastNap
+        {
+            get
+            {
+                if (NapList.Count == 0)
+                    return TimeSpan.Zero;
+
+                return DateTime.Now - NapList[0].StartTime.AddMinutes(NapList[0].Duration);
+            }
+        }
+
+        /// <summary>
         /// Gets the cleanup command.
         /// </summary>
         public ICommand CleanupCommand

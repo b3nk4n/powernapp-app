@@ -464,4 +464,8 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <value>pembelian dalam aplikasi</value>
     <comment>AppBar</comment>
   </data>
+  <data name="Commands1Message_8_1_OS" xml:space="preserve">
+    <value>Tekan dan tahan Tombol-Pencarian di ponsel Anda sampai dialog input suara muncul.</value>
+    <comment>InfoPage</comment>
+  </data>
 </root>

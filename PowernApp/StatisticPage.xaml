@@ -11,8 +11,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource ThemeForegroundLight}"
-    SupportedOrientations="Portrait"  Orientation="Portrait" shell:SystemTray.IsVisible="True" shell:SystemTray.BackgroundColor="{StaticResource ThemeBackgroundMediumColor}"
-    shell:SystemTray.ForegroundColor="{StaticResource ThemeForegroundLightColor}">
+    SupportedOrientations="Portrait"  Orientation="Portrait">
 
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
@@ -58,22 +57,27 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="Number of naps:" />
-                        <TextBlock Grid.Row="0" Grid.Column="1" x:Name="NapsCountText" Text="{Binding NapsCount}"
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding NapsCount}"
                                    HorizontalAlignment="Right" />
 
                         <TextBlock Grid.Row="1" Grid.Column="0" Text="Min. nap time:" />
-                        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="MinNapTime" Text="{Binding MinNapTime}"
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding MinNapTime}"
                                    HorizontalAlignment="Right" />
 
                         <TextBlock Grid.Row="2" Grid.Column="0" Text="Max. nap time:" />
-                        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="MaxNapTime" Text="{Binding MaxNapTime}"
+                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding MaxNapTime}"
                                    HorizontalAlignment="Right" />
 
                         <TextBlock Grid.Row="3" Grid.Column="0" Text="Avg. nap time:" />
-                        <TextBlock Grid.Row="3" Grid.Column="1" x:Name="AvgNapTime" Text="{Binding AvgNapTime}"
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding AvgNapTime}"
+                                   HorizontalAlignment="Right" />
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Time since last nap:" />
+                        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding TimeSinceLastNap}"
                                    HorizontalAlignment="Right" />
 
                     </Grid>

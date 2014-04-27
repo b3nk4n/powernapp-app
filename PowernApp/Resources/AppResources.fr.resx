@@ -461,4 +461,8 @@ De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à t
     <value>achats via l'application</value>
     <comment>AppBar</comment>
   </data>
+  <data name="Commands1Message_8_1_OS" xml:space="preserve">
+    <value>Appuyer et maintenir le "Recherche"-bouton de votre téléphone.</value>
+    <comment>InfoPage</comment>
+  </data>
 </root>

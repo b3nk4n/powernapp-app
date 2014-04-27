@@ -228,6 +228,7 @@
     <Content Include="Assets\Images\quick.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Images\search.png" />
     <Content Include="Assets\Images\sleep.png" />
     <Content Include="Assets\Images\speak.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

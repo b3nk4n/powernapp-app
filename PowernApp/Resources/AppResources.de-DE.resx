@@ -161,6 +161,10 @@
     <value>Halte den Windows-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint.</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="Commands1Message_8_1_OS" xml:space="preserve">
+    <value>Halte den Suchen-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint.</value>
+    <comment>InfoPage</comment>
+  </data>
   <data name="Commands1Title" xml:space="preserve">
     <value>1. Spracheingabe aktivieren</value>
     <comment>InfoPage</comment>
