@@ -467,4 +467,20 @@ Mostrandoci apprezzamento sullo store, ci aiuterai a proseguire il nostro lavoro
     <value>Premi e rilascia il tasto "Cerca" del telefono sino all'apparire del pop up.</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="CalendarTitle" xml:space="preserve">
+    <value>calendario</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="ListTitle" xml:space="preserve">
+    <value>lista</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="NaptisticsTitle" xml:space="preserve">
+    <value>naptistica</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTitle" xml:space="preserve">
+    <value>riassunto</value>
+    <comment>StatisticsPage</comment>
+  </data>
 </root>

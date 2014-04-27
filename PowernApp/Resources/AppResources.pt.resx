@@ -157,6 +157,10 @@
     <value>1.5</value>
     <comment>General</comment>
   </data>
+  <data name="CalendarTitle" xml:space="preserve">
+    <value>calendário</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="Commands1Message" xml:space="preserve">
     <value>Pressione e segure o botão Windows de seu telefone para abrir o controle por voz.</value>
     <comment>InfoPage</comment>
@@ -295,6 +299,10 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
     <value>ajuda</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="ListTitle" xml:space="preserve">
+    <value>lista</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="MoreApps" xml:space="preserve">
     <value>mais aplicativos</value>
     <comment>AboutPage</comment>
@@ -346,6 +354,14 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
   <data name="NappingTipsWarmTitle" xml:space="preserve">
     <value>Mantenha-se aquecido</value>
     <comment>InfoPage</comment>
+  </data>
+  <data name="NaptisticsTitle" xml:space="preserve">
+    <value>naptística</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTitle" xml:space="preserve">
+    <value>visão global</value>
+    <comment>StatisticsPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
     <value>informações de privacidade</value>

@@ -157,6 +157,10 @@
     <value>1.5</value>
     <comment>General</comment>
   </data>
+  <data name="CalendarTitle" xml:space="preserve">
+    <value>kalender</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="Commands1Message" xml:space="preserve">
     <value>Halte den Windows-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint.</value>
     <comment>InfoPage</comment>
@@ -295,6 +299,10 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <value>informationen</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="ListTitle" xml:space="preserve">
+    <value>liste</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="MoreApps" xml:space="preserve">
     <value>mehr apps</value>
     <comment>AboutPage</comment>
@@ -346,6 +354,14 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
   <data name="NappingTipsWarmTitle" xml:space="preserve">
     <value>Wärme</value>
     <comment>InfoPage</comment>
+  </data>
+  <data name="NaptisticsTitle" xml:space="preserve">
+    <value>naptistiken</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTitle" xml:space="preserve">
+    <value>überblick</value>
+    <comment>StatisticsPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
     <value>datenschutz informationen</value>

@@ -117,6 +117,21 @@ namespace PowernApp.ViewModels
         }
 
         /// <summary>
+        /// Checks whether a not with the given date exists.
+        /// </summary>
+        /// <param name="date">The year, month and day.</param>
+        /// <returns>Returns TRUE when a nap exists, else FALSE.</returns>
+        public bool HasNapAtDate(DateTime date)
+        {
+            foreach (var nap in _napList)
+            {
+                if (nap.StartTime.Date == date.Date)
+                    return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// Gets the NapStatisticsViewModel instance.
         /// </summary>
         public static NapStatisticsViewModel Instance

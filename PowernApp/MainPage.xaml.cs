@@ -546,7 +546,7 @@ namespace PowernApp
 
             // naptistics
             ApplicationBarIconButton appBarButton2 = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.statistics.png", UriKind.Relative));
-            appBarButton2.Text = "naptistics";
+            appBarButton2.Text = AppResources.NaptisticsTitle;
             ApplicationBar.Buttons.Add(appBarButton2);
             appBarButton2.Click += (s, e) =>
             {
@@ -556,7 +556,10 @@ namespace PowernApp
                 }
                 else
                 {
-                    NavigationService.Navigate(new Uri("/InAppStorePage.xaml", UriKind.Relative));
+                    //NavigationService.Navigate(new Uri("/InAppStorePage.xaml", UriKind.Relative));
+                    // FIXME
+                    // TODO
+                    NavigationService.Navigate(new Uri("/StatisticPage.xaml", UriKind.Relative));
                 }
             };
 

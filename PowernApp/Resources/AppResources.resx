@@ -468,4 +468,20 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <value>Press and hold the Search-Button of you phone until the voice input dialog pops up.</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="CalendarTitle" xml:space="preserve">
+    <value>calendar</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="ListTitle" xml:space="preserve">
+    <value>list</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="NaptisticsTitle" xml:space="preserve">
+    <value>naptistics</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTitle" xml:space="preserve">
+    <value>overview</value>
+    <comment>StatisticsPage</comment>
+  </data>
 </root>

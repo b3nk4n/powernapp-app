@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:local="clr-namespace:PowernApp.Controls"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -37,64 +38,62 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource ThemeBackgroundDark}">
         <!--Pivot Control-->
-        <phone:Pivot>
+        <phone:Pivot x:Name="StatisticPivot">
             <phone:Pivot.Title>
-                <TextBlock Text="naptistics" Style="{StaticResource ThemeTextNormalStyle}" Margin="0" />
+                <TextBlock Text="{Binding Path=LocalizedResources.NaptisticsTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextNormalStyle}" Margin="0" />
             </phone:Pivot.Title>
 
             <phone:PivotItem>
                 <phone:PivotItem.Header>
-                    <TextBlock Text="overview" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
+                    <TextBlock Text="{Binding Path=LocalizedResources.OverviewTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
                 </phone:PivotItem.Header>
-                <ScrollViewer>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Number of naps:" />
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding NapsCount}"
-                                   HorizontalAlignment="Right" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Min. nap time:" />
-                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding MinNapTime}"
-                                   HorizontalAlignment="Right" />
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Number of naps:" Foreground="White"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding NapsCount}"
+                                HorizontalAlignment="Right" Foreground="White"/>
 
-                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Max. nap time:" />
-                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding MaxNapTime}"
-                                   HorizontalAlignment="Right" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Min. nap time:" Foreground="White"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding MinNapTime}"
+                                HorizontalAlignment="Right" Foreground="White"/>
 
-                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Avg. nap time:" />
-                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding AvgNapTime}"
-                                   HorizontalAlignment="Right" />
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Max. nap time:" Foreground="White"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding MaxNapTime}"
+                                HorizontalAlignment="Right" Foreground="White"/>
 
-                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Time since last nap:" />
-                        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding TimeSinceLastNap}"
-                                   HorizontalAlignment="Right" />
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Avg. nap time:" Foreground="White"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding AvgNapTime}"
+                                HorizontalAlignment="Right" Foreground="White"/>
 
-                    </Grid>
-                </ScrollViewer>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Time since last nap:" Foreground="White"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding TimeSinceLastNap}"
+                                HorizontalAlignment="Right" Foreground="White"/>
+
+                </Grid>
             </phone:PivotItem>
 
             <phone:PivotItem>
                 <phone:PivotItem.Header>
-                    <TextBlock Text="list" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
+                    <TextBlock Text="{Binding Path=LocalizedResources.ListTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
                 </phone:PivotItem.Header>
                 <ScrollViewer>
                     <ItemsControl ItemsSource="{Binding NapList}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="20">
-                                    <TextBlock Text="{Binding StartTime}" />
-                                    <TextBlock Text="{Binding Duration}" />
+                                    <TextBlock Text="{Binding StartTime}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="White" />
+                                    <TextBlock Text="{Binding Duration}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="White" />
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -104,15 +103,13 @@
 
             <phone:PivotItem>
                 <phone:PivotItem.Header>
-                    <TextBlock Text="graph" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
+                    <TextBlock Text="{Binding Path=LocalizedResources.CalendarTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
                 </phone:PivotItem.Header>
-                <ScrollViewer>
-                    <StackPanel>
-
-                    </StackPanel>
-                </ScrollViewer>
+                <StackPanel>
+                    <local:NapCalendarControl x:Name="NapCalendar" Margin="0,48,0,0"/>
+                </StackPanel>
             </phone:PivotItem>
-
+            
         </phone:Pivot>
     </Grid>
 </phone:PhoneApplicationPage>

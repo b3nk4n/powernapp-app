@@ -99,6 +99,9 @@
     <Compile Include="Controls\LocalizedAboutControl.cs" />
     <Compile Include="Controls\LocalizedFeedbackDialogControl.cs" />
     <Compile Include="Controls\LocalizedInAppStoreControl.cs" />
+    <Compile Include="Controls\NapCalendarControl.xaml.cs">
+      <DependentUpon>NapCalendarControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ThemedAboutControlBase.xaml.cs">
       <DependentUpon>ThemedAboutControlBase.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NapCalendarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +199,8 @@
     <Content Include="Assets\AppBar\appbar.nocellular.png" />
     <Content Include="Assets\AppBar\appbar.questionmark.png" />
     <Content Include="Assets\AppBar\appbar.statistics.png" />
+    <Content Include="Assets\AppBar\appbar.back.png" />
+    <Content Include="Assets\AppBar\appbar.next.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -213,6 +222,7 @@
     <Content Include="Assets\Images\alarm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Assets\Images\check.png" />
     <Content Include="Assets\Images\consistent.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

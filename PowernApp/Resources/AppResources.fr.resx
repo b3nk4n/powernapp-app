@@ -465,4 +465,20 @@ De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à t
     <value>Appuyer et maintenir le "Recherche"-bouton de votre téléphone.</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="CalendarTitle" xml:space="preserve">
+    <value>calendrier</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="ListTitle" xml:space="preserve">
+    <value>liste</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="NaptisticsTitle" xml:space="preserve">
+    <value>naptistiques</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTitle" xml:space="preserve">
+    <value>vue d'ensemble</value>
+    <comment>StatisticsPage</comment>
+  </data>
 </root>

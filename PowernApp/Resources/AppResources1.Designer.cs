@@ -151,6 +151,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die calendar ähnelt.
+        /// </summary>
+        public static string CalendarTitle {
+            get {
+                return ResourceManager.GetString("CalendarTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Press and hold the Windows-Button of you phone until the voice input dialog pops up. ähnelt.
         /// </summary>
         public static string Commands1Message {
@@ -450,6 +459,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die list ähnelt.
+        /// </summary>
+        public static string ListTitle {
+            get {
+                return ResourceManager.GetString("ListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die more apps ähnelt.
         /// </summary>
         public static string MoreApps {
@@ -563,6 +581,24 @@ namespace PowernApp.Resources {
         public static string NappingTipsWarmTitle {
             get {
                 return ResourceManager.GetString("NappingTipsWarmTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die naptistics ähnelt.
+        /// </summary>
+        public static string NaptisticsTitle {
+            get {
+                return ResourceManager.GetString("NaptisticsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die overview ähnelt.
+        /// </summary>
+        public static string OverviewTitle {
+            get {
+                return ResourceManager.GetString("OverviewTitle", resourceCulture);
             }
         }
         
