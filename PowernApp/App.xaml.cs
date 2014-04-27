@@ -9,6 +9,8 @@ using Microsoft.Phone.Shell;
 using PowernApp.Resources;
 using PowernApp.ViewModels;
 using PhoneKit.Framework.Support;
+using BugSense;
+using BugSense.Core.Model;
 
 namespace PowernApp
 {
@@ -26,7 +28,7 @@ namespace PowernApp
         public App()
         {
             // Initialize BugSense
-            //BugSenseHandler.Instance.InitAndStartSession(new ExceptionManager(Current), RootFrame, "d6528492");
+            BugSenseHandler.Instance.InitAndStartSession(new ExceptionManager(Current), RootFrame, "d6528492");
 
             // Standard-XAML-Initialisierung
             InitializeComponent();

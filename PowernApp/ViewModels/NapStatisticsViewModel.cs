@@ -1,4 +1,6 @@
-﻿using Microsoft.Phone.Shell;
+﻿using BugSense;
+using BugSense.Core.Model;
+using Microsoft.Phone.Shell;
 using PhoneKit.Framework.Core.Graphics;
 using PhoneKit.Framework.Core.MVVM;
 using PhoneKit.Framework.Core.Storage;
@@ -9,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,20 +159,29 @@ namespace PowernApp.ViewModels
         /// </summary>
         public void UpdateLiveTile()
         {
-            var image = GraphicsHelper.Create(new CalendarNormalTileControl());
-            Uri imageUri = StorageHelper.SavePng(LiveTileHelper.SHARED_SHELL_CONTENT_PATH + "normalCalendar.png", image);
-            var wideImage = GraphicsHelper.Create(new CalendarWideTileControl());
-            Uri wideImageUri = StorageHelper.SavePng(LiveTileHelper.SHARED_SHELL_CONTENT_PATH + "wideCalendar.png", wideImage);
-            LiveTileHelper.UpdateDefaultTile(
-                new FlipTileData
-                {
-                    Title = AppResources.ApplicationTitle,
-                    SmallBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileSmall.png", UriKind.Relative),
-                    BackgroundImage = new Uri("Assets/Tiles/FlipCycleTileMedium.png", UriKind.Relative),
-                    WideBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileLarge.png", UriKind.Relative),
-                    BackBackgroundImage = imageUri,
-                    WideBackBackgroundImage = wideImageUri,
-                });
+            try
+            {
+                var image = GraphicsHelper.Create(new CalendarNormalTileControl());
+                Uri imageUri = StorageHelper.SavePng(LiveTileHelper.SHARED_SHELL_CONTENT_PATH + "normalCalendar.png", image);
+                var wideImage = GraphicsHelper.Create(new CalendarWideTileControl());
+                Uri wideImageUri = StorageHelper.SavePng(LiveTileHelper.SHARED_SHELL_CONTENT_PATH + "wideCalendar.png", wideImage);
+                LiveTileHelper.UpdateDefaultTile(
+                    new FlipTileData
+                    {
+                        Title = AppResources.ApplicationTitle,
+                        SmallBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileSmall.png", UriKind.Relative),
+                        BackgroundImage = new Uri("Assets/Tiles/FlipCycleTileMedium.png", UriKind.Relative),
+                        WideBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileLarge.png", UriKind.Relative),
+                        BackBackgroundImage = imageUri,
+                        WideBackBackgroundImage = wideImageUri,
+                    });
+            }
+            catch (Exception ex)
+            {
+                // paranoia-catch block
+                BugSenseLogResult logResult = BugSenseHandler.Instance.LogException(ex, "tileUpdate", "Failed to update the tile.");
+                Debug.WriteLine("Bugsense:" + logResult.ResultState.ToString());
+            }
         }
 
         /// <summary>
