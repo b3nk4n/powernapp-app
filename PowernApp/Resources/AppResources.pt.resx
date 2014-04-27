@@ -395,12 +395,24 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
     <value>média</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewAvgShort" xml:space="preserve">
+    <value>méd.</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="OverviewMax" xml:space="preserve">
     <value>máximo</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewMaxShort" xml:space="preserve">
+    <value>máx.</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="OverviewMin" xml:space="preserve">
     <value>mínimo</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMinShort" xml:space="preserve">
+    <value>mín.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewNapDuration" xml:space="preserve">
@@ -413,6 +425,14 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
   </data>
   <data name="OverviewTitle" xml:space="preserve">
     <value>visão global</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotal" xml:space="preserve">
+    <value>total</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotalNaps" xml:space="preserve">
+    <value>total de cochilos</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">

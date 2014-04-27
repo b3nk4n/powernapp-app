@@ -55,42 +55,7 @@
             <phone:PivotItem>
                 <phone:PivotItem.Header>
                     <TextBlock Text="{Binding Path=LocalizedResources.OverviewTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
-                </phone:PivotItem.Header>
-                <!--<Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Number of naps:" Foreground="White"/>
-                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding NapsCount}"
-                                HorizontalAlignment="Right" Foreground="White"/>
-
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Min. nap time:" Foreground="White"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding MinNapTime}"
-                                HorizontalAlignment="Right" Foreground="White"/>
-
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Max. nap time:" Foreground="White"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding MaxNapTime}"
-                                HorizontalAlignment="Right" Foreground="White"/>
-
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Avg. nap time:" Foreground="White"/>
-                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding AvgNapTime}"
-                                HorizontalAlignment="Right" Foreground="White"/>
-
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Time since last nap:" Foreground="White"/>
-                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding TimeSinceLastNap}"
-                                HorizontalAlignment="Right" Foreground="White"/>
-
-                </Grid>-->
-                    
+                </phone:PivotItem.Header>        
                 <Grid Margin="0,0,0,24">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -110,7 +75,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,0,24">
-                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.OverviewAvg, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Center" Margin="12,0,14,-8" />
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.OverviewNapDuration, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Center" Margin="12,0,14,-8" />
                         <TextBlock Text="{Binding AvgNapTime, Converter={StaticResource stringConverter}, ConverterParameter=00}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
                                                        HorizontalAlignment="Center" Margin="12,-12,12,-12"/>
                         <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Center" Margin="12,-8,14,0" />

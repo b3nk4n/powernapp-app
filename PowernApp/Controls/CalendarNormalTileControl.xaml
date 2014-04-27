@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="PowernApp.Controls.CalendarNormalTileControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:PowernApp.Controls"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="448" d:DesignWidth="448"
+    Width="448" Height="448">
+    
+    <Grid x:Name="LayoutRoot" Margin="24">
+        <local:NapCalendarControl x:Name="NapCalendar" />
+    </Grid>
+</UserControl>

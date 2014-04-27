@@ -395,12 +395,24 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <value>durchschnitt</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewAvgShort" xml:space="preserve">
+    <value>durchsch.</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="OverviewMax" xml:space="preserve">
     <value>maximum</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewMaxShort" xml:space="preserve">
+    <value>max.</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="OverviewMin" xml:space="preserve">
     <value>minimum</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMinShort" xml:space="preserve">
+    <value>min.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewNapDuration" xml:space="preserve">
@@ -413,6 +425,10 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
   </data>
   <data name="OverviewTitle" xml:space="preserve">
     <value>überblick</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotal" xml:space="preserve">
+    <value>insgesamt</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotalNaps" xml:space="preserve">

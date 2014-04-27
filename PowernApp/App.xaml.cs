@@ -25,8 +25,8 @@ namespace PowernApp
         /// </summary>
         public App()
         {
-            // Globaler Handler für nicht abgefangene Ausnahmen.
-            UnhandledException += Application_UnhandledException;
+            // Initialize BugSense
+            //BugSenseHandler.Instance.InitAndStartSession(new ExceptionManager(Current), RootFrame, "d6528492");
 
             // Standard-XAML-Initialisierung
             InitializeComponent();

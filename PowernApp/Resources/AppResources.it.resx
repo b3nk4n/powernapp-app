@@ -539,4 +539,20 @@ Mostrandoci apprezzamento sullo store, ci aiuterai a proseguire il nostro lavoro
     <value>pisolino totale</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewAvgShort" xml:space="preserve">
+    <value>med.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMaxShort" xml:space="preserve">
+    <value>mass.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMinShort" xml:space="preserve">
+    <value>min.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotal" xml:space="preserve">
+    <value>totale</value>
+    <comment>StatisticsPage</comment>
+  </data>
 </root>

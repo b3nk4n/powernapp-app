@@ -540,4 +540,20 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <value>total tidur siang</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewAvgShort" xml:space="preserve">
+    <value>rat.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMaxShort" xml:space="preserve">
+    <value>mak.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMinShort" xml:space="preserve">
+    <value>min.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotal" xml:space="preserve">
+    <value>total</value>
+    <comment>StatisticsPage</comment>
+  </data>
 </root>

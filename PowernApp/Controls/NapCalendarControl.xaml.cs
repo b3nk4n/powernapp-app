@@ -178,9 +178,6 @@ namespace PowernApp.Controls
                 // set image source in code, because the XAML implementation is asyc,
                 // so it is not going to be rendered.
                 Image image = new Image();
-                BitmapImage bmi = new BitmapImage();
-                bmi.CreateOptions = BitmapCreateOptions.None;
-
                 Uri uri = new Uri("/PowernAPP;component/Assets/Images/check.png", UriKind.Relative);
                 StreamResourceInfo resourceInfo = Application.GetResourceStream(uri);
                 BitmapImage bmp = new BitmapImage();

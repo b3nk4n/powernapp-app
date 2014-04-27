@@ -214,6 +214,17 @@ namespace PowernApp
 
             // ensure sound and vibration is off
             AlarmClockViewModel.Instance.ForceStopSoundAndVibration();
+
+            // update live tile in PRO version
+            //if (InAppPurchaseHelper.IsProductActive(AppConstants.PRO_VERSION_IN_APP_KEY)) // TODO: asdfasfa!!!
+            {
+                // update is a bit performance consuming. Only update the live tile when the app is deactivated/closed
+                if (e.NavigationMode == NavigationMode.Back ||
+                    e.Uri.OriginalString == "app://external/")
+                {
+                    NapStatisticsViewModel.Instance.UpdateLiveTile();
+                }
+            }
         }
 
         /// <summary>

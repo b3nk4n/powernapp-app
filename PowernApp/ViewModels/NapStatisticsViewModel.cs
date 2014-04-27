@@ -1,5 +1,9 @@
-﻿using PhoneKit.Framework.Core.MVVM;
+﻿using Microsoft.Phone.Shell;
+using PhoneKit.Framework.Core.Graphics;
+using PhoneKit.Framework.Core.MVVM;
 using PhoneKit.Framework.Core.Storage;
+using PhoneKit.Framework.Core.Tile;
+using PowernApp.Controls;
 using PowernApp.Resources;
 using System;
 using System.Collections.Generic;
@@ -148,6 +152,27 @@ namespace PowernApp.ViewModels
         }
 
         /// <summary>
+        /// Updates the main live tile.
+        /// </summary>
+        public void UpdateLiveTile()
+        {
+            var image = GraphicsHelper.Create(new CalendarNormalTileControl());
+            Uri imageUri = StorageHelper.SavePng(LiveTileHelper.SHARED_SHELL_CONTENT_PATH + "normalCalendar.png", image);
+            var wideImage = GraphicsHelper.Create(new CalendarWideTileControl());
+            Uri wideImageUri = StorageHelper.SavePng(LiveTileHelper.SHARED_SHELL_CONTENT_PATH + "wideCalendar.png", wideImage);
+            LiveTileHelper.UpdateDefaultTile(
+                new FlipTileData
+                {
+                    Title = AppResources.ApplicationTitle,
+                    SmallBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileSmall.png", UriKind.Relative),
+                    BackgroundImage = new Uri("Assets/Tiles/FlipCycleTileMedium.png", UriKind.Relative),
+                    WideBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileLarge.png", UriKind.Relative),
+                    BackBackgroundImage = imageUri,
+                    WideBackBackgroundImage = wideImageUri,
+                });
+        }
+
+        /// <summary>
         /// Gets the NapStatisticsViewModel instance.
         /// </summary>
         public static NapStatisticsViewModel Instance
@@ -243,7 +268,17 @@ namespace PowernApp.ViewModels
                 if (NapList.Count == 0)
                     return TimeSpan.Zero;
 
-                return DateTime.Now - NapList[0].StartTime.AddMinutes(NapList[0].Duration);
+                var timespan = DateTime.Now - NapList[0].StartTime.AddMinutes(NapList[0].Duration);
+
+                if (timespan < TimeSpan.Zero)
+                {
+                    return TimeSpan.Zero;
+                }
+                else
+                {
+                    return timespan;
+                }
+                
             }
         }
 

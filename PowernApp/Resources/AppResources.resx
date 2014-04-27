@@ -540,4 +540,20 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <value>total naps</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewAvgShort" xml:space="preserve">
+    <value>avg.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMaxShort" xml:space="preserve">
+    <value>max.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMinShort" xml:space="preserve">
+    <value>min.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotal" xml:space="preserve">
+    <value>total</value>
+    <comment>StatisticsPage</comment>
+  </data>
 </root>

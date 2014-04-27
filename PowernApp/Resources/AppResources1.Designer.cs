@@ -675,6 +675,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die avg. ähnelt.
+        /// </summary>
+        public static string OverviewAvgShort {
+            get {
+                return ResourceManager.GetString("OverviewAvgShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die maximum ähnelt.
         /// </summary>
         public static string OverviewMax {
@@ -684,11 +693,29 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die max. ähnelt.
+        /// </summary>
+        public static string OverviewMaxShort {
+            get {
+                return ResourceManager.GetString("OverviewMaxShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die minimum ähnelt.
         /// </summary>
         public static string OverviewMin {
             get {
                 return ResourceManager.GetString("OverviewMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die min. ähnelt.
+        /// </summary>
+        public static string OverviewMinShort {
+            get {
+                return ResourceManager.GetString("OverviewMinShort", resourceCulture);
             }
         }
         
@@ -716,6 +743,15 @@ namespace PowernApp.Resources {
         public static string OverviewTitle {
             get {
                 return ResourceManager.GetString("OverviewTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die total ähnelt.
+        /// </summary>
+        public static string OverviewTotal {
+            get {
+                return ResourceManager.GetString("OverviewTotal", resourceCulture);
             }
         }
         
