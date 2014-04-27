@@ -195,7 +195,7 @@ You want to help with the translation to support your language in the next versi
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>1.5</value>
+    <value>2.0</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">

@@ -1,4 +1,4 @@
-﻿#define TESTING
+﻿//#define TESTING
 
 using BugSense;
 using BugSense.Core.Model;
