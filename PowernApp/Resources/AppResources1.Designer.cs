@@ -88,11 +88,29 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die clean up ähnelt.
+        /// </summary>
+        public static string AppBarCleanUp {
+            get {
+                return ResourceManager.GetString("AppBarCleanUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die info ähnelt.
         /// </summary>
         public static string AppBarInfo {
             get {
                 return ResourceManager.GetString("AppBarInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die next ähnelt.
+        /// </summary>
+        public static string AppBarNext {
+            get {
+                return ResourceManager.GetString("AppBarNext", resourceCulture);
             }
         }
         
@@ -111,6 +129,15 @@ namespace PowernApp.Resources {
         public static string AppBarOnline {
             get {
                 return ResourceManager.GetString("AppBarOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die previous ähnelt.
+        /// </summary>
+        public static string AppBarPrevious {
+            get {
+                return ResourceManager.GetString("AppBarPrevious", resourceCulture);
             }
         }
         
@@ -340,6 +367,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die days ähnelt.
+        /// </summary>
+        public static string Days {
+            get {
+                return ResourceManager.GetString("Days", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die [Your feedback here]
         ///
         ///
@@ -414,6 +450,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die hours ähnelt.
+        /// </summary>
+        public static string Hours {
+            get {
+                return ResourceManager.GetString("Hours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die zzzZZZ... ähnelt.
         /// </summary>
         public static string InAppStoreLoading {
@@ -464,6 +509,33 @@ namespace PowernApp.Resources {
         public static string ListTitle {
             get {
                 return ResourceManager.GetString("ListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Attention ähnelt.
+        /// </summary>
+        public static string MessageBoxAttention {
+            get {
+                return ResourceManager.GetString("MessageBoxAttention", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Do you really want to clean naps from the statistics, which have been shorter than 5 minutes? ähnelt.
+        /// </summary>
+        public static string MessageBoxCleanUp {
+            get {
+                return ResourceManager.GetString("MessageBoxCleanUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die minutes ähnelt.
+        /// </summary>
+        public static string Minutes {
+            get {
+                return ResourceManager.GetString("Minutes", resourceCulture);
             }
         }
         
@@ -594,11 +666,65 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die average ähnelt.
+        /// </summary>
+        public static string OverviewAvg {
+            get {
+                return ResourceManager.GetString("OverviewAvg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die maximum ähnelt.
+        /// </summary>
+        public static string OverviewMax {
+            get {
+                return ResourceManager.GetString("OverviewMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die minimum ähnelt.
+        /// </summary>
+        public static string OverviewMin {
+            get {
+                return ResourceManager.GetString("OverviewMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die nap duration ähnelt.
+        /// </summary>
+        public static string OverviewNapDuration {
+            get {
+                return ResourceManager.GetString("OverviewNapDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die time since last nap ähnelt.
+        /// </summary>
+        public static string OverviewTimeSinceLastNap {
+            get {
+                return ResourceManager.GetString("OverviewTimeSinceLastNap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die overview ähnelt.
         /// </summary>
         public static string OverviewTitle {
             get {
                 return ResourceManager.GetString("OverviewTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die total naps ähnelt.
+        /// </summary>
+        public static string OverviewTotalNaps {
+            get {
+                return ResourceManager.GetString("OverviewTotalNaps", resourceCulture);
             }
         }
         

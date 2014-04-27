@@ -468,20 +468,76 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <value>Press and hold the Search-Button of you phone until the voice input dialog pops up.</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="AppBarCleanUp" xml:space="preserve">
+    <value>clean up</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="AppBarNext" xml:space="preserve">
+    <value>next</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="AppBarPrevious" xml:space="preserve">
+    <value>previous</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="CalendarTitle" xml:space="preserve">
     <value>calendar</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>days</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>hours</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="ListTitle" xml:space="preserve">
     <value>list</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="MessageBoxAttention" xml:space="preserve">
+    <value>Attention</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxCleanUp" xml:space="preserve">
+    <value>Do you really want to clean naps from the statistics, which have been shorter than 5 minutes?</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>minutes</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="NaptisticsTitle" xml:space="preserve">
     <value>naptistics</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewAvg" xml:space="preserve">
+    <value>average</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMax" xml:space="preserve">
+    <value>maximum</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMin" xml:space="preserve">
+    <value>minimum</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewNapDuration" xml:space="preserve">
+    <value>nap duration</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTimeSinceLastNap" xml:space="preserve">
+    <value>time since last nap</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="OverviewTitle" xml:space="preserve">
     <value>overview</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotalNaps" xml:space="preserve">
+    <value>total naps</value>
     <comment>StatisticsPage</comment>
   </data>
 </root>

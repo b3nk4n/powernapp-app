@@ -468,20 +468,76 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <value>Tekan dan tahan Tombol-Pencarian di ponsel Anda sampai dialog input suara muncul.</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="AppBarCleanUp" xml:space="preserve">
+    <value>membersihkan</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="AppBarNext" xml:space="preserve">
+    <value>berikutnya</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="AppBarPrevious" xml:space="preserve">
+    <value>sebelumnya</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="CalendarTitle" xml:space="preserve">
     <value>kalender</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>hari</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>jam</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="ListTitle" xml:space="preserve">
     <value>darftar</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="MessageBoxAttention" xml:space="preserve">
+    <value>Perhatian</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxCleanUp" xml:space="preserve">
+    <value>Do you really want to clean naps from the statistics, which have been shorter than 5 minutes?</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>menit</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="NaptisticsTitle" xml:space="preserve">
     <value>naptistika</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewAvg" xml:space="preserve">
+    <value>rata-rata</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMax" xml:space="preserve">
+    <value>maksimum</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMin" xml:space="preserve">
+    <value>minimal</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewNapDuration" xml:space="preserve">
+    <value>durasi tidur siang</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTimeSinceLastNap" xml:space="preserve">
+    <value>sejak terakhir waktu tidur</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="OverviewTitle" xml:space="preserve">
     <value>ikhtisar</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotalNaps" xml:space="preserve">
+    <value>total tidur siang</value>
     <comment>StatisticsPage</comment>
   </data>
 </root>

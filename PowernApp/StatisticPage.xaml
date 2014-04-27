@@ -8,11 +8,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:local="clr-namespace:PowernApp.Controls"
+    xmlns:vm="clr-namespace:PowernApp.ViewModels"
+    xmlns:converter="clr-namespace:PhoneKit.Framework.Conversion;assembly=PhoneKit.Framework"
     mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type=vm:NapStatisticsViewModel}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource ThemeForegroundLight}"
     SupportedOrientations="Portrait"  Orientation="Portrait">
+    
+    <phone:PhoneApplicationPage.Resources>
+        <converter:ShortDateConverter x:Key="dateConverter" />
+        <converter:ShortTimeConverter x:Key="timeConverter" />
+        <converter:StringFormatConverter x:Key="stringConverter" />
+    </phone:PhoneApplicationPage.Resources>
 
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
@@ -38,7 +47,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource ThemeBackgroundDark}">
         <!--Pivot Control-->
-        <phone:Pivot x:Name="StatisticPivot">
+        <phone:Pivot x:Name="StatisticPivot" Margin="0,0,0,72">
             <phone:Pivot.Title>
                 <TextBlock Text="{Binding Path=LocalizedResources.NaptisticsTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextNormalStyle}" Margin="0" />
             </phone:Pivot.Title>
@@ -47,7 +56,7 @@
                 <phone:PivotItem.Header>
                     <TextBlock Text="{Binding Path=LocalizedResources.OverviewTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
                 </phone:PivotItem.Header>
-                <Grid>
+                <!--<Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
@@ -80,7 +89,65 @@
                     <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding TimeSinceLastNap}"
                                 HorizontalAlignment="Right" Foreground="White"/>
 
+                </Grid>-->
+                    
+                <Grid Margin="0,0,0,24">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!-- naps -->
+                    <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.OverviewTotalNaps, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="0" Text="{Binding NapsCount}" Style="{StaticResource PhoneTextTitle1Style}" FontSize="142" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,-10" />
+                    <!-- min/avg/max -->
+                    <TextBlock Grid.Row="1" Text="{Binding Path=LocalizedResources.OverviewNapDuration, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Center"/>
+                    <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Margin="24,0,0,24" >
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.OverviewMin, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Left" Margin="12,0,14,-8" />
+                        <TextBlock Text="{Binding MinNapTime, Converter={StaticResource stringConverter}, ConverterParameter=00}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
+                                                       HorizontalAlignment="Left" Margin="12,-12,12,-12"/>
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Left" Margin="12,-8,14,0" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,0,24">
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.OverviewAvg, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Center" Margin="12,0,14,-8" />
+                        <TextBlock Text="{Binding AvgNapTime, Converter={StaticResource stringConverter}, ConverterParameter=00}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
+                                                       HorizontalAlignment="Center" Margin="12,-12,12,-12"/>
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Center" Margin="12,-8,14,0" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,24,24">
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.OverviewMax, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Right" Margin="12,0,14,-8" />
+                        <TextBlock Text="{Binding MaxNapTime, Converter={StaticResource stringConverter}, ConverterParameter=00}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
+                                                       HorizontalAlignment="Right" Margin="12,-12,12,-12"/>
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Right" Margin="12,-8,14,0" />
+                    </StackPanel>
+                    <!--time since last nap-->
+                    <TextBlock Grid.Row="2" Text="{Binding Path=LocalizedResources.OverviewTimeSinceLastNap, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Center" Margin="-12,0,-12,0"/>
+                    <StackPanel Grid.Row="2" VerticalAlignment="Bottom" Margin="48,0,0,48">
+                        <TextBlock Text="{Binding TimeSinceLastNap.Days, Converter={StaticResource stringConverter}, ConverterParameter=00}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
+                                                       HorizontalAlignment="Left" Margin="12,-12,12,-12"/>
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Days, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Left" Margin="12,-8,14,0" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" VerticalAlignment="Bottom" Margin="0,0,0,48">
+                        <TextBlock Text="{Binding TimeSinceLastNap.Hours, Converter={StaticResource stringConverter}, ConverterParameter=00}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
+                                                       HorizontalAlignment="Center" Margin="12,-12,12,-12"/>
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Hours, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Center" Margin="12,-8,14,0" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" VerticalAlignment="Bottom" Margin="0,0,48,48">
+                        <TextBlock Text="{Binding TimeSinceLastNap.Minutes, Converter={StaticResource stringConverter}, ConverterParameter=00}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
+                                                       HorizontalAlignment="Right" Margin="12,-12,12,-12"/>
+                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Right" Margin="12,-8,14,0" />
+                    </StackPanel>
                 </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem>
+                <phone:PivotItem.Header>
+                    <TextBlock Text="{Binding Path=LocalizedResources.CalendarTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
+                </phone:PivotItem.Header>
+                <StackPanel>
+                    <local:NapCalendarControl x:Name="NapCalendar" Margin="0,48,0,0"/>
+                </StackPanel>
             </phone:PivotItem>
 
             <phone:PivotItem>
@@ -91,23 +158,25 @@
                     <ItemsControl ItemsSource="{Binding NapList}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Margin="20">
-                                    <TextBlock Text="{Binding StartTime}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="White" />
-                                    <TextBlock Text="{Binding Duration}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="White" />
-                                </StackPanel>
+                                <Border Background="{StaticResource ThemeBackgroundMedium}" Margin="0, 6" Padding="0,12,0,12">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="0" Text="{Binding StartTime, Converter={StaticResource dateConverter}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" />
+                                        <TextBlock Grid.Row="1" Text="{Binding StartTime, Converter={StaticResource timeConverter}}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="White" VerticalAlignment="Bottom" />
+                                        <StackPanel Grid.Row="0" Grid.RowSpan="2">
+                                            <TextBlock Text="{Binding Duration}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
+                                                       HorizontalAlignment="Right" Margin="12,-12,12,-12"/>
+                                            <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Right" Margin="12,-8,14,0" />
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-            </phone:PivotItem>
-
-            <phone:PivotItem>
-                <phone:PivotItem.Header>
-                    <TextBlock Text="{Binding Path=LocalizedResources.CalendarTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
-                </phone:PivotItem.Header>
-                <StackPanel>
-                    <local:NapCalendarControl x:Name="NapCalendar" Margin="0,48,0,0"/>
-                </StackPanel>
             </phone:PivotItem>
             
         </phone:Pivot>

@@ -129,9 +129,17 @@
     <value>Hora de acordar! Espero que você já tenha recuperado as energias...</value>
     <comment>AlertDialog</comment>
   </data>
+  <data name="AppBarCleanUp" xml:space="preserve">
+    <value>limpar</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="AppBarInfo" xml:space="preserve">
     <value>ajuda</value>
     <comment>AppBar</comment>
+  </data>
+  <data name="AppBarNext" xml:space="preserve">
+    <value>próxima</value>
+    <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
     <value>desativar a conectividade</value>
@@ -140,6 +148,10 @@
   <data name="AppBarOnline" xml:space="preserve">
     <value>ativar a conectividade</value>
     <comment>AppBar</comment>
+  </data>
+  <data name="AppBarPrevious" xml:space="preserve">
+    <value>precedente</value>
+    <comment>StatisticsPage</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
     <value>por Benjamin Sautermeister</value>
@@ -240,6 +252,10 @@
     <value>Colaboradores</value>
     <comment>AboutPage</comment>
   </data>
+  <data name="Days" xml:space="preserve">
+    <value>dias</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="FeedbackBodyText" xml:space="preserve">
     <value>[Your feedback here]
 
@@ -279,6 +295,10 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
     <value>enviar feedback</value>
     <comment>FeedbackDialogControl</comment>
   </data>
+  <data name="Hours" xml:space="preserve">
+    <value>horas</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="InAppStoreLoading" xml:space="preserve">
     <value>zzzZZZ...</value>
     <comment>InAppStorePage</comment>
@@ -301,6 +321,18 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
   </data>
   <data name="ListTitle" xml:space="preserve">
     <value>lista</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxAttention" xml:space="preserve">
+    <value>Atenção</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxCleanUp" xml:space="preserve">
+    <value>Do you really want to clean naps from the statistics, which have been shorter than 5 minutes?</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>minutos</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
@@ -357,6 +389,26 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
   </data>
   <data name="NaptisticsTitle" xml:space="preserve">
     <value>naptística</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewAvg" xml:space="preserve">
+    <value>média</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMax" xml:space="preserve">
+    <value>máximo</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMin" xml:space="preserve">
+    <value>mínimo</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewNapDuration" xml:space="preserve">
+    <value>duração da sesta</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTimeSinceLastNap" xml:space="preserve">
+    <value>tempo desde a última soneca</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTitle" xml:space="preserve">

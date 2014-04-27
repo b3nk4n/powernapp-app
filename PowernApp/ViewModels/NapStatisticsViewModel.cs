@@ -1,8 +1,10 @@
 ﻿using PhoneKit.Framework.Core.MVVM;
 using PhoneKit.Framework.Core.Storage;
+using PowernApp.Resources;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +16,7 @@ namespace PowernApp.ViewModels
     /// <summary>
     /// The nap statistics view model.
     /// </summary>
-    class NapStatisticsViewModel : ViewModelBase
+    public class NapStatisticsViewModel : ViewModelBase
     {
         /// <summary>
         /// The singleton instance.
@@ -44,20 +46,24 @@ namespace PowernApp.ViewModels
         /// <summary>
         /// Creates a NapStatisticsViewModel instance.
         /// </summary>
-        private NapStatisticsViewModel()
+        /// <remarks>
+        /// Do not call the constructor directly. Use <code>NapStatisticsViewModel.Instance</code>, please. The constructor is public
+        /// for design time data purposes.
+        /// </remarks>
+        public NapStatisticsViewModel()
         {
             Load();
 
             _cleanupCommand = new DelegateCommand(() =>
                 {
-                    if (MessageBox.Show("Wirklich alle power naps aus den Statistiken löschen, die kürzer als 5 Minuten waren?", "Info", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                    if (MessageBox.Show(AppResources.MessageBoxCleanUp, AppResources.MessageBoxAttention, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
                     {
-                        Cleanup(5);
+                        Cleanup(10);
                     }
                 },
                 () =>
                 {
-                    return true;
+                    return _napList.Count > 0;
                 });
         }
 
@@ -88,10 +94,20 @@ namespace PowernApp.ViewModels
             if (_isDataLoaded)
                 return;
 
-            var loadedData = StorageHelper.LoadSerializedFile<ObservableCollection<NapDataViewModel>>("statistics.data");
-
-            if (loadedData != null)
-                _napList = loadedData;
+            if (DesignerProperties.IsInDesignTool)
+            {
+                // design time data
+                NapList.Add(new NapDataViewModel(DateTime.Now.AddDays(-3), 30));
+                NapList.Add(new NapDataViewModel(DateTime.Now.AddDays(-1), 45));
+                NapList.Add(new NapDataViewModel(DateTime.Now, 120));
+            }
+            else
+            {
+                // load real data.
+                var loadedData = StorageHelper.LoadSerializedFile<ObservableCollection<NapDataViewModel>>("statistics.data");
+                if (loadedData != null)
+                    _napList = loadedData;
+            }
 
             _isDataLoaded = true;
         }

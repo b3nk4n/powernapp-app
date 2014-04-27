@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PowernApp.ViewModels;
 using System.Windows.Media;
+using PowernApp.Resources;
 
 namespace PowernApp
 {
@@ -17,6 +18,11 @@ namespace PowernApp
     /// </summary>
     public partial class StatisticPage : PhoneApplicationPage
     {
+        /// <summary>
+        /// The index of the calendar control in the pivot control.
+        /// </summary>
+        private const int CALENDAR_PIVOT_INDEX = 1;
+
         /// <summary>
         /// The pages app bar state.
         /// </summary>
@@ -65,11 +71,11 @@ namespace PowernApp
             ApplicationBar.BackgroundColor = (Color)Application.Current.Resources["ThemeBackgroundMediumColor"];
             ApplicationBar.ForegroundColor = (Color)Application.Current.Resources["ThemeForegroundLightColor"];
 
-            if (StatisticPivot.SelectedIndex == 2)
+            if (StatisticPivot.SelectedIndex == CALENDAR_PIVOT_INDEX)
             {
                 // prev month
                 ApplicationBarIconButton appBarButtonPrevMonth = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.back.png", UriKind.Relative));
-                appBarButtonPrevMonth.Text = "previous";
+                appBarButtonPrevMonth.Text = AppResources.AppBarPrevious;
                 ApplicationBar.Buttons.Add(appBarButtonPrevMonth);
                 appBarButtonPrevMonth.Click += (s, e) =>
                 {
@@ -78,7 +84,7 @@ namespace PowernApp
 
                 // next month
                 ApplicationBarIconButton appBarButtonNextMonth = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.next.png", UriKind.Relative));
-                appBarButtonNextMonth.Text = "next";
+                appBarButtonNextMonth.Text = AppResources.AppBarNext;
                 ApplicationBar.Buttons.Add(appBarButtonNextMonth);
                 appBarButtonNextMonth.Click += (s, e) =>
                 {
@@ -89,7 +95,7 @@ namespace PowernApp
             {
                 // clean up
                 ApplicationBarIconButton appBarButtonCleanUp = new ApplicationBarIconButton(new Uri("Assets/AppBar/appbar.clean.png", UriKind.Relative));
-                appBarButtonCleanUp.Text = "clean up";
+                appBarButtonCleanUp.Text = AppResources.AppBarCleanUp;
                 ApplicationBar.Buttons.Add(appBarButtonCleanUp);
                 appBarButtonCleanUp.Click += (s, e) =>
                 {
@@ -106,7 +112,7 @@ namespace PowernApp
         /// <returns>The app bar state.</returns>
         private AppBarState GetStateOfPivotIndex(int index)
         {
-            if (index == 2)
+            if (index == CALENDAR_PIVOT_INDEX)
                 return AppBarState.PrevNext;
             else
                 return AppBarState.CleanUp;

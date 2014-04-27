@@ -129,9 +129,17 @@
     <value>Aufwachen! Hoffentlich hast du dich gut erholt...</value>
     <comment>AlertDialog</comment>
   </data>
+  <data name="AppBarCleanUp" xml:space="preserve">
+    <value>aufräumen</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="AppBarInfo" xml:space="preserve">
     <value>info</value>
     <comment>AppBar</comment>
+  </data>
+  <data name="AppBarNext" xml:space="preserve">
+    <value>weiter</value>
+    <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
     <value>verbindung deaktiv.</value>
@@ -141,12 +149,16 @@
     <value>verbindung aktivieren</value>
     <comment>AppBar</comment>
   </data>
+  <data name="AppBarPrevious" xml:space="preserve">
+    <value>zurück</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="ApplicationAuthor" xml:space="preserve">
     <value>von Benjamin Sautermeister</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationDescription" xml:space="preserve">
-    <value>Die schnellste Powernapping App für Windows Phone mit Spracheingabe.</value>
+    <value>Die schnellste Power-Napping App für Windows Phone mit Spracheingabe.</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
@@ -240,6 +252,10 @@
     <value>Unterstützt von</value>
     <comment>AboutPage</comment>
   </data>
+  <data name="Days" xml:space="preserve">
+    <value>tage</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="FeedbackBodyText" xml:space="preserve">
     <value>[Dein Feedback hier]
 
@@ -279,6 +295,10 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <value>feedback</value>
     <comment>FeedbackDialogControl</comment>
   </data>
+  <data name="Hours" xml:space="preserve">
+    <value>stunden</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="InAppStoreLoading" xml:space="preserve">
     <value>zzzZZZ...</value>
     <comment>InAppStorePage</comment>
@@ -301,6 +321,18 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
   </data>
   <data name="ListTitle" xml:space="preserve">
     <value>liste</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxAttention" xml:space="preserve">
+    <value>Achtung</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxCleanUp" xml:space="preserve">
+    <value>Wirklich alle Power-Naps aus den Statistiken löschen, die kürzer als 5 Minuten lang waren?</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>minuten</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
@@ -359,8 +391,32 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <value>naptistiken</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="OverviewAvg" xml:space="preserve">
+    <value>durchschnitt</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMax" xml:space="preserve">
+    <value>maximum</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMin" xml:space="preserve">
+    <value>minimum</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewNapDuration" xml:space="preserve">
+    <value>schlafdauer</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTimeSinceLastNap" xml:space="preserve">
+    <value>zeit seit dem letzten power-nap</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="OverviewTitle" xml:space="preserve">
     <value>überblick</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotalNaps" xml:space="preserve">
+    <value>power-naps insgesamt</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
