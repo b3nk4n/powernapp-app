@@ -169,7 +169,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 2.0 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2.0.1 ähnelt.
         /// </summary>
         public static string ApplicationVersion {
             get {
@@ -232,7 +232,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die - &quot; ...until 2:35 PM. &quot; ähnelt.
         /// </summary>
         public static string Commands2Bullet1c {
             get {
