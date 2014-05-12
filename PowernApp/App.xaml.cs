@@ -27,8 +27,13 @@ namespace PowernApp
         /// </summary>
         public App()
         {
+#if !DEBUG
             // Initialize BugSense
             BugSenseHandler.Instance.InitAndStartSession(new ExceptionManager(Current), RootFrame, "d6528492");
+#else
+            // Global handler for uncaught exceptions.
+            UnhandledException += Application_UnhandledException;
+#endif
 
             // Standard-XAML-Initialisierung
             InitializeComponent();
@@ -101,6 +106,18 @@ namespace PowernApp
             if (Debugger.IsAttached)
             {
                 // Navigationsfehler. Unterbrechen und Debugger öffnen
+                Debugger.Break();
+            }
+        }
+
+        // Code to execute on Unhandled Exceptions
+        private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
+        {
+            ErrorReportingManager.Instance.Save(e.ExceptionObject, AppResources.ApplicationVersion, AppResources.ResourceLanguage);
+
+            if (Debugger.IsAttached)
+            {
+                // An unhandled exception has occurred; break into the debugger
                 Debugger.Break();
             }
         }

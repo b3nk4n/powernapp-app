@@ -111,9 +111,6 @@
     <Compile Include="Controls\ThemedAboutControlBase.xaml.cs">
       <DependentUpon>ThemedAboutControlBase.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ThemedInAppStoreControlBase.xaml.cs">
-      <DependentUpon>ThemedInAppStoreControlBase.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converter\DateToTimeConverter.cs" />
     <Compile Include="Converter\TimeSpanConverter.cs" />
     <Compile Include="InAppStorePage.xaml.cs">
@@ -167,10 +164,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ThemedAboutControlBase.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\ThemedInAppStoreControlBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +223,7 @@
     <Content Include="Assets\Audio\nosound.wav" />
     <Content Include="Assets\Audio\ocean.wav" />
     <Content Include="Assets\Audio\rooster.wav" />
+    <Content Include="Assets\Banners\Photo-Info_adduplex_trans.png" />
     <Content Include="Assets\Banners\pocketBRAIN_adduplex_trans.png" />
     <Content Include="Assets\Banners\ScribbleHunter_adduplex_trans.png" />
     <Content Include="Assets\Banners\SpacepiXX_adduplex_trans.png" />

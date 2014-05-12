@@ -92,6 +92,7 @@ namespace PowernApp.Controls
                 Grid.SetRow(dayControl, 0);
                 Grid.SetColumn(dayControl, c);
                 CalendarGrid.Children.Add(dayControl);
+                currentDayCounter--;
             }
             return dayCounter;
         }

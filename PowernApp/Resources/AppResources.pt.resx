@@ -166,7 +166,7 @@
     <comment>General</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.0.1</value>
+    <value>2.1</value>
     <comment>General</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
@@ -195,6 +195,7 @@
   </data>
   <data name="Commands2Bullet1c" xml:space="preserve">
     <value />
+    <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet2" xml:space="preserve">
     <value>- "...cancelar soneca."</value>

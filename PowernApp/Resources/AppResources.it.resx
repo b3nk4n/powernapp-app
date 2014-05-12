@@ -194,7 +194,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.0.1</value>
+    <value>2.1</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
@@ -446,6 +446,7 @@ Mostrandoci apprezzamento sullo store, ci aiuterai a proseguire il nostro lavoro
   </data>
   <data name="Commands2Bullet1c" xml:space="preserve">
     <value />
+    <comment>InfoPage</comment>
   </data>
   <data name="InAppStoreLoading" xml:space="preserve">
     <value>zzzZZZ...</value>

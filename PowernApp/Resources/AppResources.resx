@@ -195,7 +195,7 @@ You want to help with the translation to support your language in the next versi
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.0.1</value>
+    <value>2.1</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
@@ -447,6 +447,7 @@ Showing us some love on the store helps us to continue to work on the app and ma
   </data>
   <data name="Commands2Bullet1c" xml:space="preserve">
     <value>- " ...until 2:35 PM. "</value>
+    <comment>InfoPage</comment>
   </data>
   <data name="InAppStoreLoading" xml:space="preserve">
     <value>zzzZZZ...</value>

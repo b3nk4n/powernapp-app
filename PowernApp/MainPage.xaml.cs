@@ -1,6 +1,4 @@
-﻿//#define TESTING
-
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -114,6 +112,7 @@ namespace PowernApp
             advertsList.Add(new AdvertData(new Uri("/Assets/Banners/SpaceScribble_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "71fc4a5b-de12-4b28-88ec-8ac573ce9708"));
             advertsList.Add(new AdvertData(new Uri("/Assets/Banners/SpacepiXX_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "cbe0dfa7-2879-4c2c-b7c6-3798781fba16"));
             advertsList.Add(new AdvertData(new Uri("/Assets/Banners/ScribbleHunter_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ed250596-e670-4d22-aee1-8ed0a08c411f"));
+            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/Photo-Info_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ac39aa30-c9b1-4dc6-af2d-1cc17d9807cc"));
             
             //shuffle
             ShuffleList<AdvertData>(advertsList);
@@ -129,7 +128,7 @@ namespace PowernApp
         /// </summary>
         /// <typeparam name="T"> The list type.</typeparam>
         /// <param name="list">The list to shuffle.</param>
-        private static void ShuffleList<T>(IList<T> list)
+        private static void ShuffleList<T>(IList<T> list) // TODO: shift to framework, also used in image info app
         {
             Random rng = new Random();
             int n = list.Count;
@@ -218,7 +217,7 @@ namespace PowernApp
             AlarmClockViewModel.Instance.ForceStopSoundAndVibration();
 
             // update live tile in PRO version
-#if !TESTING
+#if !DEBUG
             if (InAppPurchaseHelper.IsProductActive(AppConstants.PRO_VERSION_IN_APP_KEY))
 #endif
             {
@@ -571,7 +570,7 @@ namespace PowernApp
                 }
                 else
                 {
-#if TESTING
+#if DEBUG
                     NavigationService.Navigate(new Uri("/StatisticPage.xaml", UriKind.Relative));
 #else
                     NavigationService.Navigate(new Uri("/InAppStorePage.xaml", UriKind.Relative));

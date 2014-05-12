@@ -1,14 +1,16 @@
-﻿using PowernApp.Resources;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PhoneKit.Framework.Controls;
+using PowernApp.Resources;
+using System.Windows.Media;
 
 namespace PowernApp.Controls
 {
-    public class LocalizedInAppStoreControl : ThemedInAppStoreControlBase
+    public class LocalizedInAppStoreControl : InAppStoreControlBase
     {
+        public LocalizedInAppStoreControl()
+        {
+            BackgroundTheme.Color = (Color)App.Current.Resources["ThemeBackgroundMediumColor"];
+        }
+
         /// <summary>
         /// Localizes the user control content and texts.
         /// </summary>
