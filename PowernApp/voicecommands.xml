@@ -1126,6 +1126,20 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap3">
+      <Example>hingga pukul 14.30</Example>
+      <ListenFor>hingga pukul {hour} {minute}</ListenFor>
+      <Feedback>Aktifkan alarm</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3Short">
+      <Example>hingga pukul 14 pagi</Example>
+      <ListenFor>hingga pukul {hour} [pagi]</ListenFor>
+      <Feedback>Aktifkan alarm</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="stopNap">
       <Example>Batalkan tidur singkat</Example>
       <ListenFor>Batalkan [tidur singkat]</ListenFor>

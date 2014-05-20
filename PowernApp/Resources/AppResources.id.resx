@@ -422,7 +422,7 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>Voice</comment>
   </data>
   <data name="AppBarOnline" xml:space="preserve">
-    <value>aktifan konektivitas</value>
+    <value>aktifkan konektivitas</value>
     <comment>AppBar</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
@@ -442,11 +442,11 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>InfoPage</comment>
   </data>
   <data name="SuppressLockScreen" xml:space="preserve">
-    <value>Menekan layar kunci</value>
+    <value>Menekan layar terkunci</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="Commands2Bullet1c" xml:space="preserve">
-    <value />
+    <value>- "...hingga pukul 14:35."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="InAppStoreLoading" xml:space="preserve">
@@ -454,7 +454,7 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreNoProducts" xml:space="preserve">
-    <value>There are currently no in-app purchases available. Please try again later.</value>
+    <value>Saat ini tidak ada pembelian di-aplikasi yang tersedia. Silakan coba lagi nanti.</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStorePurchased" xml:space="preserve">
@@ -462,19 +462,19 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreTitle" xml:space="preserve">
-    <value>pembelian dalam aplikasi</value>
+    <value>bursa dalam aplikasi</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message_8_1_OS" xml:space="preserve">
-    <value>Tekan dan tahan Tombol-Pencarian di ponsel Anda sampai dialog input suara muncul.</value>
+    <value>Tekan dan tahan Tombol-Cari di ponsel Anda sampai dialog input suara muncul.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="AppBarCleanUp" xml:space="preserve">
-    <value>membersihkan</value>
+    <value>bersihkan</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarNext" xml:space="preserve">
-    <value>berikutnya</value>
+    <value>selanjutnya</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarPrevious" xml:space="preserve">
@@ -482,7 +482,7 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>StatisticsPage</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
-    <value>kalender</value>
+    <value>kalendar</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Days" xml:space="preserve">
@@ -494,7 +494,7 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>StatisticsPage</comment>
   </data>
   <data name="ListTitle" xml:space="preserve">
-    <value>darftar</value>
+    <value>daftar</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxAttention" xml:space="preserve">
@@ -502,7 +502,7 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxCleanUp" xml:space="preserve">
-    <value>Do you really want to clean naps from the statistics, which have been shorter than 5 minutes?</value>
+    <value>Apakah Anda ingin menghapus tidur singkat dari statistik, dimana kurang dari 5 menit?</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Minutes" xml:space="preserve">
@@ -510,7 +510,7 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>StatisticsPage</comment>
   </data>
   <data name="NaptisticsTitle" xml:space="preserve">
-    <value>naptistika</value>
+    <value>singkatisitik</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvg" xml:space="preserve">
@@ -522,31 +522,31 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMin" xml:space="preserve">
-    <value>minimal</value>
+    <value>minimum</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewNapDuration" xml:space="preserve">
-    <value>durasi tidur siang</value>
+    <value>durasi tidur singkat</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTimeSinceLastNap" xml:space="preserve">
-    <value>sejak terakhir waktu tidur</value>
+    <value>tidur singkat terakhir</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTitle" xml:space="preserve">
-    <value>ikhtisar</value>
+    <value>tinjauan</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotalNaps" xml:space="preserve">
-    <value>total tidur siang</value>
+    <value>total tidur singkat</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvgShort" xml:space="preserve">
-    <value>rat.</value>
+    <value>rt-rt.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMaxShort" xml:space="preserve">
-    <value>mak.</value>
+    <value>maks.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMinShort" xml:space="preserve">
