@@ -381,10 +381,13 @@ namespace PowernApp.ViewModels
                     {
                         StreamResourceInfo alarmResource = App.GetResourceStream(new Uri(Settings.AlarmUriString.Value, UriKind.Relative));
                         SoundEffects.Instance.Load(Settings.AlarmUriString.Value, alarmResource.Stream);
-                        _alarmSound = SoundEffects.Instance[Settings.AlarmUriString.Value].CreateInstance();
-
-                        // start silent (but 0 is a too silent start)
-                        _alarmSound.Volume = 0.2f;
+                        SoundEffect sound = SoundEffects.Instance[Settings.AlarmUriString.Value];
+                        if (sound != null) // there is a very little chance that the sound file could not be loaded.
+                        {
+                            _alarmSound = SoundEffects.Instance[Settings.AlarmUriString.Value].CreateInstance();
+                            // start silent (but 0 is a too silent start)
+                            _alarmSound.Volume = 0.2f;
+                        }
                     }
 
                     if (_alarmStartCounter % ALARM_INTERVAL == 0)
