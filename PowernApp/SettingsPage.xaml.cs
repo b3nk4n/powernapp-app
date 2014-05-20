@@ -107,6 +107,11 @@ namespace PowernApp
                     playImageUri));
             audioList.Add(
                 new AudioViewModel(
+                    "Wake up",
+                    "Assets/Audio/wake_up.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
                     "Buzzer",
                     "Assets/Audio/buzzer.wav",
                     playImageUri));

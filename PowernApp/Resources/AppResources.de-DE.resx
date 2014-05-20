@@ -497,7 +497,7 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Wünsche einen angenemen {0} Minuten Schlaf.</value>
+    <value>Wünsche einen angenehmen {0} Minuten Schlaf.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">
