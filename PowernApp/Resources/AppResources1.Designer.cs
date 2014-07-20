@@ -169,7 +169,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 2.2 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2.2.1 ähnelt.
         /// </summary>
         public static string ApplicationVersion {
             get {
@@ -1021,7 +1021,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Your installed language package is not supported  in the current version of this application. Supported languages for voice commands are English (en-US, en-GB, en-IN), French (fr-FR), Portuguese (pt-PT, pt-BR), Indonesian (id-ID) and German (de-DE). Please check your phone settings.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Your installed language package is not supported  in the current version of this application. Supported languages for voice commands are English (en-US, en-GB, en-IN), French (fr-FR), Portuguese (pt-PT, pt-BR), Indonesian (id-ID), Spanish (es-ES) and German (de-DE). Please check your phone settings.
         ///You want to help with the translation to support your language in the next version? Just contact me! ähnelt.
         /// </summary>
         public static string VoiceUnsupportedMessage {

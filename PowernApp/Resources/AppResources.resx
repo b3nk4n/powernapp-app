@@ -182,7 +182,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>Your installed language package is not supported  in the current version of this application. Supported languages for voice commands are English (en-US, en-GB, en-IN), French (fr-FR), Portuguese (pt-PT, pt-BR), Indonesian (id-ID) and German (de-DE). Please check your phone settings.
+    <value>Your installed language package is not supported  in the current version of this application. Supported languages for voice commands are English (en-US, en-GB, en-IN), French (fr-FR), Portuguese (pt-PT, pt-BR), Indonesian (id-ID), Spanish (es-ES) and German (de-DE). Please check your phone settings.
 You want to help with the translation to support your language in the next version? Just contact me!</value>
     <comment>SettingsPage</comment>
   </data>
@@ -195,7 +195,7 @@ You want to help with the translation to support your language in the next versi
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.2</value>
+    <value>2.2.1</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">

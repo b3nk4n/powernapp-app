@@ -181,6 +181,8 @@ namespace PowernApp.ViewModels
                         WideBackBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileLarge.png", UriKind.Relative),
                         BackgroundImage = imageUri,
                         WideBackgroundImage = wideImageUri,
+                        Title = "",
+                        BackTitle = ""
                     });
             }
             catch (Exception ex)

@@ -122,7 +122,7 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>fr</value>
+    <value>es</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
@@ -130,67 +130,67 @@
     <comment>General</comment>
   </data>
   <data name="AboutTitle" xml:space="preserve">
-    <value>informations</value>
+    <value>acerca de</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
-    <value>par Benjamin Sautermeister</value>
+    <value>por Benjamin Sautermeister</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationDescription" xml:space="preserve">
-    <value>La plus vite application pour prendre un roupillon pour Windows Phone avec commandes de voix.</value>
+    <value>La aplicación para siestas más rápida para Windows phone con comandos de voz.</value>
     <comment>AboutPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
-    <value>plus d'applications</value>
+    <value>más aplicaciones</value>
     <comment>AboutPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
-    <value>politique de confidentialité</value>
+    <value>declaración de privacidad</value>
     <comment>About Page</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
-    <value>évaluation</value>
+    <value>valorar y comentar</value>
     <comment>AboutPage</comment>
   </data>
   <data name="SupportAndFeedback" xml:space="preserve">
-    <value>retour d'expérience</value>
+    <value>apoyo y comentarios</value>
     <comment>About Page</comment>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
-    <value>paramètres</value>
+    <value>configuración</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceCommands" xml:space="preserve">
-    <value>Commandes de voix</value>
+    <value>Comandos de voz</value>
     <comment>Settings Page</comment>
   </data>
   <data name="VoiceLanguage" xml:space="preserve">
-    <value>Langue</value>
+    <value>Idioma</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceStatus" xml:space="preserve">
-    <value>État</value>
+    <value>Estado</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceSupported" xml:space="preserve">
-    <value>soutient</value>
+    <value>soportado</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupported" xml:space="preserve">
-    <value>non soutient</value>
+    <value>no soportado</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>Votre paquet de langue installe n'est pas supporte dans la version actuel de cette application. Les langues supportees pour commandes de voix sont anglais (en-US, en-GB, en-IN),  français (fr-FR), portugais (pt-PT, pt-BR), indonésien (id-ID) et allemand (de-DE). Prier de consulter vos paramètres de téléphone.</value>
+    <value>El paquete de idioma instalado no es compatible con la versión actual de la aplicación. Los idiomas soportados son Inglés (es-US, en-GB, en-IN), Francés (fr-FR), Portugués (pt-PT, pt-BR), Indonesio (id-ID), Español (es-ES) y el Alemán (de-DE). Por favor, consulte los ajustes del teléfono. ¿Quieres ayudar con la traducción para apoyar tu idioma en la próxima versión? Contacta conmigo!</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VibrationEnabled" xml:space="preserve">
-    <value>Vibration</value>
+    <value>Vibración</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="Alarm" xml:space="preserve">
-    <value>Son d'alarme</value>
+    <value>Sonido de la alarma</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
@@ -198,16 +198,7 @@
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
-    <value>[Votre évaluation]
-
-
----------------------------------
-Device Name: {0}
-Device Manufacturer: {1}
-Device Firmware Version: {2}
-Device Hardware Version: {3}
-Application Version: {4}
----------------------------------</value>
+    <value>[Su comentario aquí]</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackEmail" xml:space="preserve">
@@ -215,231 +206,233 @@ Application Version: {4}
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackMessageText" xml:space="preserve">
-    <value>Desole que vous ne vouliez pas évaluer powernAPP. Veuillez expliquer votre expérience ou proposez comment on peut l'améliorer.</value>
+    <value>Sentimos que no quieras puntuar siestaAPP.
+
+Dinos sobre tu experiencia o sugiere como podemos hacerlo incluso mejor.</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackNoText" xml:space="preserve">
-    <value>non merci</value>
+    <value>no gracias</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>powenAPP - Retour d'expérience</value>
+    <value>powernAPP Comentarios del Cliente</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackTitleText" xml:space="preserve">
-    <value>Est-ce qu'on peut l'améliorer?</value>
+    <value>¿Podemos hacerlo mejor?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackYesText" xml:space="preserve">
-    <value>d'accord</value>
+    <value>enviar comentario</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage10Text" xml:space="preserve">
-    <value>Il parait que vous trouvez notre application utile!
+    <value>¡Parece que nuestra aplicación te está sirviendo de gran ayuda!
 
-Pourquoi ne pas donner un 5 étoile avis pour montrer votre appréciation?</value>
+¿Por qué en agradecimiento, no nos valoras con 5 estrellas?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage5Text" xml:space="preserve">
-    <value>On aimeriais que vous avis notre application 5 étoiles.
+    <value>Nos gustaría que puntuaras nuestra aplicación con 5 estrellas.
 
-De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à travailler sur l'application et d'améliorer les choses!</value>
+¡Puntuandonos positivamente en la tienda nos ayuda a continuar trabajando en la aplicación y hacer las cosas todavía mejor!</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingNoText" xml:space="preserve">
-    <value>non merci</value>
+    <value>no gracias</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingTitleText" xml:space="preserve">
-    <value>Vous aimez powenAPP?</value>
+    <value>¿Le gusta powernAPP?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingYesText" xml:space="preserve">
-    <value>évaluer 5 étoiles</value>
+    <value>puntúa</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="AppBarInfo" xml:space="preserve">
-    <value>info</value>
+    <value>información</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>désactivez branchement</value>
+    <value>desactivar conexión</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
-    <value>Appuyer et maintenir le Windows bouton de votre téléphone.</value>
+    <value>Mantenga pulsado el botón de Windows en su teléfono para abrir el control de voz.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands1Title" xml:space="preserve">
-    <value>1. Activer les commandes vocales</value>
+    <value>1.Active el control de voz</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet1" xml:space="preserve">
-    <value>- "…pour 20 minutes."</value>
+    <value>- "...durante 20 minutos."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet2" xml:space="preserve">
-    <value>- "…annuler le roupillon."</value>
+    <value>- "…cancelar siesta."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet3" xml:space="preserve">
-    <value>- "à qu'elle heure est-ce mon réveil réglé?"</value>
+    <value>- "…¿cuántocuando se ajusta la alarma?"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet4" xml:space="preserve">
-    <value>- "…combien de temps reste-il?"</value>
+    <value>- "…¿cuánto tiempo queda?"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet5" xml:space="preserve">
-    <value>- "…donnez-moi 5 minutes de plus."</value>
+    <value>- "…dame 5 minutos más."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message1" xml:space="preserve">
-    <value>Dis</value>
+    <value>Diga</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message2" xml:space="preserve">
-    <value> "Powernap..."  </value>
+    <value> "Power Nap..."  </value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message3" xml:space="preserve">
-    <value>suivi par votre demande. Quelques exemples:</value>
+    <value>seguido de su petición. Algunos ejemplos:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Title" xml:space="preserve">
-    <value>2. Parler</value>
+    <value>2. Hable</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Message" xml:space="preserve">
-    <value>powernAPP prend soin du reste…</value>
+    <value>powernAPP se encarga del resto...</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Title" xml:space="preserve">
-    <value>3. Jouis votre roupillon</value>
+    <value>3. Disfrute de su siesta</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsHeader" xml:space="preserve">
-    <value>commandes</value>
+    <value>comandos</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsIntro" xml:space="preserve">
-    <value>Cette application supporte les commandes de voix de Windows Phone. Veuillez suivre ces pas simples pour prendre votre roupillon bien mérité plus vite:</value>
+    <value>Esta aplicación es compatible con los comandos de voz de Windows Phone. Siga estos sencillos pasos que te llevaran rápidamente a una merecida siesta:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="ConnectivityHint" xml:space="preserve">
-    <value>Ne vous vous dérangez pas. Désactivez le branchement.</value>
+    <value>No se inquiete. Apague la conectividad del teléfono!</value>
     <comment>MainPage</comment>
   </data>
   <data name="NappingTipsConsistentMessage" xml:space="preserve">
-    <value>Veuillez garder votre emploi de temps de sieste. Principal temps de roupillon est à la moitié de la journée.</value>
+    <value>Mantenga un horario regular de las siestas. Prepárese para sus momentos de descanso durante el día.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsConsistentTitle" xml:space="preserve">
-    <value>Régularité</value>
+    <value>Sea constante</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessMessage" xml:space="preserve">
-    <value>Veuillez prendre un roupillon dans une chambre sombre. Bloquer la lumière aide à dormir plus vite.</value>
+    <value>Duerma en una habitación oscura o utilice una máscara para los ojos. Bloquear todas las fuentes de luz ayuda a conciliar el sueño rápidamente.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessTitle" xml:space="preserve">
-    <value>Veuillez préférer obscurité</value>
+    <value>Prefiero el oscuro</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedMessage" xml:space="preserve">
-    <value>Désactivez le branchement de votre téléphone et cherchez des lieux silencieux.</value>
+    <value>Desactive la conectividad del teléfono y busque un lugar tranquilo.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedTitle" xml:space="preserve">
-    <value>Ne vous vous dérangez pas</value>
+    <value>No se inquiete</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsHeader" xml:space="preserve">
-    <value>tuyaus de roupillon</value>
+    <value>consejos</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsIntro" xml:space="preserve">
-    <value>La recherche a trouve que faire des roupillon régulièrement peut réduire le stress et même réduire le risque d'une maladie cardiaque. Pour profiter au maximum d'un roupillon, veuillez suivre ces tuyaus vites et simples:</value>
+    <value>Estudios han encontrado que hacer siesta regularmente puede reducir el estrés e incluso disminuir el riesgo de enfermedades del corazón. Para sacar el máximo provecho de su siesta, siga estos rápidos y sencillos consejos:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickMessage" xml:space="preserve">
-    <value>Réglez votre réveil pour 30 minutes ou moins si vous ne voulez pas vous réveillerfatigué parce que vous devriez vous réveiller avant l'occurrence de sommeil bas.</value>
+    <value>Programe la alarma alrededor de 30 minutos o menos, ya que no debería llegar a un sueño profundo.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickTitle" xml:space="preserve">
-    <value>Faisez vite</value>
+    <value>Que sea rápido</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmMessage" xml:space="preserve">
-    <value>Casez une couverture tout près pour vous couvrir parce que votre température de corps baisse pendant que vous dormez.</value>
+    <value>Tenga una manta cerca para taparse, porque mientras dormimos baja la temperatura corporal.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmTitle" xml:space="preserve">
-    <value>Restez chaud</value>
+    <value>Manténgase caliente</value>
     <comment>InfoPage</comment>
   </data>
   <data name="SpeakAlarmAlreadySet" xml:space="preserve">
-    <value>L'alarme est déjà réglee.</value>
+    <value>La alarma está definida.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakAlarmSetFor" xml:space="preserve">
-    <value>L'alarme est réglee pour {0}.</value>
+    <value>La alarma está configurada para {0}.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakNoAlarmSet" xml:space="preserve">
-    <value>L'alarme n'a pas été régle.</value>
+    <value>La alarma no se estableció.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap1" xml:space="preserve">
-    <value>Bon roupillon pour {0} minutes.</value>
+    <value>Que tenga unos buenos {0} minutos de siesta.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">
-    <value>L'alarme est maintenant éteinte. J'espère que vous vous sentez plus énergétiques.</value>
+    <value>La alarma está desactivada. Espero que te sientas con más energía.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeLeft" xml:space="preserve">
-    <value>Il vous reste {0} minutes.</value>
+    <value>Te quedan {0} minutos para el final.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeShifted" xml:space="preserve">
-    <value>Maintenant il vous reste a peu près {0} minutes.</value>
+    <value>Ahora que tienes sobre {0} minutos para el final.</value>
     <comment>Voice</comment>
   </data>
   <data name="AlertDialogMessage" xml:space="preserve">
-    <value>Réveillez-vous! J'espère que vous vous sentiez plus énergétiques maintenant…</value>
+    <value>Hora de levantarse!!! Espero que hayas recuperado las energías…</value>
     <comment>AlertDialog</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Bon roupillon pour {0} minutes.</value>
+    <value>Que tenga unos buenos {0} minutos para dormir.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap2" xml:space="preserve">
-    <value>L'alarme est maintenant éteinte. J'espère que vous avez eu un bon sommeil.</value>
+    <value>La alarma está desactivada. Espero que hayas dormido bien.</value>
     <comment>Voice</comment>
   </data>
   <data name="AppBarOnline" xml:space="preserve">
-    <value>activez branchement</value>
+    <value>activar conexión</value>
     <comment>AppBar</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
-    <value>Bénévole</value>
+    <value>Colaboradores</value>
     <comment>AboutPage</comment>
   </data>
   <data name="Commands2Bullet1b" xml:space="preserve">
-    <value>- "…pour 1 heure et 30 minutes."</value>
+    <value>- "…durante 1 hora y 30 minutos."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="VoiceFeedback" xml:space="preserve">
-    <value>Lire les confirmations sonores</value>
+    <value>Reproducir confirmaciones de audio</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="InfoTitle" xml:space="preserve">
-    <value>informations</value>
+    <value>información</value>
     <comment>InfoPage</comment>
   </data>
   <data name="SuppressLockScreen" xml:space="preserve">
-    <value>Supprimer l'écran de verrouillage</value>
+    <value>Suprime la pantalla de bloqueo</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="Commands2Bullet1c" xml:space="preserve">
@@ -451,103 +444,103 @@ De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à t
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreNoProducts" xml:space="preserve">
-    <value>There are currently no in-app purchases available. Please try again later.</value>
+    <value>Actualmente no hay compras disponibles en la aplicación. Por favor, inténtelo de nuevo más tarde.</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStorePurchased" xml:space="preserve">
-    <value>acheté</value>
+    <value>comprada</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreTitle" xml:space="preserve">
-    <value>achats via l'application</value>
+    <value>tienda</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message_8_1_OS" xml:space="preserve">
-    <value>Appuyer et maintenir le "Recherche"-bouton de votre téléphone.</value>
+    <value>Mantenga pulsado el botón de Busqueda en su teléfono para abrir el control de voz.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="AppBarCleanUp" xml:space="preserve">
-    <value>nettoyer</value>
+    <value>limpiar</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarNext" xml:space="preserve">
-    <value>suivant</value>
+    <value>próximo</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarPrevious" xml:space="preserve">
-    <value>arrière</value>
+    <value>anterior</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
-    <value>calendrier</value>
+    <value>calendario</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Days" xml:space="preserve">
-    <value>journées</value>
+    <value>días</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Hours" xml:space="preserve">
-    <value>heures</value>
+    <value>horas</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="ListTitle" xml:space="preserve">
-    <value>liste</value>
+    <value>lista</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxAttention" xml:space="preserve">
-    <value>Attention</value>
+    <value>Atención</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxCleanUp" xml:space="preserve">
-    <value>Do you really want to clean naps from the statistics, which have been shorter than 5 minutes?</value>
+    <value>¿Realmente desea limpiar las estadísticas, que han sido más cortas de 5 minutos?</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Minutes" xml:space="preserve">
-    <value>minutes</value>
+    <value>minutos</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="NaptisticsTitle" xml:space="preserve">
-    <value>naptistiques</value>
+    <value>estadisticas</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvg" xml:space="preserve">
-    <value>moyenne</value>
+    <value>promedio</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMax" xml:space="preserve">
-    <value>maximum</value>
+    <value>máximo</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMin" xml:space="preserve">
-    <value>minimum</value>
+    <value>mínimo</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewNapDuration" xml:space="preserve">
-    <value>durée sieste</value>
+    <value>duración de la siesta</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTimeSinceLastNap" xml:space="preserve">
-    <value>temps depuis la dernière sieste</value>
+    <value>tiempo desde la última siesta</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTitle" xml:space="preserve">
-    <value>vue d'ensemble</value>
+    <value>visión de conjunto</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotalNaps" xml:space="preserve">
-    <value>siestes au total</value>
+    <value>total de siestas</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvgShort" xml:space="preserve">
-    <value>moy.</value>
+    <value>prm.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMaxShort" xml:space="preserve">
-    <value>max.</value>
+    <value>máx.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMinShort" xml:space="preserve">
-    <value>min.</value>
+    <value>mín.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotal" xml:space="preserve">
