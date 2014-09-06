@@ -56,6 +56,11 @@ namespace PowernApp.ViewModels
         private readonly StoredObject<DateTime> _alarmTime = new StoredObject<DateTime>("alarmTime", DateTime.MinValue);
 
         /// <summary>
+        /// The alarm preview time.
+        /// </summary>
+        private DateTime _alarmPreviewTime = DateTime.Now;
+
+        /// <summary>
         /// The time when the user has set the alarm.
         /// </summary>
         private readonly StoredObject<DateTime> _alarmSetTime = new StoredObject<DateTime>("alarmSetTime", DateTime.MinValue);
@@ -571,6 +576,25 @@ namespace PowernApp.ViewModels
                     NotifyPropertyChanged("AlarmTime");
                     NotifyPropertyChanged("TimeToAlarm");
                     NotifyPropertyChanged("TotalNapTime");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the alarm preview time.
+        /// </summary>
+        public DateTime AlarmPreviewTime
+        {
+            get
+            {
+                return _alarmPreviewTime;
+            }
+            set
+            {
+                if (_alarmPreviewTime != value)
+                {
+                    _alarmPreviewTime = value;
+                    NotifyPropertyChanged("AlarmPreviewTime");
                 }
             }
         }

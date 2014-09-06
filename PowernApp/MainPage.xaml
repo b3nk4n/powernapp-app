@@ -236,10 +236,11 @@
                     <RowDefinition Height="52" />
                     <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" VerticalAlignment="Bottom" toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
+                <Grid Grid.Row="0" VerticalAlignment="Bottom" toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
+                    <TextBlock Grid.Row="0" Text="{Binding AlarmPreviewTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="22"/>
                     <c4f:TimeSpanPicker x:Name="CustomNapTimePicker" Value="0:20:00" FontSize="108" HorizontalAlignment="Center"
                                     Template="{StaticResource TimeSpanCustomStyle}" Min="0:01:00" />
-                </StackPanel>
+                </Grid>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"  toolkit:TurnstileFeatherEffect.FeatheringIndex="2" >
                     <Button x:Name="ButtonMinus5" Width="92" Height="92" Style="{StaticResource RoundButton}" Tag="-5" Click="ChangeAlarmTimeClick">
                         <TextBlock Text="-5" FontSize="32" Margin="0,0,2,2" />
@@ -299,9 +300,9 @@
                 <Grid Grid.Row="2" Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="4">
                     <ProgressBar Height="50" Value="{Binding Progress}" VerticalAlignment="Center" Foreground="{StaticResource ThemeForegroundDark}" Background="{StaticResource ThemeBackgroundMedium}"/>
                     <TextBlock Text="{Binding AlarmTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
-                           HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ThemeTextNormalStyle}" Margin="12,34,12,0" />
+                           HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource ThemeTextNormalStyle}" Margin="12,34,12,0" FontSize="22" />
                     <TextBlock Text="{Binding AlarmSetTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}"
-                           HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ThemeTextNormalStyle}" Margin="12,34,12,0" />
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ThemeTextNormalStyle}" Margin="12,34,12,0" FontSize="22"/>
                 </Grid>
                 <Button Grid.Row="3" Command="{Binding StopCommand}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="4"
                         Width="164" Height="164" Style="{StaticResource RoundButton}" Click="StopButtonClick">

@@ -36,10 +36,9 @@ namespace PowernApp
             // register voice commands
             Speech.Instance.InstallCommandSets(new Uri("ms-appx:///voicecommands.xml", UriKind.Absolute));
 
-            CustomNapTimePicker.Value = AlarmClockViewModel.Instance.LastAlarmDuration;
-
             //// late binding of timespan picker changed event
             CustomNapTimePicker.ValueChanged += CustomNapTimeChanged;
+            CustomNapTimePicker.Value = AlarmClockViewModel.Instance.LastAlarmDuration;
 
             Loaded += (s, e) =>
                 {
@@ -179,6 +178,8 @@ namespace PowernApp
             }
 
             UpdateBannerVisibility();
+
+            UpdatePreviewTime();
 
             // set data context to view model
             DataContext = AlarmClockViewModel.Instance;
@@ -623,6 +624,9 @@ namespace PowernApp
             DeactivateAnimation.Begin();
             ConnectivityMessageOut.Begin();
 
+            UpdatePlusMinusButtons();
+            UpdatePreviewTime();
+
             BannerOut.Begin();
             _isBannerVisible = false;
         }
@@ -672,14 +676,30 @@ namespace PowernApp
         /// <param name="e">The event args.</param>
         private void CustomNapTimeChanged(object sender, RoutedPropertyChangedEventArgs<TimeSpan> e)
         {
+            UpdatePlusMinusButtons();
+            
+            UpdatePreviewTime();
+        }
+
+        private void UpdatePlusMinusButtons()
+        {
             // update button view state in inactive mode.
             var minutes = (int)CustomNapTimePicker.Value.Value.TotalMinutes;
             bool noAlarmOn = !AlarmClockViewModel.Instance.IsAlarmSet;
 
-            ButtonMinus5.IsEnabled = minutes > 5 && noAlarmOn;
-            ButtonMinus1.IsEnabled = minutes > 1 && noAlarmOn;
-            ButtonPlus5.IsEnabled = noAlarmOn;
-            ButtonPlus1.IsEnabled = noAlarmOn;
+            ButtonMinus5.IsEnabled = minutes > 5;
+            ButtonMinus1.IsEnabled = minutes > 1;
+            ButtonPlus5.IsEnabled = true;
+            ButtonPlus1.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Updates the preview sleep time.
+        /// </summary>
+        private void UpdatePreviewTime()
+        {
+            var minutes = (int)CustomNapTimePicker.Value.Value.TotalMinutes;
+            AlarmClockViewModel.Instance.AlarmPreviewTime = DateTime.Now.AddMinutes(minutes);
         }
     }
 }
