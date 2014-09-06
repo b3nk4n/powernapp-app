@@ -139,11 +139,11 @@ namespace PowernApp.Controls
 
             var dayCounter = 0;
 
-            for (int r = (nextDaysOffset / 6) - 1; r < 6; r++)
+            for (int r = nextDaysOffset / 7; r < 6; r++)
             {
                 int columnOffset = 0;
                 // column offset for the first row
-                if (r == (nextDaysOffset / 6) - 1)
+                if (r == nextDaysOffset / 7)
                     columnOffset = nextDaysOffset % 7;
 
                 for (int c = columnOffset; c < 7; c++)
