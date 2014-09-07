@@ -75,7 +75,7 @@ namespace PowernApp
             {
                 FeedbackManager.Instance.StartFirst();
             });
-            StartupActionManager.Instance.Register(10, ActionExecutionRule.Equals, () =>
+            StartupActionManager.Instance.Register(15, ActionExecutionRule.Equals, () =>
             {
                 FeedbackManager.Instance.StartSecond();
             });
@@ -112,6 +112,7 @@ namespace PowernApp
             advertsList.Add(new AdvertData(new Uri("/Assets/Banners/SpacepiXX_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "cbe0dfa7-2879-4c2c-b7c6-3798781fba16"));
             advertsList.Add(new AdvertData(new Uri("/Assets/Banners/ScribbleHunter_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ed250596-e670-4d22-aee1-8ed0a08c411f"));
             advertsList.Add(new AdvertData(new Uri("/Assets/Banners/Photo-Info_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ac39aa30-c9b1-4dc6-af2d-1cc17d9807cc"));
+            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/frequenzer_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "92bac4f7-05eb-47ec-a75b-11f077f0c8f6"));
             
             //shuffle
             ShuffleList<AdvertData>(advertsList);
@@ -155,7 +156,7 @@ namespace PowernApp
             {
                 String commandName = NavigationContext.QueryString["voiceCommandName"];
 
-                if (!string.IsNullOrEmpty(commandName))
+                if (!string.IsNullOrEmpty(commandName) && e.NavigationMode == NavigationMode.New)
                     handleVoiceCommands(commandName);
 
                 // clear the QueryString or the page will retain the current value
@@ -165,7 +166,7 @@ namespace PowernApp
                 (!AlarmClockViewModel.Instance.IsAlarmSet || AlarmClockViewModel.Instance.TimeToAlarm.Minutes > 5))
             {
                 // fire startup events only when the app started without voice command
-                StartupActionManager.Instance.Fire();
+                StartupActionManager.Instance.Fire(e);
             }
 
             // determine view state

@@ -9,7 +9,7 @@
     <Language code="it" />
     <Language code="es" />
   </Languages>
-  <App xmlns="" ProductID="{92740dff-b2e1-4813-b08b-c6429df03356}" Title="powernAPP" RuntimeType="Silverlight" Version="2.2.1.0" Genre="apps.normal" Author="Benjamin Sautermeister" Description="The fastest powernapping app for Windows Phone with voice commands" Publisher="Benjamin Sautermeister" PublisherID="{1fbed724-86f4-4765-a4dd-c3133421f3c6}">
+  <App xmlns="" ProductID="{92740dff-b2e1-4813-b08b-c6429df03356}" Title="powernAPP" RuntimeType="Silverlight" Version="2.3.0.0" Genre="apps.normal" Author="Benjamin Sautermeister" Description="The fastest powernapping app for Windows Phone with voice commands" Publisher="Benjamin Sautermeister" PublisherID="{1fbed724-86f4-4765-a4dd-c3133421f3c6}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />

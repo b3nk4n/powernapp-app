@@ -66,7 +66,8 @@ namespace PowernApp.ViewModels
                 {
                     if (MessageBox.Show(AppResources.MessageBoxCleanUp, AppResources.MessageBoxAttention, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
                     {
-                        Cleanup(10);
+                        Cleanup(5);
+
                     }
                 },
                 () =>
@@ -92,6 +93,13 @@ namespace PowernApp.ViewModels
                 if (_napList[i].Duration < minLimit)
                     _napList.RemoveAt(i);
             }
+
+            // update UI
+            NotifyPropertyChanged("NapsCount");
+            NotifyPropertyChanged("MinNapTime");
+            NotifyPropertyChanged("MaxNapTime");
+            NotifyPropertyChanged("AvgNapTime");
+            NotifyPropertyChanged("TimeSinceLastNap");
         }
 
         /// <summary>

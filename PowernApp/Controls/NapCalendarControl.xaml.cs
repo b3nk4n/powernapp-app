@@ -164,11 +164,13 @@ namespace PowernApp.Controls
         private FrameworkElement CreateDayControl(string text, bool isActive, bool hasNap)
         {
             Grid container = new Grid();
+            container.Name = Guid.NewGuid().ToString();
             if (!isActive)
                 container.Opacity = 0.33;
             container.Height = 50;
             container.Width = 50;
             var ellipse = new Ellipse();
+            ellipse.Name = Guid.NewGuid().ToString();
             ellipse.Stroke = WHITE_BRUSH;
             ellipse.StrokeThickness = 3;
             container.Width = 46;
@@ -179,6 +181,7 @@ namespace PowernApp.Controls
                 // set image source in code, because the XAML implementation is asyc,
                 // so it is not going to be rendered.
                 Image image = new Image();
+                image.Name = Guid.NewGuid().ToString();
                 Uri uri = new Uri("/PowernAPP;component/Assets/Images/check.png", UriKind.Relative);
                 StreamResourceInfo resourceInfo = Application.GetResourceStream(uri);
                 BitmapImage bmp = new BitmapImage();
@@ -189,6 +192,7 @@ namespace PowernApp.Controls
             else
             {
                 TextBlock textBlock = new TextBlock();
+                textBlock.Name = Guid.NewGuid().ToString();
                 textBlock.Text = text;
                 textBlock.Foreground = WHITE_BRUSH;
                 textBlock.TextAlignment = TextAlignment.Center;
