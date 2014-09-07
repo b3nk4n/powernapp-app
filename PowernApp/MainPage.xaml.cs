@@ -16,6 +16,7 @@ using PowernApp.Napping;
 using PhoneKit.Framework.InAppPurchase;
 using PhoneKit.Framework.Advertising;
 using System.Collections.Generic;
+using System.Windows.Controls.Primitives;
 
 namespace PowernApp
 {
@@ -652,7 +653,7 @@ namespace PowernApp
         /// <param name="e">The event args.</param>
         private void ChangeAlarmTimeClick(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
+            var button = sender as ButtonBase;
 
             if (button == null)
                 return;
@@ -688,9 +689,7 @@ namespace PowernApp
             var minutes = (int)CustomNapTimePicker.Value.Value.TotalMinutes;
             bool noAlarmOn = !AlarmClockViewModel.Instance.IsAlarmSet;
 
-            ButtonMinus5.IsEnabled = minutes > 5;
             ButtonMinus1.IsEnabled = minutes > 1;
-            ButtonPlus5.IsEnabled = true;
             ButtonPlus1.IsEnabled = true;
         }
 
