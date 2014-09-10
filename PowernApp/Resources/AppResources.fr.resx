@@ -130,7 +130,7 @@
     <comment>General</comment>
   </data>
   <data name="AboutTitle" xml:space="preserve">
-    <value>informations</value>
+    <value>à propos</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
@@ -146,15 +146,15 @@
     <comment>AboutPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
-    <value>politique de confidentialité</value>
+    <value>confidentialité</value>
     <comment>About Page</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
-    <value>évaluation</value>
+    <value>évaluez et donnez votre avis</value>
     <comment>AboutPage</comment>
   </data>
   <data name="SupportAndFeedback" xml:space="preserve">
-    <value>retour d'expérience</value>
+    <value>support et feedback</value>
     <comment>About Page</comment>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
@@ -235,27 +235,27 @@ Application Version: {4}
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage10Text" xml:space="preserve">
-    <value>Il parait que vous trouvez notre application utile!
+    <value>Il semble que vous utilisez beaucoup notre application!
 
-Pourquoi ne pas donner un 5 étoile avis pour montrer votre appréciation?</value>
+Pourquoi ne pas donner 5 étoiles pour exprimer votre satisfaction?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage5Text" xml:space="preserve">
-    <value>On aimeriais que vous avis notre application 5 étoiles.
+    <value>Merci d'attribuer 5 étoiles à notre app.
 
-De nous montrer un peu d'amour dans le Windows Store nous aide à continuer à travailler sur l'application et d'améliorer les choses!</value>
+Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingNoText" xml:space="preserve">
-    <value>non merci</value>
+    <value>non, merci</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingTitleText" xml:space="preserve">
-    <value>Vous aimez powenAPP?</value>
+    <value>powernAPP vous plaît?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingYesText" xml:space="preserve">
-    <value>évaluer 5 étoiles</value>
+    <value>évaluer</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="AppBarInfo" xml:space="preserve">

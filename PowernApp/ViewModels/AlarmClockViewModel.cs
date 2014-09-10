@@ -177,7 +177,7 @@ namespace PowernApp.ViewModels
                 },
                 () =>
                 {
-                    return IsAlarmSet;
+                    return true;
                 });
         }
 

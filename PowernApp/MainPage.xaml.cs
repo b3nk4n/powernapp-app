@@ -607,16 +607,6 @@ namespace PowernApp
         }
 
         /// <summary>
-        /// Open the timespan picker box.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="e">The event args.</param>
-        private void CustomNapClick(object sender, RoutedEventArgs e)
-        {
-            CustomNapTimePicker.OpenPicker();
-        }
-
-        /// <summary>
         /// Handles the stop button click event.
         /// </summary>
         /// <param name="sender">The sender.</param>
@@ -701,5 +691,6 @@ namespace PowernApp
             var minutes = (int)CustomNapTimePicker.Value.Value.TotalMinutes;
             AlarmClockViewModel.Instance.AlarmPreviewTime = DateTime.Now.AddMinutes(minutes);
         }
+
     }
 }
