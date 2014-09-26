@@ -166,8 +166,20 @@
     <comment>General</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.3.1</value>
+    <value>2.4</value>
     <comment>General</comment>
+  </data>
+  <data name="AttentionTitle" xml:space="preserve">
+    <value>Achtung:</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="BackupInfoText" xml:space="preserve">
+    <value>Sie können eine Sicherung ihrer Notizen erstellen, welche auf ihrem OneDrive gespeichert werden. Die Daten können auf einem beliebigen Gerät wiederherstellt werden.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="BackupTitle" xml:space="preserve">
+    <value>sicherungen</value>
+    <comment>Backup</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
     <value>kalender</value>
@@ -245,6 +257,10 @@
     <value>Diese Anwendung unterstützt Windows Phone Spachbefehle. Befolge diese einfachen Schritte um mit deinem wohlverdienten Power Nap noch schneller loslegen zu können:</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="CommonBackupWarningText" xml:space="preserve">
+    <value>Lassen Sie die App aktiv, bis der Vorgang abgeschlossen ist. Es wird eine Internetverbindung benötigt.</value>
+    <comment>Backup</comment>
+  </data>
   <data name="ConnectivityHint" xml:space="preserve">
     <value>Lass dich nicht stören. Stelle dein Smartphone offline!</value>
     <comment>MainPage</comment>
@@ -252,6 +268,10 @@
   <data name="Contributors" xml:space="preserve">
     <value>Unterstützt von</value>
     <comment>AboutPage</comment>
+  </data>
+  <data name="CreateBackupHeaderText" xml:space="preserve">
+    <value>erstellen</value>
+    <comment>Backup</comment>
   </data>
   <data name="Days" xml:space="preserve">
     <value>tage</value>
@@ -324,13 +344,45 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <value>liste</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>anmelden</value>
+    <comment>General</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>abmelden</value>
+    <comment>General</comment>
+  </data>
   <data name="MessageBoxAttention" xml:space="preserve">
     <value>Achtung</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="MessageBoxBackupErrorText" xml:space="preserve">
+    <value>Die Sicherung '{0}' konnte leider nicht erstellt werden. Bitte prüfen Sie ihre Internetverbindung.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxBackupSuccessText" xml:space="preserve">
+    <value>Die Sicherung '{0}' wurde erfolgreich erstellt.</value>
+    <comment>Backup</comment>
+  </data>
   <data name="MessageBoxCleanUp" xml:space="preserve">
     <value>Wirklich alle Power-Naps aus den Statistiken löschen, die kürzer als 5 Minuten lang waren?</value>
     <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxInfoTitle" xml:space="preserve">
+    <value>Information</value>
+    <comment>MessageBox</comment>
+  </data>
+  <data name="MessageBoxRestoreErrorText" xml:space="preserve">
+    <value>Die Sicherung '{0}' konnte leider nicht wiederhergestellt werden. Bitte prüfen Sie ihre Internetverbindung.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxRestoreSuccessText" xml:space="preserve">
+    <value>Die Sicherung '{0}' wurde erfolgreich wiederhergestellt.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxWarningTitle" xml:space="preserve">
+    <value>Warnung</value>
+    <comment>MessageBox</comment>
   </data>
   <data name="Minutes" xml:space="preserve">
     <value>minuten</value>
@@ -339,6 +391,10 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
   <data name="MoreApps" xml:space="preserve">
     <value>mehr apps</value>
     <comment>AboutPage</comment>
+  </data>
+  <data name="NameOfBackupHintText" xml:space="preserve">
+    <value>Sicherungsname</value>
+    <comment>Backup</comment>
   </data>
   <data name="NappingTipsConsistentMessage" xml:space="preserve">
     <value>Führe einen regelmäßigen Mittagsschlaf. Besonders die Zeit nach dem Mittagessen eignet sich hervorragend um kurz die Augen zu schließen und neue Energie zu sammeln.</value>
@@ -475,6 +531,14 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
   <data name="ResourceLanguage" xml:space="preserve">
     <value>de-DE</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="RestoreBackupHeaderText" xml:space="preserve">
+    <value>wiederherstellen</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="RestoreInfoText" xml:space="preserve">
+    <value>Sie können Ihre erstellten Sicherungen hier wiederherstellen. Vorhandene Notizen werden überschrieben und erstellte Kacheln entfernt.</value>
+    <comment>Backup</comment>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
     <value>einstellungen</value>

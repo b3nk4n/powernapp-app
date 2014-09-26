@@ -56,9 +56,16 @@ namespace PowernApp
 
             DataContext = NapStatisticsViewModel.Instance;
             NapCalendar.DataContext = NapStatisticsViewModel.Instance;
-            NapCalendar.Update();
 
             BuildLocalizedAppBar();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            NapStatisticsViewModel.Instance.UpdateAll();
+            NapCalendar.Update();
         }
 
         /// <summary>
@@ -103,6 +110,14 @@ namespace PowernApp
                         NapStatisticsViewModel.Instance.CleanupCommand.Execute(null);
                 };
             }
+
+            // backup
+            ApplicationBarMenuItem appBarBackupMenuItem = new ApplicationBarMenuItem(AppResources.BackupTitle);
+            ApplicationBar.MenuItems.Add(appBarBackupMenuItem);
+            appBarBackupMenuItem.Click += (s, e) =>
+            {
+                NavigationService.Navigate(new Uri("/BackupPage.xaml", UriKind.Relative));
+            };
         }
 
         /// <summary>

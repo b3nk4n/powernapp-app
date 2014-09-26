@@ -169,11 +169,38 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 2.3.1 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2.4 ähnelt.
         /// </summary>
         public static string ApplicationVersion {
             get {
                 return ResourceManager.GetString("ApplicationVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Attention: ähnelt.
+        /// </summary>
+        public static string AttentionTitle {
+            get {
+                return ResourceManager.GetString("AttentionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You can create a backup of your data, which are going to be saved on you OneDrive. You can later restore the data on any device. ähnelt.
+        /// </summary>
+        public static string BackupInfoText {
+            get {
+                return ResourceManager.GetString("BackupInfoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die OneDrive backup ähnelt.
+        /// </summary>
+        public static string BackupTitle {
+            get {
+                return ResourceManager.GetString("BackupTitle", resourceCulture);
             }
         }
         
@@ -349,6 +376,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Keep this app active until the operation is finished. A stable internet connection is required. ähnelt.
+        /// </summary>
+        public static string CommonBackupWarningText {
+            get {
+                return ResourceManager.GetString("CommonBackupWarningText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Don&apos;t get disturbed. Disable the phones connectivity! ähnelt.
         /// </summary>
         public static string ConnectivityHint {
@@ -363,6 +399,15 @@ namespace PowernApp.Resources {
         public static string Contributors {
             get {
                 return ResourceManager.GetString("Contributors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die create ähnelt.
+        /// </summary>
+        public static string CreateBackupHeaderText {
+            get {
+                return ResourceManager.GetString("CreateBackupHeaderText", resourceCulture);
             }
         }
         
@@ -513,6 +558,24 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die sign in ähnelt.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die sign out ähnelt.
+        /// </summary>
+        public static string Logout {
+            get {
+                return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Attention ähnelt.
         /// </summary>
         public static string MessageBoxAttention {
@@ -522,11 +585,65 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Die Backup &apos;{0}&apos; could not be created. Please check you internet connection. ähnelt.
+        /// </summary>
+        public static string MessageBoxBackupErrorText {
+            get {
+                return ResourceManager.GetString("MessageBoxBackupErrorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Die Backup &apos;{0}&apos; has been created successfully. ähnelt.
+        /// </summary>
+        public static string MessageBoxBackupSuccessText {
+            get {
+                return ResourceManager.GetString("MessageBoxBackupSuccessText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Do you really want to clean naps from the statistics, which have been shorter than 5 minutes? ähnelt.
         /// </summary>
         public static string MessageBoxCleanUp {
             get {
                 return ResourceManager.GetString("MessageBoxCleanUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Information ähnelt.
+        /// </summary>
+        public static string MessageBoxInfoTitle {
+            get {
+                return ResourceManager.GetString("MessageBoxInfoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Die Backup &apos;{0}&apos; could ne be restored. Please check you internet connection. ähnelt.
+        /// </summary>
+        public static string MessageBoxRestoreErrorText {
+            get {
+                return ResourceManager.GetString("MessageBoxRestoreErrorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Die Backup &apos;{0}&apos; has been restored successfully. ähnelt.
+        /// </summary>
+        public static string MessageBoxRestoreSuccessText {
+            get {
+                return ResourceManager.GetString("MessageBoxRestoreSuccessText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Warning ähnelt.
+        /// </summary>
+        public static string MessageBoxWarningTitle {
+            get {
+                return ResourceManager.GetString("MessageBoxWarningTitle", resourceCulture);
             }
         }
         
@@ -545,6 +662,15 @@ namespace PowernApp.Resources {
         public static string MoreApps {
             get {
                 return ResourceManager.GetString("MoreApps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Backup title ähnelt.
+        /// </summary>
+        public static string NameOfBackupHintText {
+            get {
+                return ResourceManager.GetString("NameOfBackupHintText", resourceCulture);
             }
         }
         
@@ -846,6 +972,24 @@ namespace PowernApp.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die restore ähnelt.
+        /// </summary>
+        public static string RestoreBackupHeaderText {
+            get {
+                return ResourceManager.GetString("RestoreBackupHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You can restore you data here. Current notes and tiles are going to be removed. ähnelt.
+        /// </summary>
+        public static string RestoreInfoText {
+            get {
+                return ResourceManager.GetString("RestoreInfoText", resourceCulture);
             }
         }
         

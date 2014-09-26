@@ -102,12 +102,24 @@ namespace PowernApp.ViewModels
             NotifyPropertyChanged("TimeSinceLastNap");
         }
 
+        public void UpdateAll()
+        {
+            NotifyPropertyChanged("NapsCount");
+            NotifyPropertyChanged("MinNapTime");
+            NotifyPropertyChanged("MaxNapTime");
+            NotifyPropertyChanged("AvgNapTime");
+            NotifyPropertyChanged("TimeSinceLastNap");
+
+            NotifyPropertyChanged("NapList");
+        }
+
         /// <summary>
         /// Loads the statistics data.
         /// </summary>
-        public void Load()
+        /// <param name="forceReload">Whether the reload should be forced.</param>
+        public void Load(bool forceReload = false)
         {
-            if (_isDataLoaded)
+            if (_isDataLoaded && !forceReload)
                 return;
 
 #if !DEBUG

@@ -96,6 +96,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppConstants.cs" />
+    <Compile Include="BackupPage.xaml.cs">
+      <DependentUpon>BackupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MyBackupControlBase.xaml.cs">
+      <DependentUpon>MyBackupControlBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BackupControlViewModel.cs" />
     <Compile Include="Controls\CalendarNormalTileControl.xaml.cs">
       <DependentUpon>CalendarNormalTileControl.xaml</DependentUpon>
     </Compile>
@@ -103,6 +110,7 @@
       <DependentUpon>CalendarWideTileControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\LocalizedAboutControl.cs" />
+    <Compile Include="Controls\LocalizedBackupControl.cs" />
     <Compile Include="Controls\LocalizedFeedbackDialogControl.cs" />
     <Compile Include="Controls\LocalizedInAppStoreControl.cs" />
     <Compile Include="Controls\NapCalendarControl.xaml.cs">
@@ -150,6 +158,14 @@
     <Page Include="AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BackupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MyBackupControlBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\CalendarNormalTileControl.xaml">
       <SubType>Designer</SubType>
@@ -304,19 +320,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Live, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+      <HintPath>..\..\PhoneKit.Framework\Libs\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="PhoneKit.Framework">
-      <HintPath>..\Lib\PhoneKit.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="PhoneKit.Framework.Core">
-      <HintPath>..\Lib\PhoneKit.Framework.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.20\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
@@ -328,7 +339,16 @@
       <HintPath>..\packages\Microsoft.Net.Http.2.2.20\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\PhoneKit.Framework\PhoneKit.Framework.Core\PhoneKit.Framework.Core.csproj">
+      <Project>{0028ac27-312b-4f73-b8f2-c3b8d9740a86}</Project>
+      <Name>PhoneKit.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PhoneKit.Framework\PhoneKit.Framework\PhoneKit.Framework.csproj">
+      <Project>{9274ed00-223e-41d1-a1bc-e7cdd8c8d34d}</Project>
+      <Name>PhoneKit.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

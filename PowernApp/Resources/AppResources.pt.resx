@@ -166,8 +166,20 @@
     <comment>General</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.3.1</value>
+    <value>2.4</value>
     <comment>General</comment>
+  </data>
+  <data name="AttentionTitle" xml:space="preserve">
+    <value>Attention:</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="BackupInfoText" xml:space="preserve">
+    <value>You can create a backup of your data, which are going to be saved on you OneDrive. You can later restore the data on any device.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="BackupTitle" xml:space="preserve">
+    <value>OneDrive backup</value>
+    <comment>Backup</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
     <value>calendário</value>
@@ -245,6 +257,10 @@
     <value>Este aplicativo suporta os comandos de voz do Windows Phone. Siga estes passos para ter o seu merecido descanso rapidamente:</value>
     <comment>InfoPage</comment>
   </data>
+  <data name="CommonBackupWarningText" xml:space="preserve">
+    <value>Keep this app active until the operation is finished. A stable internet connection is required.</value>
+    <comment>Backup</comment>
+  </data>
   <data name="ConnectivityHint" xml:space="preserve">
     <value>Não deixe que lhe perturbem. Desative a conectividade do telefone.</value>
     <comment>MainPage</comment>
@@ -252,6 +268,10 @@
   <data name="Contributors" xml:space="preserve">
     <value>Colaboradores</value>
     <comment>AboutPage</comment>
+  </data>
+  <data name="CreateBackupHeaderText" xml:space="preserve">
+    <value>create</value>
+    <comment>Backup</comment>
   </data>
   <data name="Days" xml:space="preserve">
     <value>dias</value>
@@ -324,13 +344,45 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
     <value>lista</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>sign in</value>
+    <comment>General - has no pt trans!</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>sign out</value>
+    <comment>General - has no pt trans!</comment>
+  </data>
   <data name="MessageBoxAttention" xml:space="preserve">
     <value>Atenção</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="MessageBoxBackupErrorText" xml:space="preserve">
+    <value>Die Backup '{0}' could not be created. Please check you internet connection.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxBackupSuccessText" xml:space="preserve">
+    <value>Die Backup '{0}' has been created successfully.</value>
+    <comment>Backup</comment>
+  </data>
   <data name="MessageBoxCleanUp" xml:space="preserve">
     <value>Do you really want to clean naps from the statistics, which have been shorter than 5 minutes?</value>
     <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxInfoTitle" xml:space="preserve">
+    <value>Informação</value>
+    <comment>MessageBox</comment>
+  </data>
+  <data name="MessageBoxRestoreErrorText" xml:space="preserve">
+    <value>Die Backup '{0}' could ne be restored. Please check you internet connection.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxRestoreSuccessText" xml:space="preserve">
+    <value>Die Backup '{0}' has been restored successfully.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxWarningTitle" xml:space="preserve">
+    <value>Aviso</value>
+    <comment>MessageBox</comment>
   </data>
   <data name="Minutes" xml:space="preserve">
     <value>minutos</value>
@@ -339,6 +391,10 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
   <data name="MoreApps" xml:space="preserve">
     <value>mais aplicativos</value>
     <comment>AboutPage</comment>
+  </data>
+  <data name="NameOfBackupHintText" xml:space="preserve">
+    <value>Backup title</value>
+    <comment>Backup</comment>
   </data>
   <data name="NappingTipsConsistentMessage" xml:space="preserve">
     <value>Mantenha uma programação regular de sonecas. Prepare-se para ter seus momentos de descanso durante o dia.</value>
@@ -475,6 +531,14 @@ Mostre o seu interesse na loja e ajude-nos a continuar trabalhando para tornar e
   <data name="ResourceLanguage" xml:space="preserve">
     <value>pt-PT</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="RestoreBackupHeaderText" xml:space="preserve">
+    <value>restore</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="RestoreInfoText" xml:space="preserve">
+    <value>You can restore you data here. Current notes and tiles are going to be removed.</value>
+    <comment>Backup</comment>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
     <value>configurações</value>
