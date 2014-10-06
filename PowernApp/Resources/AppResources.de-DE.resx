@@ -166,7 +166,7 @@
     <comment>General</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.4</value>
+    <value>2.5</value>
     <comment>General</comment>
   </data>
   <data name="AttentionTitle" xml:space="preserve">
@@ -557,7 +557,7 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap1" xml:space="preserve">
-    <value>Wünsche einen guten {0} Minuten Power Nap.</value>
+    <value>Schlaf gut. Ich wecke dich in {0} Minuten.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">

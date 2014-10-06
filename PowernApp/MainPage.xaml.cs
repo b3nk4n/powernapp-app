@@ -72,11 +72,11 @@ namespace PowernApp
             BuildLocalizedApplicationBar();
 
             // register startup actions
-            StartupActionManager.Instance.Register(5, ActionExecutionRule.Equals, () =>
+            StartupActionManager.Instance.Register(10, ActionExecutionRule.Equals, () =>
             {
                 FeedbackManager.Instance.StartFirst();
             });
-            StartupActionManager.Instance.Register(15, ActionExecutionRule.Equals, () =>
+            StartupActionManager.Instance.Register(20, ActionExecutionRule.Equals, () =>
             {
                 FeedbackManager.Instance.StartSecond();
             });
@@ -271,6 +271,10 @@ namespace PowernApp
                 case "startNap1":
                     minutes = NavigationContext.QueryString["minute"];
                     handleStartNap1Command(minutes);
+                    break;
+                case "startNap1b":
+                    hours = NavigationContext.QueryString["hour"];
+                    handleStartNap2Command(hours, "0");
                     break;
                 case "startNap2":
                     hours = NavigationContext.QueryString["hour"];

@@ -169,7 +169,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 2.4 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2.5 ähnelt.
         /// </summary>
         public static string ApplicationVersion {
             get {
@@ -1039,7 +1039,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Have a nice {0} minutes sleep. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Have a nice sleep. I will wake you up in {0} minutes. ähnelt.
         /// </summary>
         public static string SpeakStartNap2 {
             get {

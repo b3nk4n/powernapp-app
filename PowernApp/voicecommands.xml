@@ -13,6 +13,13 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap1b">
+      <Example>for 1 hour</Example>
+      <ListenFor>[for] {hour} hour</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="startNap2">
       <Example>for 1 hour and 30 minutes</Example>
       <ListenFor>[for] {hour} hour [and] {minute} minutes</ListenFor>
@@ -139,6 +146,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -191,6 +199,13 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap1b">
+      <Example>for 1 hour</Example>
+      <ListenFor>[for] {hour} hour</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="startNap2">
       <Example>for 1 hour and 30 minutes</Example>
       <ListenFor>[for] {hour} hour [and] {minute} minutes</ListenFor>
@@ -317,6 +332,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -369,6 +385,13 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap1b">
+      <Example>for 1 hour</Example>
+      <ListenFor>[for] {hour} hour</ListenFor>
+      <Feedback>Turning alarm on</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="startNap2">
       <Example>for 1 hour and 30 minutes</Example>
       <ListenFor>[for] {hour} hour [and] {minute} minutes</ListenFor>
@@ -495,6 +518,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -543,6 +567,13 @@
     <Command Name="startNap1">
       <Example>für 20 Minuten</Example>
       <ListenFor>[für] {minute} [Minuten]</ListenFor>
+      <Feedback>Ich stelle den Wecker</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap1b">
+      <Example>für 1 Stunde</Example>
+      <ListenFor>[für] {hour} Stunde</ListenFor>
       <Feedback>Ich stelle den Wecker</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -673,6 +704,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -718,6 +750,13 @@
     <Command Name="startNap1">
       <Example>pour 20 minutes</Example>
       <ListenFor>[pour] {minute} [minutes]</ListenFor>
+      <Feedback>Je active l'alarme</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap1b">
+      <Example>pour 1 heure</Example>
+      <ListenFor>[pour] {hour} heure</ListenFor>
       <Feedback>Je active l'alarme</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -822,6 +861,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -853,6 +893,13 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap1b">
+      <Example>por 1 hora</Example>
+      <ListenFor>[por] {hour} hora</ListenFor>
+      <Feedback>Ligando o despertador</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="startNap2">
       <Example>por 1 hora e 30 minutos</Example>
       <ListenFor>[por] {hour} hora [e] {minute} minutos</ListenFor>
@@ -955,6 +1002,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -986,6 +1034,13 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap1b">
+      <Example>por 1 hora</Example>
+      <ListenFor>[por] {hour} hora</ListenFor>
+      <Feedback>Ligando o despertador</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="startNap2">
       <Example>por 1 hora e 30 minutos</Example>
       <ListenFor>[por] {hour} hora [e] {minute} minutos</ListenFor>
@@ -1088,6 +1143,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -1115,6 +1171,13 @@
     <Command Name="startNap1">
       <Example>selama 20 menit</Example>
       <ListenFor>[selama] {minute} menit</ListenFor>
+      <Feedback>Aktifkan alarm</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap1b">
+      <Example>selama 1 jam</Example>
+      <ListenFor>[selama] {hour} jam</ListenFor>
       <Feedback>Aktifkan alarm</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -1231,6 +1294,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -1258,6 +1322,13 @@
     <Command Name="startNap1">
       <Example>per 20 minuti</Example>
       <ListenFor>[per] {minute} [minuti]</ListenFor>
+      <Feedback>Accendi sveglia</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap1b">
+      <Example>per 1 ora</Example>
+      <ListenFor>[per] {hour} ora</ListenFor>
       <Feedback>Accendi sveglia</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
@@ -1363,6 +1434,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -1394,6 +1466,13 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+  <Command Name="startNap1b">
+    <Example>durante 1 hora</Example>
+    <ListenFor>[durante] {hour} hora</ListenFor>
+    <Feedback>Activar alarma</Feedback>
+    <Navigate Target="MainPage.xaml"/>
+  </Command>
+
     <Command Name="startNap2">
       <Example>durante 1 hora y 30 minutos</Example>
       <ListenFor>[durante] {hour} hora [y] {minute} minutos</ListenFor>
@@ -1492,6 +1571,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">
@@ -1523,6 +1603,13 @@
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
+    <Command Name="startNap1b">
+      <Example>durante 1 hora</Example>
+      <ListenFor>[durante] {hour} hora</ListenFor>
+      <Feedback>Activar alarma</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
     <Command Name="startNap2">
       <Example>durante 1 hora y 30 minutos</Example>
       <ListenFor>[durante] {hour} hora [y] {minute} minutos</ListenFor>
@@ -1621,6 +1708,7 @@
       <Item>57</Item>
       <Item>58</Item>
       <Item>59</Item>
+      <Item>60</Item>
     </PhraseList>
 
     <PhraseList Label="hour">

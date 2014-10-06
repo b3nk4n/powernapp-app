@@ -195,7 +195,7 @@ You want to help with the translation to support your language in the next versi
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.4</value>
+    <value>2.5</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
@@ -414,7 +414,7 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <comment>AlertDialog</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Have a nice {0} minutes sleep.</value>
+    <value>Have a nice sleep. I will wake you up in {0} minutes.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap2" xml:space="preserve">
