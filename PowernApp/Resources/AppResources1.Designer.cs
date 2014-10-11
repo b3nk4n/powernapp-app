@@ -985,7 +985,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die You can restore you data here. Current notes and tiles are going to be removed. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die You can restore your data here. Current notes and tiles are going to be removed. ähnelt.
         /// </summary>
         public static string RestoreInfoText {
             get {

@@ -608,7 +608,7 @@ Dinos sobre tu experiencia o sugiere como podemos hacerlo incluso mejor.</value>
     <comment>Backup</comment>
   </data>
   <data name="RestoreInfoText" xml:space="preserve">
-    <value>You can restore you data here. Current notes and tiles are going to be removed.</value>
+    <value>You can restore your data here. Current notes and tiles are going to be removed.</value>
     <comment>Backup</comment>
   </data>
 </root>
