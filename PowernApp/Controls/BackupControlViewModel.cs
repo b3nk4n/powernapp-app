@@ -1,4 +1,5 @@
 ﻿using PhoneKit.Framework.Controls;
+using PhoneKit.Framework.Storage;
 using PowernApp.Resources;
 using PowernApp.ViewModels;
 using System;
@@ -16,6 +17,11 @@ namespace PowernApp.Controls
             : base("0000000044119663", AppResources.ApplicationTitle)
         {
 
+        }
+
+        protected override IEnumerable<string> GetScopes()
+        {
+            return OneDriveManager.SCOPES_PHOTOS;
         }
 
         protected override IDictionary<string, IList<string>> GetBackupDirectoriesAndFiles()

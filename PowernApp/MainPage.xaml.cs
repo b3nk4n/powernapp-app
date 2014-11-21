@@ -80,8 +80,6 @@ namespace PowernApp
             {
                 FeedbackManager.Instance.StartSecond();
             });
-
-            InitializeBanner();
         }
 
         /// <summary>
@@ -99,28 +97,6 @@ namespace PowernApp
             {
                 BannerOut.Begin();
                 _isBannerVisible = false;
-            }
-        }
-
-        /// <summary>
-        /// Initializes the banner.
-        /// </summary>
-        private void InitializeBanner()
-        {
-            List<AdvertData> advertsList = new List<AdvertData>();
-            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/pocketBRAIN_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ad1227e4-9f80-4967-957f-6db140dc0c90"));
-            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/SpaceScribble_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "71fc4a5b-de12-4b28-88ec-8ac573ce9708"));
-            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/SpacepiXX_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "cbe0dfa7-2879-4c2c-b7c6-3798781fba16"));
-            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/ScribbleHunter_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ed250596-e670-4d22-aee1-8ed0a08c411f"));
-            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/Photo-Info_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "ac39aa30-c9b1-4dc6-af2d-1cc17d9807cc"));
-            advertsList.Add(new AdvertData(new Uri("/Assets/Banners/frequenzer_adduplex_trans.png", UriKind.Relative), AdvertData.ActionTypes.AppId, "92bac4f7-05eb-47ec-a75b-11f077f0c8f6"));
-            
-            //shuffle
-            ShuffleList<AdvertData>(advertsList);
-
-            foreach (var advert in advertsList)
-            {
-                BannerControl.AddAdvert(advert);
             }
         }
 
@@ -199,7 +175,6 @@ namespace PowernApp
             else
             {
                 BannerControl.Visibility = System.Windows.Visibility.Visible;
-                BannerControl.Start();
             }
         }
 

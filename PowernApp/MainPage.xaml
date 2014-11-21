@@ -308,7 +308,9 @@
                 <Path Data="M 0,0 L 25,0 L 25,25 Z" Fill="{StaticResource ThemeBackgroundLight}"  Height="25" Width="25" Margin="135,-2,0,0"/>
             </StackPanel>
             <StackPanel x:Name="BannerContainer" Canvas.Top="200">
-                <adverts:OfflineAdControl x:Name="BannerControl" Width="480" Height="80" toolkit:TiltEffect.IsTiltEnabled="True" />
+                <Border Margin="0,20,0,0">
+                    <adverts:MsDuplexAdControl x:Name="BannerControl" Height="80" Width="480" AdDuplexAppId="124399" MsAdUnitId="154350" MsApplicationId="2a94483e-051b-445b-9543-3b96b9c720c2"/>
+                </Border> 
             </StackPanel>         
         </Canvas>
     </Grid>
