@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>de-DE%3bfr%3bpt%3bid%3bit%3bes</SupportedCultures>
+    <SupportedCultures>de-DE%3bfr%3bpt%3bid%3bit%3bes%3bru</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>PowernApp_$(Configuration)_$(Platform).xap</XapFilename>
@@ -277,6 +277,7 @@
     <Content Include="Assets\Languages\indonesian.png" />
     <Content Include="Assets\Languages\italiano.png" />
     <Content Include="Assets\Languages\portuguese_br.png" />
+    <Content Include="Assets\Languages\russia.png" />
     <Content Include="Assets\Languages\spanish.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -305,6 +306,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.ru.resx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BugSense-WP8">

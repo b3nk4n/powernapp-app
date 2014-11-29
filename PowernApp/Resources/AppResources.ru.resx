@@ -122,7 +122,7 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>id</value>
+    <value>ru</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
@@ -130,68 +130,68 @@
     <comment>General</comment>
   </data>
   <data name="AboutTitle" xml:space="preserve">
-    <value>tentang</value>
+    <value>О приложении</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
-    <value>oleh Benjamin Sautermeister</value>
+    <value>Автор: Benjamin Sautermeister</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationDescription" xml:space="preserve">
-    <value>Aplikasi tidur singkat tercepat untuk Windows Phone dengan perintah suara.</value>
+    <value>Самое быстрое приложение для восстановительного сна  с поддержкой голосовых команд на Windows Phone.</value>
     <comment>AboutPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
-    <value>aplikasi lain</value>
+    <value>другие приложения</value>
     <comment>AboutPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
-    <value>informasi pribadi</value>
+    <value>политика конфиденциальности</value>
     <comment>About Page</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
-    <value>nilai dan tinjauan</value>
+    <value>оценить приложение</value>
     <comment>AboutPage</comment>
   </data>
   <data name="SupportAndFeedback" xml:space="preserve">
-    <value>dukungan dan saran</value>
+    <value>служба поддержки</value>
     <comment>About Page</comment>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
-    <value>pengaturan</value>
+    <value>настройки</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceCommands" xml:space="preserve">
-    <value>Perintah suara</value>
+    <value>Голосовые команды</value>
     <comment>Settings Page</comment>
   </data>
   <data name="VoiceLanguage" xml:space="preserve">
-    <value>Bahasa</value>
+    <value>Язык</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceStatus" xml:space="preserve">
-    <value>Status</value>
+    <value>Статус</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceSupported" xml:space="preserve">
-    <value>didukung</value>
+    <value>поддерживается</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupported" xml:space="preserve">
-    <value>tidak didukung</value>
+    <value>не поддерживается</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>Anda menginstal paket bahasa yang tidak didukung pada versi aplikasi ini. Bahasa yang didukung untuk perintah suara adalah English (en-US, en-GB, en-IN), German (de-DE), French (fr-FR), Portuguese (pt-PT, pt-BR) dan Indonesian (id-ID). Periksa pengaturan telefon Anda.
-You want to help with the translation to support your language in the next version? Just contact me!</value>
+    <value>Установленный языковой пакет не поддерживается в данной версии приложения. Голосовые команды доступны для следующих языков: английский (en-US, en-GB, en-IN), русский (ru-RU), французский (fr-FR), португальский (pt-PT, pt-BR), индонезийский (id-ID) и немецкий (de-DE). Проверьте настройки телефона. 
+Для помощи в переводе приложения на другие языки свяжитесь с разработчиком.</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VibrationEnabled" xml:space="preserve">
-    <value>Getaran</value>
+    <value>Вибрация</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="Alarm" xml:space="preserve">
-    <value>Suara alarm</value>
+    <value>Мелодия будильника</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
@@ -199,7 +199,8 @@ You want to help with the translation to support your language in the next versi
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
-    <value>[Your feedback here]
+    <value>[Ваши комментарии]
+
 
 
 ---------------------------------
@@ -216,237 +217,237 @@ Application Version: {4}
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackMessageText" xml:space="preserve">
-    <value>Sedih jika Anda tidak ingin menilai powernAPP.
+    <value>Жаль, что вы не хотите оценить powernAPP.
 
-Beritahu kami mengenai pengalaman atau saran untuk membuat aplikasi ini lebih baik.</value>
+Поделитесь с нами ощущениями или предложите, как сделать приложение ещё лучше.</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackNoText" xml:space="preserve">
-    <value>tidak terimakasih</value>
+    <value>спасибо, нет</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>powernAPP Saran Pelanggan</value>
+    <value>Отзывы пользователей</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackTitleText" xml:space="preserve">
-    <value>Dapatkah kami membuatnya lebih baik?</value>
+    <value>Приложение можно улучшить?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackYesText" xml:space="preserve">
-    <value>berikan saran</value>
+    <value>оставить отзыв</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage10Text" xml:space="preserve">
-    <value>Anda sepertinya sering menggunakan aplikasi kami!
+    <value>Кажется, наше приложение вам помогает. 
 
-Mengapa tidak memberikan kita nilai 5 bintang untuk menunjukkan apresiasi Anda?</value>
+Почему бы не поставить нам 5 звёзд?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage5Text" xml:space="preserve">
-    <value>Kami sangat ingin Anda memberikan nilai 5 bintang untuk aplikasi kita.
+    <value>Оцените наше приложение!
 
-Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan aplikasi dan membuat sesuatu menjadi lebih baik!</value>
+Ваша поддержка помогает нам продолжать работу над приложениями и делать их ещё лучше.</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingNoText" xml:space="preserve">
-    <value>tidak terimakasih</value>
+    <value>спасибо, нет</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingTitleText" xml:space="preserve">
-    <value>Menikmati powernAPP?</value>
+    <value>Вам нравится powernAPP?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingYesText" xml:space="preserve">
-    <value>nilai 5 bintang</value>
+    <value>оценивать</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="AppBarInfo" xml:space="preserve">
-    <value>informasi</value>
+    <value>сведения</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>matikan konektivitas</value>
+    <value>отключить сетевые соединения</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
-    <value>Tekan dan tahan Tombol-Windows di ponsel Anda sampai dialog input suara muncul.</value>
+    <value>Нажмите и удерживайте центральную кнопку до появления окна голосового ввода.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands1Title" xml:space="preserve">
-    <value>1. Mengaktifkan input suara</value>
+    <value>1. Активируйте голосовой ввод</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet1" xml:space="preserve">
-    <value>- "...selama 20 menit."</value>
+    <value>«... На 20 минут.»</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet2" xml:space="preserve">
-    <value>- "...batalkan tidur singkat."</value>
+    <value>«... Отменить.»</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet3" xml:space="preserve">
-    <value>- "...kapan alarm saya diatur?"</value>
+    <value>«...когда подъём?»</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet4" xml:space="preserve">
-    <value>- "...masih berapa lama waktu tersisa?"</value>
+    <value>«...сколько осталось времени?»</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet5" xml:space="preserve">
-    <value>- "...tambahkan waktu 5 menit lagi."</value>
+    <value>«... ещё 5 минут.»</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message1" xml:space="preserve">
-    <value>Ucapkan</value>
+    <value>Скажите</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message2" xml:space="preserve">
-    <value> "Power Nap..."  </value>
+    <value>«Power Nap...»</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message3" xml:space="preserve">
-    <value>diikuti oleh permintaan Anda. Beberapa contoh:</value>
+    <value>затем скажите, что вам нужно. Например:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Title" xml:space="preserve">
-    <value>2. Bicara</value>
+    <value>2. Говорите</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Message" xml:space="preserve">
-    <value>powernAPP akan mengatur hal lainnya...</value>
+    <value>всё остальное сделает powernAPP...</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Title" xml:space="preserve">
-    <value>3. Nikmati tidur singkat Anda</value>
+    <value>3. Наслаждайтесь отдыхом.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsHeader" xml:space="preserve">
-    <value>perintah</value>
+    <value>голосовые команды</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsIntro" xml:space="preserve">
-    <value>Aplikasi ini mendukung perintah suara Windows Phone. Ikuti langkah sederhana ini untuk membuat tidur singkat Anda lebih cepat:</value>
+    <value>Это приложение поддерживает голосовые команды Windows Phone. Следуйте нижеприведенным рекомендациям, чтобы не тратить время сна на настройки:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="ConnectivityHint" xml:space="preserve">
-    <value>Jangan sampai terganggu. Matikan konektivitas telefon!</value>
+    <value>Позаботьтесь о своём покое. Отключите сетевые подключения!</value>
     <comment>MainPage</comment>
   </data>
   <data name="NappingTipsConsistentMessage" xml:space="preserve">
-    <value>Jaga jadwal tidur singkat secara reguler. Waktu tidur singkat yang tepat adalah sewaktu siang hari.</value>
+    <value>Вздрёмывайте в одно и то же время. Оптимальным является сон в середине рабочего дня.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsConsistentTitle" xml:space="preserve">
-    <value>Konsisten</value>
+    <value>Регулярность.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessMessage" xml:space="preserve">
-    <value>Tidur singkat di ruang gelap atau kenakan masker mata. Menutup mata dari cahaya membantu Anda tertidur lebih cepat.</value>
+    <value>Спите в затемненном помещении или используйте маску для сна. Это поможет быстрее уснуть.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessTitle" xml:space="preserve">
-    <value>Lebih baik di tempat gelap</value>
+    <value>Темнота.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedMessage" xml:space="preserve">
-    <value>Matikan konektivitas telefon dan carilah tempat yang sunyi.</value>
+    <value>Отключите сетевые соединения телефона и найдите тихое место.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedTitle" xml:space="preserve">
-    <value>Jangan sampai terganggu</value>
+    <value>Тишина.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsHeader" xml:space="preserve">
-    <value>tips tidur singkat</value>
+    <value>советы</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsIntro" xml:space="preserve">
-    <value>Penelitian telah membuktikan bahwa tidur singkat secara reguler bisa mengurangi stres dan bahkan menurunkan resiko serangan jantung. Untuk mendapatkan kelebihan tidur singkat, ikuti tips cepat dan sederhana ini:</value>
+    <value>Исследования показали, что регулярный кратковременный дневной сон снижает уровень стресса и риск развития заболеваний сердца. Следуйте нижеприведенным рекомендациям, чтобы получить максимальную пользу от сна:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickMessage" xml:space="preserve">
-    <value>Atur alarm Anda sekitar 30 menit atau kurang jika Anda tidak ingin terbangun dalam keadaan pening. Karena Anda harus terbangun sebelum memasuki keadaan tidur lelap.</value>
+    <value>Установите будильник не больше, чем на 30 минут, чтобы избежать вялости и разбитости. Так вы проснётесь до того, как начнётся фаза глубокого сна.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickTitle" xml:space="preserve">
-    <value>Lakukan dengan cepat</value>
+    <value>Умеренность</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmMessage" xml:space="preserve">
-    <value>Simpan selimut di samping Anda karena temperatur tubuh Anda akan menurun sewaktu tidur singkat.</value>
+    <value>Прихватите с собой плед, которым можно накрыться, так как температура тела во время сна снижается.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmTitle" xml:space="preserve">
-    <value>Pertahankan kehangatan</value>
+    <value>Тепло</value>
     <comment>InfoPage</comment>
   </data>
   <data name="SpeakAlarmAlreadySet" xml:space="preserve">
-    <value>Alarm sudah di atur.</value>
+    <value>Будильник установлен</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakAlarmSetFor" xml:space="preserve">
-    <value>Alarm diatur selama {0}.</value>
+    <value>Будильник установлен на {0}.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakNoAlarmSet" xml:space="preserve">
-    <value>Alarm belum diatur.</value>
+    <value>Будильник не установлен.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap1" xml:space="preserve">
-    <value>Selamat menikmati tidur singkat selama {0} menit.</value>
+    <value>Приятного сна! Подъём через {0} минут.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">
-    <value>Alarm sudah dimatikan. Semoga Anda lebih bertenaga.</value>
+    <value>Будильник выключен. Вы выспались?</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeLeft" xml:space="preserve">
-    <value>Anda memiliki {0} menit tersisa.</value>
+    <value>Осталось {0} минут.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeShifted" xml:space="preserve">
-    <value>Sekarang Anda mempunyai {0} menit tersisa.</value>
+    <value>Теперь осталось {0} минут.</value>
     <comment>Voice</comment>
   </data>
   <data name="AlertDialogMessage" xml:space="preserve">
-    <value>Bangun! Semoga Anda lebih bertenaga sekarang...</value>
+    <value>Подъём! Надеемся, вы отлично подзарядились.</value>
     <comment>AlertDialog</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Selamat menikmati tidur selama {0} menit.</value>
+    <value>Приятного отдыха! Подъём через {0} минут.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap2" xml:space="preserve">
-    <value>Alarm sudah dimatikan. Semoga Anda sudah tidur dengan nyenyak.</value>
+    <value>Будильник выключен. Хорошо вздремнули?</value>
     <comment>Voice</comment>
   </data>
   <data name="AppBarOnline" xml:space="preserve">
-    <value>aktifkan konektivitas</value>
+    <value>включить сетевые соединения</value>
     <comment>AppBar</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
-    <value>Kontributor</value>
+    <value>Благодарим за помощь</value>
     <comment>AboutPage</comment>
   </data>
   <data name="Commands2Bullet1b" xml:space="preserve">
-    <value>- "...selama 1 jam dan 30 menit."</value>
+    <value>«... На 1 час 30 минут.»</value>
     <comment>InfoPage</comment>
   </data>
   <data name="VoiceFeedback" xml:space="preserve">
-    <value>Putar konfirmasi audio</value>
+    <value>Голосовое подтверждение</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="InfoTitle" xml:space="preserve">
-    <value>tentang</value>
+    <value>информация</value>
     <comment>InfoPage</comment>
   </data>
   <data name="SuppressLockScreen" xml:space="preserve">
-    <value>Menekan layar terkunci</value>
+    <value>Препятствовать блокировке экрана</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="Commands2Bullet1c" xml:space="preserve">
-    <value>- "...hingga pukul 14:35."</value>
+    <value>«... До 14:35.»</value>
     <comment>InfoPage</comment>
   </data>
   <data name="InAppStoreLoading" xml:space="preserve">
@@ -454,107 +455,107 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreNoProducts" xml:space="preserve">
-    <value>Saat ini tidak ada pembelian di-aplikasi yang tersedia. Silakan coba lagi nanti.</value>
+    <value>Нет доступных встроенных покупок. Попробуйте повторить в другое время.</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStorePurchased" xml:space="preserve">
-    <value>dibeli</value>
+    <value>приобретено</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreTitle" xml:space="preserve">
-    <value>bursa dalam aplikasi</value>
+    <value>встроенные покупки</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message_8_1_OS" xml:space="preserve">
-    <value>Tekan dan tahan Tombol-Cari di ponsel Anda sampai dialog input suara muncul.</value>
+    <value>Нажмите и удерживайте кнопку поиска до появления окна голосового ввода.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="AppBarCleanUp" xml:space="preserve">
-    <value>bersihkan</value>
+    <value>очистить</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarNext" xml:space="preserve">
-    <value>selanjutnya</value>
+    <value>следующий</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarPrevious" xml:space="preserve">
-    <value>sebelumnya</value>
+    <value>предыдущий</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
-    <value>kalendar</value>
+    <value>календарь</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Days" xml:space="preserve">
-    <value>hari</value>
+    <value>дни</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Hours" xml:space="preserve">
-    <value>jam</value>
+    <value>часы</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="ListTitle" xml:space="preserve">
-    <value>daftar</value>
+    <value>список</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxAttention" xml:space="preserve">
-    <value>Perhatian</value>
+    <value>Внимание</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxCleanUp" xml:space="preserve">
-    <value>Apakah Anda ingin menghapus tidur singkat dari statistik, dimana kurang dari 5 menit?</value>
+    <value>Вы действительно хотите удалить все перерывы короче 5 минут из статистики?</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Minutes" xml:space="preserve">
-    <value>menit</value>
+    <value>минуты</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="NaptisticsTitle" xml:space="preserve">
-    <value>singkatisitik</value>
+    <value>статистика</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvg" xml:space="preserve">
-    <value>rata-rata</value>
+    <value>среднее</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMax" xml:space="preserve">
-    <value>maksimum</value>
+    <value>макс.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMin" xml:space="preserve">
-    <value>minimum</value>
+    <value>мин.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewNapDuration" xml:space="preserve">
-    <value>durasi tidur singkat</value>
+    <value>продолжительность сна</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTimeSinceLastNap" xml:space="preserve">
-    <value>tidur singkat terakhir</value>
+    <value>время с последнего сна</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTitle" xml:space="preserve">
-    <value>tinjauan</value>
+    <value>обзор</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotalNaps" xml:space="preserve">
-    <value>total tidur singkat</value>
+    <value>всего раз</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvgShort" xml:space="preserve">
-    <value>rt-rt.</value>
+    <value>ср.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMaxShort" xml:space="preserve">
-    <value>maks.</value>
+    <value>макс.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMinShort" xml:space="preserve">
-    <value>min.</value>
+    <value>мин.</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotal" xml:space="preserve">
-    <value>total</value>
+    <value>всего</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AttentionTitle" xml:space="preserve">
@@ -578,11 +579,11 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>Backup</comment>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>sign in</value>
+    <value>войти</value>
     <comment>General</comment>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>sign out</value>
+    <value>Выйти</value>
     <comment>General</comment>
   </data>
   <data name="MessageBoxBackupErrorText" xml:space="preserve">
@@ -594,7 +595,7 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxInfoTitle" xml:space="preserve">
-    <value>Information</value>
+    <value>информация</value>
     <comment>MessageBox</comment>
   </data>
   <data name="MessageBoxRestoreErrorText" xml:space="preserve">
@@ -606,7 +607,7 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxWarningTitle" xml:space="preserve">
-    <value>Warning</value>
+    <value>предупреждение</value>
     <comment>MessageBox</comment>
   </data>
   <data name="NameOfBackupHintText" xml:space="preserve">
