@@ -71,6 +71,7 @@ namespace PowernApp
                 InstalledVoices.Default.Language == "it-IT" ||
                 InstalledVoices.Default.Language == "es-ES" ||
                 InstalledVoices.Default.Language == "es-MX" ||
+                InstalledVoices.Default.Language == "ru-RU" ||
                 InstalledVoices.Default.Language == "id-ID")
             {
                 StatusText.Text = AppResources.VoiceSupported;

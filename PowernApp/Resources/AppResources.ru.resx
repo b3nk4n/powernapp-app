@@ -195,7 +195,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.7</value>
+    <value>2.7.1</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
@@ -267,7 +267,7 @@ Application Version: {4}
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>отключить сетевые соединения</value>
+    <value>отключить сеть</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
