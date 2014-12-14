@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutTitle" xml:space="preserve">
-    <value>hilfe</value>
+    <value>Hilfe</value>
     <comment>AboutPage</comment>
   </data>
   <data name="Alarm" xml:space="preserve">
@@ -134,23 +134,23 @@
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarInfo" xml:space="preserve">
-    <value>info</value>
+    <value>Info</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarNext" xml:space="preserve">
-    <value>weiter</value>
+    <value>Weiter</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>verbindung deaktiv.</value>
+    <value>Verbindung deaktiv.</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOnline" xml:space="preserve">
-    <value>verbindung aktivieren</value>
+    <value>Verbindung aktivieren</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarPrevious" xml:space="preserve">
-    <value>zurück</value>
+    <value>Zurück</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
@@ -178,11 +178,11 @@
     <comment>Backup</comment>
   </data>
   <data name="BackupTitle" xml:space="preserve">
-    <value>sicherungen</value>
+    <value>Sicherungen</value>
     <comment>Backup</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
-    <value>kalender</value>
+    <value>Kalender</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
@@ -250,7 +250,7 @@
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsHeader" xml:space="preserve">
-    <value>sprachbefehle</value>
+    <value>Sprachbefehle</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsIntro" xml:space="preserve">
@@ -270,7 +270,7 @@
     <comment>AboutPage</comment>
   </data>
   <data name="CreateBackupHeaderText" xml:space="preserve">
-    <value>erstellen</value>
+    <value>Erstellen</value>
     <comment>Backup</comment>
   </data>
   <data name="Days" xml:space="preserve">
@@ -333,15 +333,15 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreTitle" xml:space="preserve">
-    <value>erweiterungen</value>
+    <value>Erweiterungen</value>
     <comment>AppBar</comment>
   </data>
   <data name="InfoTitle" xml:space="preserve">
-    <value>informationen</value>
+    <value>Informationen</value>
     <comment>InfoPage</comment>
   </data>
   <data name="ListTitle" xml:space="preserve">
-    <value>liste</value>
+    <value>Liste</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Login" xml:space="preserve">
@@ -389,7 +389,7 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>StatisticsPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
-    <value>mehr apps</value>
+    <value>Mehr Apps</value>
     <comment>AboutPage</comment>
   </data>
   <data name="NameOfBackupHintText" xml:space="preserve">
@@ -421,7 +421,7 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsHeader" xml:space="preserve">
-    <value>tipps</value>
+    <value>Tipps</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsIntro" xml:space="preserve">
@@ -445,7 +445,7 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>InfoPage</comment>
   </data>
   <data name="NaptisticsTitle" xml:space="preserve">
-    <value>naptistiken</value>
+    <value>Naptistiken</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvg" xml:space="preserve">
@@ -481,7 +481,7 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTitle" xml:space="preserve">
-    <value>überblick</value>
+    <value>Überblick</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotal" xml:space="preserve">
@@ -493,11 +493,11 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>StatisticsPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
-    <value>datenschutz informationen</value>
+    <value>Datenschutz-Informationen</value>
     <comment>About Page</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
-    <value>bewerten und kritik schreiben</value>
+    <value>Bewerten und Kritik schreiben</value>
     <comment>AboutPage</comment>
   </data>
   <data name="RatingMessage10Text" xml:space="preserve">
@@ -533,7 +533,7 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="RestoreBackupHeaderText" xml:space="preserve">
-    <value>wiederherstellen</value>
+    <value>Wiederherstellen</value>
     <comment>Backup</comment>
   </data>
   <data name="RestoreInfoText" xml:space="preserve">
@@ -541,7 +541,7 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <comment>Backup</comment>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
-    <value>einstellungen</value>
+    <value>Einstellungen</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="SpeakAlarmAlreadySet" xml:space="preserve">
@@ -581,7 +581,7 @@ Das würde uns sehr motivieren um die App noch besser zu machen!</value>
     <comment>Voice</comment>
   </data>
   <data name="SupportAndFeedback" xml:space="preserve">
-    <value>hilfe und feedback</value>
+    <value>Hilfe und Feedback</value>
     <comment>About Page</comment>
   </data>
   <data name="SuppressLockScreen" xml:space="preserve">
