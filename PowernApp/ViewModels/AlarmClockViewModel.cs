@@ -317,18 +317,27 @@ namespace PowernApp.ViewModels
         /// </summary>
         public void TryRemoveFromScheduler()
         {
-            var oldAlarm = ScheduledActionService.Find(ALARM_NAME) as Alarm;
-
-            if (oldAlarm != null)
+            try
             {
-                // check if alarm was dismissed
-                if (oldAlarm.IsScheduled == false)
-                {
-                    Stop();
-                }
+                var oldAlarm = ScheduledActionService.Find(ALARM_NAME) as Alarm;
 
-                ScheduledActionService.Remove(ALARM_NAME);
+                if (oldAlarm != null)
+                {
+                    // check if alarm was dismissed
+                    if (oldAlarm.IsScheduled == false)
+                    {
+                        Stop();
+                    }
+
+                    ScheduledActionService.Remove(ALARM_NAME);
+                }
             }
+            catch (InvalidOperationException)
+            {
+                // BugSense: There are no more endpoints available from the endpoint mapper
+                //           13 occurrences. Added try catch in version 2.8.1 on 06.01.2015
+            }
+            
         }
 
         /// <summary>
@@ -385,20 +394,27 @@ namespace PowernApp.ViewModels
                     if (_alarmSound == null)
                     {
                         StreamResourceInfo alarmResource = App.GetResourceStream(new Uri(Settings.AlarmUriString.Value, UriKind.Relative));
-                        SoundEffects.Instance.Load(Settings.AlarmUriString.Value, alarmResource.Stream);
-                        SoundEffect sound = SoundEffects.Instance[Settings.AlarmUriString.Value];
-                        if (sound != null) // there is a very little chance that the sound file could not be loaded.
+
+                        if (alarmResource != null)
                         {
-                            _alarmSound = SoundEffects.Instance[Settings.AlarmUriString.Value].CreateInstance();
-                            // start silent (but 0 is a too silent start)
-                            _alarmSound.Volume = 0.2f;
+                            SoundEffects.Instance.Load(Settings.AlarmUriString.Value, alarmResource.Stream);
+                            SoundEffect sound = SoundEffects.Instance[Settings.AlarmUriString.Value];
+                            if (sound != null) // there is a very little chance that the sound file could not be loaded.
+                            {
+                                _alarmSound = SoundEffects.Instance[Settings.AlarmUriString.Value].CreateInstance();
+                                // start silent (but 0 is a too silent start)
+                                _alarmSound.Volume = 0.2f;
+                            }
                         }
                     }
 
                     if (_alarmStartCounter % ALARM_INTERVAL == 0)
                     {
-                        // get slightly louder
-                        _alarmSound.Volume = Math.Min(1.0f, _alarmSound.Volume + 0.1f);
+                        if (_alarmSound != null)
+                        {
+                            // get slightly louder
+                            _alarmSound.Volume = Math.Min(1.0f, _alarmSound.Volume + 0.1f);
+                        }
 
                         TryPlayAlarmSound();
                     }

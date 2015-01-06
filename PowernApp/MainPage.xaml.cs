@@ -592,6 +592,9 @@ namespace PowernApp
         /// <param name="e">The event args.</param>
         private void StopButtonClick(object sender, RoutedEventArgs e)
         {
+            // ensure the last alarm time is going to be displayed.
+            CustomNapTimePicker.Value = AlarmClockViewModel.Instance.LastAlarmDuration;
+
             DeactivateAnimation.Begin();
             ConnectivityMessageOut.Begin();
 
