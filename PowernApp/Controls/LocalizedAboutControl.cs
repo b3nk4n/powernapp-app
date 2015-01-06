@@ -31,7 +31,7 @@ namespace PowernApp.Controls
             // contributors
             ContributorsListVisibility = System.Windows.Visibility.Visible;
             SetContributorsList(new List<ContributorModel>() {
-                new ContributorModel("/Assets/Languages/french.png","Lamyae Reklaoui"),
+                new ContributorModel("/Assets/Languages/french.png","Maël Navarro Salcedo"),
                 new ContributorModel("/Assets/Languages/portuguese_br.png","João Vitório Dagostin"),
                 new ContributorModel("/Assets/Languages/indonesian.png","Agus Setiawan"),
                 new ContributorModel("/Assets/Languages/italiano.png","Roc Lat"),

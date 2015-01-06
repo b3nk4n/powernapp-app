@@ -138,7 +138,7 @@
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationDescription" xml:space="preserve">
-    <value>La plus vite application pour prendre un roupillon pour Windows Phone avec commandes de voix.</value>
+    <value>L'application la plus rapide pour faire un roupillon sur Windows Phone avec commandes vocales.</value>
     <comment>AboutPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
@@ -162,7 +162,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceCommands" xml:space="preserve">
-    <value>Commandes de voix</value>
+    <value>Commandes vocales</value>
     <comment>Settings Page</comment>
   </data>
   <data name="VoiceLanguage" xml:space="preserve">
@@ -174,15 +174,15 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceSupported" xml:space="preserve">
-    <value>soutient</value>
+    <value>activé</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupported" xml:space="preserve">
-    <value>non soutient</value>
+    <value>désactivé</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>Votre paquet de langue installe n'est pas supporte dans la version actuel de cette application. Les langues supportees pour commandes de voix sont anglais (en-US, en-GB, en-IN),  français (fr-FR), portugais (pt-PT, pt-BR), indonésien (id-ID) et allemand (de-DE). Prier de consulter vos paramètres de téléphone.</value>
+    <value>Votre langue d'installation n'est pas supportée dans la version actuel de cette application. Les langues supportées pour les commandes vocales sont l'anglais (en-US, en-GB), l'allemand (de-DE) et le français (fr-FR). Veuillez consulter les paramètres de votre téléphone.</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VibrationEnabled" xml:space="preserve">
@@ -190,7 +190,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="Alarm" xml:space="preserve">
-    <value>Son d'alarme</value>
+    <value>Sonnerie</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
@@ -198,7 +198,7 @@
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
-    <value>[Votre évaluation]
+    <value>[Votre feedback ici]
 
 
 ---------------------------------
@@ -215,7 +215,7 @@ Application Version: {4}
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackMessageText" xml:space="preserve">
-    <value>Desole que vous ne vouliez pas évaluer powernAPP. Veuillez expliquer votre expérience ou proposez comment on peut l'améliorer.</value>
+    <value>Dommage que vous ne vouliez pas évaluer powernAPP. Si vous voulez bien expliquer votre ressenti ou proposez des améliorations.</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackNoText" xml:space="preserve">
@@ -227,23 +227,23 @@ Application Version: {4}
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackTitleText" xml:space="preserve">
-    <value>Est-ce qu'on peut l'améliorer?</value>
+    <value>Comment peut-on l'améliorer?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackYesText" xml:space="preserve">
-    <value>d'accord</value>
+    <value>feedback</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage10Text" xml:space="preserve">
-    <value>Il semble que vous utilisez beaucoup notre application!
+    <value>Il semblerait que notre application vous plaît! 
 
-Pourquoi ne pas donner 5 étoiles pour exprimer votre satisfaction?</value>
+Pourquoi ne pas lui donner 5 étoiles?</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage5Text" xml:space="preserve">
-    <value>Merci d'attribuer 5 étoiles à notre app.
+    <value>Nous vous serions reconnaissant si vous donniez 5 étoiles à notre application.
 
-Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
+Nous encourager avec votre notation dans le Windows Store nous aide à continuer à travailler et améliorer l'application!</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingNoText" xml:space="preserve">
@@ -255,7 +255,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingYesText" xml:space="preserve">
-    <value>évaluer</value>
+    <value>notation</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="AppBarInfo" xml:space="preserve">
@@ -263,7 +263,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>désactivez branchement</value>
+    <value>active le mode avion</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
@@ -279,11 +279,11 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet2" xml:space="preserve">
-    <value>- "…annuler le roupillon."</value>
+    <value>- "…annuler la sieste."</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet3" xml:space="preserve">
-    <value>- "à qu'elle heure est-ce mon réveil réglé?"</value>
+    <value>- "à qu'elle heure mon réveil est-il réglé?"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet4" xml:space="preserve">
@@ -303,7 +303,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message3" xml:space="preserve">
-    <value>suivi par votre demande. Quelques exemples:</value>
+    <value>Commandes vocales. Quelques exemples:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Title" xml:space="preserve">
@@ -315,7 +315,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Title" xml:space="preserve">
-    <value>3. Jouis votre roupillon</value>
+    <value>3. Profitez de votre sieste</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsHeader" xml:space="preserve">
@@ -323,59 +323,59 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsIntro" xml:space="preserve">
-    <value>Cette application supporte les commandes de voix de Windows Phone. Veuillez suivre ces pas simples pour prendre votre roupillon bien mérité plus vite:</value>
+    <value>Cette application supporte les commandes vocales Windows Phone. Veuillez suivre ces étapes simples pour prendre votre sieste bien mérité au plus vite:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="ConnectivityHint" xml:space="preserve">
-    <value>Ne vous vous dérangez pas. Désactivez le branchement.</value>
+    <value>Ne soyez pas dérangé. Activé le mode avion.</value>
     <comment>MainPage</comment>
   </data>
   <data name="NappingTipsConsistentMessage" xml:space="preserve">
-    <value>Veuillez garder votre emploi de temps de sieste. Principal temps de roupillon est à la moitié de la journée.</value>
+    <value>Créer un emploi du temps régulier pour vos sieste. Le meilleurs moment pour faire une sieste est au milieu de la journée.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsConsistentTitle" xml:space="preserve">
-    <value>Régularité</value>
+    <value>Être régulier</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessMessage" xml:space="preserve">
-    <value>Veuillez prendre un roupillon dans une chambre sombre. Bloquer la lumière aide à dormir plus vite.</value>
+    <value>Veuillez prendre une sieste dans une chambre sombre ou avec un masque de nuit. L'absence de lumière aide à s'endormir plus vite.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessTitle" xml:space="preserve">
-    <value>Veuillez préférer obscurité</value>
+    <value>Préférez obscurité</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedMessage" xml:space="preserve">
-    <value>Désactivez le branchement de votre téléphone et cherchez des lieux silencieux.</value>
+    <value>Désactivez les notifications de votre téléphone et cherchez des lieux silencieux.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedTitle" xml:space="preserve">
-    <value>Ne vous vous dérangez pas</value>
+    <value>Ne soyez pas dérangé</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsHeader" xml:space="preserve">
-    <value>tuyaus de roupillon</value>
+    <value>Astuces pour la sieste</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsIntro" xml:space="preserve">
-    <value>La recherche a trouve que faire des roupillon régulièrement peut réduire le stress et même réduire le risque d'une maladie cardiaque. Pour profiter au maximum d'un roupillon, veuillez suivre ces tuyaus vites et simples:</value>
+    <value>Les recherches ont montré que faire des siestes régulièrement aide à réduire le stress ainsi que le risque de maladies cardiaques. Pour profiter au maximum d'une sieste veuillez suivre ces conseils rapides et simples:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickMessage" xml:space="preserve">
-    <value>Réglez votre réveil pour 30 minutes ou moins si vous ne voulez pas vous réveillerfatigué parce que vous devriez vous réveiller avant l'occurrence de sommeil bas.</value>
+    <value>Réglez votre réveil pour 30 minutes ou moins si vous ne voulez pas vous réveiller fatigué. Il est nécessaire de se réveiller avant de rentrer dans le sommeil profond.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickTitle" xml:space="preserve">
-    <value>Faisez vite</value>
+    <value>Faites-le rapidement</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmMessage" xml:space="preserve">
-    <value>Casez une couverture tout près pour vous couvrir parce que votre température de corps baisse pendant que vous dormez.</value>
+    <value>Prenez une couverture pour vous couvrir car la témpérature de votre corps baisse lorsque que vous dormez.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmTitle" xml:space="preserve">
-    <value>Restez chaud</value>
+    <value>Restez au chaud</value>
     <comment>InfoPage</comment>
   </data>
   <data name="SpeakAlarmAlreadySet" xml:space="preserve">
@@ -391,11 +391,11 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap1" xml:space="preserve">
-    <value>Bon roupillon pour {0} minutes.</value>
+    <value>Reposez-vous bien pendant {0} minutes.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">
-    <value>L'alarme est maintenant éteinte. J'espère que vous vous sentez plus énergétiques.</value>
+    <value>L'alarme est maintenant éteinte. J'espère que vous vous sentez mieux.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeLeft" xml:space="preserve">
@@ -407,19 +407,19 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>Voice</comment>
   </data>
   <data name="AlertDialogMessage" xml:space="preserve">
-    <value>Réveillez-vous! J'espère que vous vous sentiez plus énergétiques maintenant…</value>
+    <value>Réveillez-vous! J'espère que vous vous êtes bien reposé!</value>
     <comment>AlertDialog</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Bon roupillon pour {0} minutes.</value>
+    <value>Bonne sieste pour les prochaine {0} minutes.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap2" xml:space="preserve">
-    <value>L'alarme est maintenant éteinte. J'espère que vous avez eu un bon sommeil.</value>
+    <value>L'alarme est maintenant éteinte. J'espère que vous vous êtes bien reposé.</value>
     <comment>Voice</comment>
   </data>
   <data name="AppBarOnline" xml:space="preserve">
-    <value>activez branchement</value>
+    <value>désactiver le mode avion</value>
     <comment>AppBar</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
@@ -431,7 +431,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>InfoPage</comment>
   </data>
   <data name="VoiceFeedback" xml:space="preserve">
-    <value>Lire les confirmations sonores</value>
+    <value>Jouer des confirmations sonores</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="InfoTitle" xml:space="preserve">
@@ -439,11 +439,11 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>InfoPage</comment>
   </data>
   <data name="SuppressLockScreen" xml:space="preserve">
-    <value>Supprimer l'écran de verrouillage</value>
+    <value>Enlever de l'écran de veille</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="Commands2Bullet1c" xml:space="preserve">
-    <value />
+    <value>- "…jusqu'à 14h35"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="InAppStoreLoading" xml:space="preserve">
@@ -467,7 +467,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>InfoPage</comment>
   </data>
   <data name="AppBarCleanUp" xml:space="preserve">
-    <value>nettoyer</value>
+    <value>supprimer</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarNext" xml:space="preserve">
@@ -475,7 +475,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarPrevious" xml:space="preserve">
-    <value>arrière</value>
+    <value>précédant</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
@@ -483,7 +483,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Days" xml:space="preserve">
-    <value>journées</value>
+    <value>jours</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Hours" xml:space="preserve">
@@ -491,7 +491,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="ListTitle" xml:space="preserve">
-    <value>liste</value>
+    <value>listes</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxAttention" xml:space="preserve">
@@ -499,7 +499,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxCleanUp" xml:space="preserve">
-    <value>Do you really want to clean naps from the statistics, which have been shorter than 5 minutes?</value>
+    <value>Souhaitez-vous vraiment supprimer votre liste de siestes qui sont inférieurs à 5 minutes?</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Minutes" xml:space="preserve">
@@ -507,7 +507,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="NaptisticsTitle" xml:space="preserve">
-    <value>naptistiques</value>
+    <value>statistiques de sieste</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvg" xml:space="preserve">
@@ -523,7 +523,7 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewNapDuration" xml:space="preserve">
-    <value>durée sieste</value>
+    <value>durée des siestes</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTimeSinceLastNap" xml:space="preserve">
@@ -531,11 +531,11 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTitle" xml:space="preserve">
-    <value>vue d'ensemble</value>
+    <value>vue globale</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotalNaps" xml:space="preserve">
-    <value>siestes au total</value>
+    <value>total de sieste</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvgShort" xml:space="preserve">
@@ -559,19 +559,19 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>Backup</comment>
   </data>
   <data name="BackupInfoText" xml:space="preserve">
-    <value>You can create a backup of your data, which are going to be saved on you OneDrive. You can later restore the data on any device.</value>
+    <value>Vous pouvez créer une copie de sauvegarde qui sera sauvergardée dans OneDrive. Vous pourrez récupérer ses données depuis un autre téléphone.</value>
     <comment>Backup</comment>
   </data>
   <data name="BackupTitle" xml:space="preserve">
-    <value>OneDrive backup</value>
+    <value>Sauvegarde OneDrive</value>
     <comment>Backup</comment>
   </data>
   <data name="CommonBackupWarningText" xml:space="preserve">
-    <value>Keep this app active until the operation is finished. A stable internet connection is required.</value>
+    <value>Garder cette application active jusqu'à ce que la sauvegarde soit terminée. Une connection internet est nécessaire.</value>
     <comment>Backup</comment>
   </data>
   <data name="CreateBackupHeaderText" xml:space="preserve">
-    <value>create</value>
+    <value>créer</value>
     <comment>Backup</comment>
   </data>
   <data name="Login" xml:space="preserve">
@@ -583,11 +583,11 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>General</comment>
   </data>
   <data name="MessageBoxBackupErrorText" xml:space="preserve">
-    <value>Die Backup '{0}' could not be created. Please check you internet connection.</value>
+    <value>La sauvegarde '{0}' n'a pu être créée. Vérifiez votre connection internet.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxBackupSuccessText" xml:space="preserve">
-    <value>Die Backup '{0}' has been created successfully.</value>
+    <value>La sauvegarde '{0}' a bien été créée.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxInfoTitle" xml:space="preserve">
@@ -595,11 +595,11 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>MessageBox</comment>
   </data>
   <data name="MessageBoxRestoreErrorText" xml:space="preserve">
-    <value>Die Backup '{0}' could ne be restored. Please check you internet connection.</value>
+    <value>La sauvegarde '{0}' ne peut être restaurée. Vérifiez votre connection internet.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxRestoreSuccessText" xml:space="preserve">
-    <value>Die Backup '{0}' has been restored successfully.</value>
+    <value>La sauvegarde '{0}' a bien été restaurée.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxWarningTitle" xml:space="preserve">
@@ -607,15 +607,15 @@ Votre soutien sur le Store nous aide à améliorer sans cesse notre app!</value>
     <comment>MessageBox</comment>
   </data>
   <data name="NameOfBackupHintText" xml:space="preserve">
-    <value>Backup title</value>
+    <value>Titre de la sauvegarde</value>
     <comment>Backup</comment>
   </data>
   <data name="RestoreBackupHeaderText" xml:space="preserve">
-    <value>restore</value>
+    <value>restauration</value>
     <comment>Backup</comment>
   </data>
   <data name="RestoreInfoText" xml:space="preserve">
-    <value>You can restore your data here. Current notes and tiles are going to be removed.</value>
+    <value>Vous pouvez restaurer vos données ici. Les données actuelles seront remplacées.</value>
     <comment>Backup</comment>
   </data>
 </root>

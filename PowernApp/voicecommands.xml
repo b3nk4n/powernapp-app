@@ -750,33 +750,48 @@
     <Command Name="startNap1">
       <Example>pour 20 minutes</Example>
       <ListenFor>[pour] {minute} [minutes]</ListenFor>
-      <Feedback>Je active l'alarme</Feedback>
+      <Feedback>Activer l'alarme</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="startNap1b">
       <Example>pour 1 heure</Example>
       <ListenFor>[pour] {hour} heure</ListenFor>
-      <Feedback>Je active l'alarme</Feedback>
+      <Feedback>Activer l'alarme</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="startNap2">
       <Example>pour 1 heure et 30 minutes</Example>
       <ListenFor>[pour] {hour} heure [et] {minute} minutes</ListenFor>
-      <Feedback>Je active l'alarme</Feedback>
+      <Feedback>Activer l'alarme</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3">
+      <Example>jusqu'à 14h30</Example>
+      <ListenFor>jusqu'à {hour} {minute}</ListenFor>
+      <Feedback>Activer l'alarme</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="startNap3Short">
+      <Example>jusqu'à 15 heure</Example>
+      <ListenFor>jusqu' à {hour} [heure]</ListenFor>
+      <Feedback>Activer l'alarme</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
     <Command Name="stopNap">
-      <Example>annuler le roupillon</Example>
+      <Example>annuler la sieste</Example>
+      <ListenFor>annuler [la sieste]</ListenFor>
       <ListenFor>annuler [le roupillon]</ListenFor>
       <ListenFor>annuler [le nap]</ListenFor>
-      <ListenFor>annuler [la sieste]</ListenFor>
+      <ListenFor>Arrêter [la sieste]</ListenFor>
+      <ListenFor>Stop [la sieste]</ListenFor>
       <ListenFor>Stop [le roupillon]</ListenFor>
       <ListenFor>Stop [nap]</ListenFor>
-      <ListenFor>Stop [la sieste]</ListenFor>
-      <Feedback>Je désactive l'alarme</Feedback>
+      <Feedback>Désactiver l'alarme</Feedback>
       <Navigate Target="MainPage.xaml"/>
     </Command>
 
@@ -865,6 +880,7 @@
     </PhraseList>
 
     <PhraseList Label="hour">
+      <Item>0</Item>
       <Item>1</Item>
       <Item>2</Item>
       <Item>3</Item>
@@ -877,6 +893,17 @@
       <Item>10</Item>
       <Item>11</Item>
       <Item>12</Item>
+      <Item>13</Item>
+      <Item>14</Item>
+      <Item>15</Item>
+      <Item>16</Item>
+      <Item>17</Item>
+      <Item>18</Item>
+      <Item>19</Item>
+      <Item>20</Item>
+      <Item>21</Item>
+      <Item>22</Item>
+      <Item>23</Item>
     </PhraseList>
 
   </CommandSet>
