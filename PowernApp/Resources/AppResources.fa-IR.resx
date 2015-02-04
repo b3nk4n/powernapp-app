@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ResourceFlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
+    <value>RightToLeft</value>
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>ru</value>
+    <value>fa-IR</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
@@ -130,68 +130,68 @@
     <comment>General</comment>
   </data>
   <data name="AboutTitle" xml:space="preserve">
-    <value>О приложении</value>
+    <value>درباره</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
-    <value>Автор: Benjamin Sautermeister</value>
+    <value>توسط Benjamin Sautermeister</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationDescription" xml:space="preserve">
-    <value>Самое быстрое приложение для восстановительного сна  с поддержкой голосовых команд на Windows Phone.</value>
+    <value>سریع ترین نرم افزار چرت قوی برای ویندوز فون به همراه دستورات صوتی.</value>
     <comment>AboutPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
-    <value>другие приложения</value>
+    <value>نرم افزارهای بیشتر</value>
     <comment>AboutPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
-    <value>политика конфиденциальности</value>
+    <value>اطلاعات حریم خصوصی</value>
     <comment>About Page</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
-    <value>оценить приложение</value>
+    <value>امتیاز و نظردهی</value>
     <comment>AboutPage</comment>
   </data>
   <data name="SupportAndFeedback" xml:space="preserve">
-    <value>служба поддержки</value>
+    <value>پشتیبانی و بازخورد</value>
     <comment>About Page</comment>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
-    <value>настройки</value>
+    <value>تنظیمات</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceCommands" xml:space="preserve">
-    <value>Голосовые команды</value>
+    <value>دستورات صوتی</value>
     <comment>Settings Page</comment>
   </data>
   <data name="VoiceLanguage" xml:space="preserve">
-    <value>Язык</value>
+    <value>زبان</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceStatus" xml:space="preserve">
-    <value>Статус</value>
+    <value>وضعیت</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceSupported" xml:space="preserve">
-    <value>поддерживается</value>
+    <value>پشتیبانی شده</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupported" xml:space="preserve">
-    <value>не поддерживается</value>
+    <value>پشتیبانی نشده</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>Установленный языковой пакет не поддерживается в данной версии приложения. Голосовые команды доступны для следующих языков: английский (en-US, en-GB, en-IN), русский (ru-RU), французский (fr-FR), португальский (pt-PT, pt-BR), индонезийский (id-ID) и немецкий (de-DE). Проверьте настройки телефона. 
-Для помощи в переводе приложения на другие языки свяжитесь с разработчиком.</value>
+    <value>زبان نصب شده ی شما در نسخه ی فعلی این نرم افزار پشتیبانی نمی شود. زبان های پشتیبانی شده برای دستورات صوتی،  انگلیسی(آمریکایی، بریتانیایی و هندی)، فرانسوی، پرتغالی(پرتغالی و برزیلی)، اندونزیایی و آلمانی هستند. لطفا تنظیمات تلفن خود را چک کنید.
+می خواهید برای ترجمه ی این نرم افزار در نسخه ی بعدی کمک کنید؟ کافی است با من تماس بگیرید!</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VibrationEnabled" xml:space="preserve">
-    <value>Вибрация</value>
+    <value>لرزش</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="Alarm" xml:space="preserve">
-    <value>Мелодия будильника</value>
+    <value>صدای هشدار</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
@@ -199,8 +199,7 @@
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
-    <value>[Ваши комментарии]
-
+    <value>[بازخورد شما در اینجا]
 
 
 ---------------------------------
@@ -217,237 +216,237 @@ Application Version: {4}
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackMessageText" xml:space="preserve">
-    <value>Жаль, что вы не хотите оценить powernAPP.
+    <value>متاسفم که شما نخواستید به powernAPP امتیاز دهید.
 
-Поделитесь с нами ощущениями или предложите, как сделать приложение ещё лучше.</value>
+در مورد تجربه تان از این نرم افزار به ما بگویید یا پیشنهاد خود را در مورد اینکه چطور می توانیم این نرم افزار را بهتر کنیم به ما بگویید.</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackNoText" xml:space="preserve">
-    <value>спасибо, нет</value>
+    <value>نه ممنون</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>Отзывы пользователей</value>
+    <value>بازخورد کاربران powernAPP</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackTitleText" xml:space="preserve">
-    <value>Приложение можно улучшить?</value>
+    <value>می توانیم بهترش کنیم؟</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackYesText" xml:space="preserve">
-    <value>оставить отзыв</value>
+    <value>بازخوردتان را بگویید</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage10Text" xml:space="preserve">
-    <value>Кажется, наше приложение вам помогает. 
+    <value>به نظر می رسد شما مدت زیادی از نرم افزار ما استفاده کردید!
 
-Почему бы не поставить нам 5 звёзд?</value>
+پس چرا با دادن امتیاز 5 ستاره از ما قدردانی نکنید؟</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage5Text" xml:space="preserve">
-    <value>Оцените наше приложение!
+    <value>از این که به نرم افزارمان امتیاز 5 ستاره بدهید بسیار خرسند خواهیم شد.
 
-Ваша поддержка помогает нам продолжать работу над приложениями и делать их ещё лучше.</value>
+نشان دادن علاقه تان در فروشگاه ویندوز فون به ما کمک می کند تا کارمان روی این نرم افزار را ادامه دهیم و همه چیز را بهتر کنیم!</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingNoText" xml:space="preserve">
-    <value>спасибо, нет</value>
+    <value>نه ممنون</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingTitleText" xml:space="preserve">
-    <value>Вам нравится powernAPP?</value>
+    <value>از powernAPP لذت می برید؟</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingYesText" xml:space="preserve">
-    <value>оценивать</value>
+    <value>امتیاز دادن</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="AppBarInfo" xml:space="preserve">
-    <value>сведения</value>
+    <value>اطلاعات</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>отключить сеть</value>
+    <value>غیرفعال کردن اتصال</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
-    <value>Нажмите и удерживайте центральную кнопку до появления окна голосового ввода.</value>
+    <value>دکمه ی ویندوز را فشار داده و نگه دارید تا پنجره ی ورودی صدا نمایش داده شود.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands1Title" xml:space="preserve">
-    <value>1. Активируйте голосовой ввод</value>
+    <value>1. فعال سازی ورودی صدا</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet1" xml:space="preserve">
-    <value>«... На 20 минут.»</value>
+    <value>- " ...for 20 minutes. "</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet2" xml:space="preserve">
-    <value>«... Отменить.»</value>
+    <value>- " ...cancel nap. "</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet3" xml:space="preserve">
-    <value>«...когда подъём?»</value>
+    <value>- " ...when is my alarm set for? "</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet4" xml:space="preserve">
-    <value>«...сколько осталось времени?»</value>
+    <value>- " ...what is the remaining time? "</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet5" xml:space="preserve">
-    <value>«... ещё 5 минут.»</value>
+    <value>- " ...give me 5 more minutes. "</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message1" xml:space="preserve">
-    <value>Скажите</value>
+    <value>بگویید</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message2" xml:space="preserve">
-    <value>«Power Nap...»</value>
+    <value> "Power Nap..."  </value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message3" xml:space="preserve">
-    <value>затем скажите, что вам нужно. Например:</value>
+    <value>درخواست شما اجرا می شود. چند نمونه:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Title" xml:space="preserve">
-    <value>2. Говорите</value>
+    <value>2. صحبت کنید</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Message" xml:space="preserve">
-    <value>всё остальное сделает powernAPP...</value>
+    <value>powernAPP مراقب استراحت شماست...</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Title" xml:space="preserve">
-    <value>3. Наслаждайтесь отдыхом.</value>
+    <value>3. از چرت خود لذت ببرید</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsHeader" xml:space="preserve">
-    <value>голосовые команды</value>
+    <value>دستورات</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsIntro" xml:space="preserve">
-    <value>Это приложение поддерживает голосовые команды Windows Phone. Следуйте нижеприведенным рекомендациям, чтобы не тратить время сна на настройки:</value>
+    <value>این نرم افزار از دستورات صوتی ویندوز فون پشتیبانی می کند. این مراحل را دنبال کنید تا چرت خوب و سریعی بزنید:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="ConnectivityHint" xml:space="preserve">
-    <value>Позаботьтесь о своём покое. Отключите сетевые подключения!</value>
+    <value>مزاحم نداشته باشید. اتصالات تلفن خود را قطع کنید!</value>
     <comment>MainPage</comment>
   </data>
   <data name="NappingTipsConsistentMessage" xml:space="preserve">
-    <value>Вздрёмывайте в одно и то же время. Оптимальным является сон в середине рабочего дня.</value>
+    <value>یک برنامه ی منظم برای چرت زدن داشته باشید. نخستین چرت در اواسط روز اتفاق می افتد.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsConsistentTitle" xml:space="preserve">
-    <value>Регулярность.</value>
+    <value>باثبات باشید</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessMessage" xml:space="preserve">
-    <value>Спите в затемненном помещении или используйте маску для сна. Это поможет быстрее уснуть.</value>
+    <value>در یک اتاق تاریک چرت بزنید و یا چشم بند بزنید. مسدود کردن نور باعث می شود سریع تر به خواب بروید.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessTitle" xml:space="preserve">
-    <value>Темнота.</value>
+    <value>تاریکی را ترجیح دهید</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedMessage" xml:space="preserve">
-    <value>Отключите сетевые соединения телефона и найдите тихое место.</value>
+    <value>برای داشتن مکانی آرام اتصالات تلفن خود را غیر فعال کنید.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedTitle" xml:space="preserve">
-    <value>Тишина.</value>
+    <value>مزاحم نداشته باشید</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsHeader" xml:space="preserve">
-    <value>советы</value>
+    <value>ترفند های چرت زدن</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsIntro" xml:space="preserve">
-    <value>Исследования показали, что регулярный кратковременный дневной сон снижает уровень стресса и риск развития заболеваний сердца. Следуйте нижеприведенным рекомендациям, чтобы получить максимальную пользу от сна:</value>
+    <value>تحقیقات نشان داده است که چرت منظم ممکن است استرس را کاهش دهد و حتی خطر ابتلا به بیماری های قلبی را نیز کاهش دهد. برای بهتر شدن چرت خود، این ترفند های ساده را دنبال کنید:</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickMessage" xml:space="preserve">
-    <value>Установите будильник не больше, чем на 30 минут, чтобы избежать вялости и разбитости. Так вы проснётесь до того, как начнётся фаза глубокого сна.</value>
+    <value>اگر می خواهید سست نشوید، هشدار را برای حدود 30 دقیقه یا کمتر تنظیم کنید. زیرا شما باید قبل از اینکه به خواب عمیق بروید، بیدار شوید.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickTitle" xml:space="preserve">
-    <value>Умеренность</value>
+    <value>سریع انجامش دهید</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmMessage" xml:space="preserve">
-    <value>Прихватите с собой плед, которым можно накрыться, так как температура тела во время сна снижается.</value>
+    <value>یک پتو نزدیک خود نگه دارید تا روی خود بیاندازید زیرا دمای بدن شما در خواب کاهش می یابد.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmTitle" xml:space="preserve">
-    <value>Тепло</value>
+    <value>گرم بمانید</value>
     <comment>InfoPage</comment>
   </data>
   <data name="SpeakAlarmAlreadySet" xml:space="preserve">
-    <value>Будильник установлен</value>
+    <value>Alarm is already set.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakAlarmSetFor" xml:space="preserve">
-    <value>Будильник установлен на {0}.</value>
+    <value>Alarm is set for {0}.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakNoAlarmSet" xml:space="preserve">
-    <value>Будильник не установлен.</value>
+    <value>Alarm was not set.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap1" xml:space="preserve">
-    <value>Приятного сна! Подъём через {0} минут.</value>
+    <value>Have a nice {0} minutes nap.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">
-    <value>Будильник выключен. Вы выспались?</value>
+    <value>Alarm is now off. Hope you feel more energized.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeLeft" xml:space="preserve">
-    <value>Осталось {0} минут.</value>
+    <value>You have {0} minutes left.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeShifted" xml:space="preserve">
-    <value>Теперь осталось {0} минут.</value>
+    <value>Now you have about {0} minutes left.</value>
     <comment>Voice</comment>
   </data>
   <data name="AlertDialogMessage" xml:space="preserve">
-    <value>Подъём! Надеемся, вы отлично подзарядились.</value>
+    <value>بیدار شو! امیدوارم الآن احساس کنی انرژی بیشتری داری...</value>
     <comment>AlertDialog</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Приятного отдыха! Подъём через {0} минут.</value>
+    <value>Have a nice sleep. I will wake you up in {0} minutes.</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap2" xml:space="preserve">
-    <value>Будильник выключен. Хорошо вздремнули?</value>
+    <value>Alarm is now off. Hope you had a good sleep.</value>
     <comment>Voice</comment>
   </data>
   <data name="AppBarOnline" xml:space="preserve">
-    <value>включить сетевые соединения</value>
+    <value>فعال کردن اتصال</value>
     <comment>AppBar</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
-    <value>Благодарим за помощь</value>
+    <value>مشارکت کنندگان</value>
     <comment>AboutPage</comment>
   </data>
   <data name="Commands2Bullet1b" xml:space="preserve">
-    <value>«... На 1 час 30 минут.»</value>
+    <value>- " ...for 1 hour and 30 minutes. "</value>
     <comment>InfoPage</comment>
   </data>
   <data name="VoiceFeedback" xml:space="preserve">
-    <value>Голосовое подтверждение</value>
+    <value>پخش صدای تایید</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="InfoTitle" xml:space="preserve">
-    <value>информация</value>
+    <value>اطلاعات</value>
     <comment>InfoPage</comment>
   </data>
   <data name="SuppressLockScreen" xml:space="preserve">
-    <value>Препятствовать блокировке экрана</value>
+    <value>جلوگیری از قفل شدن صفحه</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="Commands2Bullet1c" xml:space="preserve">
-    <value>«... До 14:35.»</value>
+    <value>- " ...until 2:35 PM. "</value>
     <comment>InfoPage</comment>
   </data>
   <data name="InAppStoreLoading" xml:space="preserve">
@@ -455,171 +454,171 @@ Application Version: {4}
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreNoProducts" xml:space="preserve">
-    <value>Нет доступных встроенных покупок. Попробуйте повторить в другое время.</value>
+    <value>در حال حاضر پرداخت درون برنامه ای در دسترس نیست. لطفا بعدا تلاش کنید.</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStorePurchased" xml:space="preserve">
-    <value>приобретено</value>
+    <value>پرداخت شده</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreTitle" xml:space="preserve">
-    <value>встроенные покупки</value>
+    <value>فروشگاه درون برنامه ای</value>
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message_8_1_OS" xml:space="preserve">
-    <value>Нажмите и удерживайте кнопку поиска до появления окна голосового ввода.</value>
+    <value>دکمه ی جستجو را فشار داده و نگه دارید تا پنجره ی ورودی صدا نمایش داده شود.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="AppBarCleanUp" xml:space="preserve">
-    <value>очистить</value>
+    <value>پاک کردن</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarNext" xml:space="preserve">
-    <value>следующий</value>
+    <value>بعدی</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarPrevious" xml:space="preserve">
-    <value>предыдущий</value>
+    <value>قبلی</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
-    <value>календарь</value>
+    <value>تقویم</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Days" xml:space="preserve">
-    <value>дни</value>
+    <value>روز</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Hours" xml:space="preserve">
-    <value>часы</value>
+    <value>ساعت</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="ListTitle" xml:space="preserve">
-    <value>список</value>
+    <value>لیست</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxAttention" xml:space="preserve">
-    <value>Внимание</value>
+    <value>توجه</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxCleanUp" xml:space="preserve">
-    <value>Вы действительно хотите удалить все перерывы короче 5 минут из статистики?</value>
+    <value>آیا واقعا می خواهید چرت هایی را که کمتر از 5 دقیقه بوده را از بخش آمار پاک کنید؟</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Minutes" xml:space="preserve">
-    <value>минуты</value>
+    <value>دقیقه</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="NaptisticsTitle" xml:space="preserve">
-    <value>статистика</value>
+    <value>آمار چرت ها</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvg" xml:space="preserve">
-    <value>среднее</value>
+    <value>میانگین</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMax" xml:space="preserve">
-    <value>макс.</value>
+    <value>بیشینه</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMin" xml:space="preserve">
-    <value>мин.</value>
+    <value>کمینه</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewNapDuration" xml:space="preserve">
-    <value>продолжительность сна</value>
+    <value>مدت زمان چرت</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTimeSinceLastNap" xml:space="preserve">
-    <value>время с последнего сна</value>
+    <value>زمان قبل از آخرین چرت</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTitle" xml:space="preserve">
-    <value>обзор</value>
+    <value>مرور</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotalNaps" xml:space="preserve">
-    <value>всего раз</value>
+    <value>کل چرت ها</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvgShort" xml:space="preserve">
-    <value>ср.</value>
+    <value>میانگین</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMaxShort" xml:space="preserve">
-    <value>макс.</value>
+    <value>بیشینه</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMinShort" xml:space="preserve">
-    <value>мин.</value>
+    <value>کمینه</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotal" xml:space="preserve">
-    <value>всего</value>
+    <value>کل</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AttentionTitle" xml:space="preserve">
-    <value>Attention:</value>
+    <value>توجه:</value>
     <comment>Backup</comment>
   </data>
   <data name="BackupInfoText" xml:space="preserve">
-    <value>You can create a backup of your data, which are going to be saved on you OneDrive. You can later restore the data on any device.</value>
+    <value>شما می توانید یک نسخه ی پشتیبان از داده هایتان تهیه کنید که در OneDrive ذخیره خواهد شد. شما بعدا خواهید توانست آن را روی هر دستگاهی بازیابی کنید.</value>
     <comment>Backup</comment>
   </data>
   <data name="BackupTitle" xml:space="preserve">
-    <value>OneDrive backup</value>
+    <value>پشتیبان گیری OneDrive</value>
     <comment>Backup</comment>
   </data>
   <data name="CommonBackupWarningText" xml:space="preserve">
-    <value>Keep this app active until the operation is finished. A stable internet connection is required.</value>
+    <value>این نرم افزار را تا زمانی که عملیات تمام نشده فعال نگه دارید. یک اتصال اینترنت پایدار مورد نیاز است.</value>
     <comment>Backup</comment>
   </data>
   <data name="CreateBackupHeaderText" xml:space="preserve">
-    <value>create</value>
+    <value>ایجاد</value>
     <comment>Backup</comment>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>войти</value>
+    <value>ورود</value>
     <comment>General</comment>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>Выйти</value>
+    <value>خروج</value>
     <comment>General</comment>
   </data>
   <data name="MessageBoxBackupErrorText" xml:space="preserve">
-    <value>Die Backup '{0}' could not be created. Please check you internet connection.</value>
+    <value>{0} ایجاد نشد. لطفا اتصال اینترنت خود را چک کنید.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxBackupSuccessText" xml:space="preserve">
-    <value>Die Backup '{0}' has been created successfully.</value>
+    <value>{0} با موفقیت ایجاد شد.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxInfoTitle" xml:space="preserve">
-    <value>информация</value>
+    <value>Information</value>
     <comment>MessageBox</comment>
   </data>
   <data name="MessageBoxRestoreErrorText" xml:space="preserve">
-    <value>Die Backup '{0}' could ne be restored. Please check you internet connection.</value>
+    <value>{0} بازیابی نشد. لطفا اتصال اینترنت خود را چک کنید.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxRestoreSuccessText" xml:space="preserve">
-    <value>Die Backup '{0}' has been restored successfully.</value>
+    <value>{0} با موفقیت بازیابی شد.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxWarningTitle" xml:space="preserve">
-    <value>предупреждение</value>
+    <value>Warning</value>
     <comment>MessageBox</comment>
   </data>
   <data name="NameOfBackupHintText" xml:space="preserve">
-    <value>Backup title</value>
+    <value>عنوان نسخه پشتیبان</value>
     <comment>Backup</comment>
   </data>
   <data name="RestoreBackupHeaderText" xml:space="preserve">
-    <value>restore</value>
+    <value>بازیابی</value>
     <comment>Backup</comment>
   </data>
   <data name="RestoreInfoText" xml:space="preserve">
-    <value>You can restore your data here. Current notes and tiles are going to be removed.</value>
+    <value>شما اینجا می توانید داده های خود را بازیابی کنید. یادداشت ها و کاشی های فعلی حذف خواهند شد.</value>
     <comment>Backup</comment>
   </data>
 </root>
