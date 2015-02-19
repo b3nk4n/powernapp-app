@@ -57,6 +57,12 @@ namespace PowernApp
             DataContext = NapStatisticsViewModel.Instance;
             NapCalendar.DataContext = NapStatisticsViewModel.Instance;
 
+            // install update callback to update the calendar
+            NapStatisticsViewModel.Instance.RegisterUpdateCallback(() =>
+            {
+                NapCalendar.Update();
+            });
+
             BuildLocalizedAppBar();
         }
 
@@ -64,7 +70,7 @@ namespace PowernApp
         {
             base.OnNavigatedTo(e);
 
-            NapStatisticsViewModel.Instance.UpdateAll();
+            NapStatisticsViewModel.Instance.NotifyAll();
             NapCalendar.Update();
         }
 

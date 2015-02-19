@@ -120,10 +120,16 @@
                     <TextBlock Text="{Binding Path=LocalizedResources.ListTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
                 </phone:PivotItem.Header>
                 <ScrollViewer>
-                    <ItemsControl ItemsSource="{Binding NapList}">
-                        <ItemsControl.ItemTemplate>
+                    <ListBox ItemsSource="{Binding NapList}">
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Border Background="{StaticResource ThemeBackgroundMedium}" Margin="0, 6" Padding="0,12,0,12">
+                                <Border Background="{StaticResource ThemeBackgroundMedium}" Width="430" Margin="12, 6" Padding="0,12,0,12"
+                                        toolkit:TiltEffect.IsTiltEnabled="True">
+                                    <toolkit:ContextMenuService.ContextMenu>
+                                        <toolkit:ContextMenu>
+                                            <toolkit:MenuItem Header="{Binding Path=LocalizedResources.ContextMenuRemove, Source={StaticResource LocalizedStrings}}" Command="{Binding DeleteCommand}" />
+                                        </toolkit:ContextMenu>
+                                    </toolkit:ContextMenuService.ContextMenu>
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
@@ -139,8 +145,8 @@
                                     </Grid>
                                 </Border>
                             </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </ScrollViewer>
             </phone:PivotItem>
             

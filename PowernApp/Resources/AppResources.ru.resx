@@ -195,7 +195,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.8.2</value>
+    <value>2.9</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
@@ -621,5 +621,9 @@ Application Version: {4}
   <data name="RestoreInfoText" xml:space="preserve">
     <value>You can restore your data here. Current notes and tiles are going to be removed.</value>
     <comment>Backup</comment>
+  </data>
+  <data name="ContextMenuRemove" xml:space="preserve">
+    <value>удалять</value>
+    <comment>NapStatisticsPage</comment>
   </data>
 </root>

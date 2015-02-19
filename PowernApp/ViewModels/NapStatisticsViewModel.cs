@@ -52,6 +52,11 @@ namespace PowernApp.ViewModels
         private DelegateCommand _cleanupCommand;
 
         /// <summary>
+        /// The updated callback handler.
+        /// </summary>
+        private Action _updatedCallback;
+
+        /// <summary>
         /// Creates a NapStatisticsViewModel instance.
         /// </summary>
         /// <remarks>
@@ -61,19 +66,25 @@ namespace PowernApp.ViewModels
         public NapStatisticsViewModel()
         {
             Load();
+            InitializeCommands();
+        }
 
+        /// <summary>
+        /// Initializes the commands.
+        /// </summary>
+        private void InitializeCommands()
+        {
             _cleanupCommand = new DelegateCommand(() =>
+            {
+                if (MessageBox.Show(AppResources.MessageBoxCleanUp, AppResources.MessageBoxAttention, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
                 {
-                    if (MessageBox.Show(AppResources.MessageBoxCleanUp, AppResources.MessageBoxAttention, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
-                    {
-                        Cleanup(5);
-
-                    }
-                },
-                () =>
-                {
-                    return _napList.Count > 0;
-                });
+                    Cleanup(5);
+                }
+            },
+            () =>
+            {
+                return _napList.Count > 0;
+            });
         }
 
         /// <summary>
@@ -94,15 +105,19 @@ namespace PowernApp.ViewModels
                     _napList.RemoveAt(i);
             }
 
-            // update UI
-            NotifyPropertyChanged("NapsCount");
-            NotifyPropertyChanged("MinNapTime");
-            NotifyPropertyChanged("MaxNapTime");
-            NotifyPropertyChanged("AvgNapTime");
-            NotifyPropertyChanged("TimeSinceLastNap");
+            NotifyAll();
+            Updated();
         }
 
-        public void UpdateAll()
+        public void Delete(NapDataViewModel data)
+        {
+            _napList.Remove(data);
+
+            NotifyAll();
+            Updated();
+        }
+
+        public void NotifyAll()
         {
             NotifyPropertyChanged("NapsCount");
             NotifyPropertyChanged("MinNapTime");
@@ -111,6 +126,24 @@ namespace PowernApp.ViewModels
             NotifyPropertyChanged("TimeSinceLastNap");
 
             NotifyPropertyChanged("NapList");
+        }
+
+        /// <summary>
+        /// Registers a callback handler for when the data has updated.
+        /// </summary>
+        /// <param name="callback">The callback handler function.</param>
+        public void RegisterUpdateCallback(Action callback)
+        {
+            _updatedCallback = callback;
+        }
+
+        /// <summary>
+        /// Fires the updated callback.
+        /// </summary>
+        private void Updated()
+        {
+            if (_updatedCallback != null)
+                _updatedCallback();
         }
 
         /// <summary>

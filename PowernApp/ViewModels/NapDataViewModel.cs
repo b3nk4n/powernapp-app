@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace PowernApp.ViewModels
 {
@@ -23,10 +24,16 @@ namespace PowernApp.ViewModels
         private int _duration;
 
         /// <summary>
+        /// The delete single item command.
+        /// </summary>
+        private DelegateCommand _deleteCommand;
+
+        /// <summary>
         /// Creates a NapDataViewModel instance.
         /// </summary>
         public NapDataViewModel()
         {
+            InitializeCommands();
         }
 
         /// <summary>
@@ -35,9 +42,19 @@ namespace PowernApp.ViewModels
         /// <param name="startTime"> The start time of the nap.</param>
         /// <param name="duration">The nap duration.</param>
         public NapDataViewModel(DateTime startTime, int duration)
+            : this()
         {
             _startTime = startTime;
             _duration = duration;
+        }
+
+        private void InitializeCommands()
+        {
+            _deleteCommand = new DelegateCommand(() =>
+            {
+                // remove itself from the list
+                NapStatisticsViewModel.Instance.Delete(this);
+            });
         }
 
         /// <summary>
@@ -85,6 +102,17 @@ namespace PowernApp.ViewModels
                     _duration = value;
                     NotifyPropertyChanged("Duration");
                 }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ICommand DeleteCommand
+        {
+            get
+            {
+                return _deleteCommand;
             }
         }
     }

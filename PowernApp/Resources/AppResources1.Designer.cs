@@ -169,7 +169,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 2.8.2 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2.9 ähnelt.
         /// </summary>
         public static string ApplicationVersion {
             get {
@@ -390,6 +390,15 @@ namespace PowernApp.Resources {
         public static string ConnectivityHint {
             get {
                 return ResourceManager.GetString("ConnectivityHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die remove ähnelt.
+        /// </summary>
+        public static string ContextMenuRemove {
+            get {
+                return ResourceManager.GetString("ContextMenuRemove", resourceCulture);
             }
         }
         

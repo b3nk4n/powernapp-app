@@ -194,7 +194,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.8.2</value>
+    <value>2.9</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
@@ -617,5 +617,9 @@ Nous encourager avec votre notation dans le Windows Store nous aide à continuer
   <data name="RestoreInfoText" xml:space="preserve">
     <value>Vous pouvez restaurer vos données ici. Les données actuelles seront remplacées.</value>
     <comment>Backup</comment>
+  </data>
+  <data name="ContextMenuRemove" xml:space="preserve">
+    <value>supprimer</value>
+    <comment>NapStatisticsPage</comment>
   </data>
 </root>

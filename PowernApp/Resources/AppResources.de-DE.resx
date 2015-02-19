@@ -130,7 +130,7 @@
     <comment>AlertDialog</comment>
   </data>
   <data name="AppBarCleanUp" xml:space="preserve">
-    <value>aufräumen</value>
+    <value>Aufräumen</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarInfo" xml:space="preserve">
@@ -166,7 +166,7 @@
     <comment>General</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.8.2</value>
+    <value>2.9</value>
     <comment>General</comment>
   </data>
   <data name="AttentionTitle" xml:space="preserve">
@@ -264,6 +264,10 @@
   <data name="ConnectivityHint" xml:space="preserve">
     <value>Lass dich nicht stören. Stelle dein Smartphone offline!</value>
     <comment>MainPage</comment>
+  </data>
+  <data name="ContextMenuRemove" xml:space="preserve">
+    <value>Entfernen</value>
+    <comment>NapStatisticsPage</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
     <value>Unterstützt von</value>

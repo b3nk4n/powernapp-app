@@ -195,7 +195,7 @@
     <comment>SettingsPage</comment>
   </data>
   <data name="ApplicationVersion" xml:space="preserve">
-    <value>2.8.2</value>
+    <value>2.9</value>
     <comment>General</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
@@ -620,5 +620,9 @@ Application Version: {4}
   <data name="RestoreInfoText" xml:space="preserve">
     <value>شما اینجا می توانید داده های خود را بازیابی کنید. یادداشت ها و کاشی های فعلی حذف خواهند شد.</value>
     <comment>Backup</comment>
+  </data>
+  <data name="ContextMenuRemove" xml:space="preserve">
+    <value>برداشتن</value>
+    <comment>NapStatisticsPage</comment>
   </data>
 </root>
