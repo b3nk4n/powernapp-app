@@ -161,11 +161,11 @@ namespace PowernApp.ViewModels
 #endif
                 // design time data
                 NapList.Add(new NapDataViewModel(new DateTime(2015, 1, 19, 13, 38, 0), 25));
-                NapList.Add(new NapDataViewModel(new DateTime(2015, 2, 27, 14, 30, 0), 30));
-                NapList.Add(new NapDataViewModel(new DateTime(2015, 2, 23, 12, 25, 0), 45));
-                NapList.Add(new NapDataViewModel(new DateTime(2015, 2, 10, 13, 38, 0), 35));
-                NapList.Add(new NapDataViewModel(new DateTime(2015, 2, 02, 12, 45, 0), 30));
-                NapList.Add(new NapDataViewModel(new DateTime(2015, 2, 11, 13, 38, 0), 25));
+                NapList.Add(new NapDataViewModel(new DateTime(2015, 6, 27, 14, 30, 0), 30));
+                NapList.Add(new NapDataViewModel(new DateTime(2015, 6, 23, 12, 25, 0), 45));
+                NapList.Add(new NapDataViewModel(new DateTime(2015, 6, 10, 13, 38, 0), 35));
+                NapList.Add(new NapDataViewModel(new DateTime(2015, 6, 02, 12, 45, 0), 30));
+                NapList.Add(new NapDataViewModel(new DateTime(2015, 6, 11, 13, 38, 0), 25));
 #if !DEBUG
             }
             else

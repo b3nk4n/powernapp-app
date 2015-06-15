@@ -118,47 +118,47 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutTitle" xml:space="preserve">
-    <value>sobre</value>
+    <value>关于</value>
     <comment>AboutPage</comment>
   </data>
   <data name="Alarm" xml:space="preserve">
-    <value>Toque do despertador</value>
+    <value>铃声声音</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="AlertDialogMessage" xml:space="preserve">
-    <value>Hora de acordar! Espero que você já tenha recuperado as energias...</value>
+    <value>醒来了！希望你现在能感觉充满能量…</value>
     <comment>AlertDialog</comment>
   </data>
   <data name="AppBarCleanUp" xml:space="preserve">
-    <value>limpar</value>
+    <value>清除</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarInfo" xml:space="preserve">
-    <value>ajuda</value>
+    <value>信息</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarNext" xml:space="preserve">
-    <value>próxima</value>
+    <value>下一个</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="AppBarOffline" xml:space="preserve">
-    <value>desativar a conectividade</value>
+    <value>关闭连接</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarOnline" xml:space="preserve">
-    <value>ativar a conectividade</value>
+    <value>开启连接</value>
     <comment>AppBar</comment>
   </data>
   <data name="AppBarPrevious" xml:space="preserve">
-    <value>precedente</value>
+    <value>上一个</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="ApplicationAuthor" xml:space="preserve">
-    <value>por Benjamin Sautermeister</value>
+    <value>by Benjamin Sautermeister</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationDescription" xml:space="preserve">
-    <value>O mais rápido aplicativo de soneca com comandos de voz para o Windows Phone.</value>
+    <value>Windows Phone上最快速的带有语音命令的的小睡闹钟。</value>
     <comment>AboutPage</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
@@ -170,39 +170,39 @@
     <comment>General</comment>
   </data>
   <data name="AttentionTitle" xml:space="preserve">
-    <value>Attention:</value>
+    <value>请注意：</value>
     <comment>Backup</comment>
   </data>
   <data name="BackupInfoText" xml:space="preserve">
-    <value>You can create a backup of your data, which are going to be saved on you OneDrive. You can later restore the data on any device.</value>
+    <value>你可以给您的数据在Onedrive上创建一个备份。您可以稍后在其他设备上恢复数据。</value>
     <comment>Backup</comment>
   </data>
   <data name="BackupTitle" xml:space="preserve">
-    <value>OneDrive backup</value>
+    <value>OneDrive 备份</value>
     <comment>Backup</comment>
   </data>
   <data name="CalendarTitle" xml:space="preserve">
-    <value>calendário</value>
+    <value>日历</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Commands1Message" xml:space="preserve">
-    <value>Pressione e segure o botão Windows de seu telefone para abrir o controle por voz.</value>
+    <value>请按住Windows键直到语音对话框弹出。</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands1Message_8_1_OS" xml:space="preserve">
-    <value>Pressione e segure o botão "Pesquisa" de seu telefone para abrir o controle por voz.</value>
+    <value>请按住搜索键直到您的手机的语音对话框弹出。</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands1Title" xml:space="preserve">
-    <value>1. Ative o controle por voz</value>
+    <value>1. 激活语音输入</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet1" xml:space="preserve">
-    <value>- "...por 20 minutos."</value>
+    <value>- " …睡 20 分钟"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet1b" xml:space="preserve">
-    <value>- "...por 1 hora e 30 minutos."</value>
+    <value>- " …睡1小时 30 分"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet1c" xml:space="preserve">
@@ -210,23 +210,23 @@
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet2" xml:space="preserve">
-    <value>- "...cancelar soneca."</value>
+    <value>- " …取消小睡闹钟"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet3" xml:space="preserve">
-    <value>- "...para quando o despertador está definido?"</value>
+    <value>- " …闹钟被设定在什么时候了？"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet4" xml:space="preserve">
-    <value>- "...quanto tempo restante?"</value>
+    <value>- " …还有多少剩余时间？"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Bullet5" xml:space="preserve">
-    <value>- "...mais 5 minutos."</value>
+    <value>- " …再给我 5 分钟"</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message1" xml:space="preserve">
-    <value>Diga</value>
+    <value>说</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message2" xml:space="preserve">
@@ -234,51 +234,52 @@
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Message3" xml:space="preserve">
-    <value>seguido do seu comando. Alguns exemplos:</value>
+    <value>后跟随者您的要求。一些例子：</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands2Title" xml:space="preserve">
-    <value>2. Fale</value>
+    <value>2. 说</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Message" xml:space="preserve">
-    <value>O powernAPP cuidará de tudo...</value>
+    <value>powernAPP会照看其余的事情...</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands3Title" xml:space="preserve">
-    <value>3. Aproveite sua soneca</value>
+    <value>3. 享受您的睡眠</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsHeader" xml:space="preserve">
-    <value>comandos</value>
+    <value>命令</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommandsIntro" xml:space="preserve">
-    <value>Este aplicativo suporta os comandos de voz do Windows Phone. Siga estes passos para ter o seu merecido descanso rapidamente:</value>
+    <value>这个应用支持 Windows Phone的语音命令。跟随下面几步帮助您更快的获得更好的睡眠。</value>
     <comment>InfoPage</comment>
   </data>
   <data name="CommonBackupWarningText" xml:space="preserve">
-    <value>Keep this app active until the operation is finished. A stable internet connection is required.</value>
+    <value>在操作完成前将应用保持在前台。并且提供一个稳定的网络。</value>
     <comment>Backup</comment>
   </data>
   <data name="ConnectivityHint" xml:space="preserve">
-    <value>Não deixe que lhe perturbem. Desative a conectividade do telefone.</value>
+    <value>别收到打扰！
+关闭手机连接。</value>
     <comment>MainPage</comment>
   </data>
   <data name="ContextMenuRemove" xml:space="preserve">
-    <value>remover</value>
+    <value>拆除</value>
     <comment>NapStatisticsPage</comment>
   </data>
   <data name="Contributors" xml:space="preserve">
-    <value>Colaboradores</value>
+    <value>贡献者</value>
     <comment>AboutPage</comment>
   </data>
   <data name="CreateBackupHeaderText" xml:space="preserve">
-    <value>create</value>
+    <value>创建</value>
     <comment>Backup</comment>
   </data>
   <data name="Days" xml:space="preserve">
-    <value>dias</value>
+    <value>天数</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="FeedbackBodyText" xml:space="preserve">
@@ -299,29 +300,29 @@ Application Version: {4}
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackMessageText" xml:space="preserve">
-    <value>Lamento saber que você não quer avaliar o powernAPP.
+    <value>很难过听到您不想对 powernAPP评价。
 
-Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
+告诉我们您的想法和经验以帮助我们做的更好</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackNoText" xml:space="preserve">
-    <value>não, obrigado</value>
+    <value>谢谢</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackSubject" xml:space="preserve">
-    <value>powernAPP Feedback</value>
+    <value>powernAPP 用户反馈</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackTitleText" xml:space="preserve">
-    <value>Como podemos melhorar?</value>
+    <value>能帮助我们做得更好吗？</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="FeedbackYesText" xml:space="preserve">
-    <value>enviar feedback</value>
+    <value>提供反馈</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="Hours" xml:space="preserve">
-    <value>horas</value>
+    <value>小时</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="InAppStoreLoading" xml:space="preserve">
@@ -329,203 +330,203 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreNoProducts" xml:space="preserve">
-    <value>There are currently no in-app purchases available. Please try again later.</value>
+    <value>当前没有应用内购可用，请稍后重试。</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStorePurchased" xml:space="preserve">
-    <value>comprou</value>
+    <value>充值完成</value>
     <comment>InAppStorePage</comment>
   </data>
   <data name="InAppStoreTitle" xml:space="preserve">
-    <value>compras na aplicação</value>
+    <value>在应用商店</value>
     <comment>AppBar</comment>
   </data>
   <data name="InfoTitle" xml:space="preserve">
-    <value>ajuda</value>
+    <value>信息</value>
     <comment>InfoPage</comment>
   </data>
   <data name="ListTitle" xml:space="preserve">
-    <value>lista</value>
+    <value>表单</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>sign in</value>
-    <comment>General - has no pt trans!</comment>
+    <value>登录</value>
+    <comment>General</comment>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>sign out</value>
-    <comment>General - has no pt trans!</comment>
+    <value>注销</value>
+    <comment>General</comment>
   </data>
   <data name="MessageBoxAttention" xml:space="preserve">
-    <value>Atenção</value>
+    <value>注意</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxBackupErrorText" xml:space="preserve">
-    <value>Die Backup '{0}' could not be created. Please check you internet connection.</value>
+    <value>备份 '{0}' 不能被创建，请检查您的网络设置。</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxBackupSuccessText" xml:space="preserve">
-    <value>Die Backup '{0}' has been created successfully.</value>
+    <value>备份 '{0}' 已经成功创建了。</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxCleanUp" xml:space="preserve">
-    <value>Do you really want to clean naps from the statistics, which have been shorter than 5 minutes?</value>
+    <value>你真的想清除短于5分钟小睡的统计吗？</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxInfoTitle" xml:space="preserve">
-    <value>Informação</value>
+    <value>信息</value>
     <comment>MessageBox</comment>
   </data>
   <data name="MessageBoxRestoreErrorText" xml:space="preserve">
-    <value>Die Backup '{0}' could ne be restored. Please check you internet connection.</value>
+    <value>备份 '{0}' 不能被恢复，请检查您的网络设置。</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxRestoreSuccessText" xml:space="preserve">
-    <value>Die Backup '{0}' has been restored successfully.</value>
+    <value>备份 '{0}' 已经成功恢复了。</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxWarningTitle" xml:space="preserve">
-    <value>Aviso</value>
+    <value>警告</value>
     <comment>MessageBox</comment>
   </data>
   <data name="Minutes" xml:space="preserve">
-    <value>minutos</value>
+    <value>分钟</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MoreApps" xml:space="preserve">
-    <value>mais aplicativos</value>
+    <value>更多应用</value>
     <comment>AboutPage</comment>
   </data>
   <data name="NameOfBackupHintText" xml:space="preserve">
-    <value>Backup title</value>
+    <value>备份磁贴</value>
     <comment>Backup</comment>
   </data>
   <data name="NappingTipsConsistentMessage" xml:space="preserve">
-    <value>Mantenha uma programação regular de sonecas. Prepare-se para ter seus momentos de descanso durante o dia.</value>
+    <value>保持一个规律的小睡时间表。最好睡在一天的中午。</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsConsistentTitle" xml:space="preserve">
-    <value>Regularidade</value>
+    <value>一致的</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessMessage" xml:space="preserve">
-    <value>Durma em um quarto escuro ou use uma máscara de olhos. Bloquear toda a fonte de luz ajuda você a adormecer rapidamente.</value>
+    <value>在黑暗处睡眠或戴上眼罩。阻止光线进入可以帮助您睡得更快。</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDarknessTitle" xml:space="preserve">
-    <value>Prefira a escuridão</value>
+    <value>最好在暗处</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedMessage" xml:space="preserve">
-    <value>Desative a conectividade do seu telefone e procure por lugares silenciosos.</value>
+    <value>关闭您的手机连接并且寻找一个安静的地方。</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsDisturbedTitle" xml:space="preserve">
-    <value>Não deixe que lhe perturbem</value>
+    <value>不要受到打扰</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsHeader" xml:space="preserve">
-    <value>dicas</value>
+    <value>小睡提示</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsIntro" xml:space="preserve">
-    <value>Pesquisas constataram que dormir regularmente pode reduzir o estresse e até mesmo o risco de doenças cardíacas. Para obter o máximo proveito de uma soneca, siga estas dicas simples e rápidas:</value>
+    <value>研究表明有规律的小睡可以减少压力甚至是心脏疾病。要获取一个质量好的小睡，请跟随下面的一些简单提示。</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickMessage" xml:space="preserve">
-    <value>Programe seu despertador por aproximadamente 30 minutos ou menos, se você não quer acordar grogue, pois você deve acordar antes de cair em sono profundo.</value>
+    <value>除非您想在醒来时变得像醉酒一样无力，把闹钟设置在30分钟或更少。因为这样会在您深度睡眠前醒来。</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsQuickTitle" xml:space="preserve">
-    <value>Seja rápido</value>
+    <value>变得快速</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmMessage" xml:space="preserve">
-    <value>Mantenha um cobertor próximo a você, porque a sua temperatura corporal cai enquanto você dorme.</value>
+    <value>把一条毯子放在旁边给你因为你的体温在你小睡时下降。</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NappingTipsWarmTitle" xml:space="preserve">
-    <value>Mantenha-se aquecido</value>
+    <value>保持温暖</value>
     <comment>InfoPage</comment>
   </data>
   <data name="NaptisticsTitle" xml:space="preserve">
-    <value>naptística</value>
+    <value>小睡统计</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvg" xml:space="preserve">
-    <value>média</value>
+    <value>平均</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewAvgShort" xml:space="preserve">
-    <value>méd.</value>
+    <value>平均</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMax" xml:space="preserve">
-    <value>máximo</value>
+    <value>最大</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMaxShort" xml:space="preserve">
-    <value>máx.</value>
+    <value>最大</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMin" xml:space="preserve">
-    <value>mínimo</value>
+    <value>最小</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewMinShort" xml:space="preserve">
-    <value>mín.</value>
+    <value>最小</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewNapDuration" xml:space="preserve">
-    <value>duração da sesta</value>
+    <value>小睡时间</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTimeSinceLastNap" xml:space="preserve">
-    <value>tempo desde a última soneca</value>
+    <value>上一次小睡时间</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTitle" xml:space="preserve">
-    <value>visão global</value>
+    <value>概述</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotal" xml:space="preserve">
-    <value>total</value>
+    <value>总计</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="OverviewTotalNaps" xml:space="preserve">
-    <value>total de cochilos</value>
+    <value>总计小睡次数</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="PrivacyInfo" xml:space="preserve">
-    <value>informações de privacidade</value>
+    <value>隐私政策</value>
     <comment>About Page</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
-    <value>classificar e dar opinião</value>
+    <value>评级和反馈</value>
     <comment>AboutPage</comment>
   </data>
   <data name="RatingMessage10Text" xml:space="preserve">
-    <value>Você parece estar gostando deste aplicativo!
+    <value>您看起来已经习惯了这款应用！
 
-Por que não avaliar com 5 estrelas para mostrar a sua importância?</value>
+为什么不给一个五星评价来表达您对我们的欣赏？</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingMessage5Text" xml:space="preserve">
-    <value>Adoraríamos que você classificasse nosso aplicativo com 5 estrelas.
+    <value>我们想得到您对我们应用的五星好评.
 
-Mostre o seu interesse na loja e ajude-nos a continuar trabalhando para tornar este aplicativo ainda melhor!</value>
+在商店上展现您对这款应用的爱可以让我们继续在这款应用上努力，并继续把一切事情做好。</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingNoText" xml:space="preserve">
-    <value>não, obrigado</value>
+    <value>谢谢</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingTitleText" xml:space="preserve">
-    <value>Gostando do powernAPP?</value>
+    <value>喜欢powernAPP吗？</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="RatingYesText" xml:space="preserve">
-    <value>avaliar com 5 estrelas</value>
+    <value>好评</value>
     <comment>FeedbackDialogControl</comment>
   </data>
   <data name="ResourceFlowDirection" xml:space="preserve">
@@ -533,95 +534,96 @@ Mostre o seu interesse na loja e ajude-nos a continuar trabalhando para tornar e
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>pt-PT</value>
+    <value>zh</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="RestoreBackupHeaderText" xml:space="preserve">
-    <value>restore</value>
+    <value>恢复</value>
     <comment>Backup</comment>
   </data>
   <data name="RestoreInfoText" xml:space="preserve">
-    <value>You can restore your data here. Current notes and tiles are going to be removed.</value>
+    <value>你可以在这里恢复您的数据。当前的笔记和磁贴将会被移除。</value>
     <comment>Backup</comment>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
-    <value>configurações</value>
+    <value>设置</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="SpeakAlarmAlreadySet" xml:space="preserve">
-    <value>O despertador já está definido.</value>
+    <value>闹铃已经被设置了。</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakAlarmSetFor" xml:space="preserve">
-    <value>O despertador está definido para {0}.</value>
+    <value>闹铃被设置在 {0}。</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakNoAlarmSet" xml:space="preserve">
-    <value>O despertador não foi definido.</value>
+    <value>闹铃没有被设置。</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap1" xml:space="preserve">
-    <value>Tenha ótimos {0} minutos de sono.</value>
+    <value>拥有一个美好的 {0} 分钟的小睡吧！</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStartNap2" xml:space="preserve">
-    <value>Tenha ótimos {0} minutos para dormir.</value>
+    <value>拥有一个美好的 {0} 分钟的睡眠吧！</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap1" xml:space="preserve">
-    <value>O despertador foi desligado. Espero que você já tenha recuperado as energias.</value>
+    <value>闹钟已经关闭。希望你现在感到充满能量</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakStopNap2" xml:space="preserve">
-    <value>O despertador foi desligado. Espero que você tenha dormido bem.</value>
+    <value>闹钟现在已经关闭。希望你有个好的睡眠。</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeLeft" xml:space="preserve">
-    <value>Você tem {0} minutos restantes.</value>
+    <value>您还有 {0} 的小睡剩余时间</value>
     <comment>Voice</comment>
   </data>
   <data name="SpeakTimeShifted" xml:space="preserve">
-    <value>Agora você tem {0} minutos restantes</value>
+    <value>现在您还有 {0} 的闹钟剩余时间</value>
     <comment>Voice</comment>
   </data>
   <data name="SupportAndFeedback" xml:space="preserve">
-    <value>suporte e feedback</value>
+    <value>支持与反馈</value>
     <comment>About Page</comment>
   </data>
   <data name="SuppressLockScreen" xml:space="preserve">
-    <value>Suprimir a tela de bloqueio</value>
+    <value>禁止锁屏</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VibrationEnabled" xml:space="preserve">
-    <value>Vibrar</value>
+    <value>振动</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceCommands" xml:space="preserve">
-    <value>Comandos de voz</value>
+    <value>语音命令</value>
     <comment>Settings Page</comment>
   </data>
   <data name="VoiceFeedback" xml:space="preserve">
-    <value>Reproduzir confirmaçõesde áudio</value>
+    <value>确认播放音频</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceLanguage" xml:space="preserve">
-    <value>Idioma</value>
+    <value>语言</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceStatus" xml:space="preserve">
-    <value>Status</value>
+    <value>统计信息</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceSupported" xml:space="preserve">
-    <value>suportado</value>
+    <value>支持与反馈</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupported" xml:space="preserve">
-    <value>não suportado</value>
+    <value>不被支持</value>
     <comment>SettingsPage</comment>
   </data>
   <data name="VoiceUnsupportedMessage" xml:space="preserve">
-    <value>O pacote de idiomas instalado não é suportado pela versão atual deste aplicativo. Os comandos de voz são suportados em inglês (en-US, en-GB, en-IN), francês (fr-FR) português (pt-PT, pt-BR), indonésio (id-ID) e alemão (de-DE). Por favor, verifique as configurações de seu telefone.</value>
+    <value>Your installed language package is not supported  in the current version of this application. Supported languages for voice commands are English (en-US, en-GB, en-IN), French (fr-FR), Portuguese (pt-PT, pt-BR), Indonesian (id-ID), Spanish (es-ES), Chinese (zh-Hans) and German (de-DE). Please check your phone settings.
+You want to help with the translation to support your language in the next version? Just contact me!</value>
     <comment>SettingsPage</comment>
   </data>
 </root>

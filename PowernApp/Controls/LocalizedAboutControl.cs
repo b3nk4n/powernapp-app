@@ -37,7 +37,8 @@ namespace PowernApp.Controls
                 new ContributorModel("/Assets/Languages/italiano.png","Roc Lat"),
                 new ContributorModel("/Assets/Languages/spanish.png", "Juan Febrero"),
                 new ContributorModel("/Assets/Languages/russia.png", "Иван Скороходов"),
-                new ContributorModel("/Assets/Languages/persian.png", "Mahmud Karimi")
+                new ContributorModel("/Assets/Languages/persian.png", "Mahmud Karimi"),
+                new ContributorModel("/Assets/Languages/chinese.png", "杨博涵")
             });
         }
     }
