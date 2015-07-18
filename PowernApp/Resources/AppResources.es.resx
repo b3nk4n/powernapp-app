@@ -576,11 +576,11 @@ Dinos sobre tu experiencia o sugiere como podemos hacerlo incluso mejor.</value>
     <comment>General</comment>
   </data>
   <data name="MessageBoxBackupErrorText" xml:space="preserve">
-    <value>Die Backup '{0}' could not be created. Please check you internet connection.</value>
+    <value>Backup '{0}' could not be created. Please check you internet connection.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxBackupSuccessText" xml:space="preserve">
-    <value>Die Backup '{0}' has been created successfully.</value>
+    <value>Backup '{0}' has been created successfully.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxInfoTitle" xml:space="preserve">
@@ -588,11 +588,11 @@ Dinos sobre tu experiencia o sugiere como podemos hacerlo incluso mejor.</value>
     <comment>MessageBox</comment>
   </data>
   <data name="MessageBoxRestoreErrorText" xml:space="preserve">
-    <value>Die Backup '{0}' could ne be restored. Please check you internet connection.</value>
+    <value>Backup '{0}' could ne be restored. Please check you internet connection.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxRestoreSuccessText" xml:space="preserve">
-    <value>Die Backup '{0}' has been restored successfully.</value>
+    <value>Backup '{0}' has been restored successfully.</value>
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxWarningTitle" xml:space="preserve">
