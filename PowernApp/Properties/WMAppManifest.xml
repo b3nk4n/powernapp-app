@@ -11,6 +11,7 @@
     <Language code="ru" />
     <Language code="fa-IR" />
     <Language code="zh" />
+    <Language code="hr" />
   </Languages>
   <App xmlns="" ProductID="{92740dff-b2e1-4813-b08b-c6429df03356}" Title="powernAPP" RuntimeType="Silverlight" Version="2.9.1.0" Genre="apps.normal" Author="Benjamin Sautermeister" Description="The fastest powernapping app for Windows Phone with voice commands" Publisher="Benjamin Sautermeister" PublisherID="{1fbed724-86f4-4765-a4dd-c3133421f3c6}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
@@ -35,18 +36,13 @@
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
           <Title>powernAPP</Title>
-          <BackContent>
-          </BackContent>
-          <BackBackgroundImageURI>
-          </BackBackgroundImageURI>
-          <BackTitle>
-          </BackTitle>
+          <BackContent></BackContent>
+          <BackBackgroundImageURI></BackBackgroundImageURI>
+          <BackTitle></BackTitle>
           <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileLarge.png</LargeBackgroundImageURI>
           <LargeBackContent />
-          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
-          </LargeBackBackgroundImageURI>
-          <DeviceLockImageURI>
-          </DeviceLockImageURI>
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false"></LargeBackBackgroundImageURI>
+          <DeviceLockImageURI></DeviceLockImageURI>
           <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>

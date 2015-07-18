@@ -594,7 +594,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Die Backup &apos;{0}&apos; could not be created. Please check you internet connection. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Backup &apos;{0}&apos; could not be created. Please check you internet connection. ähnelt.
         /// </summary>
         public static string MessageBoxBackupErrorText {
             get {
@@ -603,7 +603,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Die Backup &apos;{0}&apos; has been created successfully. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Backup &apos;{0}&apos; has been created successfully. ähnelt.
         /// </summary>
         public static string MessageBoxBackupSuccessText {
             get {
@@ -630,7 +630,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Die Backup &apos;{0}&apos; could ne be restored. Please check you internet connection. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Backup &apos;{0}&apos; could ne be restored. Please check you internet connection. ähnelt.
         /// </summary>
         public static string MessageBoxRestoreErrorText {
             get {
@@ -639,7 +639,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Die Backup &apos;{0}&apos; has been restored successfully. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Backup &apos;{0}&apos; has been restored successfully. ähnelt.
         /// </summary>
         public static string MessageBoxRestoreSuccessText {
             get {

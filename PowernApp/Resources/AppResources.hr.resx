@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>hr</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>powernAPP</value>
+    <comment>General</comment>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>O aplikaciji</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="ApplicationAuthor" xml:space="preserve">
+    <value>od Benjamin Sautermeister</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="ApplicationDescription" xml:space="preserve">
+    <value>Najbrža power napping aplikacija za Windows Phone s glasovnim naredbama.</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="MoreApps" xml:space="preserve">
+    <value>više aplikacija</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="PrivacyInfo" xml:space="preserve">
+    <value>informacije o privatnosti</value>
+    <comment>About Page</comment>
+  </data>
+  <data name="RateAndReview" xml:space="preserve">
+    <value>ocijeni i komentiraj</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="SupportAndFeedback" xml:space="preserve">
+    <value>podrška i povratne informacije</value>
+    <comment>About Page</comment>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>postavke</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceCommands" xml:space="preserve">
+    <value>Glasovne naredbe</value>
+    <comment>Settings Page</comment>
+  </data>
+  <data name="VoiceLanguage" xml:space="preserve">
+    <value>Jezik</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceSupported" xml:space="preserve">
+    <value>podržano</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceUnsupported" xml:space="preserve">
+    <value>nepodržano</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VoiceUnsupportedMessage" xml:space="preserve">
+    <value>Trenutna inačica aplikacije ne podržava trenutno instalirani jezični paket. Podržani jezici za glasovne naredbe su engleski (en-US, en-GB, en-IN), francuski (fr-FR), portugalski (pt-PT, pt-BR), indonezijski (id-ID) and njemački (de-DE).  Molimo provjerite postavke svojeg uređaja. Želite pomoći u prevođenju sljedeće inačice aplikacije? Samo me kontaktirajte.</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="VibrationEnabled" xml:space="preserve">
+    <value>Vibracija</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="Alarm" xml:space="preserve">
+    <value>Zvuk alarma</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="ApplicationVersion" xml:space="preserve">
+    <value>2.9.1</value>
+    <comment>General</comment>
+  </data>
+  <data name="FeedbackBodyText" xml:space="preserve">
+    <value>[Tvoje povratne informacije ovdje]
+
+
+---------------------------------
+Device Name: {0}
+Device Manufacturer: {1}
+Device Firmware Version: {2}
+Device Hardware Version: {3}
+Application Version: {4}
+---------------------------------</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackEmail" xml:space="preserve">
+    <value>apps@bsautermeister.de</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackMessageText" xml:space="preserve">
+    <value>Žao mi je što niste htjeli ocijeniti  powernAPP.
+
+Recite nam Vaša iskustva ili predložite kako da poboljšamo aplikaciju.</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackNoText" xml:space="preserve">
+    <value>ne, hvala</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackSubject" xml:space="preserve">
+    <value>powernAPP Povratne informacije</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackTitleText" xml:space="preserve">
+    <value>Možemo li što poboljšati?</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="FeedbackYesText" xml:space="preserve">
+    <value>give feedback</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingMessage10Text" xml:space="preserve">
+    <value>Izgleda da Vam se sviđa ova aplikacija!
+
+Želite li nas ocijeniti s 5 zvijezdica i pokazati nam kako cijenite naš rad?</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingMessage5Text" xml:space="preserve">
+    <value>Voljeli bismo kad biste ocijenili aplikaciju s 5 zvijezdica.
+
+Pokazujući nam koliko nas volite pomaže nam razvijati aplikaciju i poboljšati je!</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingNoText" xml:space="preserve">
+    <value>ne, hvala</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingTitleText" xml:space="preserve">
+    <value>Sviđa Vam se  powernAPP?</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="RatingYesText" xml:space="preserve">
+    <value>ocijeni</value>
+    <comment>FeedbackDialogControl</comment>
+  </data>
+  <data name="AppBarInfo" xml:space="preserve">
+    <value>info</value>
+    <comment>AppBar</comment>
+  </data>
+  <data name="AppBarOffline" xml:space="preserve">
+    <value>Onemogući veze</value>
+    <comment>AppBar</comment>
+  </data>
+  <data name="Commands1Message" xml:space="preserve">
+    <value>Pritisnite i držite Windows tipku kako bi se otvorio dijalog za glasovne naredbe.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands1Title" xml:space="preserve">
+    <value>1. Aktivirajte glasovne naredbe</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet1" xml:space="preserve">
+    <value>- " ...for 20 minutes. "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet2" xml:space="preserve">
+    <value>- " ...cancel nap. "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet3" xml:space="preserve">
+    <value>- " ...when is my alarm set for? "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet4" xml:space="preserve">
+    <value>- " ...what is the remaining time? "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Bullet5" xml:space="preserve">
+    <value>- " ...give me 5 more minutes. "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message1" xml:space="preserve">
+    <value>Recite</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message2" xml:space="preserve">
+    <value> "Power Nap..."  </value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Message3" xml:space="preserve">
+    <value>i nakon toga svoju naredbu. Neki primjeri:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands2Title" xml:space="preserve">
+    <value>2. Govorite</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands3Message" xml:space="preserve">
+    <value>powernAPP će se pobrinuti za ostalo...</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="Commands3Title" xml:space="preserve">
+    <value>3. Uživajte u drijemanju.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="CommandsHeader" xml:space="preserve">
+    <value>naredbe</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="CommandsIntro" xml:space="preserve">
+    <value>Aplikacija podržava glasovne naredbe Windows Phonea.
+Slijedite sljedeće korake kako biste odrijemali čak brže:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="ConnectivityHint" xml:space="preserve">
+    <value>Ne dopustite da Vas ometa netko ili nešto. Onemogućite veze mbilnog uređaja!</value>
+    <comment>MainPage</comment>
+  </data>
+  <data name="NappingTipsConsistentMessage" xml:space="preserve">
+    <value>Držite redovni raspored drijemanja. Primarno vrijeme drijemanja pada u podne.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsConsistentTitle" xml:space="preserve">
+    <value>Budite redovni</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDarknessMessage" xml:space="preserve">
+    <value>Drijemajte u mračnoj sobi ili koristite masku za oči. Blokiranje izvora svjetlosti pomaže Vam kako biste zaspali brže.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDarknessTitle" xml:space="preserve">
+    <value>Mrak</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDisturbedMessage" xml:space="preserve">
+    <value>Onemogućite veze mobilnog uređaja i potražite tiho mjesto.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsDisturbedTitle" xml:space="preserve">
+    <value>Ometanja</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsHeader" xml:space="preserve">
+    <value>savjeti</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsIntro" xml:space="preserve">
+    <value>Studije su pokazale da redovno drijemanje može smanjiti stres i čak smanjiti mogućnost oboljevanja od srčanih bolesti. Kako biste dobili najviše iz drijemanja, slijedite ove kratke i jednostavne savjete:</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsQuickMessage" xml:space="preserve">
+    <value>Postavite alarm za 30 minuta ili manje ako se ne želite probuditi mrzovoljni. Trebali biste se probuditi prije dubokog sna.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsQuickTitle" xml:space="preserve">
+    <value>Trajanje</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsWarmMessage" xml:space="preserve">
+    <value>Čuvajte deku u blizini jer gubite toplinu tijekom drijemanja.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="NappingTipsWarmTitle" xml:space="preserve">
+    <value>Ostanite topli</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="SpeakAlarmAlreadySet" xml:space="preserve">
+    <value>Alarm je već postavljen.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakAlarmSetFor" xml:space="preserve">
+    <value>Alarm je postavljen na {0}.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakNoAlarmSet" xml:space="preserve">
+    <value>Alarm nije postavljen</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakStartNap1" xml:space="preserve">
+    <value>Želimo Vam lijepih {0} minuta drijemanja.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakStopNap1" xml:space="preserve">
+    <value>Alarm je sada isključen. Nadamo se da ste se odmorili.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakTimeLeft" xml:space="preserve">
+    <value>Preostalo Vam je {0} minuta.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakTimeShifted" xml:space="preserve">
+    <value>Sada vam je preostalo {0} minuta.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="AlertDialogMessage" xml:space="preserve">
+    <value>Probudite se! Nadam se da ste se odmorili...</value>
+    <comment>AlertDialog</comment>
+  </data>
+  <data name="SpeakStartNap2" xml:space="preserve">
+    <value>Želimo Vam lijepih {0} minuta spavanja.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="SpeakStopNap2" xml:space="preserve">
+    <value>Alarm je sada isključen. Nadamo se da ste se lijepo sanjali.</value>
+    <comment>Voice</comment>
+  </data>
+  <data name="AppBarOnline" xml:space="preserve">
+    <value>Omogući veze</value>
+    <comment>AppBar</comment>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Suradnici</value>
+    <comment>AboutPage</comment>
+  </data>
+  <data name="Commands2Bullet1b" xml:space="preserve">
+    <value>- " ...for 1 hour and 30 minutes. "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="VoiceFeedback" xml:space="preserve">
+    <value>Reproduciraj glasovne potvrde</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="InfoTitle" xml:space="preserve">
+    <value>informacije</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="SuppressLockScreen" xml:space="preserve">
+    <value>onemogući zaključavanje</value>
+    <comment>SettingsPage</comment>
+  </data>
+  <data name="Commands2Bullet1c" xml:space="preserve">
+    <value>- " ...until 2:35 PM. "</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="InAppStoreLoading" xml:space="preserve">
+    <value>zzzZZZ...</value>
+    <comment>InAppStorePage</comment>
+  </data>
+  <data name="InAppStoreNoProducts" xml:space="preserve">
+    <value>Trenutno nije dostupna kupovina unutar aplikacije. Molimo pokušaje ponovno kasnije.</value>
+    <comment>InAppStorePage</comment>
+  </data>
+  <data name="InAppStorePurchased" xml:space="preserve">
+    <value>kupljeno</value>
+    <comment>InAppStorePage</comment>
+  </data>
+  <data name="InAppStoreTitle" xml:space="preserve">
+    <value>in-app kupovina</value>
+    <comment>AppBar</comment>
+  </data>
+  <data name="Commands1Message_8_1_OS" xml:space="preserve">
+    <value>Pritisnite i držite tipku Pretraživanje kako bi se otvorio dijalog za glasovne naredbe.</value>
+    <comment>InfoPage</comment>
+  </data>
+  <data name="AppBarCleanUp" xml:space="preserve">
+    <value>očisti</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="AppBarNext" xml:space="preserve">
+    <value>sljedeće</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="AppBarPrevious" xml:space="preserve">
+    <value>prethodno</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="CalendarTitle" xml:space="preserve">
+    <value>kalendar</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>dani</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>sati</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="ListTitle" xml:space="preserve">
+    <value>popis</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxAttention" xml:space="preserve">
+    <value>Upozorenje</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxCleanUp" xml:space="preserve">
+    <value>Jeste li sigurni da želite očistiti drijemanja kraća od 5 minuta iz statistika?</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>minute</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="NaptisticsTitle" xml:space="preserve">
+    <value>naptistike</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewAvg" xml:space="preserve">
+    <value>prosječno</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMax" xml:space="preserve">
+    <value>maksimalno</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMin" xml:space="preserve">
+    <value>minimalno</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewNapDuration" xml:space="preserve">
+    <value>trajanje drijemanja</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTimeSinceLastNap" xml:space="preserve">
+    <value>vrijeme od zadnjeg drijemanja</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTitle" xml:space="preserve">
+    <value>pregled</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotalNaps" xml:space="preserve">
+    <value>ukupno drijemanja</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewAvgShort" xml:space="preserve">
+    <value>avg.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMaxShort" xml:space="preserve">
+    <value>max.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewMinShort" xml:space="preserve">
+    <value>min.</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="OverviewTotal" xml:space="preserve">
+    <value>ukupno</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="AttentionTitle" xml:space="preserve">
+    <value>Upozorenje:</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="BackupInfoText" xml:space="preserve">
+    <value>Možete stvoriti sigurnosnu kopiju podataka koja će se spremiti na Vaš OneDrive. Kasnije možete vratiti podatke na bilo kojem uređaju.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="BackupTitle" xml:space="preserve">
+    <value>OneDrive sigurnosna kopija</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="CommonBackupWarningText" xml:space="preserve">
+    <value>Ostavite aplikaciju aktivnom do kraja zadatka. Potrebna je stabilna internetska veza.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="CreateBackupHeaderText" xml:space="preserve">
+    <value>stvori</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Prijava</value>
+    <comment>General</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Odjava</value>
+    <comment>General</comment>
+  </data>
+  <data name="MessageBoxBackupErrorText" xml:space="preserve">
+    <value>Sigurnosnu kopiju '{0}' nije moguće stvoriti. Provjerite internetsku vezu.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxBackupSuccessText" xml:space="preserve">
+    <value>Sigurnosna kopija '{0}' uspješno je stvorena.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxInfoTitle" xml:space="preserve">
+    <value>informacije</value>
+    <comment>MessageBox</comment>
+  </data>
+  <data name="MessageBoxRestoreErrorText" xml:space="preserve">
+    <value>Sigurnosnu kopiju '{0}' nije moguće vratiti. Molimo provjerite internetsku vezu.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxRestoreSuccessText" xml:space="preserve">
+    <value>Sigurnosna kopija '{0}' uspješno je vraćena.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="MessageBoxWarningTitle" xml:space="preserve">
+    <value>Warning</value>
+    <comment>MessageBox</comment>
+  </data>
+  <data name="NameOfBackupHintText" xml:space="preserve">
+    <value>Naziv sigurnosne kopije</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="RestoreBackupHeaderText" xml:space="preserve">
+    <value>vrati</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="RestoreInfoText" xml:space="preserve">
+    <value>Ovjde možete vratiti svoje podatke. Trenutne bilješke i nazivi će biti uklonjeni.</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="ContextMenuRemove" xml:space="preserve">
+    <value>remove</value>
+    <comment>NapStatisticsPage</comment>
+  </data>
+</root>
