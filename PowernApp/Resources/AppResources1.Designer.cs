@@ -169,7 +169,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 2.9.1 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2.9.2 ähnelt.
         /// </summary>
         public static string ApplicationVersion {
             get {
