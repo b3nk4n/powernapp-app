@@ -272,6 +272,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Languages\chinese.png" />
+    <Content Include="Assets\Languages\croatia.png" />
     <Content Include="Assets\Languages\french.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
