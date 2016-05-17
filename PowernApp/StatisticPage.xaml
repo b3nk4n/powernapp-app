@@ -119,35 +119,33 @@
                 <phone:PivotItem.Header>
                     <TextBlock Text="{Binding Path=LocalizedResources.ListTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ThemeTextTitle0Style}" Margin="0" />
                 </phone:PivotItem.Header>
-                <ScrollViewer>
-                    <ListBox ItemsSource="{Binding NapList}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Border Background="{StaticResource ThemeBackgroundMedium}" Width="430" Margin="12, 6" Padding="0,12,0,12"
+                <ListBox ItemsSource="{Binding NapList}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="{StaticResource ThemeBackgroundMedium}" Width="430" Margin="12, 6" Padding="0,12,0,12"
                                         toolkit:TiltEffect.IsTiltEnabled="True">
-                                    <toolkit:ContextMenuService.ContextMenu>
-                                        <toolkit:ContextMenu>
-                                            <toolkit:MenuItem Header="{Binding Path=LocalizedResources.ContextMenuRemove, Source={StaticResource LocalizedStrings}}" Command="{Binding DeleteCommand}" />
-                                        </toolkit:ContextMenu>
-                                    </toolkit:ContextMenuService.ContextMenu>
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="*" />
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Grid.Row="0" Text="{Binding StartTime, Converter={StaticResource dateConverter}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" />
-                                        <TextBlock Grid.Row="1" Text="{Binding StartTime, Converter={StaticResource timeConverter}}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="White" VerticalAlignment="Bottom" />
-                                        <StackPanel Grid.Row="0" Grid.RowSpan="2">
-                                            <TextBlock Text="{Binding Duration}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
+                                <toolkit:ContextMenuService.ContextMenu>
+                                    <toolkit:ContextMenu>
+                                        <toolkit:MenuItem Header="{Binding Path=LocalizedResources.ContextMenuRemove, Source={StaticResource LocalizedStrings}}" Command="{Binding DeleteCommand}" />
+                                    </toolkit:ContextMenu>
+                                </toolkit:ContextMenuService.ContextMenu>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="{Binding StartTime, Converter={StaticResource dateConverter}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" />
+                                    <TextBlock Grid.Row="1" Text="{Binding StartTime, Converter={StaticResource timeConverter}}" Style="{StaticResource PhoneTextLargeStyle}" Foreground="White" VerticalAlignment="Bottom" />
+                                    <StackPanel Grid.Row="0" Grid.RowSpan="2">
+                                        <TextBlock Text="{Binding Duration}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White"
                                                        HorizontalAlignment="Right" Margin="12,-12,12,-12"/>
-                                            <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Right" Margin="12,-8,14,0" />
-                                        </StackPanel>
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </ScrollViewer>
+                                        <TextBlock Grid.Row="0" Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="{StaticResource ThemeForegroundDark}" HorizontalAlignment="Right" Margin="12,-8,14,0" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </phone:PivotItem>
             
         </phone:Pivot>
