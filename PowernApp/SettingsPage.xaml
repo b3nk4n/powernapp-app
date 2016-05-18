@@ -356,6 +356,17 @@
                             </DataTemplate>
                         </toolkit:ListPicker.FullModeItemTemplate>
                     </toolkit:ListPicker>
+                    <TextBlock Margin="12,0,12,0" Style="{StaticResource ThemeTextTitle2Style}"
+                           Text="{Binding Path=LocalizedResources.VoiceCommands, Source={StaticResource LocalizedStrings}}" />
+                    <Grid Margin="0,12,0,44">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="AlarmPreset1TextBox" Grid.Column="0" InputScope="Number" />
+                        <TextBox x:Name="AlarmPreset2TextBox" Grid.Column="1" InputScope="Number" />
+                    </Grid>
+                    
                     <toolkit:ToggleSwitch x:Name="SuppressLockScreenToggleSwitch" IsChecked="True" Margin="0,-20,0,0" Style="{StaticResource ThemedToggleSwitchStyle}"
                                       Header="{Binding Path=LocalizedResources.SuppressLockScreen, Source={StaticResource LocalizedStrings}}"/>
                     <toolkit:ToggleSwitch x:Name="VibrationToggleSwitch" Margin="0,12,0,0" IsChecked="True" Style="{StaticResource ThemedToggleSwitchStyle}"

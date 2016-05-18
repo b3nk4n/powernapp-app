@@ -34,6 +34,8 @@ namespace PowernApp
             this.SuppressLockScreenToggleSwitch.IsChecked = Settings.EnableSuppressLockScreen.Value;
             this.VibrationToggleSwitch.IsChecked = Settings.EnableVibration.Value;
             this.VoiceFeedbackToggleSwitch.IsChecked = Settings.EnableVoiceFeedback.Value;
+            this.AlarmPreset1TextBox.Text = Settings.AlarmPreset1.Value.ToString();
+            this.AlarmPreset2TextBox.Text = Settings.AlarmPreset2.Value.ToString();
             BindAudioItems();
             RefreshVoiceCommandsStatus();
         }
@@ -49,10 +51,26 @@ namespace PowernApp
             Settings.EnableSuppressLockScreen.Value = this.SuppressLockScreenToggleSwitch.IsChecked.Value;
             Settings.EnableVibration.Value = this.VibrationToggleSwitch.IsChecked.Value;
             Settings.EnableVoiceFeedback.Value = this.VoiceFeedbackToggleSwitch.IsChecked.Value;
-            
+
+            Settings.AlarmPreset1.Value = GetPresetValue(this.AlarmPreset1TextBox.Text, 30);
+            Settings.AlarmPreset2.Value = GetPresetValue(this.AlarmPreset2TextBox.Text, 90);
+
             var selectedAudio = this.AudioList.SelectedItem as AudioViewModel;
             if (selectedAudio != null)
                 Settings.AlarmUriString.Value = selectedAudio.UriString;
+        }
+
+        private int GetPresetValue(string stringValue, int fallback)
+        {
+            var preset = fallback;
+            int.TryParse(stringValue, out preset);
+
+            if (preset <= 0)
+                preset = 1;
+            else if (preset > 999)
+                preset = 999;
+
+            return preset;
         }
 
         /// <summary>

@@ -13,12 +13,19 @@ using System.Windows.Threading;
 
 namespace PowernApp.ViewModels
 {
+    public interface AlarmClockCallback
+    {
+        void SetTime(int minutes);
+    }
+
     /// <summary>
     /// Represents a down counting alarm clock.
     /// </summary>
     public class AlarmClockViewModel : ViewModelBase
     {
         # region Members
+
+        private AlarmClockCallback _callback;
 
         /// <summary>
         /// The singleton instance.
@@ -94,6 +101,16 @@ namespace PowernApp.ViewModels
         /// The stop alarm command.
         /// </summary>
         private DelegateCommand _stopCommand;
+
+        /// <summary>
+        /// The alarm preset 1 command.
+        /// </summary>
+        private DelegateCommand _alarmPreset1Command;
+
+        /// <summary>
+        /// The alarm preset 2 command.
+        /// </summary>
+        private DelegateCommand _alarmPreset2Command;
 
         /// <summary>
         /// Alarm seconds counter to have an alarm sound in a regular interval.
@@ -179,11 +196,40 @@ namespace PowernApp.ViewModels
                 {
                     return true;
                 });
+
+            _alarmPreset1Command = new DelegateCommand(
+                () =>
+                {
+                    int minValue = Settings.AlarmPreset1.Value;
+                    if (_callback != null)
+                        _callback.SetTime(minValue);
+                },
+                () =>
+                {
+                    return true;
+                });
+
+            _alarmPreset2Command = new DelegateCommand(
+                () =>
+                {
+                    int minValue = Settings.AlarmPreset2.Value;
+                    if (_callback != null)
+                        _callback.SetTime(minValue);
+                },
+                () =>
+                {
+                    return true;
+                });
         }
 
         #endregion
 
         #region Methods
+
+        public void SetCallbackContext(AlarmClockCallback callbackContext)
+        {
+            _callback = callbackContext;
+        }
 
         /// <summary>
         /// Tries to set the alarm.
@@ -664,6 +710,28 @@ namespace PowernApp.ViewModels
             }
         }
 
+        public void UpdatePresets()
+        {
+            NotifyPropertyChanged("AlarmPreset1Text");
+            NotifyPropertyChanged("AlarmPreset2Text");
+        }
+
+        public string AlarmPreset1Text
+        {
+            get
+            {
+                return Settings.AlarmPreset1.Value.ToString();
+            }
+        }
+
+        public string AlarmPreset2Text
+        {
+            get
+            {
+                return Settings.AlarmPreset2.Value.ToString();
+            }
+        }
+
         /// <summary>
         /// Gets the start alarm command.
         /// </summary>
@@ -705,6 +773,28 @@ namespace PowernApp.ViewModels
             get
             {
                 return _stopCommand;
+            }
+        }
+
+        /// <summary>
+        /// Gets the alarm preset 1 command.
+        /// </summary>
+        public ICommand AlarmPreset1Command
+        {
+            get
+            {
+                return _alarmPreset1Command;
+            }
+        }
+
+        /// <summary>
+        /// Gets the alarm preset 2 command.
+        /// </summary>
+        public ICommand AlarmPreset2Command
+        {
+            get
+            {
+                return _alarmPreset2Command;
             }
         }
 

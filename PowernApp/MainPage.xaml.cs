@@ -23,7 +23,7 @@ namespace PowernApp
     /// <summary>
     /// The applications default page.
     /// </summary>
-    public partial class MainPage : PhoneApplicationPage
+    public partial class MainPage : PhoneApplicationPage, AlarmClockCallback
     {
         private bool _isBannerVisible = false;
 
@@ -162,7 +162,10 @@ namespace PowernApp
             UpdatePreviewTime();
 
             // set data context to view model
+            AlarmClockViewModel.Instance.SetCallbackContext(this);
             DataContext = AlarmClockViewModel.Instance;
+
+            AlarmClockViewModel.Instance.UpdatePresets();
         }
 
         /// <summary>
@@ -638,9 +641,26 @@ namespace PowernApp
 
             int minDelta = 1;
             int.TryParse(button.Tag.ToString(), out minDelta);
+
+            ChangeAlarmTime(minDelta);
+        }
+
+        private void ChangeAlarmTime(int minDelta)
+        {
             var value = CustomNapTimePicker.Value.Value;
 
             value = value.Add(TimeSpan.FromMinutes(minDelta));
+
+            // verify at least 1 min
+            if (value.TotalMinutes < 1)
+                value = TimeSpan.FromMinutes(1);
+
+            CustomNapTimePicker.Value = value;
+        }
+
+        private void SetAlarmTime(int minValue)
+        {
+            var value = TimeSpan.FromMinutes(minValue);
 
             // verify at least 1 min
             if (value.TotalMinutes < 1)
@@ -680,5 +700,9 @@ namespace PowernApp
             AlarmClockViewModel.Instance.AlarmPreviewTime = DateTime.Now.AddMinutes(minutes);
         }
 
+        public void SetTime(int minutes)
+        {
+            SetAlarmTime(minutes);
+        }
     }
 }

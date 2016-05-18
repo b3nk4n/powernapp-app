@@ -31,5 +31,15 @@ namespace PowernApp
         /// Setting for whether the lockscreen should be suppressed.
         /// </summary>
         public static readonly StoredObject<bool> EnableSuppressLockScreen = new StoredObject<bool>("enableSuppressLockScreen", false);
+
+        /// <summary>
+        /// Settings for the frist alarm preset.
+        /// </summary>
+        public static readonly StoredObject<int> AlarmPreset1 = new StoredObject<int>("alarmPreset1", 30);
+
+        /// <summary>
+        /// Settings for the frist alarm preset.
+        /// </summary>
+        public static readonly StoredObject<int> AlarmPreset2 = new StoredObject<int>("alarmPreset2", 90);
     }
 }
