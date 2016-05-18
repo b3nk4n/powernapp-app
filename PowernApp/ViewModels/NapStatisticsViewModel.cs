@@ -247,10 +247,10 @@ namespace PowernApp.ViewModels
                     new FlipTileData
                     {
                         SmallBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileSmall.png", UriKind.Relative),
-                        BackBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileMedium.png", UriKind.Relative),
-                        WideBackBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileLarge.png", UriKind.Relative),
-                        BackgroundImage = imageUri,
-                        WideBackgroundImage = wideImageUri,
+                        BackgroundImage = new Uri("Assets/Tiles/FlipCycleTileMedium.png", UriKind.Relative),
+                        WideBackgroundImage = new Uri("Assets/Tiles/FlipCycleTileLarge.png", UriKind.Relative),
+                        BackBackgroundImage = imageUri,
+                        WideBackBackgroundImage = wideImageUri,
                         Title = "",
                         BackTitle = ""
                     });
