@@ -185,6 +185,10 @@
     <value>Kalender</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="ClearAllTitle" xml:space="preserve">
+    <value>Alles Löschen</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="Commands1Message" xml:space="preserve">
     <value>Halte den Windows-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint.</value>
     <comment>InfoPage</comment>
@@ -503,6 +507,10 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
   <data name="PrivacyInfo" xml:space="preserve">
     <value>Datenschutz-Informationen</value>
     <comment>About Page</comment>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>Schnellzugriff</value>
+    <comment>SettingsPage</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
     <value>Bewerten und Kritik schreiben</value>

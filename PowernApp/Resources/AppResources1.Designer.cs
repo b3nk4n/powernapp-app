@@ -214,6 +214,15 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die clear all ähnelt.
+        /// </summary>
+        public static string ClearAllTitle {
+            get {
+                return ResourceManager.GetString("ClearAllTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Press and hold the Windows-Button of you phone until the voice input dialog pops up. ähnelt.
         /// </summary>
         public static string Commands1Message {
@@ -914,6 +923,15 @@ namespace PowernApp.Resources {
         public static string PrivacyInfo {
             get {
                 return ResourceManager.GetString("PrivacyInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Quick access ähnelt.
+        /// </summary>
+        public static string QuickAccess {
+            get {
+                return ResourceManager.GetString("QuickAccess", resourceCulture);
             }
         }
         

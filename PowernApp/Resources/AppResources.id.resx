@@ -629,4 +629,12 @@ Tunjukkan pada kita cinta melalui store untuk membantu kita mendukung pembuatan 
     <value>Apakah Anda ingin menghapus tidur singkat dari statistik?</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="ClearAllTitle" xml:space="preserve">
+    <value>jelas semua</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>Akses cepat</value>
+    <comment>SettingsPage</comment>
+  </data>
 </root>

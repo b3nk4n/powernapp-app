@@ -619,4 +619,12 @@ Dinos sobre tu experiencia o sugiere como podemos hacerlo incluso mejor.</value>
     <value>¿Realmente desea limpiar las estadísticas?</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="ClearAllTitle" xml:space="preserve">
+    <value>limpiar todo</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>Acceso rápido</value>
+    <comment>SettingsPage</comment>
+  </data>
 </root>

@@ -185,6 +185,10 @@
     <value>calendário</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="ClearAllTitle" xml:space="preserve">
+    <value>apagar tudo</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="Commands1Message" xml:space="preserve">
     <value>Pressione e segure o botão Windows de seu telefone para abrir o controle por voz.</value>
     <comment>InfoPage</comment>
@@ -503,6 +507,10 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
   <data name="PrivacyInfo" xml:space="preserve">
     <value>informações de privacidade</value>
     <comment>About Page</comment>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>Acesso rápido</value>
+    <comment>SettingsPage</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
     <value>classificar e dar opinião</value>

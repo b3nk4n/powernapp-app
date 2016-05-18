@@ -185,6 +185,10 @@
     <value>日历</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="ClearAllTitle" xml:space="preserve">
+    <value>全部删除</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="Commands1Message" xml:space="preserve">
     <value>请按住Windows键直到语音对话框弹出。</value>
     <comment>InfoPage</comment>
@@ -374,7 +378,7 @@ Application Version: {4}
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxClearAll" xml:space="preserve">
-    <value>你真的想清除短于？</value>
+    <value>你真的想清除小睡的统计？</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxInfoTitle" xml:space="preserve">
@@ -504,6 +508,10 @@ Application Version: {4}
   <data name="PrivacyInfo" xml:space="preserve">
     <value>隐私政策</value>
     <comment>About Page</comment>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>快速访问</value>
+    <comment>SettingsPage</comment>
   </data>
   <data name="RateAndReview" xml:space="preserve">
     <value>评级和反馈</value>

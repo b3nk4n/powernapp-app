@@ -357,7 +357,7 @@
                         </toolkit:ListPicker.FullModeItemTemplate>
                     </toolkit:ListPicker>
                     <TextBlock Margin="12,0,12,0" Style="{StaticResource ThemeTextTitle2Style}"
-                           Text="{Binding Path=LocalizedResources.VoiceCommands, Source={StaticResource LocalizedStrings}}" />
+                           Text="{Binding Path=LocalizedResources.QuickAccess, Source={StaticResource LocalizedStrings}}" />
                     <Grid Margin="0,12,0,44">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />

@@ -626,7 +626,15 @@ Slijedite sljedeće korake kako biste odrijemali čak brže:</value>
     <comment>NapStatisticsPage</comment>
   </data>
   <data name="MessageBoxClearAll" xml:space="preserve">
-    <value>Jeste li sigurni da želite očistiti drijemanja kraća?</value>
+    <value>Jeste li sigurni da želite očistiti drijemanja?</value>
     <comment>StatisticsPage</comment>
+  </data>
+  <data name="ClearAllTitle" xml:space="preserve">
+    <value>Očistiti sve</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>Brzi pristup</value>
+    <comment>SettingsPage</comment>
   </data>
 </root>

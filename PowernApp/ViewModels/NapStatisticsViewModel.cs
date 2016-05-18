@@ -93,8 +93,7 @@ namespace PowernApp.ViewModels
 
             _clearCommand = new DelegateCommand(() =>
             {
-                // TODO: fix translations!!!
-                if (MessageBox.Show(AppResources.MessageBoxCleanUp, AppResources.MessageBoxAttention, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                if (MessageBox.Show(AppResources.MessageBoxClearAll, AppResources.MessageBoxAttention, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
                 {
                     Cleanup(int.MaxValue);
                 }

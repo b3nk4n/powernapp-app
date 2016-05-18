@@ -626,7 +626,15 @@ Application Version: {4}
     <comment>NapStatisticsPage</comment>
   </data>
   <data name="MessageBoxClearAll" xml:space="preserve">
-    <value>آیا واقعا می خواهید چرت هایی را که کمتر؟</value>
+    <value>آیا واقعا می خواهید چرت از بخش آمار پاک کنید؟</value>
     <comment>StatisticsPage</comment>
+  </data>
+  <data name="ClearAllTitle" xml:space="preserve">
+    <value>همه را پاک کن</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>دسترسی سریع</value>
+    <comment>SettingsPage</comment>
   </data>
 </root>

@@ -117,8 +117,8 @@ namespace PowernApp
                 };
             }
 
-            // backup
-            ApplicationBarMenuItem appBarClearMenuItem = new ApplicationBarMenuItem(AppResources.BackupTitle);
+            // clear all
+            ApplicationBarMenuItem appBarClearMenuItem = new ApplicationBarMenuItem(AppResources.ClearAllTitle);
             ApplicationBar.MenuItems.Add(appBarClearMenuItem);
             appBarClearMenuItem.Click += (s, e) =>
             {

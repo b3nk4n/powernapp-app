@@ -627,7 +627,15 @@ Application Version: {4}
     <comment>NapStatisticsPage</comment>
   </data>
   <data name="MessageBoxClearAll" xml:space="preserve">
-    <value>Вы действительно хотите удалить все перерывы?</value>
+    <value>Вы действительно хотите удалить все перерывы из статистики?</value>
     <comment>StatisticsPage</comment>
+  </data>
+  <data name="ClearAllTitle" xml:space="preserve">
+    <value>Очистить все</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="QuickAccess" xml:space="preserve">
+    <value>Быстрый доступ</value>
+    <comment>SettingsPage</comment>
   </data>
 </root>
