@@ -232,7 +232,7 @@ namespace PowernApp.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Press and hold the Search-Button of you phone until the voice input dialog pops up. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Press and hold the Search-Button of you phone until the voice input dialog pops up, or launch Cortana. ähnelt.
         /// </summary>
         public static string Commands1Message_8_1_OS {
             get {

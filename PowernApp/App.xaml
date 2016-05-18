@@ -43,12 +43,13 @@
 
         <Style x:Key="ThemeTextTitle2Style" TargetType="TextBlock" BasedOn="{StaticResource PhoneTextNormalStyle}">
             <Setter Property="Foreground" Value="{StaticResource ThemeForegroundDark}" />
+            <Setter Property="FontWeight" Value="Normal" />
         </Style>
 
         <Style x:Key="RoundButton" TargetType="ButtonBase">
-            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Background" Value="{StaticResource ThemeForegroundLight}"/>
             <Setter Property="BorderBrush" Value="{StaticResource ThemeForegroundLight}"/>
-            <Setter Property="Foreground" Value="{StaticResource ThemeForegroundLight}"/>
+            <Setter Property="Foreground" Value="{StaticResource ThemeBackgroundDark}"/>
             <Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
             <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
             <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}"/>

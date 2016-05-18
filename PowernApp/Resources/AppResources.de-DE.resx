@@ -194,7 +194,7 @@
     <comment>InfoPage</comment>
   </data>
   <data name="Commands1Message_8_1_OS" xml:space="preserve">
-    <value>Halte den Suchen-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint.</value>
+    <value>Halte den Suchen-Knopf deines Smartphones gedrückt bis der Sprachdialog erscheint, oder starte Cortana.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="Commands1Title" xml:space="preserve">

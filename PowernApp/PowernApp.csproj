@@ -233,6 +233,7 @@
     <Content Include="Assets\Audio\birds.wav" />
     <Content Include="Assets\Audio\buzzer.wav" />
     <Content Include="Assets\Audio\classic.wav" />
+    <Content Include="Assets\Audio\crickets.wav" />
     <Content Include="Assets\Audio\dong.wav" />
     <Content Include="Assets\Audio\frogs.wav" />
     <Content Include="Assets\Audio\modern.wav" />

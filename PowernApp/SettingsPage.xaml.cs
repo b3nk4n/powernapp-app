@@ -174,6 +174,11 @@ namespace PowernApp
                     playImageUri));
             audioList.Add(
                 new AudioViewModel(
+                    "Crickets",
+                    "Assets/Audio/crickets.wav",
+                    playImageUri));
+            audioList.Add(
+                new AudioViewModel(
                     "NO SOUND",
                     "Assets/Audio/nosound.wav",
                     playImageUri));

@@ -466,7 +466,7 @@ Showing us some love on the store helps us to continue to work on the app and ma
     <comment>AppBar</comment>
   </data>
   <data name="Commands1Message_8_1_OS" xml:space="preserve">
-    <value>Press and hold the Search-Button of you phone until the voice input dialog pops up.</value>
+    <value>Press and hold the Search-Button of you phone until the voice input dialog pops up, or launch Cortana.</value>
     <comment>InfoPage</comment>
   </data>
   <data name="AppBarCleanUp" xml:space="preserve">

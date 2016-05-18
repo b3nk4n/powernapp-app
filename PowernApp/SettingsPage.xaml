@@ -67,6 +67,7 @@
                                     ContentTemplate = "{TemplateBinding HeaderTemplate}" 
                                     FontFamily = "{StaticResource PhoneFontFamilyNormal}" 
                                     FontSize = "{StaticResource PhoneFontSizeNormal}" 
+                                    FontWeight="Normal"
                                     Foreground = "{StaticResource ThemeForegroundDark}" 
                                     HorizontalAlignment = "Left" 
                                     IsTabStop = "False" 
@@ -268,6 +269,8 @@
 					            ContentTemplate="{TemplateBinding HeaderTemplate}"
 					            Foreground="{StaticResource ThemeForegroundDark}"
 					            FontSize="{StaticResource PhoneFontSizeNormal}"
+                                FontWeight="Normal"
+                                FontFamily = "{StaticResource PhoneFontFamilyNormal}" 
 					            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 					            Margin="0 0 0 8"/>
                             <Grid>

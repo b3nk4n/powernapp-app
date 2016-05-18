@@ -257,7 +257,7 @@
                 </StackPanel>
                 <Button Grid.Row="3" Click="StartAlarmClick"  toolkit:TurnstileFeatherEffect.FeatheringIndex="4"
                             Width="176" Height="176" Style="{StaticResource RoundButton}">
-                    <Path Data="M 10,0 L 10,60 L60,30 Z" Fill="{StaticResource ThemeForegroundLight}" Width="60" Height="60" />
+                    <Path Data="M 10,0 L 10,60 L60,30 Z" Fill="{StaticResource ThemeBackgroundDark}" Width="60" Height="60" />
                 </Button>
             </Grid>
             <Grid x:Name="ActivePanel" Visibility="Visible">
@@ -278,11 +278,11 @@
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"  toolkit:TurnstileFeatherEffect.FeatheringIndex="2"
                             Visibility="{Binding IsAlarmNotRinging, Converter={StaticResource BoolToVisibilityConverter}}">
                     <RepeatButton Command="{Binding AntiSnoozeCommand}" CommandParameter="1"
-                            Width="112" Height="112" Style="{StaticResource RoundButton}" Margin="12,0,54,0">
+                            Width="112" Height="112" Style="{StaticResource RoundButton}" Margin="0,0,92,0">
                         <TextBlock Text="-" FontSize="64" Margin="0,-16,2,0" />
                     </RepeatButton>
                     <RepeatButton Command="{Binding SnoozeCommand}" CommandParameter="1"
-                            Width="112" Height="112" Style="{StaticResource RoundButton}" Margin="54,0,12,0">
+                            Width="112" Height="112" Style="{StaticResource RoundButton}" Margin="92,0,0,0">
                         <TextBlock Text="+" FontSize="64" Margin="0,-16,2,0" />
                     </RepeatButton>
                 </StackPanel>
@@ -295,7 +295,7 @@
                 </Grid>
                 <Button Grid.Row="3" Command="{Binding StopCommand}"  toolkit:TurnstileFeatherEffect.FeatheringIndex="4"
                         Width="176" Height="176" Style="{StaticResource RoundButton}" Click="StopButtonClick">
-                    <Rectangle Width="42" Height="42" Fill="{StaticResource ThemeForegroundLight}" />
+                    <Rectangle Width="42" Height="42" Fill="{StaticResource ThemeBackgroundDark}" />
                 </Button>
             </Grid>
         </Grid>
