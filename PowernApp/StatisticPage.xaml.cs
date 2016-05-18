@@ -118,6 +118,15 @@ namespace PowernApp
             }
 
             // backup
+            ApplicationBarMenuItem appBarClearMenuItem = new ApplicationBarMenuItem(AppResources.BackupTitle);
+            ApplicationBar.MenuItems.Add(appBarClearMenuItem);
+            appBarClearMenuItem.Click += (s, e) =>
+            {
+                if (NapStatisticsViewModel.Instance.ClearCommand.CanExecute(null))
+                    NapStatisticsViewModel.Instance.ClearCommand.Execute(null);
+            };
+
+            // backup
             ApplicationBarMenuItem appBarBackupMenuItem = new ApplicationBarMenuItem(AppResources.BackupTitle);
             ApplicationBar.MenuItems.Add(appBarBackupMenuItem);
             appBarBackupMenuItem.Click += (s, e) =>

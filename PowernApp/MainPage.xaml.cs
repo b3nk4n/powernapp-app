@@ -418,6 +418,10 @@ namespace PowernApp
         /// <param name="totalMinutes">The total minutes to sleep.</param>
         private void handleSleepMinutesInternal(int totalMinutes)
         {
+            // in case the value was negative, use a fallback value.
+            if (totalMinutes < 1)
+                totalMinutes = 20;
+
             if (AlarmClockViewModel.Instance.Set(totalMinutes))
             {
                 string startFormat = (new Random().Next(2) == 0) ? AppResources.SpeakStartNap1 : AppResources.SpeakStartNap2;

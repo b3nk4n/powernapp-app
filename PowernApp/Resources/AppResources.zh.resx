@@ -373,6 +373,10 @@ Application Version: {4}
     <value>你真的想清除短于5分钟小睡的统计吗？</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="MessageBoxClearAll" xml:space="preserve">
+    <value>你真的想清除短于？</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="MessageBoxInfoTitle" xml:space="preserve">
     <value>信息</value>
     <comment>MessageBox</comment>

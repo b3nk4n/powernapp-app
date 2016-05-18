@@ -52,6 +52,11 @@ namespace PowernApp.ViewModels
         private DelegateCommand _cleanupCommand;
 
         /// <summary>
+        /// The clear all command.
+        /// </summary>
+        private DelegateCommand _clearCommand;
+
+        /// <summary>
         /// The updated callback handler.
         /// </summary>
         private Action _updatedCallback;
@@ -79,6 +84,19 @@ namespace PowernApp.ViewModels
                 if (MessageBox.Show(AppResources.MessageBoxCleanUp, AppResources.MessageBoxAttention, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
                 {
                     Cleanup(5);
+                }
+            },
+            () =>
+            {
+                return _napList.Count > 0;
+            });
+
+            _clearCommand = new DelegateCommand(() =>
+            {
+                // TODO: fix translations!!!
+                if (MessageBox.Show(AppResources.MessageBoxCleanUp, AppResources.MessageBoxAttention, MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                {
+                    Cleanup(int.MaxValue);
                 }
             },
             () =>
@@ -364,6 +382,17 @@ namespace PowernApp.ViewModels
             get
             {
                 return _cleanupCommand;
+            }
+        }
+
+        /// <summary>
+        /// Gets the clear command.
+        /// </summary>
+        public ICommand ClearCommand
+        {
+            get
+            {
+                return _clearCommand;
             }
         }
     }

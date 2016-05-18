@@ -372,6 +372,10 @@ Conte-nos sobre a sua experiência ou sugira como podemos melhorá-lo.</value>
     <value>Do you really want to clean naps from the statistics, which have been shorter than 5 minutes?</value>
     <comment>StatisticsPage</comment>
   </data>
+  <data name="MessageBoxClearAll" xml:space="preserve">
+    <value>Do you really want to clear all naps from the statistics?</value>
+    <comment>StatisticsPage</comment>
+  </data>
   <data name="MessageBoxInfoTitle" xml:space="preserve">
     <value>Informação</value>
     <comment>MessageBox</comment>

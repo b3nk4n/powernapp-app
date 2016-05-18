@@ -615,4 +615,8 @@ Dinos sobre tu experiencia o sugiere como podemos hacerlo incluso mejor.</value>
     <value>quitar</value>
     <comment>NapStatisticsPage</comment>
   </data>
+  <data name="MessageBoxClearAll" xml:space="preserve">
+    <value>¿Realmente desea limpiar las estadísticas?</value>
+    <comment>StatisticsPage</comment>
+  </data>
 </root>

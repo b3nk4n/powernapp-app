@@ -117,6 +117,19 @@ namespace PowernApp.Napping
             int.TryParse(minutes, out min);
             int.TryParse(hours, out h);
 
+            // use fallback values when values are negative
+            if (h <= 0)
+            {
+                h = 0;
+            }
+            if (min <= 0)
+            {
+                if (h <= 0)
+                    min = 20;
+                else
+                    min = 0;
+            }
+
             var sleepTo = new DateTime(_now.Year, _now.Month, _now.Day, h, min, 0);
 
             if (identifier12h == IDENTIFIER12_PM)

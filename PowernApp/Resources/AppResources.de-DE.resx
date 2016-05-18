@@ -369,7 +369,11 @@ Erzählen Sie uns von Ihren Erfahrungen oder teilen Sie uns Vorschläge mit, dam
     <comment>Backup</comment>
   </data>
   <data name="MessageBoxCleanUp" xml:space="preserve">
-    <value>Wirklich alle Power-Naps aus den Statistiken löschen, die kürzer als 5 Minuten lang waren?</value>
+    <value>Wirklich alle Power-Naps aus den Statistiken löschen, die kürzer als 5 Minuten lang sind?</value>
+    <comment>StatisticsPage</comment>
+  </data>
+  <data name="MessageBoxClearAll" xml:space="preserve">
+    <value>Wirklich alle Power-Naps aus den Statistiken löschen?</value>
     <comment>StatisticsPage</comment>
   </data>
   <data name="MessageBoxInfoTitle" xml:space="preserve">

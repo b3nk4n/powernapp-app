@@ -622,4 +622,8 @@ Nous encourager avec votre notation dans le Windows Store nous aide à continuer
     <value>supprimer</value>
     <comment>NapStatisticsPage</comment>
   </data>
+  <data name="MessageBoxClearAll" xml:space="preserve">
+    <value>Souhaitez-vous vraiment supprimer votre liste de siestes?</value>
+    <comment>StatisticsPage</comment>
+  </data>
 </root>
