@@ -74,11 +74,13 @@ namespace PowernApp
             // register startup actions
             StartupActionManager.Instance.Register(10, ActionExecutionRule.Equals, () =>
             {
-                FeedbackManager.Instance.StartFirst();
+                if (!InAppPurchaseHelper.IsProductActive(AppConstants.PRO_VERSION_IN_APP_KEY))
+                    FeedbackManager.Instance.StartFirst();
             });
             StartupActionManager.Instance.Register(20, ActionExecutionRule.Equals, () =>
             {
-                FeedbackManager.Instance.StartSecond();
+                if (!InAppPurchaseHelper.IsProductActive(AppConstants.PRO_VERSION_IN_APP_KEY))
+                    FeedbackManager.Instance.StartSecond();
             });
         }
 
