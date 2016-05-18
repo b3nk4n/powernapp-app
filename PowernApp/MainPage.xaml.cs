@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -10,11 +9,9 @@ using PowernApp.ViewModels;
 using PhoneKit.Framework.OS;
 using System.Windows.Threading;
 using System.Windows.Media;
-using PhoneKit.Framework.Core.Net;
 using PhoneKit.Framework.Support;
 using PowernApp.Napping;
 using PhoneKit.Framework.InAppPurchase;
-using PhoneKit.Framework.Advertising;
 using System.Collections.Generic;
 using System.Windows.Controls.Primitives;
 
