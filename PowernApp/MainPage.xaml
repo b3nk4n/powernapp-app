@@ -239,7 +239,7 @@
                 <Grid Grid.Row="0" VerticalAlignment="Bottom" toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
                     <TextBlock Grid.Row="0" Text="{Binding AlarmPreviewTime, Converter={StaticResource DateToTimeConverter}, ConverterParameter=t}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="22"/>
                     <c4f:TimeSpanPicker x:Name="CustomNapTimePicker" Value="0:20:00" FontSize="108" HorizontalAlignment="Center"
-                                    Template="{StaticResource TimeSpanCustomStyle}" Min="0:01:00" IsHitTestVisible="False" />
+                                    Template="{StaticResource TimeSpanCustomStyle}" Minimum="0:01:00" IsHitTestVisible="False" />
                 </Grid>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top"  toolkit:TurnstileFeatherEffect.FeatheringIndex="2" >
                     <RepeatButton x:Name="ButtonMinus1" Width="112" Height="112" Margin="0,0,0,0" Style="{StaticResource RoundButton}" Tag="-1" Click="ChangeAlarmTimeClick">

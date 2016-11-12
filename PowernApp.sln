@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowernApp", "PowernApp\PowernApp.csproj", "{9B087801-1E2D-45B0-9666-075809C89E8E}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneKit.Framework", "..\PhoneKit.Framework\PhoneKit.Framework\PhoneKit.Framework.csproj", "{9274ED00-223E-41D1-A1BC-E7CDD8C8D34D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneKit.Framework.Core", "..\PhoneKit.Framework\PhoneKit.Framework.Core\PhoneKit.Framework.Core.csproj", "{0028AC27-312B-4F73-B8F2-C3B8D9740A86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{F2EF90B9-A31D-43F6-BFD0-89D1844DF6D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,5 +76,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9274ED00-223E-41D1-A1BC-E7CDD8C8D34D} = {F2EF90B9-A31D-43F6-BFD0-89D1844DF6D0}
+		{0028AC27-312B-4F73-B8F2-C3B8D9740A86} = {F2EF90B9-A31D-43F6-BFD0-89D1844DF6D0}
 	EndGlobalSection
 EndGlobal
